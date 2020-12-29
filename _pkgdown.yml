@@ -1,0 +1,11 @@
+development:
+  mode: auto
+reference:
+- title: "Datasets"
+- contents:
+  - abbreviations_lup
+  - fn_type_lup_tb
+  - fns_dmt_tb
+- title: "Functions"
+- contents:
+  - print_table

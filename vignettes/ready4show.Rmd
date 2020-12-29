@@ -1,0 +1,20 @@
+---
+title: "ready4show"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ready4show}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ready4show)
+```
+This development version of the ready4show package has been made available as part of the process of testing and documenting the package. Currently there are no vignettes available.
