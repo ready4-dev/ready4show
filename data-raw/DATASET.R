@@ -45,8 +45,8 @@ ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Standardised Developer Tools For
 ## PART THREE
 ##
 # 5. Create a lookup table of abbreviations used in this package and save it as a package dataset (data gets saved in the data directory, documentation script is created in R directory).
-pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = character(0),
-                                        long_name_chr = character(0),
+pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = c("hline","lbl","mkdn"),
+                                        long_name_chr = c("horizonal line","label","markdown"),
                                         no_plural_chr = NA_character_,
                                         custom_plural_ls = NULL,
                                         url_1L_chr = NA_character_,

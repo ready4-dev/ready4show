@@ -7,10 +7,10 @@
 #' @param merge_row_idx_int Merge row index (an integer vector), Default: NA
 #' @param digits_dbl Digits (a double vector), Default: NULL
 #' @param big_mark_1L_chr Big mark (a character vector of length one), Default: ' '
-#' @param use_lbls_as_col_nms_1L_lgl Use lbls as column names (a logical vector of length one), Default: F
+#' @param use_lbls_as_col_nms_1L_lgl Use labels as column names (a logical vector of length one), Default: F
 #' @param scroll_box_args_ls Scroll box arguments (a list), Default: NULL
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one)
-#' @param hline_after_ls Hline after (a list), Default: NULL
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one)
+#' @param hline_after_ls Horizonal line after (a list), Default: NULL
 #' @param add_to_row_ls Add to row (a list), Default: NULL
 #' @param sanitize_fn Sanitize (a function), Default: getOption("xtable.sanitize.text.function", NULL)
 #' @return NULL

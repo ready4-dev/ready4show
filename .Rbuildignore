@@ -9,3 +9,4 @@
 ^data-raw/fns/print\.R$
 ^\.github$
 ^initial_setup\.R$
+^data-raw/gnrcs/generics\.R$

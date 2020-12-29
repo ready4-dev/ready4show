@@ -35,13 +35,13 @@ print_table(
 
 \item{big_mark_1L_chr}{Big mark (a character vector of length one), Default: ' '}
 
-\item{use_lbls_as_col_nms_1L_lgl}{Use lbls as column names (a logical vector of length one), Default: F}
+\item{use_lbls_as_col_nms_1L_lgl}{Use labels as column names (a logical vector of length one), Default: F}
 
 \item{scroll_box_args_ls}{Scroll box arguments (a list), Default: NULL}
 
-\item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one)}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one)}
 
-\item{hline_after_ls}{Hline after (a list), Default: NULL}
+\item{hline_after_ls}{Horizonal line after (a list), Default: NULL}
 
 \item{add_to_row_ls}{Add to row (a list), Default: NULL}
 
