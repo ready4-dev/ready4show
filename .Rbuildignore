@@ -10,3 +10,6 @@
 ^\.github$
 ^initial_setup\.R$
 ^data-raw/gnrcs/generics\.R$
+^data-raw/fns/knit\.R$
+^data-raw/fns/make\.R$
+^data-raw/fns/write\.R$

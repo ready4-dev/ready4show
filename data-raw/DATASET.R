@@ -45,8 +45,8 @@ ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Standardised Developer Tools For
 ## PART THREE
 ##
 # 5. Create a lookup table of abbreviations used in this package and save it as a package dataset (data gets saved in the data directory, documentation script is created in R directory).
-pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = c("hline","lbl","mkdn"),
-                                        long_name_chr = c("horizonal line","label","markdown"),
+pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = c("hline","lbl","mkdn","rprt"),
+                                        long_name_chr = c("horizonal line","label","markdown","report"),
                                         no_plural_chr = NA_character_,
                                         custom_plural_ls = NULL,
                                         url_1L_chr = NA_character_,
@@ -84,6 +84,20 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
                               abbreviations_lup = abbreviations_lup,
                               pkg_dss_tb = pkg_dss_tb)
 utils::data("fns_dmt_tb")
+## NEED TO MAKE EXAMPLE REPORTS RMDS AND LUP
+## NEED TO ADD RPRTS LUP AND KNIT PARS LS CLASSES AND KNIT METHOD
+# pkg_dss_tb <- tibble::tibble(rprt_nms_chr = "Main_Mdl_Smry",
+#                              title_chr = "Sample report template.",
+#                              paths_to_RMD_dir_1L_chr = NA_character_,
+#                              pkg_dirs_chr = "Markdown",
+#                              packages_chr = "TTU",
+#                              nms_of_RMD_chr = "_Mdls_Report.RMD",
+#                              rltv_paths_to_outpt_yaml_chr = "_output.yml") %>%
+#   ready4fun::write_and_doc_ds(db_1L_chr = "rprt_lup",
+#                               title_1L_chr = "Report types lookup table",
+#                               desc_1L_chr = "A lookup table of the different report types supported by ready4show",
+#                               abbreviations_lup = abbreviations_lup,
+#                               pkg_dss_tb = pkg_dss_tb)
 # 7. Save copy of package documentation to online data repo.
 # ds_ls <- ready4use::write_pkg_dss_to_dv_ds_csvs(pkg_dss_tb,
 #                                                 dv_nm_1L_chr = "ready4models",

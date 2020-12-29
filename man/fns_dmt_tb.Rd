@@ -5,7 +5,7 @@
 \alias{fns_dmt_tb}
 \title{ready4u function documentation table}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1 rows and 10 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 4 rows and 10 columns.
 }
 \source{
 \url{https://ready4-dev.github.io/ready4u/}
