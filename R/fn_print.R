@@ -2,6 +2,7 @@
 #' @description print_table() is a Print function that prints output to console Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.
 #' @param data_tb Data (a tibble)
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'PDF'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: F
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'NA'
 #' @param footnotes_chr Footnotes (a character vector), Default: 'NA'
 #' @param merge_row_idx_int Merge row index (an integer vector), Default: NA
@@ -24,11 +25,12 @@
 #' @importFrom flextable flextable set_caption merge_h_range bold colformat_num autofit add_footer_lines
 #' @importFrom officer run_autonum
 #' @importFrom purrr reduce
-print_table <- function (data_tb, output_type_1L_chr = "PDF", caption_1L_chr = NA_character_, 
-    footnotes_chr = NA_character_, merge_row_idx_int = NA_integer_, 
-    digits_dbl = NULL, big_mark_1L_chr = " ", use_lbls_as_col_nms_1L_lgl = F, 
-    scroll_box_args_ls = NULL, mkdn_tbl_ref_1L_chr, hline_after_ls = NULL, 
-    add_to_row_ls = NULL, sanitize_fn = getOption("xtable.sanitize.text.function", 
+print_table <- function (data_tb, output_type_1L_chr = "PDF", use_rdocx_1L_lgl = F, 
+    caption_1L_chr = NA_character_, footnotes_chr = NA_character_, 
+    merge_row_idx_int = NA_integer_, digits_dbl = NULL, big_mark_1L_chr = " ", 
+    use_lbls_as_col_nms_1L_lgl = F, scroll_box_args_ls = NULL, 
+    mkdn_tbl_ref_1L_chr, hline_after_ls = NULL, add_to_row_ls = NULL, 
+    sanitize_fn = getOption("xtable.sanitize.text.function", 
         NULL)) 
 {
     if (use_lbls_as_col_nms_1L_lgl & !any(Hmisc::label(data_tb) == 
@@ -66,8 +68,11 @@ print_table <- function (data_tb, output_type_1L_chr = "PDF", caption_1L_chr = N
         }
         if (output_type_1L_chr == "Word") {
             j2_1L_dbl <- ncol(data_tb)
-            data_fx <- flextable::flextable(data_tb) %>% flextable::set_caption(caption_1L_chr, 
-                autonum = officer::run_autonum())
+            data_fx <- flextable::flextable(data_tb)
+            if (!use_rdocx_1L_lgl) {
+                data_fx <- data_fx %>% flextable::set_caption(caption_1L_chr, 
+                  autonum = officer::run_autonum())
+            }
             if (!all(is.na(merge_row_idx_int))) {
                 data_fx <- data_fx %>% flextable::merge_h_range(i = merge_row_idx_int, 
                   j1 = 1, j2 = j2_1L_dbl) %>% flextable::bold(i = merge_row_idx_int, 

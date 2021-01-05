@@ -1,5 +1,6 @@
 print_table <- function(data_tb,
                            output_type_1L_chr = "PDF",
+                        use_rdocx_1L_lgl = F,
                            caption_1L_chr = NA_character_,
                            footnotes_chr = NA_character_,
                            merge_row_idx_int = NA_integer_,
@@ -52,9 +53,12 @@ print_table <- function(data_tb,
     }
     if(output_type_1L_chr == "Word"){
       j2_1L_dbl <- ncol(data_tb)
-      data_fx <- flextable::flextable(data_tb) %>% #
-        flextable::set_caption(caption_1L_chr,
-                               autonum = officer::run_autonum())
+      data_fx <- flextable::flextable(data_tb)
+      if(!use_rdocx_1L_lgl){
+        data_fx <- data_fx %>% #
+          flextable::set_caption(caption_1L_chr,
+                                 autonum = officer::run_autonum())
+      }
       if(!all(is.na(merge_row_idx_int))){
         data_fx <- data_fx %>%
           flextable::merge_h_range(i = merge_row_idx_int,

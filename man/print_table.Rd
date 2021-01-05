@@ -7,6 +7,7 @@
 print_table(
   data_tb,
   output_type_1L_chr = "PDF",
+  use_rdocx_1L_lgl = F,
   caption_1L_chr = NA_character_,
   footnotes_chr = NA_character_,
   merge_row_idx_int = NA_integer_,
@@ -24,6 +25,8 @@ print_table(
 \item{data_tb}{Data (a tibble)}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
+
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: F}
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'NA'}
 
