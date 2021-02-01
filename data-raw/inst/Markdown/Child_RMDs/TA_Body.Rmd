@@ -1,0 +1,13 @@
+---
+title: "Appendix"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r child="XX_Funs.Rmd", echo=FALSE}
+```
+```{r child="TA_Tables.Rmd", echo=FALSE}
+```
+```{r child="TA_Figures.Rmd", echo=FALSE}
+```

@@ -1,0 +1,10 @@
+---
+title: "XX_Funs"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r echo=FALSE}
+# Fns go here
+```
+

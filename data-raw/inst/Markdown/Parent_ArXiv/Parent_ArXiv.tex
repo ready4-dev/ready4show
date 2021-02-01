@@ -1,0 +1,136 @@
+\documentclass{article}
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}        % https://github.com/rstudio/rticles/issues/343
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{rotating} 
+\usepackage{multirow}
+
+\title{Predicting changes in the health utility of helpseeking young people from psychological distress, depression and anxiety measures.}
+
+\author{
+  }
+
+
+% Pandoc citation processing
+
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+
+\begin{document}
+\maketitle
+
+\def\tightlist{}
+
+
+\begin{abstract}
+\textbf{Background: } Background \newline \newline \textbf{Aims: } Aims text \newline \newline \textbf{Method: } Method text \newline \newline \textbf{Results: } Results text \newline \newline \textbf{Conclusions: } Conclusions text \newline \newline \textbf{Data Set Information:} Resources
+\end{abstract}
+
+\keywords{
+    anxiety; AQoL; depression; health utility; outcome measurement; psychological distress; youth mental health
+  }
+
+\textsuperscript{$\dagger{}$} These authors contributed equally to this work.
+
+\textsuperscript{1} Institute one details\\
+\textsuperscript{2} Institute two details\\
+\textsuperscript{3} Institute three details
+
+\textsuperscript{*} Correspondence: \href{mailto:john.doe@address.org.au}{John Doe \textless{}\href{mailto:john.doe@address.org.au}{\nolinkurl{john.doe@address.org.au}}\textgreater{}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+The aims of this study were to:
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{sample-and-setting}{%
+\subsection{Sample and setting}\label{sample-and-setting}}
+
+\hypertarget{measures}{%
+\subsection{Measures}\label{measures}}
+
+\hypertarget{population-characteristics}{%
+\subsubsection{Population characteristics}\label{population-characteristics}}
+
+\hypertarget{procedures}{%
+\subsection{Procedures}\label{procedures}}
+
+\hypertarget{statistical-analysis}{%
+\subsection{Statistical analysis}\label{statistical-analysis}}
+
+\hypertarget{replicability}{%
+\subsubsection{Replicability}\label{replicability}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\hypertarget{availability-of-data-and-materials}{%
+\subsection*{Availability of data and materials}\label{availability-of-data-and-materials}}
+\addcontentsline{toc}{subsection}{Availability of data and materials}
+
+\hypertarget{ethics-approval}{%
+\subsection*{Ethics approval}\label{ethics-approval}}
+\addcontentsline{toc}{subsection}{Ethics approval}
+
+The study was reviewed and granted approval by
+
+\hypertarget{funding}{%
+\subsection*{Funding}\label{funding}}
+\addcontentsline{toc}{subsection}{Funding}
+
+This study was funded by
+
+\hypertarget{conflict-of-interest}{%
+\subsection*{Conflict of Interest}\label{conflict-of-interest}}
+\addcontentsline{toc}{subsection}{Conflict of Interest}
+
+None declared.
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+
+\newpage
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
+
+\bibliographystyle{unsrt}
+\bibliography{../Data/references.bib}
+
+
+\end{document}

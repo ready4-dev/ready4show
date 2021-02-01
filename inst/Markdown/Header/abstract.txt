@@ -1,0 +1,22 @@
+\\textbf{Background: } 
+Background
+\\newline
+\\newline
+\\textbf{Aims: } 
+Aims text
+\\newline
+\\newline
+\\textbf{Method: } 
+Method text
+\\newline
+\\newline
+\\textbf{Results: } 
+Results text
+\\newline
+\\newline
+\\textbf{Conclusions: } 
+Conclusions text
+\\newline
+\\newline
+\\textbf{Data Set Information:} 
+Resources
