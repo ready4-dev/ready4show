@@ -17,4 +17,3 @@ Report type (a list)
 \description{
 make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).
 }
-\keyword{internal}

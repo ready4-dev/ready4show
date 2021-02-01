@@ -1,3 +1,18 @@
+#' Make eqn reference
+#' @description make_eqn_ref() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make eqn reference. The function returns Eqn reference (a character vector of length one).
+#' @param eqn_nm_1L_chr Eqn name (a character vector of length one)
+#' @param output_type_1L_chr Output type (a character vector of length one)
+#' @return Eqn reference (a character vector of length one)
+#' @rdname make_eqn_ref
+#' @export 
+
+make_eqn_ref <- function (eqn_nm_1L_chr, output_type_1L_chr) 
+{
+    eqn_ref_1L_chr <- ifelse(output_type_1L_chr == "Word", paste0("\\@ref(eq:", 
+        eqn_nm_1L_chr, ")"), paste0("\\ref{eq:", eqn_nm_1L_chr, 
+        "}"))
+    return(eqn_ref_1L_chr)
+}
 #' Make report type
 #' @description make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).
 #' @param rprt_nm_1L_chr Report name (a character vector of length one)
@@ -7,7 +22,6 @@
 #' @export 
 #' @importFrom purrr map_chr
 #' @importFrom ready4fun get_from_lup_obj
-#' @keywords internal
 make_rprt_type_ls <- function (rprt_nm_1L_chr, rprt_lup) 
 {
     values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>% 

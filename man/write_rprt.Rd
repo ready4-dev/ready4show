@@ -44,4 +44,3 @@ Output smry (a list)
 \description{
 write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output smry (a list).
 }
-\keyword{internal}

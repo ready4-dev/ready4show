@@ -1,3 +1,10 @@
+make_eqn_ref <- function(eqn_nm_1L_chr,
+                         output_type_1L_chr){
+  eqn_ref_1L_chr <- ifelse(output_type_1L_chr == "Word",
+                           paste0("\\@ref(eq:",eqn_nm_1L_chr,")"),
+                           paste0("\\ref{eq:",eqn_nm_1L_chr,"}"))
+  return(eqn_ref_1L_chr)
+}
 make_rprt_type_ls <- function(rprt_nm_1L_chr,
                               rprt_lup){
   values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>% purrr::map_chr(~ready4fun::get_from_lup_obj(rprt_lup,

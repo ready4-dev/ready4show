@@ -1,3 +1,31 @@
+#' Write markdown from package
+#' @description write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @param pkg_nm_1L_chr Package name (a character vector of length one)
+#' @param destn_dir_1L_chr Destn directory (a character vector of length one), Default: 'Markdown'
+#' @param overwrite_1L_lgl Overwrite (a logical vector of length one), Default: F
+#' @return NULL
+#' @rdname write_mkdn_from_pkg
+#' @export 
+#' @importFrom purrr map_lgl walk
+write_mkdn_from_pkg <- function (pkg_nm_1L_chr, destn_dir_1L_chr = "Markdown", overwrite_1L_lgl = F) 
+{
+    all_mkdn_chr <- system.file("Markdown", package = pkg_nm_1L_chr) %>% 
+        list.files()
+    is_dir_lgl <- all_mkdn_chr %>% purrr::map_lgl(~system.file(paste0("Markdown/", 
+        .x), package = pkg_nm_1L_chr) %>% dir.exists())
+    all_mkdn_chr[is_dir_lgl] %>% purrr::walk(~{
+        if (!dir.exists(paste0(destn_dir_1L_chr, "/", .x))) 
+            dir.create(paste0(destn_dir_1L_chr, "/", .x))
+    })
+    all_mkdn_files_chr <- system.file("Markdown", package = pkg_nm_1L_chr) %>% 
+        list.files(recursive = T)
+    all_mkdn_files_chr %>% purrr::walk(~{
+        if (!file.exists(paste0(destn_dir_1L_chr, "/", .x)) | 
+            (file.exists(paste0(destn_dir_1L_chr, "/", .x)) & 
+                overwrite_1L_lgl)) 
+            file.create(paste0(destn_dir_1L_chr, "/", .x))
+    })
+}
 #' Write rndrd report
 #' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rndrd report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param rprt_type_ls Report type (a list)
@@ -61,7 +89,6 @@ write_rndrd_rprt <- function (rprt_type_ls, params_ls = list(output_type_1L_chr 
 #' @export 
 #' @importFrom tibble tibble
 #' @importFrom ready4use write_fls_to_dv_ds
-#' @keywords internal
 write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF", 
     section_type_1L_chr = "#", path_to_prjs_dir_1L_chr = "../../../../Data/Project", 
     prt_dir_dir_1L_chr = "My_Project", reports_dir_1L_chr = "Reports", 

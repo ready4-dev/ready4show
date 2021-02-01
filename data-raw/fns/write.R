@@ -1,11 +1,25 @@
+write_mkdn_from_pkg <- function(pkg_nm_1L_chr,
+                                destn_dir_1L_chr = "Markdown",
+                                overwrite_1L_lgl = F){
+  all_mkdn_chr <- system.file("Markdown",package=pkg_nm_1L_chr) %>% list.files()
+  is_dir_lgl <- all_mkdn_chr %>% purrr::map_lgl(~system.file(paste0("Markdown/",.x),package=pkg_nm_1L_chr) %>% dir.exists())
+  all_mkdn_chr[is_dir_lgl] %>% purrr::walk(~{
+    if(!dir.exists(paste0(destn_dir_1L_chr,"/",.x)))
+      dir.create(paste0(destn_dir_1L_chr,"/",.x))
+  })
+  all_mkdn_files_chr <- system.file("Markdown",package=pkg_nm_1L_chr) %>% list.files(recursive = T)
+  all_mkdn_files_chr %>% purrr::walk(~{
+    if(!file.exists(paste0(destn_dir_1L_chr,"/",.x)) | (file.exists(paste0(destn_dir_1L_chr,"/",.x)) & overwrite_1L_lgl))
+      file.create(paste0(destn_dir_1L_chr,"/",.x))
+  })
+}
 write_rndrd_rprt <- function(rprt_type_ls,
                              params_ls = list(output_type_1L_chr = "HTML"),
                              paths_to_fls_to_copy_chr = NA_character_,
                              path_to_write_dirs_to_1L_chr = NA_character_,
                              nm_of_mkdn_dir_1L_chr = "Markdown",
                              path_to_rprt_dir_1L_chr = "./",
-                             overwrite_1L_lgl = T)
-{
+                             overwrite_1L_lgl = T){
   if (!is.na(path_to_write_dirs_to_1L_chr)) {
     path_to_mkdn_dir_1L_chr <- paste0(path_to_write_dirs_to_1L_chr,
                                       "/", nm_of_mkdn_dir_1L_chr)
