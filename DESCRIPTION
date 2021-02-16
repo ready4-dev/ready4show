@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Standardised Developer Tools for Sharing Insights from
     Projects Developed with the Ready4 Suite
-Version: 0.0.0.9008
+Version: 0.0.0.9009
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -42,6 +42,7 @@ RoxygenNote: 7.1.1
 Imports: 
     testthat,
     knitr,
+    lifecycle,
     ggfortify,
     knitrBootstrap,
     ready4fun (>= 0.0.0.9268),
