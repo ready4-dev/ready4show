@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Standardised Developer Tools for Sharing Insights from
     Projects Developed with the Ready4 Suite
-Version: 0.0.0.9009
+Version: 0.0.0.9010
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -45,8 +45,8 @@ Imports:
     lifecycle,
     ggfortify,
     knitrBootstrap,
-    ready4fun (>= 0.0.0.9268),
-    ready4use (>= 0.0.0.9107),
+    ready4fun (>= 0.0.0.9270),
+    ready4use (>= 0.0.0.9108),
     dplyr,
     flextable,
     Hmisc,
