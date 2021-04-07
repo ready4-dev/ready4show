@@ -1,3 +1,9 @@
+home:
+  links:
+  - text: User manual (PDF)
+    href: https://github.com/ready4-dev/ready4show/files/6268208/ready4show_user_0.0.0.9014.pdf
+  - text: Developer version of usual manual (PDF)
+    href: https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_developer_0.0.0.9014.pdf
 development:
   mode: auto
 reference:
