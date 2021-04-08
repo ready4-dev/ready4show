@@ -3,7 +3,7 @@
 \docType{data}
 \name{fns_dmt_tb}
 \alias{fns_dmt_tb}
-\title{ready4u function documentation table}
+\title{ready4show function documentation table}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6 rows and 10 columns.
 }

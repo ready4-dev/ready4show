@@ -43,32 +43,18 @@ ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Standardised Developer Tools For
 # PAUSE FOR INTERACTIVE
 ##
 ## PART THREE
-##
-# 5. Create a lookup table of abbreviations used in this package and save it as a package dataset (data gets saved in the data directory, documentation script is created in R directory).
-pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = c("hline","lbl","mkdn","rprt"),
-                                        long_name_chr = c("horizonal line","label","markdown","report"),
-                                        no_plural_chr = NA_character_,
-                                        custom_plural_ls = NULL,
-                                        url_1L_chr = NA_character_,
-                                        seed_lup = ready4use::abbreviations_lup)
+# 5. Create a lookup table of abbreviations used in this package and save it as a package dataset
+pkg_dss_tb <- ready4fun::get_rds_from_dv("abbreviations_lup") %>%
+  ready4fun::write_abbr_lup()
 utils::data("abbreviations_lup")
-##
-# 5. Create function types and generics look-up tables
-# 5.1 Create a lookup table of function types used in this package and save it as a package dataset (data gets saved in the data directory, documentation script is created in R directory).
-utils::data("fn_type_lup_tb",package = "ready4use")
-pkg_dss_tb <- fn_type_lup_tb %>% # NOTE: NEED TO UPDATE READY4FUN TO WRITE EMPTY GENERICS.R
-  ready4fun::add_rows_to_fn_type_lup(fn_type_nm_chr = ready4fun::get_new_fn_types(abbreviations_lup = abbreviations_lup,
-                                                                                  fn_type_lup_tb = fn_type_lup_tb),
-                                     fn_type_desc_chr = c("Prints output to console"),
-                                     is_generic_lgl = F,
-                                     is_method_lgl = F) %>% # Add to ready4fun template.
-  dplyr::arrange(fn_type_nm_chr) %>%
-  ready4fun::write_dmtd_fn_type_lup(url_1L_chr = NA_character_,
-                                    abbreviations_lup = abbreviations_lup,
+#
+# 6. Create function types look-up table and save it as a package dataset
+pkg_dss_tb <- ready4fun::get_rds_from_dv("fn_type_lup_tb") %>%
+  ready4fun::write_dmtd_fn_type_lup(abbreviations_lup = abbreviations_lup,
                                     pkg_dss_tb = pkg_dss_tb)
 utils::data("fn_type_lup_tb")
 #
-# 6. Create a table of all functions to document
+# 7. Create a table of all functions to document
 pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms()[1],
                                               undocumented_fns_dir_chr = ready4fun::make_undmtd_fns_dir_chr()[1],
                                               custom_dmt_ls = list(details_ls = NULL,
@@ -80,7 +66,7 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
                                               fn_type_lup_tb = fn_type_lup_tb,
                                               abbreviations_lup = abbreviations_lup) %>%
   ready4fun::write_and_doc_ds(db_1L_chr = "fns_dmt_tb",
-                              title_1L_chr = "ready4u function documentation table",
+                              title_1L_chr = "ready4show function documentation table",
                               desc_1L_chr = "Meta-data on each ready4u function used to create package documentation",
                               url_1L_chr = "https://ready4-dev.github.io/ready4u/",
                               abbreviations_lup = abbreviations_lup,
@@ -100,12 +86,6 @@ utils::data("fns_dmt_tb")
 #                               desc_1L_chr = "A lookup table of the different report types supported by ready4show",
 #                               abbreviations_lup = abbreviations_lup,
 #                               pkg_dss_tb = pkg_dss_tb)
-# 7. Save copy of package documentation to online data repo.
-# ds_ls <- ready4use::write_pkg_dss_to_dv_ds_csvs(pkg_dss_tb,
-#                                                 dv_nm_1L_chr = "ready4models",
-#                                                 ds_url_1L_chr = "https://doi.org/10.7910/DVN/RXGPAT",
-#                                                 parent_dv_dir_1L_chr = "../../../../../Data/Dataverse",
-#                                                 wait_time_in_secs_int = 5L)
 # NOTE: NEED TO UPDATE DIR PATH FOR MODELS
 ## Note files to be rewritten cannot be open in RStudio.
 ## 8. Document functions.
@@ -122,6 +102,13 @@ ready4fun::write_and_doc_fn_fls(fns_dmt_tb,
                                 update_pkgdown_1L_lgl = T)
 ##
 ## PART FOUR
+# Uncomment once classes are created
+# data("prototype_lup")
+# if(!identical(prototype_lup,ready4fun::get_rds_from_dv("prototype_lup"))){
+#   prototype_lup %>%
+#     write_paired_ds_fls_to_dv(fl_nm_1L_chr = "prototype_lup",
+#                               desc_1L_chr = "Prototypes lookup table")
+# }
 ready4fun::write_links_for_website(user_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/files/6268208/ready4show_user_0.0.0.9014.pdf",
                                    developer_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_developer_0.0.0.9014.pdf")
 ##

@@ -54,3 +54,8 @@
 ^data-raw/inst/Markdown/Parent_Word/Parent_Word\.docx$
 ^data-raw/inst/Markdown/Parent_Word/Parent_Word\.Rmd$
 ^data-raw/inst/Markdown/Parent_Word/plos\.csl$
+^data-raw/dataverse/abbreviations_lup/abbreviations_lup\.csv$
+^data-raw/dataverse/abbreviations_lup/abbreviations_lup\.RDS$
+^data-raw/dataverse/fn_type_lup_tb/fn_type_lup_tb\.csv$
+^data-raw/dataverse/fn_type_lup_tb/fn_type_lup_tb\.RDS$
+^data-raw/MAKE_HOUSESTYLE_DSS\.R$
