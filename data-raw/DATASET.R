@@ -76,10 +76,10 @@ utils::data("fns_dmt_tb")
 ## NEED TO ADD RPRTS LUP AND KNIT PARS LS CLASSES AND KNIT METHOD
 # pkg_dss_tb <- tibble::tibble(rprt_nms_chr = "Main_Mdl_Smry",
 #                              title_chr = "Sample report template.",
-#                              paths_to_RMD_dir_1L_chr = NA_character_,
+#                              paths_to_rmd_dir_1L_chr = NA_character_,
 #                              pkg_dirs_chr = "Markdown",
 #                              packages_chr = "TTU",
-#                              nms_of_RMD_chr = "_Mdls_Report.RMD",
+#                              nms_of_rmd_chr = "_Mdls_Report.RMD",
 #                              rltv_paths_to_outpt_yaml_chr = "_output.yml") %>%
 #   ready4fun::write_and_doc_ds(db_1L_chr = "rprt_lup",
 #                               title_1L_chr = "Report types lookup table",

@@ -20,7 +20,7 @@ write_rprt(
 \arguments{
 \item{rprt_type_ls}{Report type (a list)}
 
-\item{outp_smry_ls}{Output smry (a list)}
+\item{outp_smry_ls}{Output summary (a list)}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
 
@@ -32,15 +32,15 @@ write_rprt(
 
 \item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
 
-\item{rltv_path_to_data_dir_1L_chr}{Rltv path to data directory (a character vector of length one), Default: '../Output'}
+\item{rltv_path_to_data_dir_1L_chr}{Relative path to data directory (a character vector of length one), Default: '../Output'}
 
 \item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
 
 \item{push_copy_to_dv_1L_lgl}{Push copy to dataverse (a logical vector of length one), Default: T}
 }
 \value{
-Output smry (a list)
+Output summary (a list)
 }
 \description{
-write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output smry (a list).
+write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output summary (a list).
 }

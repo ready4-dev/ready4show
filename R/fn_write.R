@@ -73,18 +73,18 @@ write_rndrd_rprt <- function (rprt_type_ls, params_ls = list(output_type_1L_chr 
         output_dir = path_to_rprt_dir_1L_chr)
 }
 #' Write report
-#' @description write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output smry (a list).
+#' @description write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output summary (a list).
 #' @param rprt_type_ls Report type (a list)
-#' @param outp_smry_ls Output smry (a list)
+#' @param outp_smry_ls Output summary (a list)
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'PDF'
 #' @param section_type_1L_chr Section type (a character vector of length one), Default: '#'
 #' @param path_to_prjs_dir_1L_chr Path to prjs directory (a character vector of length one), Default: '../../../../Data/Project'
 #' @param prt_dir_dir_1L_chr Prt directory directory (a character vector of length one), Default: 'My_Project'
 #' @param reports_dir_1L_chr Reports directory (a character vector of length one), Default: 'Reports'
-#' @param rltv_path_to_data_dir_1L_chr Rltv path to data directory (a character vector of length one), Default: '../Output'
+#' @param rltv_path_to_data_dir_1L_chr Relative path to data directory (a character vector of length one), Default: '../Output'
 #' @param nm_of_mkdn_dir_1L_chr Name of markdown directory (a character vector of length one), Default: 'Markdown'
 #' @param push_copy_to_dv_1L_lgl Push copy to dataverse (a logical vector of length one), Default: T
-#' @return Output smry (a list)
+#' @return Output summary (a list)
 #' @rdname write_rprt
 #' @export 
 #' @importFrom tibble tibble
