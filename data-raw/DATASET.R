@@ -109,7 +109,8 @@ ready4fun::write_and_doc_fn_fls(fns_dmt_tb,
 #     write_paired_ds_fls_to_dv(fl_nm_1L_chr = "prototype_lup",
 #                               desc_1L_chr = "Prototypes lookup table")
 # }
-ready4fun::write_links_for_website(user_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/files/6268208/ready4show_user_0.0.0.9014.pdf",
-                                   developer_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_developer_0.0.0.9014.pdf")
+ready4fun::write_links_for_website(user_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_user_0.0.0.9014.pdf",
+                                   developer_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_developer_0.0.0.9014.pdf",
+                                   project_website_url_1L_chr = "https://www.ready4-dev.com/")
 ##
 ## Add, Commit and Push
