@@ -44,13 +44,15 @@ ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Standardised Developer Tools For
 ##
 ## PART THREE
 # 5. Create a lookup table of abbreviations used in this package and save it as a package dataset
+object_type_lup <- ready4fun::get_rds_from_dv("object_type_lup")
 pkg_dss_tb <- ready4fun::get_rds_from_dv("abbreviations_lup") %>%
-  ready4fun::write_abbr_lup()
+  ready4fun::write_abbr_lup(object_type_lup = object_type_lup)
 utils::data("abbreviations_lup")
 #
 # 6. Create function types look-up table and save it as a package dataset
 pkg_dss_tb <- ready4fun::get_rds_from_dv("fn_type_lup_tb") %>%
   ready4fun::write_dmtd_fn_type_lup(abbreviations_lup = abbreviations_lup,
+                                    object_type_lup = object_type_lup,
                                     pkg_dss_tb = pkg_dss_tb)
 utils::data("fn_type_lup_tb")
 #
@@ -64,12 +66,14 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
                                                                                                    force_false_chr = NA_character_),
                                                                    args_ls_ls = NULL),
                                               fn_type_lup_tb = fn_type_lup_tb,
-                                              abbreviations_lup = abbreviations_lup) %>%
+                                              abbreviations_lup = abbreviations_lup,
+                                              object_type_lup = object_type_lup) %>%
   ready4fun::write_and_doc_ds(db_1L_chr = "fns_dmt_tb",
                               title_1L_chr = "ready4show function documentation table",
                               desc_1L_chr = "Meta-data on each ready4u function used to create package documentation",
                               url_1L_chr = "https://ready4-dev.github.io/ready4u/",
                               abbreviations_lup = abbreviations_lup,
+                              object_type_lup = object_type_lup,
                               pkg_dss_tb = pkg_dss_tb)
 utils::data("fns_dmt_tb")
 ## NEED TO MAKE EXAMPLE REPORTS RMDS AND LUP
@@ -85,6 +89,7 @@ utils::data("fns_dmt_tb")
 #                               title_1L_chr = "Report types lookup table",
 #                               desc_1L_chr = "A lookup table of the different report types supported by ready4show",
 #                               abbreviations_lup = abbreviations_lup,
+#                               object_type_lup = object_type_lup,
 #                               pkg_dss_tb = pkg_dss_tb)
 # NOTE: NEED TO UPDATE DIR PATH FOR MODELS
 ## Note files to be rewritten cannot be open in RStudio.

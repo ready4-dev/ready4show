@@ -19,7 +19,8 @@ fn_type_lup_tb %>%
 #                              custom_plural_ls = NULL)
 # fn_type_lup_tb <- fn_type_lup_tb %>%
 #   ready4fun::add_rows_to_fn_type_lup(fn_type_nm_chr = ready4fun::get_new_fn_types(abbreviations_lup = abbreviations_lup,
-#                                                                                   fn_type_lup_tb = fn_type_lup_tb),
+#                                                                                   fn_type_lup_tb = fn_type_lup_tb,
+#                                                                                   object_type_lup = object_type_lup),
 #                                      fn_type_desc_chr = c("Prints output to console"),
 #                                      is_generic_lgl = F,
 #                                      is_method_lgl = F)
