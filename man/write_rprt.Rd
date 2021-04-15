@@ -14,7 +14,8 @@ write_rprt(
   reports_dir_1L_chr = "Reports",
   rltv_path_to_data_dir_1L_chr = "../Output",
   nm_of_mkdn_dir_1L_chr = "Markdown",
-  push_copy_to_dv_1L_lgl = T
+  push_copy_to_dv_1L_lgl = T,
+  append_params_ls = NULL
 )
 }
 \arguments{
@@ -37,6 +38,8 @@ write_rprt(
 \item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
 
 \item{push_copy_to_dv_1L_lgl}{Push copy to dataverse (a logical vector of length one), Default: T}
+
+\item{append_params_ls}{Append params (a list), Default: NULL}
 }
 \value{
 Output summary (a list)

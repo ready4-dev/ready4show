@@ -84,6 +84,7 @@ write_rndrd_rprt <- function (rprt_type_ls, params_ls = list(output_type_1L_chr 
 #' @param rltv_path_to_data_dir_1L_chr Relative path to data directory (a character vector of length one), Default: '../Output'
 #' @param nm_of_mkdn_dir_1L_chr Name of markdown directory (a character vector of length one), Default: 'Markdown'
 #' @param push_copy_to_dv_1L_lgl Push copy to dataverse (a logical vector of length one), Default: T
+#' @param append_params_ls Append params (a list), Default: NULL
 #' @return Output summary (a list)
 #' @rdname write_rprt
 #' @export 
@@ -93,7 +94,7 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
     section_type_1L_chr = "#", path_to_prjs_dir_1L_chr = "../../../../Data/Project", 
     prt_dir_dir_1L_chr = "My_Project", reports_dir_1L_chr = "Reports", 
     rltv_path_to_data_dir_1L_chr = "../Output", nm_of_mkdn_dir_1L_chr = "Markdown", 
-    push_copy_to_dv_1L_lgl = T) 
+    push_copy_to_dv_1L_lgl = T, append_params_ls = NULL) 
 {
     path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr, 
         "/", prt_dir_dir_1L_chr)
@@ -102,10 +103,14 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
     if (!dir.exists(path_to_rprt_dir_1L_chr)) 
         dir.create(path_to_rprt_dir_1L_chr)
     path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
+    params_ls <- list(outp_smry_ls = outp_smry_ls, output_type_1L_chr = output_type_1L_chr, 
+        rltv_path_to_data_dir_1L_chr = rltv_path_to_data_dir_1L_chr, 
+        section_type_1L_chr = section_type_1L_chr)
+    if (!is.null(append_params_ls)) {
+        params_ls <- append(params_ls, append_params_ls)
+    }
     write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-        full.names = T), params_ls = list(outp_smry_ls = outp_smry_ls, 
-        output_type_1L_chr = output_type_1L_chr, rltv_path_to_data_dir_1L_chr = rltv_path_to_data_dir_1L_chr, 
-        section_type_1L_chr = section_type_1L_chr), path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
+        full.names = T), params_ls = params_ls, path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
     if (!is.null(outp_smry_ls$dv_ls) & push_copy_to_dv_1L_lgl) {
         outp_smry_ls$rprt_dss_tb <- tibble::tibble(ds_obj_nm_chr = rprt_type_ls$file_nm_1L_chr, 

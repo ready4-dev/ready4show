@@ -59,19 +59,25 @@ write_rprt <- function(rprt_type_ls,
                        reports_dir_1L_chr = "Reports",
                        rltv_path_to_data_dir_1L_chr = "../Output",
                        nm_of_mkdn_dir_1L_chr = "Markdown",
-                       push_copy_to_dv_1L_lgl = T){
+                       push_copy_to_dv_1L_lgl = T,
+                       append_params_ls = NULL){
   path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr,"/",prt_dir_dir_1L_chr)#"../../../../Data/Project/Utility_Models",
   path_to_rprt_dir_1L_chr <- paste0(path_to_outpt_dir_1L_chr, "/", reports_dir_1L_chr)
   if(!dir.exists(path_to_rprt_dir_1L_chr))
     dir.create(path_to_rprt_dir_1L_chr)
   path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
+  params_ls <- list(outp_smry_ls = outp_smry_ls,
+                   output_type_1L_chr = output_type_1L_chr,
+                   rltv_path_to_data_dir_1L_chr = rltv_path_to_data_dir_1L_chr,
+                   section_type_1L_chr = section_type_1L_chr)
+  if(!is.null(append_params_ls)){
+    params_ls <- append(params_ls, append_params_ls)
+
+  }
   write_rndrd_rprt(rprt_type_ls = rprt_type_ls,
                    paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr,
                                                          full.names = T),
-                   params_ls = list(outp_smry_ls = outp_smry_ls,
-                                    output_type_1L_chr = output_type_1L_chr,
-                                    rltv_path_to_data_dir_1L_chr = rltv_path_to_data_dir_1L_chr,
-                                    section_type_1L_chr = section_type_1L_chr),
+                   params_ls = params_ls,
                    path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr),
                    nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr,
                    path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
