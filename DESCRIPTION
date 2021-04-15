@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Standardised Developer Tools for Sharing Insights from Projects
     Developed with the Ready4 Suite
-Version: 0.0.0.9022
+Version: 0.0.0.9023
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -52,7 +52,7 @@ Imports:
     officer,
     purrr,
     ready4fun (>= 0.0.0.9292),
-    ready4use (>= 0.0.0.9126),
+    ready4use (>= 0.0.0.9127),
     rlang,
     rmarkdown,
     testthat,
