@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Common abbreviations lookup table — abbreviations_lup • ready4show</title>
+<title>Write model plot file — write_mdl_plt_fl • ready4show</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Common abbreviations lookup table — abbreviations_lup" />
-<meta property="og:description" content="A lookup table for abbreviations commonly used in object names in the ready4showpackage." />
+<meta property="og:title" content="Write model plot file — write_mdl_plt_fl" />
+<meta property="og:description" content="write_mdl_plt_fl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write model plot file. The function returns Path to plot (a character vector of length one)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,34 +119,71 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Common abbreviations lookup table</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/db_abbreviations_lup.R'><code>R/db_abbreviations_lup.R</code></a></small>
-    <div class="hidden name"><code>abbreviations_lup.Rd</code></div>
+    <h1>Write model plot file</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/fn_write.R'><code>R/fn_write.R</code></a></small>
+    <div class="hidden name"><code>write_mdl_plt_fl.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A lookup table for abbreviations commonly used in object names in the ready4showpackage.</p>
+    <p>write_mdl_plt_fl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write model plot file. The function returns Path to plot (a character vector of length one).</p>
     </div>
 
-    <pre class="usage"><span class='va'>abbreviations_lup</span></pre>
+    <pre class="usage"><span class='fu'>write_mdl_plt_fl</span><span class='op'>(</span>
+  plt_fn <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fn_args_ls <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>path_to_write_to_1L_chr</span>,
+  <span class='va'>plt_nm_1L_chr</span>,
+  grpx_fn <span class='op'>=</span> <span class='fu'>grDevices</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/grDevices/png.html'>png</a></span>,
+  units_1L_chr <span class='op'>=</span> <span class='st'>"in"</span>,
+  width_1L_dbl <span class='op'>=</span> <span class='fl'>6</span>,
+  height_1L_dbl <span class='op'>=</span> <span class='fl'>6</span>,
+  rsl_1L_dbl <span class='op'>=</span> <span class='fl'>300</span>
+<span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>plt_fn</th>
+      <td><p>Plot (a function), Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>fn_args_ls</th>
+      <td><p>Function arguments (a list), Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>path_to_write_to_1L_chr</th>
+      <td><p>Path to write to (a character vector of length one)</p></td>
+    </tr>
+    <tr>
+      <th>plt_nm_1L_chr</th>
+      <td><p>Plot name (a character vector of length one)</p></td>
+    </tr>
+    <tr>
+      <th>grpx_fn</th>
+      <td><p>Grpx (a function), Default: grDevices::png</p></td>
+    </tr>
+    <tr>
+      <th>units_1L_chr</th>
+      <td><p>Units (a character vector of length one), Default: 'in'</p></td>
+    </tr>
+    <tr>
+      <th>width_1L_dbl</th>
+      <td><p>Width (a double vector of length one), Default: 6</p></td>
+    </tr>
+    <tr>
+      <th>height_1L_dbl</th>
+      <td><p>Height (a double vector of length one), Default: 6</p></td>
+    </tr>
+    <tr>
+      <th>rsl_1L_dbl</th>
+      <td><p>Resolution (a double vector of length one), Default: 300</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 501 rows and 3 columns.</p>
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p><a href='https://doi.org/10.7910/DVN/2Y9VF9'>https://doi.org/10.7910/DVN/2Y9VF9</a></p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>A tibble</p>
-<dl>
-<dt>short_name_chr</dt><dd><p>Short name (a character vector)</p></dd>
-<dt>long_name_chr</dt><dd><p>Long name (a character vector)</p></dd>
-<dt>plural_lgl</dt><dd><p>Plural (a logical vector)</p></dd>
-
-</dl>
-
+    <p>Path to plot (a character vector of length one)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
