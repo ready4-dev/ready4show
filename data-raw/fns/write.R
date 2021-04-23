@@ -1,3 +1,22 @@
+write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to_1L_chr,
+                              plt_nm_1L_chr, grpx_fn = grDevices::png, units_1L_chr = "in",
+                              width_1L_dbl = 6, height_1L_dbl = 6, rsl_1L_dbl = 300)
+{
+  if (!is.null(plt_fn)) {
+    path_to_plot_1L_chr <- paste0(path_to_write_to_1L_chr,
+                                  "/", plt_nm_1L_chr, ifelse(identical(grpx_fn, grDevices::png),
+                                                             ".png", ".tiff"))
+    rlang::exec(grpx_fn, !!!list(path_to_plot_1L_chr, units = units_1L_chr,
+                                 width = width_1L_dbl, height = height_1L_dbl, res = rsl_1L_dbl))
+    plt <- rlang::exec(plt_fn, !!!fn_args_ls)
+    print(plt)
+    grDevices::dev.off()
+  }
+  else {
+    path_to_plot_1L_chr <- NA_character_
+  }
+  return(path_to_plot_1L_chr)
+}
 write_mkdn_from_pkg <- function(pkg_nm_1L_chr,
                                 destn_dir_1L_chr = "Markdown",
                                 overwrite_1L_lgl = F){

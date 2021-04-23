@@ -1,3 +1,38 @@
+#' Write model plot file
+#' @description write_mdl_plt_fl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write model plot file. The function returns Path to plot (a character vector of length one).
+#' @param plt_fn Plot (a function), Default: NULL
+#' @param fn_args_ls Function arguments (a list), Default: NULL
+#' @param path_to_write_to_1L_chr Path to write to (a character vector of length one)
+#' @param plt_nm_1L_chr Plot name (a character vector of length one)
+#' @param grpx_fn Grpx (a function), Default: grDevices::png
+#' @param units_1L_chr Units (a character vector of length one), Default: 'in'
+#' @param width_1L_dbl Width (a double vector of length one), Default: 6
+#' @param height_1L_dbl Height (a double vector of length one), Default: 6
+#' @param rsl_1L_dbl Resolution (a double vector of length one), Default: 300
+#' @return Path to plot (a character vector of length one)
+#' @rdname write_mdl_plt_fl
+#' @export 
+#' @importFrom grDevices png dev.off
+#' @importFrom rlang exec
+write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to_1L_chr, 
+    plt_nm_1L_chr, grpx_fn = grDevices::png, units_1L_chr = "in", 
+    width_1L_dbl = 6, height_1L_dbl = 6, rsl_1L_dbl = 300) 
+{
+    if (!is.null(plt_fn)) {
+        path_to_plot_1L_chr <- paste0(path_to_write_to_1L_chr, 
+            "/", plt_nm_1L_chr, ifelse(identical(grpx_fn, grDevices::png), 
+                ".png", ".tiff"))
+        rlang::exec(grpx_fn, !!!list(path_to_plot_1L_chr, units = units_1L_chr, 
+            width = width_1L_dbl, height = height_1L_dbl, res = rsl_1L_dbl))
+        plt <- rlang::exec(plt_fn, !!!fn_args_ls)
+        print(plt)
+        grDevices::dev.off()
+    }
+    else {
+        path_to_plot_1L_chr <- NA_character_
+    }
+    return(path_to_plot_1L_chr)
+}
 #' Write markdown from package
 #' @description write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param pkg_nm_1L_chr Package name (a character vector of length one)

@@ -19,5 +19,6 @@ reference:
   - make_eqn_ref
   - make_rprt_type_ls
   - print_table
+  - write_mdl_plt_fl
   - write_mkdn_from_pkg
   - write_rprt
