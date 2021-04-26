@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Make report type — make_rprt_type_ls • ready4show</title>
+<title>Write report from template — write_rprt_from_tmpl • ready4show</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Make report type — make_rprt_type_ls" />
-<meta property="og:description" content="make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list)." />
+<meta property="og:title" content="Write report from template — write_rprt_from_tmpl" />
+<meta property="og:description" content="write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,33 +119,63 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Make report type</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/fn_make.R'><code>R/fn_make.R</code></a></small>
-    <div class="hidden name"><code>make_rprt_type_ls.Rd</code></div>
+    <h1>Write report from template</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/fn_write.R'><code>R/fn_write.R</code></a></small>
+    <div class="hidden name"><code>write_rprt_from_tmpl.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).</p>
+    <p>write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour</p>
     </div>
 
-    <pre class="usage"><span class='fu'>make_rprt_type_ls</span><span class='op'>(</span><span class='va'>rprt_nm_1L_chr</span>, <span class='va'>rprt_lup</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>write_rprt_from_tmpl</span><span class='op'>(</span>
+  <span class='va'>rprt_type_ls</span>,
+  params_ls <span class='op'>=</span> <span class='cn'>NULL</span>,
+  output_type_1L_chr <span class='op'>=</span> <span class='st'>"PDF"</span>,
+  <span class='va'>path_to_prjs_dir_1L_chr</span>,
+  prt_dir_dir_1L_chr <span class='op'>=</span> <span class='st'>"Fake"</span>,
+  reports_dir_1L_chr <span class='op'>=</span> <span class='st'>"Reports"</span>,
+  rltv_path_to_data_dir_1L_chr <span class='op'>=</span> <span class='st'>"../Output"</span>,
+  nm_of_mkdn_dir_1L_chr <span class='op'>=</span> <span class='st'>"Markdown"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>rprt_nm_1L_chr</th>
-      <td><p>Report name (a character vector of length one)</p></td>
+      <th>rprt_type_ls</th>
+      <td><p>Report type (a list)</p></td>
     </tr>
     <tr>
-      <th>rprt_lup</th>
-      <td><p>Report (a lookup table)</p></td>
+      <th>params_ls</th>
+      <td><p>Params (a list), Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>output_type_1L_chr</th>
+      <td><p>Output type (a character vector of length one), Default: 'PDF'</p></td>
+    </tr>
+    <tr>
+      <th>path_to_prjs_dir_1L_chr</th>
+      <td><p>Path to prjs directory (a character vector of length one)</p></td>
+    </tr>
+    <tr>
+      <th>prt_dir_dir_1L_chr</th>
+      <td><p>Prt directory directory (a character vector of length one), Default: 'Fake'</p></td>
+    </tr>
+    <tr>
+      <th>reports_dir_1L_chr</th>
+      <td><p>Reports directory (a character vector of length one), Default: 'Reports'</p></td>
+    </tr>
+    <tr>
+      <th>rltv_path_to_data_dir_1L_chr</th>
+      <td><p>Relative path to data directory (a character vector of length one), Default: '../Output'</p></td>
+    </tr>
+    <tr>
+      <th>nm_of_mkdn_dir_1L_chr</th>
+      <td><p>Name of markdown directory (a character vector of length one), Default: 'Markdown'</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Report type (a list)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
