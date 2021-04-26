@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Standardised Developer Tools for Sharing Insights from Projects
     Developed with the Ready4 Suite
-Version: 0.0.0.9025
+Version: 0.0.0.9026
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
