@@ -160,3 +160,33 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
     }
     return(outp_smry_ls)
 }
+#' Write report from template
+#' @description write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @param rprt_type_ls Report type (a list)
+#' @param params_ls Params (a list), Default: NULL
+#' @param output_type_1L_chr Output type (a character vector of length one), Default: 'PDF'
+#' @param path_to_prjs_dir_1L_chr Path to prjs directory (a character vector of length one)
+#' @param prt_dir_dir_1L_chr Prt directory directory (a character vector of length one), Default: 'Fake'
+#' @param reports_dir_1L_chr Reports directory (a character vector of length one), Default: 'Reports'
+#' @param rltv_path_to_data_dir_1L_chr Relative path to data directory (a character vector of length one), Default: '../Output'
+#' @param nm_of_mkdn_dir_1L_chr Name of markdown directory (a character vector of length one), Default: 'Markdown'
+#' @return NULL
+#' @rdname write_rprt_from_tmpl
+#' @export 
+
+#' @keywords internal
+write_rprt_from_tmpl <- function (rprt_type_ls, params_ls = NULL, output_type_1L_chr = "PDF", 
+    path_to_prjs_dir_1L_chr, prt_dir_dir_1L_chr = "Fake", reports_dir_1L_chr = "Reports", 
+    rltv_path_to_data_dir_1L_chr = "../Output", nm_of_mkdn_dir_1L_chr = "Markdown") 
+{
+    path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr, 
+        "/", prt_dir_dir_1L_chr)
+    path_to_rprt_dir_1L_chr <- paste0(path_to_outpt_dir_1L_chr, 
+        "/", reports_dir_1L_chr)
+    if (!dir.exists(path_to_rprt_dir_1L_chr)) 
+        dir.create(path_to_rprt_dir_1L_chr)
+    path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
+    write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
+        full.names = T), params_ls = params_ls, path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
+        nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
+}
