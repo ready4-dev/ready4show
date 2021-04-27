@@ -1,3 +1,63 @@
+write_header_fls <- function(path_to_header_dir_1L_chr,
+                             header_yaml_args_ls,
+                             abstract_args_ls = NULL){
+  dir.create(path_to_header_dir_1L_chr)
+  rlang::exec(write_header_yaml, path_to_header_dir_1L_chr, !!!header_yaml_args_ls )
+  if(!is.null(abstract_args_ls))
+    abstract_args_ls$abstract_ls %>%
+    make_abstract_lines() %>%
+    writeLines(paste0(path_to_header_dir_1L_chr,
+                      "/",
+                      abstract_args_ls$fl_nm_1L_chr))
+}
+write_header_yaml <- function(path_to_header_dir_1L_chr,
+                              fl_nm_1L_chr = "header.yaml",
+                              authors_tb,
+                              institutes_tb,
+                              title_1L_chr = "Example title",
+                              keywords_chr = c("Example keyword one", "Example keyword two"),
+                              path_to_tmpl_header_1L_chr = NULL){
+  if(is.null(path_to_tmpl_header_1L_chr)){
+    tmpl_header_chr <- c("title: TITLE_PLACEHOLDER",
+                         "author:",
+                         "AUTHOR_PLACEHOLDER",
+                         "institute:",
+                         "INSTITUTE_PLACEHOLDER",
+                         "keywords:  KEYWORDS_PLACEHOLDER")
+  }else{
+    tmpl_header_chr <- readLines(path_to_tmpl_header_1L_chr)
+  }
+  authors_tb <- authors_tb %>%
+    dplyr::arrange(sequence_int)
+  tmpl_header_chr  %>% purrr::map(~{
+    if(.x=="AUTHOR_PLACEHOLDER"){
+      make_authorship_lines(authors_tb)
+    }else{
+      if(.x=="INSTITUTE_PLACEHOLDER"){
+        make_institutes_lines(authors_tb,
+                              institutes_tb = institutes_tb)
+      }else{
+        if(stringr::str_detect(.x,"KEYWORDS_PLACEHOLDER")){
+          if(is.na(keywords_chr[1])){
+            NA_character_
+          }else{
+            stringr::str_replace(.x,
+                                 "KEYWORDS_PLACEHOLDER",
+                                 paste0(keywords_chr, collapse = ", "))
+          }
+        }else{
+          .x %>% stringr::str_replace_all("TITLE_PLACEHOLDER",
+                                          title_1L_chr)
+        }
+      }
+    }
+  }) %>%
+    purrr::flatten_chr() %>%
+    purrr::discard(is.na) %>%
+    writeLines(paste0(path_to_header_dir_1L_chr,
+                      "/",
+                      fl_nm_1L_chr))
+}
 write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to_1L_chr,
                               plt_nm_1L_chr, grpx_fn = grDevices::png, units_1L_chr = "in",
                               width_1L_dbl = 6, height_1L_dbl = 6, rsl_1L_dbl = 300)
@@ -38,6 +98,8 @@ write_rndrd_rprt <- function(rprt_type_ls,
                              path_to_write_dirs_to_1L_chr = NA_character_,
                              nm_of_mkdn_dir_1L_chr = "Markdown",
                              path_to_rprt_dir_1L_chr = "./",
+                             header_yaml_args_ls = NULL,
+                             abstract_args_ls = NULL,
                              overwrite_1L_lgl = T){
   if (!is.na(path_to_write_dirs_to_1L_chr)) {
     path_to_mkdn_dir_1L_chr <- paste0(path_to_write_dirs_to_1L_chr,
@@ -55,6 +117,12 @@ write_rndrd_rprt <- function(rprt_type_ls,
   }
   if (!dir.exists(path_to_rprt_dir_1L_chr))
     dir.create(path_to_rprt_dir_1L_chr)
+  if(!is.null(header_yaml_args_ls)){
+    write_header_fls(path_to_header_dir_1L_chr = paste0(path_to_mkdn_dir_1L_chr,
+                                                       "/Header"),
+                     header_yaml_args_ls,
+                     abstract_args_ls = abstract_args_ls)
+  }
   path_to_RMD_1L_chr <- paste0(path_to_wd_1L_chr, "/", rprt_type_ls$nm_of_RMD_1L_chr)
   rmarkdown::render(path_to_RMD_1L_chr,
                     output_format = switch(params_ls$output_type_1L_chr,
@@ -120,13 +188,15 @@ write_rprt_from_tmpl <- function (rprt_type_ls,
                                   params_ls = NULL,
                                   output_type_1L_chr = "PDF",
                                   path_to_prjs_dir_1L_chr, #  = "../../../../Data/Project"
-                                  prt_dir_dir_1L_chr = "Fake",
+                                  prj_dir_1L_chr = "Fake",
+                                  header_yaml_args_ls = NULL,
+                                  abstract_args_ls = NULL,
                                   reports_dir_1L_chr = "Reports",
                                   rltv_path_to_data_dir_1L_chr = "../Output",
                                   nm_of_mkdn_dir_1L_chr = "Markdown"
 ){
   path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr,
-                                     "/", prt_dir_dir_1L_chr)
+                                     "/", prj_dir_1L_chr)
   path_to_rprt_dir_1L_chr <- paste0(path_to_outpt_dir_1L_chr,
                                     "/", reports_dir_1L_chr)
   if (!dir.exists(path_to_rprt_dir_1L_chr))
@@ -138,5 +208,7 @@ write_rprt_from_tmpl <- function (rprt_type_ls,
                    params_ls = params_ls,
                    path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr),
                    nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr,
-                   path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
+                   path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr,
+                   header_yaml_args_ls = header_yaml_args_ls,
+                   abstract_args_ls = abstract_args_ls)
 }

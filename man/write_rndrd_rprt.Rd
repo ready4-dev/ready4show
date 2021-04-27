@@ -11,6 +11,8 @@ write_rndrd_rprt(
   path_to_write_dirs_to_1L_chr = NA_character_,
   nm_of_mkdn_dir_1L_chr = "Markdown",
   path_to_rprt_dir_1L_chr = "./",
+  header_yaml_args_ls = NULL,
+  abstract_args_ls = NULL,
   overwrite_1L_lgl = T
 )
 }
@@ -26,6 +28,10 @@ write_rndrd_rprt(
 \item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
 
 \item{path_to_rprt_dir_1L_chr}{Path to report directory (a character vector of length one), Default: './'}
+
+\item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
+
+\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: T}
 }

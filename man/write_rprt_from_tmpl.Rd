@@ -9,7 +9,9 @@ write_rprt_from_tmpl(
   params_ls = NULL,
   output_type_1L_chr = "PDF",
   path_to_prjs_dir_1L_chr,
-  prt_dir_dir_1L_chr = "Fake",
+  prj_dir_1L_chr = "Fake",
+  header_yaml_args_ls = NULL,
+  abstract_args_ls = NULL,
   reports_dir_1L_chr = "Reports",
   rltv_path_to_data_dir_1L_chr = "../Output",
   nm_of_mkdn_dir_1L_chr = "Markdown"
@@ -24,7 +26,11 @@ write_rprt_from_tmpl(
 
 \item{path_to_prjs_dir_1L_chr}{Path to prjs directory (a character vector of length one)}
 
-\item{prt_dir_dir_1L_chr}{Prt directory directory (a character vector of length one), Default: 'Fake'}
+\item{prj_dir_1L_chr}{Prj directory (a character vector of length one), Default: 'Fake'}
+
+\item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
+
+\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
 \item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
 
