@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ready4show function documentation table — fns_dmt_tb • ready4show</title>
+<title>Write header yaml — write_header_yaml • ready4show</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="ready4show function documentation table — fns_dmt_tb" />
-<meta property="og:description" content="Meta-data on each ready4u function used to create package documentation" />
+<meta property="og:title" content="Write header yaml — write_header_yaml" />
+<meta property="og:description" content="write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,40 +119,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>ready4show function documentation table</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/db_fns_dmt_tb.R'><code>R/db_fns_dmt_tb.R</code></a></small>
-    <div class="hidden name"><code>fns_dmt_tb.Rd</code></div>
+    <h1>Write header yaml</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/fn_write.R'><code>R/fn_write.R</code></a></small>
+    <div class="hidden name"><code>write_header_yaml.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Meta-data on each ready4u function used to create package documentation</p>
+    <p>write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour</p>
     </div>
 
-    <pre class="usage"><span class='va'>fns_dmt_tb</span></pre>
+    <pre class="usage"><span class='fu'>write_header_yaml</span><span class='op'>(</span>
+  <span class='va'>path_to_header_dir_1L_chr</span>,
+  fl_nm_1L_chr <span class='op'>=</span> <span class='st'>"header.yaml"</span>,
+  <span class='va'>authors_tb</span>,
+  <span class='va'>institutes_tb</span>,
+  title_1L_chr <span class='op'>=</span> <span class='st'>"Example title"</span>,
+  keywords_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Example keyword one"</span>, <span class='st'>"Example keyword two"</span><span class='op'>)</span>,
+  path_to_tmpl_header_1L_chr <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
-
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 16 rows and 10 columns.</p>
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p><a href='https://ready4-dev.github.io/ready4u/'>https://ready4-dev.github.io/ready4u/</a></p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>A tibble</p>
-<dl>
-<dt>fns_chr</dt><dd><p>Functions (a character vector)</p></dd>
-<dt>title_chr</dt><dd><p>Title (a character vector)</p></dd>
-<dt>desc_chr</dt><dd><p>Description (a character vector)</p></dd>
-<dt>details_chr</dt><dd><p>Details (a character vector)</p></dd>
-<dt>inc_for_main_user_lgl</dt><dd><p>Include for main user (a logical vector)</p></dd>
-<dt>output_chr</dt><dd><p>Output (a character vector)</p></dd>
-<dt>example_lgl</dt><dd><p>Example (a logical vector)</p></dd>
-<dt>args_ls</dt><dd><p>Arguments (a list)</p></dd>
-<dt>file_nm_chr</dt><dd><p>File name (a character vector)</p></dd>
-<dt>file_pfx_chr</dt><dd><p>File prefix (a character vector)</p></dd>
-
-</dl>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path_to_header_dir_1L_chr</th>
+      <td><p>Path to header directory (a character vector of length one)</p></td>
+    </tr>
+    <tr>
+      <th>fl_nm_1L_chr</th>
+      <td><p>File name (a character vector of length one), Default: 'header.yaml'</p></td>
+    </tr>
+    <tr>
+      <th>authors_tb</th>
+      <td><p>Authors (a tibble)</p></td>
+    </tr>
+    <tr>
+      <th>institutes_tb</th>
+      <td><p>Institutes (a tibble)</p></td>
+    </tr>
+    <tr>
+      <th>title_1L_chr</th>
+      <td><p>Title (a character vector of length one), Default: 'Example title'</p></td>
+    </tr>
+    <tr>
+      <th>keywords_chr</th>
+      <td><p>Keywords (a character vector), Default: c("Example keyword one", "Example keyword two")</p></td>
+    </tr>
+    <tr>
+      <th>path_to_tmpl_header_1L_chr</th>
+      <td><p>Path to template header (a character vector of length one), Default: NULL</p></td>
+    </tr>
+    </table>
 
 
   </div>
