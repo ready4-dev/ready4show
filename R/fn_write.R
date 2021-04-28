@@ -274,7 +274,8 @@ write_rprt_from_tmpl <- function (rprt_type_ls, params_ls = NULL, output_type_1L
         dir.create(path_to_rprt_dir_1L_chr)
     path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
     write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-        full.names = T), params_ls = params_ls, path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
+        full.names = T, recursive = T), params_ls = params_ls, 
+        path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr, 
         header_yaml_args_ls = header_yaml_args_ls, abstract_args_ls = abstract_args_ls)
 }
