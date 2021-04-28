@@ -94,7 +94,7 @@ write_mkdn_from_pkg <- function(pkg_nm_1L_chr,
 }
 write_rndrd_rprt <- function(rprt_type_ls,
                              params_ls = list(output_type_1L_chr = "HTML"),
-                             paths_to_fls_to_copy_chr = NA_character_,
+                             #paths_to_fls_to_copy_chr = NA_character_,
                              path_to_write_dirs_to_1L_chr = NA_character_,
                              nm_of_mkdn_dir_1L_chr = "Markdown",
                              path_to_rprt_dir_1L_chr = "./",
@@ -102,15 +102,28 @@ write_rndrd_rprt <- function(rprt_type_ls,
                              abstract_args_ls = NULL,
                              overwrite_1L_lgl = T){
   if (!is.na(path_to_write_dirs_to_1L_chr)) {
+    file.copy(rprt_type_ls$path_to_RMD_dir_1L_chr,
+              path_to_write_dirs_to_1L_chr,
+              recursive = T,
+              overwrite = overwrite_1L_lgl)
+    dir_nm_1L_chr <- rprt_type_ls$path_to_RMD_dir_1L_chr %>%
+      normalizePath() %>%
+      strsplit("\\\\") %>%
+      purrr::pluck(1) %>%
+      tail(1)
     path_to_mkdn_dir_1L_chr <- paste0(path_to_write_dirs_to_1L_chr,
                                       "/", nm_of_mkdn_dir_1L_chr)
-    if (!dir.exists(path_to_mkdn_dir_1L_chr))
-      dir.create(path_to_mkdn_dir_1L_chr)
-    if (is.na(paths_to_fls_to_copy_chr[1]))
-      paths_to_fls_to_copy_chr <- list.files(rprt_type_ls$path_to_RMD_dir_1L_chr,
-                                             full.names = T)
-    file.copy(paths_to_fls_to_copy_chr, path_to_mkdn_dir_1L_chr,
-              overwrite = overwrite_1L_lgl)
+    if(dir_nm_1L_chr != nm_of_mkdn_dir_1L_chr)
+      file.rename(paste0(path_to_write_dirs_to_1L_chr,
+                         "/", dir_nm_1L_chr),
+                  path_to_mkdn_dir_1L_chr)
+
+    # if (!dir.exists(path_to_mkdn_dir_1L_chr))
+    #   dir.create(path_to_mkdn_dir_1L_chr)
+    # if (is.na(paths_to_fls_to_copy_chr[1])){
+    #   paths_to_fls_to_copy_chr <- list.files(rprt_type_ls$path_to_RMD_dir_1L_chr,
+    #                                          full.names = T)
+    # }
     path_to_wd_1L_chr <- path_to_mkdn_dir_1L_chr
   }else{
     path_to_wd_1L_chr <- rprt_type_ls$path_to_RMD_dir_1L_chr
@@ -159,12 +172,8 @@ write_rprt <- function(rprt_type_ls,
                    section_type_1L_chr = section_type_1L_chr)
   if(!is.null(append_params_ls)){
     params_ls <- append(params_ls, append_params_ls)
-
   }
   write_rndrd_rprt(rprt_type_ls = rprt_type_ls,
-                   paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr,
-                                                         full.names = T,
-                                                         recursive = T),
                    params_ls = params_ls,
                    path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr),
                    nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr,
@@ -204,9 +213,6 @@ write_rprt_from_tmpl <- function (rprt_type_ls,
     dir.create(path_to_rprt_dir_1L_chr)
   path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
   write_rndrd_rprt(rprt_type_ls = rprt_type_ls,
-                   paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr,
-                                                         full.names = T,
-                                                         recursive = T),
                    params_ls = params_ls,
                    path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr),
                    nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr,

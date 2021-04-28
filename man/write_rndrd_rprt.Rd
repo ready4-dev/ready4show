@@ -7,7 +7,6 @@
 write_rndrd_rprt(
   rprt_type_ls,
   params_ls = list(output_type_1L_chr = "HTML"),
-  paths_to_fls_to_copy_chr = NA_character_,
   path_to_write_dirs_to_1L_chr = NA_character_,
   nm_of_mkdn_dir_1L_chr = "Markdown",
   path_to_rprt_dir_1L_chr = "./",
@@ -20,8 +19,6 @@ write_rndrd_rprt(
 \item{rprt_type_ls}{Report type (a list)}
 
 \item{params_ls}{Params (a list), Default: list(output_type_1L_chr = "HTML")}
-
-\item{paths_to_fls_to_copy_chr}{Paths to files to copy (a character vector), Default: 'NA'}
 
 \item{path_to_write_dirs_to_1L_chr}{Path to write directories to (a character vector of length one), Default: 'NA'}
 

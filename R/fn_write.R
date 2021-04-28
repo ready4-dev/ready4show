@@ -142,7 +142,6 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, destn_dir_1L_chr = "Markdown", o
 #' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rndrd report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param rprt_type_ls Report type (a list)
 #' @param params_ls Params (a list), Default: list(output_type_1L_chr = "HTML")
-#' @param paths_to_fls_to_copy_chr Paths to files to copy (a character vector), Default: 'NA'
 #' @param path_to_write_dirs_to_1L_chr Path to write directories to (a character vector of length one), Default: 'NA'
 #' @param nm_of_mkdn_dir_1L_chr Name of markdown directory (a character vector of length one), Default: 'Markdown'
 #' @param path_to_rprt_dir_1L_chr Path to report directory (a character vector of length one), Default: './'
@@ -152,23 +151,25 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, destn_dir_1L_chr = "Markdown", o
 #' @return NULL
 #' @rdname write_rndrd_rprt
 #' @export 
+#' @importFrom purrr pluck
 #' @importFrom rmarkdown render
 #' @keywords internal
 write_rndrd_rprt <- function (rprt_type_ls, params_ls = list(output_type_1L_chr = "HTML"), 
-    paths_to_fls_to_copy_chr = NA_character_, path_to_write_dirs_to_1L_chr = NA_character_, 
-    nm_of_mkdn_dir_1L_chr = "Markdown", path_to_rprt_dir_1L_chr = "./", 
-    header_yaml_args_ls = NULL, abstract_args_ls = NULL, overwrite_1L_lgl = T) 
+    path_to_write_dirs_to_1L_chr = NA_character_, nm_of_mkdn_dir_1L_chr = "Markdown", 
+    path_to_rprt_dir_1L_chr = "./", header_yaml_args_ls = NULL, 
+    abstract_args_ls = NULL, overwrite_1L_lgl = T) 
 {
     if (!is.na(path_to_write_dirs_to_1L_chr)) {
+        file.copy(rprt_type_ls$path_to_RMD_dir_1L_chr, path_to_write_dirs_to_1L_chr, 
+            recursive = T, overwrite = overwrite_1L_lgl)
+        dir_nm_1L_chr <- rprt_type_ls$path_to_RMD_dir_1L_chr %>% 
+            normalizePath() %>% strsplit("\\\\") %>% purrr::pluck(1) %>% 
+            tail(1)
         path_to_mkdn_dir_1L_chr <- paste0(path_to_write_dirs_to_1L_chr, 
             "/", nm_of_mkdn_dir_1L_chr)
-        if (!dir.exists(path_to_mkdn_dir_1L_chr)) 
-            dir.create(path_to_mkdn_dir_1L_chr)
-        if (is.na(paths_to_fls_to_copy_chr[1])) 
-            paths_to_fls_to_copy_chr <- list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-                full.names = T)
-        file.copy(paths_to_fls_to_copy_chr, path_to_mkdn_dir_1L_chr, 
-            overwrite = overwrite_1L_lgl)
+        if (dir_nm_1L_chr != nm_of_mkdn_dir_1L_chr) 
+            file.rename(paste0(path_to_write_dirs_to_1L_chr, 
+                "/", dir_nm_1L_chr), path_to_mkdn_dir_1L_chr)
         path_to_wd_1L_chr <- path_to_mkdn_dir_1L_chr
     }
     else {
@@ -227,8 +228,7 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
     if (!is.null(append_params_ls)) {
         params_ls <- append(params_ls, append_params_ls)
     }
-    write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-        full.names = T, recursive = T), params_ls = params_ls, 
+    write_rndrd_rprt(rprt_type_ls = rprt_type_ls, params_ls = params_ls, 
         path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
     if (!is.null(outp_smry_ls$dv_ls) & push_copy_to_dv_1L_lgl) {
@@ -273,8 +273,7 @@ write_rprt_from_tmpl <- function (rprt_type_ls, params_ls = NULL, output_type_1L
     if (!dir.exists(path_to_rprt_dir_1L_chr)) 
         dir.create(path_to_rprt_dir_1L_chr)
     path_to_rprt_dir_1L_chr <- normalizePath(path_to_rprt_dir_1L_chr)
-    write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-        full.names = T, recursive = T), params_ls = params_ls, 
+    write_rndrd_rprt(rprt_type_ls = rprt_type_ls, params_ls = params_ls, 
         path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr, 
         header_yaml_args_ls = header_yaml_args_ls, abstract_args_ls = abstract_args_ls)
