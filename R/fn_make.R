@@ -86,10 +86,15 @@ make_paths_ls <- function (params_ls, depth_1L_int = 1)
     }
     else {
         if (is.null(paths_ls$path_from_top_level_1L_chr)) {
-            path_elements_chr <- dirname(getwd()) %>% strsplit("/") %>% 
-                purrr::pluck(1)
+            path_elements_chr <- dirname(getwd()) %>% normalizePath() %>% 
+                strsplit("\\\\") %>% purrr::pluck(1)
             paths_ls$path_from_top_level_1L_chr <- path_elements_chr[length(path_elements_chr) - 
                 depth_1L_int]
+            extended_path_elmts_chr <- getwd() %>% normalizePath() %>% 
+                strsplit("\\\\") %>% purrr::pluck(1)
+            paths_ls$path_to_current_1L_chr <- paste0(extended_path_elmts_chr[(length(extended_path_elmts_chr) - 
+                depth_1L_int):length(extended_path_elmts_chr)], 
+                collapse = "/")
         }
         paths_ls$write_to_dir_nm_1L_chr <- "Fake"
         paths_ls$path_to_fake_data_1L_chr <- paste0(paths_ls$path_from_top_level_1L_chr, 

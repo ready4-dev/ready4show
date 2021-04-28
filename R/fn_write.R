@@ -228,7 +228,8 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
         params_ls <- append(params_ls, append_params_ls)
     }
     write_rndrd_rprt(rprt_type_ls = rprt_type_ls, paths_to_fls_to_copy_chr = list.files(rprt_type_ls$path_to_RMD_dir_1L_chr, 
-        full.names = T), params_ls = params_ls, path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
+        full.names = T, recursive = T), params_ls = params_ls, 
+        path_to_write_dirs_to_1L_chr = normalizePath(path_to_outpt_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr)
     if (!is.null(outp_smry_ls$dv_ls) & push_copy_to_dv_1L_lgl) {
         outp_smry_ls$rprt_dss_tb <- tibble::tibble(ds_obj_nm_chr = rprt_type_ls$file_nm_1L_chr, 
