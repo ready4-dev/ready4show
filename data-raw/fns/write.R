@@ -16,7 +16,8 @@ write_header_yaml <- function(path_to_header_dir_1L_chr,
                               institutes_tb,
                               title_1L_chr = "Example title",
                               keywords_chr = c("Example keyword one", "Example keyword two"),
-                              path_to_tmpl_header_1L_chr = NULL){
+                              path_to_tmpl_header_1L_chr = NULL,
+                              inc_quals_1L_lgl = F){
   if(is.null(path_to_tmpl_header_1L_chr)){
     tmpl_header_chr <- c("title: TITLE_PLACEHOLDER",
                          "author:",
@@ -31,7 +32,8 @@ write_header_yaml <- function(path_to_header_dir_1L_chr,
     dplyr::arrange(sequence_int)
   tmpl_header_chr  %>% purrr::map(~{
     if(.x=="AUTHOR_PLACEHOLDER"){
-      make_authorship_lines(authors_tb)
+      make_authorship_lines(authors_tb,
+                            inc_quals_1L_lgl = inc_quals_1L_lgl)
     }else{
       if(.x=="INSTITUTE_PLACEHOLDER"){
         make_institutes_lines(authors_tb,

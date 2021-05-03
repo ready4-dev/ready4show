@@ -18,15 +18,17 @@ make_abstract_lines <- function (abstract_ls)
 #' Make authorship lines
 #' @description make_authorship_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make authorship lines. The function returns Authorship lines (a character vector).
 #' @param authors_tb Authors (a tibble)
+#' @param inc_quals_1L_lgl Include quals (a logical vector of length one), Default: F
 #' @return Authorship lines (a character vector)
 #' @rdname make_authorship_lines
 #' @export 
 #' @importFrom purrr map flatten_chr
 #' @keywords internal
-make_authorship_lines <- function (authors_tb) 
+make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F) 
 {
     authorship_lines_chr <- 1:nrow(authors_tb) %>% purrr::map(~make_sngl_author_lines(authors_tb, 
-        slice_1L_int = .x)) %>% purrr::flatten_chr()
+        slice_1L_int = .x, inc_quals_1L_lgl = inc_quals_1L_lgl)) %>% 
+        purrr::flatten_chr()
     return(authorship_lines_chr)
 }
 #' Make eqn reference

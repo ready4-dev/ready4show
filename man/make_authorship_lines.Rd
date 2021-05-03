@@ -4,10 +4,12 @@
 \alias{make_authorship_lines}
 \title{Make authorship lines}
 \usage{
-make_authorship_lines(authors_tb)
+make_authorship_lines(authors_tb, inc_quals_1L_lgl = F)
 }
 \arguments{
 \item{authors_tb}{Authors (a tibble)}
+
+\item{inc_quals_1L_lgl}{Include quals (a logical vector of length one), Default: F}
 }
 \value{
 Authorship lines (a character vector)

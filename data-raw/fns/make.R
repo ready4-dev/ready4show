@@ -10,9 +10,11 @@ make_abstract_lines <- function(abstract_ls){
     purrr::flatten_chr()
   return(abstract_lines_chr)
 }
-make_authorship_lines <- function(authors_tb){
+make_authorship_lines <- function(authors_tb,
+                                  inc_quals_1L_lgl = F){
   authorship_lines_chr <- 1:nrow(authors_tb) %>% purrr::map(~ make_sngl_author_lines(authors_tb,
-                                                                                     slice_1L_int = .x)) %>%
+                                                                                     slice_1L_int = .x,
+                                                                                     inc_quals_1L_lgl = inc_quals_1L_lgl)) %>%
     purrr::flatten_chr()
   return(authorship_lines_chr)
 }

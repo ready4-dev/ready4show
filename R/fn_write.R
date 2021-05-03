@@ -27,6 +27,7 @@ write_header_fls <- function (path_to_header_dir_1L_chr, header_yaml_args_ls, ab
 #' @param title_1L_chr Title (a character vector of length one), Default: 'Example title'
 #' @param keywords_chr Keywords (a character vector), Default: c("Example keyword one", "Example keyword two")
 #' @param path_to_tmpl_header_1L_chr Path to template header (a character vector of length one), Default: NULL
+#' @param inc_quals_1L_lgl Include quals (a logical vector of length one), Default: F
 #' @return NULL
 #' @rdname write_header_yaml
 #' @export 
@@ -37,7 +38,7 @@ write_header_fls <- function (path_to_header_dir_1L_chr, header_yaml_args_ls, ab
 write_header_yaml <- function (path_to_header_dir_1L_chr, fl_nm_1L_chr = "header.yaml", 
     authors_tb, institutes_tb, title_1L_chr = "Example title", 
     keywords_chr = c("Example keyword one", "Example keyword two"), 
-    path_to_tmpl_header_1L_chr = NULL) 
+    path_to_tmpl_header_1L_chr = NULL, inc_quals_1L_lgl = F) 
 {
     if (is.null(path_to_tmpl_header_1L_chr)) {
         tmpl_header_chr <- c("title: TITLE_PLACEHOLDER", "author:", 
@@ -50,7 +51,7 @@ write_header_yaml <- function (path_to_header_dir_1L_chr, fl_nm_1L_chr = "header
     authors_tb <- authors_tb %>% dplyr::arrange(sequence_int)
     tmpl_header_chr %>% purrr::map(~{
         if (.x == "AUTHOR_PLACEHOLDER") {
-            make_authorship_lines(authors_tb)
+            make_authorship_lines(authors_tb, inc_quals_1L_lgl = inc_quals_1L_lgl)
         }
         else {
             if (.x == "INSTITUTE_PLACEHOLDER") {

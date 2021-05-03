@@ -77,7 +77,7 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
 utils::data("fns_dmt_tb")
 ## NEED TO MAKE EXAMPLE REPORTS RMDS AND LUP
 ## NEED TO ADD RPRTS LUP AND KNIT PARS LS CLASSES AND KNIT METHOD
-# pkg_dss_tb <- tibble::tibble(rprt_nms_chr = "Main_Mdl_Smry",
+# pkg_dss_tb <- tibble::tibble(rprt_nms_chr = "TS_TTU_Mdls_Smry",
 #                              title_chr = "Sample report template.",
 #                              paths_to_rmd_dir_1L_chr = NA_character_,
 #                              pkg_dirs_chr = "Markdown",
