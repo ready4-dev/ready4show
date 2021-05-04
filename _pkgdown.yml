@@ -12,8 +12,10 @@ reference:
 - title: "Datasets"
 - contents:
   - abbreviations_lup
+  - authors_tb
   - fn_type_lup_tb
   - fns_dmt_tb
+  - institutes_tb
 - title: "Functions"
 - contents:
   - make_eqn_ref

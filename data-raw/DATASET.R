@@ -70,29 +70,43 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
   ready4fun::write_and_doc_ds(db_1L_chr = "fns_dmt_tb",
                               title_1L_chr = "ready4show function documentation table",
                               desc_1L_chr = "Meta-data on each ready4u function used to create package documentation",
-                              url_1L_chr = "https://ready4-dev.github.io/ready4u/",
+                              url_1L_chr = "https://ready4-dev.com",
                               abbreviations_lup = abbreviations_lup,
                               object_type_lup = object_type_lup,
                               pkg_dss_tb = pkg_dss_tb)
 utils::data("fns_dmt_tb")
+#
+# 8. Create other datasets
 ## NEED TO MAKE EXAMPLE REPORTS RMDS AND LUP
 ## NEED TO ADD RPRTS LUP AND KNIT PARS LS CLASSES AND KNIT METHOD
-# pkg_dss_tb <- tibble::tibble(rprt_nms_chr = "TS_TTU_Mdls_Smry",
-#                              title_chr = "Sample report template.",
-#                              paths_to_rmd_dir_1L_chr = NA_character_,
-#                              pkg_dirs_chr = "Markdown",
-#                              packages_chr = "TTU",
-#                              nms_of_rmd_chr = "_Mdls_Report.RMD",
-#                              rltv_paths_to_outpt_yaml_chr = "_output.yml") %>%
-#   ready4fun::write_and_doc_ds(db_1L_chr = "rprt_lup",
-#                               title_1L_chr = "Report types lookup table",
-#                               desc_1L_chr = "A lookup table of the different report types supported by ready4show",
-#                               abbreviations_lup = abbreviations_lup,
-#                               object_type_lup = object_type_lup,
-#                               pkg_dss_tb = pkg_dss_tb)
-# NOTE: NEED TO UPDATE DIR PATH FOR MODELS
+pkg_dss_tb <- tibble::tibble(first_nm_chr = c("Alejandra","Fionn"),
+                             middle_nm_chr = c("Rocio", "Seamus"),
+                             last_nm_chr = c("Scienceace", "Researchchamp"),
+                             title = c("Dr", "Prof"),
+                             qualifications_chr = c("MD, PhD", "MSc, PhD"),
+                             institute_chr = c("Insitute_A, Institute_B", "Institute_C, Institute_B"),
+                             sequence_int = c(1,2),
+                             is_corresponding_lgl = c(T, F),
+                             email_chr = c("fake_email@fake_institute.com", "fake_email@made_up_org.com"),
+                             is_equal_first_lgl = c(F,F)) %>%
+  ready4fun::write_and_doc_ds(db_1L_chr = "authors_tb",
+                              title_1L_chr = "Example authors table",
+                              desc_1L_chr = "Example of an authors table with fake author entries",
+                              url_1L_chr = "https://ready4-dev.com",
+                              abbreviations_lup = abbreviations_lup,
+                              object_type_lup = object_type_lup,
+                              pkg_dss_tb = pkg_dss_tb)
+pkg_dss_tb <- tibble::tibble(short_name_chr = c("Insitute_A", "Institute_B", "Institute_C"),
+                                long_name_chr = c("Awesome University, Shanghai","August Institution, London","Highly Ranked Uni, Montreal")) %>%
+  ready4fun::write_and_doc_ds(db_1L_chr = "institutes_tb",
+                              title_1L_chr = "Example institutes table",
+                              desc_1L_chr = "Example of an institutes table with fake institute entries",
+                              url_1L_chr = "https://ready4-dev.com",
+                              abbreviations_lup = abbreviations_lup,
+                              object_type_lup = object_type_lup,
+                              pkg_dss_tb = pkg_dss_tb)
 ## Note files to be rewritten cannot be open in RStudio.
-## 8. Document functions.
+## 9. Document functions.
 usethis::use_build_ignore("initial_setup.R")
 readLines(".github/workflows/R-CMD-check.yaml")[-28] %>%
   writeLines(".github/workflows/R-CMD-check.yaml")
