@@ -60,3 +60,4 @@
 ^data-raw/dataverse/fn_type_lup_tb/fn_type_lup_tb\.RDS$
 ^data-raw/MAKE_HOUSESTYLE_DSS\.R$
 ^data-raw/fns/transform\.R$
+^data-raw/MAKE_CLASSES\.R$

@@ -13,6 +13,13 @@ fn_type_lup_tb %>%
                             desc_1L_chr = "Function type lookup table")
 # Previous edits
 # abbreviations_lup <- abbreviations_lup %>%
+#   dplyr::filter(!short_name_chr %in% c(paste0(name_pfx_1L_chr,classes_to_make_tb$name_stub_chr))) %>%
+#   dplyr::filter(!short_name_chr %in% c(paste0(paste0(name_pfx_1L_chr,classes_to_make_tb$name_stub_chr),"s"))) %>%
+#   ready4fun::update_abbr_lup(short_name_chr = c(paste0(name_pfx_1L_chr,classes_to_make_tb$name_stub_chr)),
+#                              long_name_chr = c(classes_to_make_tb$class_desc_chr),
+#                              no_plural_chr = c(classes_to_make_tb$class_desc_chr),
+#                              custom_plural_ls = NULL, pfx_rgx = NA_character_)
+# abbreviations_lup <- abbreviations_lup %>%
 #   ready4fun::update_abbr_lup(short_name_chr = c("hline","lbl","mkdn","rprt"),
 #                              long_name_chr = c("horizonal line","label","markdown","report"),
 #                              no_plural_chr = NA_character_,

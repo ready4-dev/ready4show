@@ -48,14 +48,28 @@ pkg_dss_tb <- ready4fun::get_rds_from_dv("abbreviations_lup") %>%
   ready4fun::write_abbr_lup(object_type_lup = object_type_lup)
 utils::data("abbreviations_lup")
 #
-# 6. Create function types look-up table and save it as a package dataset
+# 6. Make classes
+source("data-raw/MAKE_CLASSES.R")
+pkg_dss_tb <- classes_to_make_tb %>%
+  ready4class::write_classes_and_make_lup(abbreviations_lup = abbreviations_lup,
+                                          init_class_pt_lup = ready4fun::get_rds_from_dv("prototype_lup"),
+                                          name_pfx_1L_chr = name_pfx_1L_chr,
+                                          object_type_lup = object_type_lup)  %>% #
+  ready4fun::write_and_doc_ds(db_1L_chr = "prototype_lup",
+                              title_1L_chr = "Class prototype lookup table",
+                              desc_1L_chr = "Metadata on classes used in readyforwhatsnext suite",
+                              abbreviations_lup = abbreviations_lup,
+                              object_type_lup = object_type_lup,
+                              pkg_dss_tb = pkg_dss_tb)
+##
+# 7. Create function types look-up table and save it as a package dataset
 pkg_dss_tb <- ready4fun::get_rds_from_dv("fn_type_lup_tb") %>%
   ready4fun::write_dmtd_fn_type_lup(abbreviations_lup = abbreviations_lup,
                                     object_type_lup = object_type_lup,
                                     pkg_dss_tb = pkg_dss_tb)
 utils::data("fn_type_lup_tb")
 #
-# 7. Create a table of all functions to document
+# 8. Create a table of all functions to document
 pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms()[1],
                                               undocumented_fns_dir_chr = ready4fun::make_undmtd_fns_dir_chr()[1],
                                               custom_dmt_ls = list(details_ls = NULL,
@@ -76,19 +90,20 @@ pkg_dss_tb <- ready4fun::make_dmt_for_all_fns(paths_ls = ready4fun::make_fn_nms(
                               pkg_dss_tb = pkg_dss_tb)
 utils::data("fns_dmt_tb")
 #
-# 8. Create other datasets
+# 9. Create other datasets
 ## NEED TO MAKE EXAMPLE REPORTS RMDS AND LUP
 ## NEED TO ADD RPRTS LUP AND KNIT PARS LS CLASSES AND KNIT METHOD
-pkg_dss_tb <- tibble::tibble(first_nm_chr = c("Alejandra","Fionn"),
+pkg_dss_tb <- make_pt_ready4_authors_lup(first_nm_chr = c("Alejandra","Fionn"),
                              middle_nm_chr = c("Rocio", "Seamus"),
                              last_nm_chr = c("Scienceace", "Researchchamp"),
-                             title = c("Dr", "Prof"),
+                             title_chr = c("Dr", "Prof"),
                              qualifications_chr = c("MD, PhD", "MSc, PhD"),
                              institute_chr = c("Insitute_A, Institute_B", "Institute_C, Institute_B"),
-                             sequence_int = c(1,2),
+                             sequence_int = c(1,2) %>% as.integer(),
                              is_corresponding_lgl = c(T, F),
                              email_chr = c("fake_email@fake_institute.com", "fake_email@made_up_org.com"),
                              is_equal_first_lgl = c(F,F)) %>%
+  ready4_authors_lup() %>%
   ready4fun::write_and_doc_ds(db_1L_chr = "authors_tb",
                               title_1L_chr = "Example authors table",
                               desc_1L_chr = "Example of an authors table with fake author entries",
@@ -96,8 +111,9 @@ pkg_dss_tb <- tibble::tibble(first_nm_chr = c("Alejandra","Fionn"),
                               abbreviations_lup = abbreviations_lup,
                               object_type_lup = object_type_lup,
                               pkg_dss_tb = pkg_dss_tb)
-pkg_dss_tb <- tibble::tibble(short_name_chr = c("Insitute_A", "Institute_B", "Institute_C"),
-                                long_name_chr = c("Awesome University, Shanghai","August Institution, London","Highly Ranked Uni, Montreal")) %>%
+pkg_dss_tb <- make_pt_ready4_institutes_lup(short_name_chr = c("Insitute_A", "Institute_B", "Institute_C"),
+                                            long_name_chr = c("Awesome University, Shanghai","August Institution, London","Highly Ranked Uni, Montreal")) %>%
+  ready4_institutes_lup() %>%
   ready4fun::write_and_doc_ds(db_1L_chr = "institutes_tb",
                               title_1L_chr = "Example institutes table",
                               desc_1L_chr = "Example of an institutes table with fake institute entries",
@@ -106,7 +122,7 @@ pkg_dss_tb <- tibble::tibble(short_name_chr = c("Insitute_A", "Institute_B", "In
                               object_type_lup = object_type_lup,
                               pkg_dss_tb = pkg_dss_tb)
 ## Note files to be rewritten cannot be open in RStudio.
-## 9. Document functions.
+## 10. Document functions.
 usethis::use_build_ignore("initial_setup.R")
 readLines(".github/workflows/R-CMD-check.yaml")[-28] %>%
   writeLines(".github/workflows/R-CMD-check.yaml")
@@ -124,11 +140,11 @@ ready4fun::write_and_doc_fn_fls(fns_dmt_tb,
 # data("prototype_lup")
 # if(!identical(prototype_lup,ready4fun::get_rds_from_dv("prototype_lup"))){
 #   prototype_lup %>%
-#     write_paired_ds_fls_to_dv(fl_nm_1L_chr = "prototype_lup",
+#     ready4use::write_paired_ds_fls_to_dv(fl_nm_1L_chr = "prototype_lup",
 #                               desc_1L_chr = "Prototypes lookup table")
 # }
-ready4fun::write_links_for_website(user_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_user_0.0.0.9014.pdf",
-                                   developer_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.0.0.9014/ready4show_developer_0.0.0.9014.pdf",
+ready4fun::write_links_for_website(user_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.9035/ready4show_user_0.0.0.9036.pdf",
+                                   developer_manual_url_1L_chr = "https://github.com/ready4-dev/ready4show/releases/download/v0.9035/ready4show_developer_0.0.0.9036.pdf",
                                    project_website_url_1L_chr = "https://www.ready4-dev.com/")
 ##
 ## Add, Commit and Push

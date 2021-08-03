@@ -8,7 +8,7 @@
 #'   \item{first_nm_chr}{First name (a character vector)}
 #'   \item{middle_nm_chr}{Middle name (a character vector)}
 #'   \item{last_nm_chr}{Last name (a character vector)}
-#'   \item{title}{NO MATCH}
+#'   \item{title_chr}{Title (a character vector)}
 #'   \item{qualifications_chr}{Qualifications (a character vector)}
 #'   \item{institute_chr}{Institute (a character vector)}
 #'   \item{sequence_int}{Sequence (an integer vector)}

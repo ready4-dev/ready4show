@@ -1,7 +1,8 @@
 write_header_fls <- function(path_to_header_dir_1L_chr,
                              header_yaml_args_ls,
                              abstract_args_ls = NULL){
-  dir.create(path_to_header_dir_1L_chr)
+  if(!dir.exists(path_to_header_dir_1L_chr))
+    dir.create(path_to_header_dir_1L_chr)
   rlang::exec(write_header_yaml, path_to_header_dir_1L_chr, !!!header_yaml_args_ls )
   if(!is.null(abstract_args_ls))
     abstract_args_ls$abstract_ls %>%
