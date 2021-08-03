@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • ready4show</title>
+<title>Make prototype ready4show S3 class for authors lookup table — make_pt_ready4_authors_lup • ready4show</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Make prototype ready4show S3 class for authors lookup table — make_pt_ready4_authors_lup" />
+<meta property="og:description" content="Create a new prototype for the ready4show S3 class for authors lookup table" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,18 +119,85 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Make prototype ready4show S3 class for authors lookup table</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/C3_ready4_authors_lup.R'><code>R/C3_ready4_authors_lup.R</code></a></small>
+    <div class="hidden name"><code>make_pt_ready4_authors_lup.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="ready4show.html">ready4show</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Create a new prototype for the ready4show S3 class for authors lookup table</p>
     </div>
+
+    <pre class="usage"><span class='fu'>make_pt_ready4_authors_lup</span><span class='op'>(</span>
+  first_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  middle_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  last_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  title_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  qualifications_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  institute_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  sequence_int <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>integer</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  is_corresponding_lgl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>logical</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  email_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  is_equal_first_lgl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>logical</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>first_nm_chr</th>
+      <td><p>First name (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>middle_nm_chr</th>
+      <td><p>Middle name (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>last_nm_chr</th>
+      <td><p>Last name (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>title_chr</th>
+      <td><p>Title (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>qualifications_chr</th>
+      <td><p>Qualifications (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>institute_chr</th>
+      <td><p>Institute (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>sequence_int</th>
+      <td><p>Sequence (an integer vector), Default: integer(0)</p></td>
+    </tr>
+    <tr>
+      <th>is_corresponding_lgl</th>
+      <td><p>Is corresponding (a logical vector), Default: logical(0)</p></td>
+    </tr>
+    <tr>
+      <th>email_chr</th>
+      <td><p>Email (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>is_equal_first_lgl</th>
+      <td><p>Is equal first (a logical vector), Default: logical(0)</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A prototype for ready4show S3 class for authors lookup table</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>ready4show S3 class for authors lookup table</p>
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
