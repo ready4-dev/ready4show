@@ -61,3 +61,5 @@
 ^data-raw/MAKE_HOUSESTYLE_DSS\.R$
 ^data-raw/fns/transform\.R$
 ^data-raw/MAKE_CLASSES\.R$
+^data-raw/dataverse/prototype_lup/prototype_lup\.csv$
+^data-raw/dataverse/prototype_lup/prototype_lup\.RDS$

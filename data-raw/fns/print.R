@@ -1,17 +1,19 @@
 print_table <- function(data_tb,
-                           output_type_1L_chr = "PDF",
+                        output_type_1L_chr = "PDF",
                         use_rdocx_1L_lgl = F,
-                           caption_1L_chr = NA_character_,
-                           footnotes_chr = NA_character_,
-                           merge_row_idx_int = NA_integer_,
-                           digits_dbl = NULL,
-                           big_mark_1L_chr = " ",
-                           use_lbls_as_col_nms_1L_lgl = F,
-                           scroll_box_args_ls = NULL,
-                           mkdn_tbl_ref_1L_chr,
-                           hline_after_ls = NULL,
-                           add_to_row_ls = NULL,
-                           sanitize_fn = getOption("xtable.sanitize.text.function", NULL)){
+                        caption_1L_chr = NA_character_,
+                        footnotes_chr = NA_character_,
+                        merge_row_idx_int = NA_integer_,
+                        digits_dbl = NULL,
+                        big_mark_1L_chr = " ",
+                        use_lbls_as_col_nms_1L_lgl = F,
+                        scroll_box_args_ls = NULL,
+                        mkdn_tbl_ref_1L_chr,
+                        hline_after_ls = NULL,
+                        incl_col_nms_1L_lgl = FALSE,
+                        incl_row_nms_1L_lgl = FALSE,
+                        add_to_row_ls = NULL,
+                        sanitize_fn = getOption("xtable.sanitize.text.function", NULL)){
   if(use_lbls_as_col_nms_1L_lgl & !any(Hmisc::label(data_tb)=="")){ #Add assert all cols have (unique) labels
     data_tb <- data_tb %>%
       dplyr::rename_with(~Hmisc::label(data_tb)[names(Hmisc::label(data_tb))==.x])
@@ -27,8 +29,8 @@ print_table <- function(data_tb,
             add.to.row = add_to_row_ls,
             sanitize.text.function = sanitize_fn,
             format.args = list(big.mark = big_mark_1L_chr),
-            include.colnames = FALSE,
-            include.rownames = FALSE)
+            include.colnames = incl_col_nms_1L_lgl,
+            include.rownames = incl_row_nms_1L_lgl)
   }else{
     if(output_type_1L_chr == "HTML"){
       data_kb <- data_tb %>%
