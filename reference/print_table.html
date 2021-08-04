@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ready4show</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9036</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9037</span>
       </span>
     </div>
 
@@ -141,6 +141,8 @@
   scroll_box_args_ls <span class='op'>=</span> <span class='cn'>NULL</span>,
   <span class='va'>mkdn_tbl_ref_1L_chr</span>,
   hline_after_ls <span class='op'>=</span> <span class='cn'>NULL</span>,
+  incl_col_nms_1L_lgl <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  incl_row_nms_1L_lgl <span class='op'>=</span> <span class='cn'>FALSE</span>,
   add_to_row_ls <span class='op'>=</span> <span class='cn'>NULL</span>,
   sanitize_fn <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"xtable.sanitize.text.function"</span>, <span class='cn'>NULL</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
@@ -195,6 +197,14 @@
     <tr>
       <th>hline_after_ls</th>
       <td><p>Horizonal line after (a list), Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>incl_col_nms_1L_lgl</th>
+      <td><p>Incl column names (a logical vector of length one), Default: FALSE</p></td>
+    </tr>
+    <tr>
+      <th>incl_row_nms_1L_lgl</th>
+      <td><p>Incl row names (a logical vector of length one), Default: FALSE</p></td>
     </tr>
     <tr>
       <th>add_to_row_ls</th>
