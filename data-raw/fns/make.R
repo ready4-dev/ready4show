@@ -95,22 +95,28 @@ make_sngl_author_lines <- function(authors_tb,
                                         paste0(" (", sngl_author_tb$qualifications_chr %>% stringr::str_replace_all("\"",""),")")),
                                  ""),
                           ifelse(slice_1L_int==1,":",""))
-  email_1L_chr <- ifelse(sngl_author_tb$email_chr =="",
+  email_1L_chr <- ifelse(is.na(sngl_author_tb$email_chr),
+                         NA_character_,
+                         ifelse(sngl_author_tb$email_chr =="",
                          NA_character_,
                          paste0(indent_1L_chr,
                                 "email: ",
-                                sngl_author_tb$email_chr))
+                                sngl_author_tb$email_chr)))
   institute_1L_chr <- paste0(indent_1L_chr,"institute: [",
                              sngl_author_tb$institute_chr %>% stringr::str_replace_all("\"",""),
                              "]")
-  correspondence_1L_chr <- ifelse(sngl_author_tb$is_corresponding_lgl,
+  correspondence_1L_chr <- ifelse(is.na(sngl_author_tb$is_corresponding_lgl),
+                                  NA_character_,
+                                  ifelse(sngl_author_tb$is_corresponding_lgl,
                                   paste0(indent_1L_chr,
                                          "correspondence: true"),
-                                  NA_character_)
-  equal_1L_chr <- ifelse(sngl_author_tb$is_equal_first_lgl,
+                                  NA_character_))
+  equal_1L_chr <- ifelse(is.na(sngl_author_tb$is_equal_first_lgl),
+                         NA_character_,
+                         ifelse(sngl_author_tb$is_equal_first_lgl,
                          paste0(indent_1L_chr,
                                 "equal_contributor: \"yes\""),
-                         NA_character_)
+                         NA_character_))
   author_lines_chr <- c(author_1L_chr, email_1L_chr, institute_1L_chr, correspondence_1L_chr, equal_1L_chr) %>%
     purrr::discard(is.na)
   return(author_lines_chr)
