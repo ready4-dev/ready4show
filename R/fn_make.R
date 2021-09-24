@@ -18,7 +18,7 @@ make_abstract_lines <- function (abstract_ls)
 #' Make authorship lines
 #' @description make_authorship_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make authorship lines. The function returns Authorship lines (a character vector).
 #' @param authors_tb Authors (a tibble)
-#' @param inc_quals_1L_lgl Include quals (a logical vector of length one), Default: F
+#' @param inc_quals_1L_lgl Include qualifications (a logical vector of length one), Default: F
 #' @return Authorship lines (a character vector)
 #' @rdname make_authorship_lines
 #' @export 
@@ -31,20 +31,20 @@ make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F)
         purrr::flatten_chr()
     return(authorship_lines_chr)
 }
-#' Make eqn reference
-#' @description make_eqn_ref() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make eqn reference. The function returns Eqn reference (a character vector of length one).
-#' @param eqn_nm_1L_chr Eqn name (a character vector of length one)
+#' Make equation reference
+#' @description make_eq_ref() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make equation reference. The function returns Equation reference (a character vector of length one).
+#' @param eq_nm_1L_chr Equation name (a character vector of length one)
 #' @param output_type_1L_chr Output type (a character vector of length one)
-#' @return Eqn reference (a character vector of length one)
-#' @rdname make_eqn_ref
+#' @return Equation reference (a character vector of length one)
+#' @rdname make_eq_ref
 #' @export 
 
-make_eqn_ref <- function (eqn_nm_1L_chr, output_type_1L_chr) 
+make_eq_ref <- function (eq_nm_1L_chr, output_type_1L_chr) 
 {
-    eqn_ref_1L_chr <- ifelse(output_type_1L_chr == "Word", paste0("\\@ref(eq:", 
-        eqn_nm_1L_chr, ")"), paste0("\\ref{eq:", eqn_nm_1L_chr, 
+    eq_ref_1L_chr <- ifelse(output_type_1L_chr == "Word", paste0("\\@ref(eq:", 
+        eq_nm_1L_chr, ")"), paste0("\\ref{eq:", eq_nm_1L_chr, 
         "}"))
-    return(eqn_ref_1L_chr)
+    return(eq_ref_1L_chr)
 }
 #' Make institutes lines
 #' @description make_institutes_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make institutes lines. The function returns Institutes lines (a character vector).
@@ -70,9 +70,9 @@ make_institutes_lines <- function (authors_tb, institutes_tb)
     })
     return(institutes_lines_chr)
 }
-#' Make paths
+#' Make paths list
 #' @description make_paths_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make paths list. The function returns Paths (a list).
-#' @param params_ls Params (a list)
+#' @param params_ls Parameters (a list)
 #' @param depth_1L_int Depth (an integer vector of length one), Default: 1
 #' @return Paths (a list)
 #' @rdname make_paths_ls
@@ -106,7 +106,7 @@ make_paths_ls <- function (params_ls, depth_1L_int = 1)
     }
     return(paths_ls)
 }
-#' Make report type
+#' Make report type list
 #' @description make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).
 #' @param rprt_nm_1L_chr Report name (a character vector of length one)
 #' @param rprt_lup Report (a lookup table)
@@ -131,7 +131,7 @@ make_rprt_type_ls <- function (rprt_nm_1L_chr, rprt_lup)
 #' @description make_sngl_author_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make single author lines. The function returns Author lines (a character vector).
 #' @param authors_tb Authors (a tibble)
 #' @param slice_1L_int Slice (an integer vector of length one)
-#' @param inc_quals_1L_lgl Include quals (a logical vector of length one), Default: F
+#' @param inc_quals_1L_lgl Include qualifications (a logical vector of length one), Default: F
 #' @return Author lines (a character vector)
 #' @rdname make_sngl_author_lines
 #' @export 

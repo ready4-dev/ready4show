@@ -10,8 +10,8 @@ print_table <- function(data_tb,
                         scroll_box_args_ls = NULL,
                         mkdn_tbl_ref_1L_chr,
                         hline_after_ls = NULL,
-                        incl_col_nms_1L_lgl = FALSE,
-                        incl_row_nms_1L_lgl = FALSE,
+                        inc_col_nms_1L_lgl = FALSE,
+                        inc_row_nms_1L_lgl = FALSE,
                         add_to_row_ls = NULL,
                         sanitize_fn = getOption("xtable.sanitize.text.function", NULL)){
   if(use_lbls_as_col_nms_1L_lgl & !any(Hmisc::label(data_tb)=="")){ #Add assert all cols have (unique) labels
@@ -29,8 +29,8 @@ print_table <- function(data_tb,
             add.to.row = add_to_row_ls,
             sanitize.text.function = sanitize_fn,
             format.args = list(big.mark = big_mark_1L_chr),
-            include.colnames = incl_col_nms_1L_lgl,
-            include.rownames = incl_row_nms_1L_lgl)
+            include.colnames = inc_col_nms_1L_lgl,
+            include.rownames = inc_row_nms_1L_lgl)
   }else{
     if(output_type_1L_chr == "HTML"){
       data_kb <- data_tb %>%

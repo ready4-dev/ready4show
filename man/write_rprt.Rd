@@ -10,7 +10,7 @@ write_rprt(
   output_type_1L_chr = "PDF",
   section_type_1L_chr = "#",
   path_to_prjs_dir_1L_chr = "../../../../Data/Project",
-  prt_dir_dir_1L_chr = "My_Project",
+  prj_dir_dir_1L_chr = "My_Project",
   reports_dir_1L_chr = "Reports",
   rltv_path_to_data_dir_1L_chr = "../Output",
   nm_of_mkdn_dir_1L_chr = "Markdown",
@@ -27,9 +27,9 @@ write_rprt(
 
 \item{section_type_1L_chr}{Section type (a character vector of length one), Default: '#'}
 
-\item{path_to_prjs_dir_1L_chr}{Path to prjs directory (a character vector of length one), Default: '../../../../Data/Project'}
+\item{path_to_prjs_dir_1L_chr}{Path to projects directory (a character vector of length one), Default: '../../../../Data/Project'}
 
-\item{prt_dir_dir_1L_chr}{Prt directory directory (a character vector of length one), Default: 'My_Project'}
+\item{prj_dir_dir_1L_chr}{Project directory directory (a character vector of length one), Default: 'My_Project'}
 
 \item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
 
@@ -39,7 +39,7 @@ write_rprt(
 
 \item{push_copy_to_dv_1L_lgl}{Push copy to dataverse (a logical vector of length one), Default: T}
 
-\item{append_params_ls}{Append params (a list), Default: NULL}
+\item{append_params_ls}{Append parameters (a list), Default: NULL}
 }
 \value{
 Output summary (a list)

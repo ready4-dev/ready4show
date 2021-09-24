@@ -20,13 +20,13 @@ write_rprt_from_tmpl(
 \arguments{
 \item{rprt_type_ls}{Report type (a list)}
 
-\item{params_ls}{Params (a list), Default: NULL}
+\item{params_ls}{Parameters (a list), Default: NULL}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
 
-\item{path_to_prjs_dir_1L_chr}{Path to prjs directory (a character vector of length one)}
+\item{path_to_prjs_dir_1L_chr}{Path to projects directory (a character vector of length one)}
 
-\item{prj_dir_1L_chr}{Prj directory (a character vector of length one), Default: 'Fake'}
+\item{prj_dir_1L_chr}{Project directory (a character vector of length one), Default: 'Fake'}
 
 \item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
 

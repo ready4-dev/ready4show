@@ -17,8 +17,8 @@ print_table(
   scroll_box_args_ls = NULL,
   mkdn_tbl_ref_1L_chr,
   hline_after_ls = NULL,
-  incl_col_nms_1L_lgl = FALSE,
-  incl_row_nms_1L_lgl = FALSE,
+  inc_col_nms_1L_lgl = FALSE,
+  inc_row_nms_1L_lgl = FALSE,
   add_to_row_ls = NULL,
   sanitize_fn = getOption("xtable.sanitize.text.function", NULL)
 )
@@ -48,9 +48,9 @@ print_table(
 
 \item{hline_after_ls}{Horizonal line after (a list), Default: NULL}
 
-\item{incl_col_nms_1L_lgl}{Incl column names (a logical vector of length one), Default: FALSE}
+\item{inc_col_nms_1L_lgl}{Include column names (a logical vector of length one), Default: FALSE}
 
-\item{incl_row_nms_1L_lgl}{Incl row names (a logical vector of length one), Default: FALSE}
+\item{inc_row_nms_1L_lgl}{Include row names (a logical vector of length one), Default: FALSE}
 
 \item{add_to_row_ls}{Add to row (a list), Default: NULL}
 

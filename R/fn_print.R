@@ -12,8 +12,8 @@
 #' @param scroll_box_args_ls Scroll box arguments (a list), Default: NULL
 #' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one)
 #' @param hline_after_ls Horizonal line after (a list), Default: NULL
-#' @param incl_col_nms_1L_lgl Incl column names (a logical vector of length one), Default: FALSE
-#' @param incl_row_nms_1L_lgl Incl row names (a logical vector of length one), Default: FALSE
+#' @param inc_col_nms_1L_lgl Include column names (a logical vector of length one), Default: FALSE
+#' @param inc_row_nms_1L_lgl Include row names (a logical vector of length one), Default: FALSE
 #' @param add_to_row_ls Add to row (a list), Default: NULL
 #' @param sanitize_fn Sanitize (a function), Default: getOption("xtable.sanitize.text.function", NULL)
 #' @return NULL
@@ -31,8 +31,8 @@ print_table <- function (data_tb, output_type_1L_chr = "PDF", use_rdocx_1L_lgl =
     caption_1L_chr = NA_character_, footnotes_chr = NA_character_, 
     merge_row_idx_int = NA_integer_, digits_dbl = NULL, big_mark_1L_chr = " ", 
     use_lbls_as_col_nms_1L_lgl = F, scroll_box_args_ls = NULL, 
-    mkdn_tbl_ref_1L_chr, hline_after_ls = NULL, incl_col_nms_1L_lgl = FALSE, 
-    incl_row_nms_1L_lgl = FALSE, add_to_row_ls = NULL, sanitize_fn = getOption("xtable.sanitize.text.function", 
+    mkdn_tbl_ref_1L_chr, hline_after_ls = NULL, inc_col_nms_1L_lgl = FALSE, 
+    inc_row_nms_1L_lgl = FALSE, add_to_row_ls = NULL, sanitize_fn = getOption("xtable.sanitize.text.function", 
         NULL)) 
 {
     if (use_lbls_as_col_nms_1L_lgl & !any(Hmisc::label(data_tb) == 
@@ -46,7 +46,7 @@ print_table <- function (data_tb, output_type_1L_chr = "PDF", use_rdocx_1L_lgl =
         data_x_tb %>% print(comment = F, floating = TRUE, hline.after = hline_after_ls, 
             caption.placement = "top", add.to.row = add_to_row_ls, 
             sanitize.text.function = sanitize_fn, format.args = list(big.mark = big_mark_1L_chr), 
-            include.colnames = incl_col_nms_1L_lgl, include.rownames = incl_row_nms_1L_lgl)
+            include.colnames = inc_col_nms_1L_lgl, include.rownames = inc_row_nms_1L_lgl)
     }
     else {
         if (output_type_1L_chr == "HTML") {

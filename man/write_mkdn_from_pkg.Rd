@@ -6,14 +6,14 @@
 \usage{
 write_mkdn_from_pkg(
   pkg_nm_1L_chr,
-  destn_dir_1L_chr = "Markdown",
+  dest_dir_1L_chr = "Markdown",
   overwrite_1L_lgl = F
 )
 }
 \arguments{
 \item{pkg_nm_1L_chr}{Package name (a character vector of length one)}
 
-\item{destn_dir_1L_chr}{Destn directory (a character vector of length one), Default: 'Markdown'}
+\item{dest_dir_1L_chr}{Destination directory (a character vector of length one), Default: 'Markdown'}
 
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: F}
 }

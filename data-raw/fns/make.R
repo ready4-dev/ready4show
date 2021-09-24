@@ -18,12 +18,12 @@ make_authorship_lines <- function(authors_tb,
     purrr::flatten_chr()
   return(authorship_lines_chr)
 }
-make_eqn_ref <- function(eqn_nm_1L_chr,
+make_eq_ref <- function(eq_nm_1L_chr,
                          output_type_1L_chr){
-  eqn_ref_1L_chr <- ifelse(output_type_1L_chr == "Word",
-                           paste0("\\@ref(eq:",eqn_nm_1L_chr,")"),
-                           paste0("\\ref{eq:",eqn_nm_1L_chr,"}"))
-  return(eqn_ref_1L_chr)
+  eq_ref_1L_chr <- ifelse(output_type_1L_chr == "Word",
+                           paste0("\\@ref(eq:",eq_nm_1L_chr,")"),
+                           paste0("\\ref{eq:",eq_nm_1L_chr,"}"))
+  return(eq_ref_1L_chr)
 }
 make_institutes_lines <- function(authors_tb,
                                   institutes_tb){

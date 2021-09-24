@@ -2,12 +2,12 @@
 % Please edit documentation in R/fn_make.R
 \name{make_paths_ls}
 \alias{make_paths_ls}
-\title{Make paths}
+\title{Make paths list}
 \usage{
 make_paths_ls(params_ls, depth_1L_int = 1)
 }
 \arguments{
-\item{params_ls}{Params (a list)}
+\item{params_ls}{Parameters (a list)}
 
 \item{depth_1L_int}{Depth (an integer vector of length one), Default: 1}
 }

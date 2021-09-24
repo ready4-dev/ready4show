@@ -81,18 +81,18 @@ write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to
   return(path_to_plot_1L_chr)
 }
 write_mkdn_from_pkg <- function(pkg_nm_1L_chr,
-                                destn_dir_1L_chr = "Markdown",
+                                dest_dir_1L_chr = "Markdown",
                                 overwrite_1L_lgl = F){
   all_mkdn_chr <- system.file("Markdown",package=pkg_nm_1L_chr) %>% list.files()
   is_dir_lgl <- all_mkdn_chr %>% purrr::map_lgl(~system.file(paste0("Markdown/",.x),package=pkg_nm_1L_chr) %>% dir.exists())
   all_mkdn_chr[is_dir_lgl] %>% purrr::walk(~{
-    if(!dir.exists(paste0(destn_dir_1L_chr,"/",.x)))
-      dir.create(paste0(destn_dir_1L_chr,"/",.x))
+    if(!dir.exists(paste0(dest_dir_1L_chr,"/",.x)))
+      dir.create(paste0(dest_dir_1L_chr,"/",.x))
   })
   all_mkdn_files_chr <- system.file("Markdown",package=pkg_nm_1L_chr) %>% list.files(recursive = T)
   all_mkdn_files_chr %>% purrr::walk(~{
-    if(!file.exists(paste0(destn_dir_1L_chr,"/",.x)) | (file.exists(paste0(destn_dir_1L_chr,"/",.x)) & overwrite_1L_lgl))
-      file.create(paste0(destn_dir_1L_chr,"/",.x))
+    if(!file.exists(paste0(dest_dir_1L_chr,"/",.x)) | (file.exists(paste0(dest_dir_1L_chr,"/",.x)) & overwrite_1L_lgl))
+      file.create(paste0(dest_dir_1L_chr,"/",.x))
   })
 }
 write_rndrd_rprt <- function(rprt_type_ls,
@@ -158,13 +158,13 @@ write_rprt <- function(rprt_type_ls,
                        output_type_1L_chr = "PDF",
                        section_type_1L_chr = "#",
                        path_to_prjs_dir_1L_chr = "../../../../Data/Project",
-                       prt_dir_dir_1L_chr = "My_Project",
+                       prj_dir_dir_1L_chr = "My_Project",
                        reports_dir_1L_chr = "Reports",
                        rltv_path_to_data_dir_1L_chr = "../Output",
                        nm_of_mkdn_dir_1L_chr = "Markdown",
                        push_copy_to_dv_1L_lgl = T,
                        append_params_ls = NULL){
-  path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr,"/",prt_dir_dir_1L_chr)#"../../../../Data/Project/Utility_Models",
+  path_to_outpt_dir_1L_chr <- paste0(path_to_prjs_dir_1L_chr,"/",prj_dir_dir_1L_chr)#"../../../../Data/Project/Utility_Models",
   path_to_rprt_dir_1L_chr <- paste0(path_to_outpt_dir_1L_chr, "/", reports_dir_1L_chr)
   if(!dir.exists(path_to_rprt_dir_1L_chr))
     dir.create(path_to_rprt_dir_1L_chr)

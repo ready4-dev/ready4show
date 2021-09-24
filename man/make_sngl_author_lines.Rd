@@ -11,7 +11,7 @@ make_sngl_author_lines(authors_tb, slice_1L_int, inc_quals_1L_lgl = F)
 
 \item{slice_1L_int}{Slice (an integer vector of length one)}
 
-\item{inc_quals_1L_lgl}{Include quals (a logical vector of length one), Default: F}
+\item{inc_quals_1L_lgl}{Include qualifications (a logical vector of length one), Default: F}
 }
 \value{
 Author lines (a character vector)

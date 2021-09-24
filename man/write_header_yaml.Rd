@@ -30,7 +30,7 @@ write_header_yaml(
 
 \item{path_to_tmpl_header_1L_chr}{Path to template header (a character vector of length one), Default: NULL}
 
-\item{inc_quals_1L_lgl}{Include quals (a logical vector of length one), Default: F}
+\item{inc_quals_1L_lgl}{Include qualifications (a logical vector of length one), Default: F}
 }
 \description{
 write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_rndrd_rprt}
 \alias{write_rndrd_rprt}
-\title{Write rndrd report}
+\title{Write rendered report}
 \usage{
 write_rndrd_rprt(
   rprt_type_ls,
@@ -18,7 +18,7 @@ write_rndrd_rprt(
 \arguments{
 \item{rprt_type_ls}{Report type (a list)}
 
-\item{params_ls}{Params (a list), Default: list(output_type_1L_chr = "HTML")}
+\item{params_ls}{Parameters (a list), Default: list(output_type_1L_chr = "HTML")}
 
 \item{path_to_write_dirs_to_1L_chr}{Path to write directories to (a character vector of length one), Default: 'NA'}
 
@@ -33,6 +33,6 @@ write_rndrd_rprt(
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: T}
 }
 \description{
-write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rndrd report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 }
 \keyword{internal}

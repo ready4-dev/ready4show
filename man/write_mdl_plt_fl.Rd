@@ -25,7 +25,7 @@ write_mdl_plt_fl(
 
 \item{plt_nm_1L_chr}{Plot name (a character vector of length one)}
 
-\item{grpx_fn}{Grpx (a function), Default: grDevices::png}
+\item{grpx_fn}{Graphics (a function), Default: grDevices::png}
 
 \item{units_1L_chr}{Units (a character vector of length one), Default: 'in'}
 

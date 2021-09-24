@@ -5,7 +5,7 @@
 \alias{authors_tb}
 \title{Example authors table}
 \format{
-An object of class \code{ready4_authors_lup} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 2 rows and 10 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2 rows and 10 columns.
 }
 \source{
 \url{https://ready4-dev.com}

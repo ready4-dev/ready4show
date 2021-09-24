@@ -1,29 +1,17 @@
 home:
   links:
-  - text: User manual (PDF)
-    href: https://github.com/ready4-dev/ready4show/releases/download/v0.9035/ready4show_user_0.0.0.9036.pdf
-  - text: Developer version of usual manual (PDF)
-    href: https://github.com/ready4-dev/ready4show/releases/download/v0.9035/ready4show_developer_0.0.0.9036.pdf
   - text: Project website
-    href: https://www.ready4-dev.com/
+    href:  https://ready4-dev.github.io/ready4/
 development:
   mode: auto
 reference:
 - title: "Datasets"
 - contents:
-  - abbreviations_lup
   - authors_tb
-  - fn_type_lup_tb
-  - fns_dmt_tb
   - institutes_tb
-  - prototype_lup
-- title: "Classes"
-- contents:
-  - ready4_authors_lup
-  - ready4_institutes_lup
 - title: "Functions"
 - contents:
-  - make_eqn_ref
+  - make_eq_ref
   - make_rprt_type_ls
   - print_table
   - write_mdl_plt_fl
