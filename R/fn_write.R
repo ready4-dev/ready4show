@@ -261,7 +261,6 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
 #' @return NULL
 #' @rdname write_rprt_from_tmpl
 #' @export 
-
 #' @keywords internal
 write_rprt_from_tmpl <- function (rprt_type_ls, params_ls = NULL, output_type_1L_chr = "PDF", 
     path_to_prjs_dir_1L_chr, prj_dir_1L_chr = "Fake", header_yaml_args_ls = NULL, 

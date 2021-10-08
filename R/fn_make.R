@@ -38,7 +38,6 @@ make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F)
 #' @return Equation reference (a character vector of length one)
 #' @rdname make_eq_ref
 #' @export 
-
 make_eq_ref <- function (eq_nm_1L_chr, output_type_1L_chr) 
 {
     eq_ref_1L_chr <- ifelse(output_type_1L_chr == "Word", paste0("\\@ref(eq:", 

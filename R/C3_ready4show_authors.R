@@ -1,31 +1,30 @@
 
-setOldClass(c("ready4show_authors_lup","tbl_df", "tbl", "data.frame"))
+setOldClass(c("ready4show_authors","tbl_df", "tbl", "data.frame"))
 #' ready4 S3 class for authors lookup table
 #' @description Create a new valid instance of the ready4 S3 class for authors lookup table
-#' @param x A prototype for the ready4 S3 class for authors lookup table, Default: make_pt_ready4show_authors_lup()
+#' @param x A prototype for the ready4 S3 class for authors lookup table, Default: make_pt_ready4show_authors()
 #' @return A validated instance of the ready4 S3 class for authors lookup table
 #' @details ready4 S3 class for authors lookup table
-#' @rdname ready4show_authors_lup
+#' @rdname ready4show_authors
 #' @export 
-
-ready4show_authors_lup <- function(x = make_pt_ready4show_authors_lup()){ 
-validate_ready4show_authors_lup(make_new_ready4show_authors_lup(x))
+ready4show_authors <- function(x = make_pt_ready4show_authors()){ 
+validate_ready4show_authors(make_new_ready4show_authors(x))
 }
-#' Make new ready4show authors lookup table ready4 S3 class for authors lookup table
+#' Make new ready4show authors ready4 S3 class for authors lookup table
 #' @description Create a new unvalidated instance of the ready4 S3 class for authors lookup table
 #' @param x A prototype for the ready4 S3 class for authors lookup table
 #' @return An unvalidated instance of the ready4 S3 class for authors lookup table
 #' @details ready4 S3 class for authors lookup table
-#' @rdname make_new_ready4show_authors_lup
+#' @rdname make_new_ready4show_authors
 #' @export 
 #' @importFrom tibble is_tibble
-make_new_ready4show_authors_lup <- function(x){ 
+make_new_ready4show_authors <- function(x){ 
 stopifnot(tibble::is_tibble(x))
-class(x) <- append(c("ready4show_authors_lup",setdiff(make_pt_ready4show_authors_lup() %>% class(),class(x))),
+class(x) <- append(c("ready4show_authors",setdiff(make_pt_ready4show_authors() %>% class(),class(x))),
 class(x))
 x
 }
-#' Make prototype ready4show authors lookup table ready4 S3 class for authors lookup table
+#' Make prototype ready4show authors ready4 S3 class for authors lookup table
 #' @description Create a new prototype for the ready4 S3 class for authors lookup table
 #' @param first_nm_chr First name (a character vector), Default: character(0)
 #' @param middle_nm_chr Middle name (a character vector), Default: character(0)
@@ -39,12 +38,12 @@ x
 #' @param is_equal_first_lgl Is equal first (a logical vector), Default: logical(0)
 #' @return A prototype for ready4 S3 class for authors lookup table
 #' @details ready4 S3 class for authors lookup table
-#' @rdname make_pt_ready4show_authors_lup
+#' @rdname make_pt_ready4show_authors
 #' @export 
 #' @importFrom ready4fun update_pt_fn_args_ls
 #' @importFrom rlang exec
 #' @importFrom tibble tibble
-make_pt_ready4show_authors_lup <- function(first_nm_chr = character(0),
+make_pt_ready4show_authors <- function(first_nm_chr = character(0),
 middle_nm_chr = character(0),
 last_nm_chr = character(0),
 title_chr = character(0),
@@ -66,26 +65,26 @@ email_chr = email_chr,
 is_equal_first_lgl = is_equal_first_lgl) %>% ready4fun::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
-#' Validate ready4show authors lookup table ready4 S3 class for authors lookup table
+#' Validate ready4show authors ready4 S3 class for authors lookup table
 #' @description Validate an instance of the ready4 S3 class for authors lookup table
 #' @param x An unvalidated instance of the ready4 S3 class for authors lookup table
 #' @return A prototpe for ready4 S3 class for authors lookup table
 #' @details ready4 S3 class for authors lookup table
-#' @rdname validate_ready4show_authors_lup
+#' @rdname validate_ready4show_authors
 #' @export 
 #' @importFrom stringr str_detect str_c
 #' @importFrom dplyr summarise_all filter arrange pull
 #' @importFrom tidyr gather
 #' @importFrom purrr map_chr map2_chr
-validate_ready4show_authors_lup <- function(x){
-if(sum(stringr::str_detect(names(x)[names(x) %in% names(make_pt_ready4show_authors_lup())],
-names(make_pt_ready4show_authors_lup())))!=length(names(make_pt_ready4show_authors_lup()))){
+validate_ready4show_authors <- function(x){
+if(sum(stringr::str_detect(names(x)[names(x) %in% names(make_pt_ready4show_authors())],
+names(make_pt_ready4show_authors())))!=length(names(make_pt_ready4show_authors()))){
 stop(paste0("TIBBLE must include columns named: ",
-names(make_pt_ready4show_authors_lup()) %>% stringr::str_c(sep="", collapse = ", ")),
+names(make_pt_ready4show_authors()) %>% stringr::str_c(sep="", collapse = ", ")),
 call. = FALSE)
 }
 
- if(!identical(make_pt_ready4show_authors_lup() %>% 
+ if(!identical(make_pt_ready4show_authors() %>% 
 dplyr::summarise_all(class) %>% 
  tidyr::gather(variable,class) %>% 
  dplyr::filter(!is.na(class)) %>% 
@@ -94,11 +93,11 @@ x %>%
 dplyr::summarise_all(class) %>% 
  tidyr::gather(variable,class) %>% 
  dplyr::filter(!is.na(class)) %>% 
-dplyr::filter(variable %in% names(make_pt_ready4show_authors_lup())) %>% dplyr::arrange(variable))){
+dplyr::filter(variable %in% names(make_pt_ready4show_authors())) %>% dplyr::arrange(variable))){
 stop(paste0("TIBBLE columns should be of the following classes: ",
 "",
 {
-class_lup <- make_pt_ready4show_authors_lup() %>% 
+class_lup <- make_pt_ready4show_authors() %>% 
 dplyr::summarise_all(class) %>% 
  tidyr::gather(variable,class) %>% 
  dplyr::filter(!is.na(class))
@@ -114,12 +113,11 @@ call. = FALSE)
 }
 
 x}
-#' Is ready4show authors lookup table ready4 S3 class for authors lookup table
+#' Is ready4show authors ready4 S3 class for authors lookup table
 #' @description Check whether an object is a valid instance of the ready4 S3 class for authors lookup table
 #' @param x An object of any type
 #' @return A logical value, TRUE if a valid instance of the ready4 S3 class for authors lookup table
 #' @details ready4 S3 class for authors lookup table
-#' @rdname is_ready4show_authors_lup
+#' @rdname is_ready4show_authors
 #' @export 
-
-is_ready4show_authors_lup <- function(x) inherits(validate_ready4show_authors_lup(x), "ready4show_authors_lup")
+is_ready4show_authors <- function(x) inherits(validate_ready4show_authors(x), "ready4show_authors")

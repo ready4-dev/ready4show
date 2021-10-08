@@ -1,5 +1,9 @@
 home:
   links:
+  - text: Manual - User (PDF)
+    href: 5213863
+  - text: Manual - Developer (PDF)
+    href: 5213862
   - text: Project website
     href:  https://ready4-dev.github.io/ready4/
 development:
@@ -9,6 +13,10 @@ reference:
 - contents:
   - authors_tb
   - institutes_tb
+- title: "Classes"
+- contents:
+  - ready4show_authors
+  - ready4show_institutes
 - title: "Functions"
 - contents:
   - make_eq_ref
