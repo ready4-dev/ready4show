@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Write markdown from package — write_mkdn_from_pkg • ready4show</title>
+<title>Make prototype ready4show authors ready4 S3 class for authors lookup table — make_pt_ready4show_authors • ready4show</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Write markdown from package — write_mkdn_from_pkg" />
-<meta property="og:description" content="write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour" />
+<meta property="og:title" content="Make prototype ready4show authors ready4 S3 class for authors lookup table — make_pt_ready4show_authors" />
+<meta property="og:description" content="Create a new prototype for the ready4 S3 class for authors lookup table" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,38 +119,79 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Write markdown from package</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/fn_write.R'><code>R/fn_write.R</code></a></small>
-    <div class="hidden name"><code>write_mkdn_from_pkg.Rd</code></div>
+    <h1>Make prototype ready4show authors ready4 S3 class for authors lookup table</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4show/blob/master/R/C3_ready4show_authors.R'><code>R/C3_ready4show_authors.R</code></a></small>
+    <div class="hidden name"><code>make_pt_ready4show_authors.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour</p>
+    <p>Create a new prototype for the ready4 S3 class for authors lookup table</p>
     </div>
 
-    <pre class="usage"><span class='fu'>write_mkdn_from_pkg</span><span class='op'>(</span>
-  <span class='va'>pkg_nm_1L_chr</span>,
-  dest_dir_1L_chr <span class='op'>=</span> <span class='st'>"Markdown"</span>,
-  overwrite_1L_lgl <span class='op'>=</span> <span class='cn'>F</span>
+    <pre class="usage"><span class='fu'>make_pt_ready4show_authors</span><span class='op'>(</span>
+  first_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  middle_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  last_nm_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  title_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  qualifications_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  institute_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  sequence_int <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>integer</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  is_corresponding_lgl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>logical</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  email_chr <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>,
+  is_equal_first_lgl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>logical</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pkg_nm_1L_chr</th>
-      <td><p>Package name (a character vector of length one)</p></td>
+      <th>first_nm_chr</th>
+      <td><p>First name (a character vector), Default: character(0)</p></td>
     </tr>
     <tr>
-      <th>dest_dir_1L_chr</th>
-      <td><p>Destination directory (a character vector of length one), Default: 'Markdown'</p></td>
+      <th>middle_nm_chr</th>
+      <td><p>Middle name (a character vector), Default: character(0)</p></td>
     </tr>
     <tr>
-      <th>overwrite_1L_lgl</th>
-      <td><p>Overwrite (a logical vector of length one), Default: F</p></td>
+      <th>last_nm_chr</th>
+      <td><p>Last name (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>title_chr</th>
+      <td><p>Title (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>qualifications_chr</th>
+      <td><p>Qualifications (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>institute_chr</th>
+      <td><p>Institute (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>sequence_int</th>
+      <td><p>Sequence (an integer vector), Default: integer(0)</p></td>
+    </tr>
+    <tr>
+      <th>is_corresponding_lgl</th>
+      <td><p>Is corresponding (a logical vector), Default: logical(0)</p></td>
+    </tr>
+    <tr>
+      <th>email_chr</th>
+      <td><p>Email (a character vector), Default: character(0)</p></td>
+    </tr>
+    <tr>
+      <th>is_equal_first_lgl</th>
+      <td><p>Is equal first (a logical vector), Default: logical(0)</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A prototype for ready4 S3 class for authors lookup table</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>ready4 S3 class for authors lookup table</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
