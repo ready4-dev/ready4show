@@ -31,7 +31,7 @@ x_ready4fun_manifest <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author L
                                                                                                  "write_mdl_plt_fl","write_mkdn_from_pkg","write_rprt")),
                            dev_pkgs_chr = c("ready4fun","ready4class","ready4use"),
                            lifecycle_stage_1L_chr = "experimental",
-                           path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4use-logo/default.png",
+                           path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4show-logo/default.png",
                            pkg_dmt_dv_dss_chr = c("https://doi.org/10.7910/DVN/HLLXZN",
                                                   "https://doi.org/10.7910/DVN/2Y9VF9"),
                            ready4_type_1L_chr = "authoring")
@@ -88,7 +88,7 @@ x_ready4use_manifest <- ready4use::make_pt_ready4use_manifest(x_ready4fun_manife
   ready4use::ready4use_manifest()
 x_ready4fun_manifest <- ready4fun::author(x_ready4use_manifest)
 ##
-
+usethis::use_package("knitrBootstrap")
 # ##
 # Next bit needs to be generalised to
 # pkg_ds_ls_ls[[1]]$db_df
@@ -110,5 +110,5 @@ x_ready4fun_manifest <- ready4fun::author(x_ready4use_manifest)
 #                               object_type_lup = manifest_r3$subsequent_ls$object_type_lu,
 #                               pkg_dss_tb = pkg_dss_tb)
 #usethis::use_package("ggfortify")
-usethis::use_package("knitrBootstrap")
+
 
