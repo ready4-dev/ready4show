@@ -22,7 +22,7 @@ x_ready4fun_manifest <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author L
                                            urls_chr = c("https://ready4-dev.github.io/ready4show/",
                                                         "https://github.com/ready4-dev/ready4show",
                                                         "https://ready4-dev.github.io/ready4/")) %>%
-  ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(suggests_chr = "rmarkdown"),
+  ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(imports_chr = "knitrBootstrap",suggests_chr = "rmarkdown"),
                            build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
                            check_type_1L_chr = "ready4",
                            copyright_holders_chr = "Orygen",
@@ -88,7 +88,7 @@ x_ready4use_manifest <- ready4use::make_pt_ready4use_manifest(x_ready4fun_manife
   ready4use::ready4use_manifest()
 x_ready4fun_manifest <- ready4fun::author(x_ready4use_manifest)
 ##
-usethis::use_package("knitrBootstrap")
+# usethis::use_package("knitrBootstrap")
 # ##
 # Next bit needs to be generalised to
 # pkg_ds_ls_ls[[1]]$db_df
