@@ -15,3 +15,26 @@
 #                      #key_1L_chr = key_1L_chr,
 #                      publish_dv_1L_lgl = T,
 #                      server_1L_chr = pkg_setup_ls$subsequent_ls$server_1L_chr)
+##
+# usethis::use_package("knitrBootstrap")
+# ##
+# Next bit needs to be generalised to
+# pkg_ds_ls_ls[[1]]$db_df
+# pkg_dss_tb <- pkg_ds_ls_ls[[1]]$db_df %>%
+#   ready4show_authors() %>%
+#   ready4fun::write_and_doc_ds(db_1L_chr = pkg_ds_ls_ls[[1]]$db_1L_chr,
+#                               title_1L_chr = pkg_ds_ls_ls[[1]]$title_1L_chr,
+#                               desc_1L_chr = pkg_ds_ls_ls[[1]]$desc_1L_chr,
+#                               url_1L_chr = pkg_ds_ls_ls[[1]]$url_1L_chr,
+#                               abbreviations_lup = manifest_r3$subsequent_ls$abbreviations_lup,
+#                               object_type_lup = manifest_r3$subsequent_ls$object_type_lup)
+# pkg_dss_tb <- pkg_ds_ls_ls[[2]]$db_df %>%
+#   ready4show_institutes() %>%
+#   ready4fun::write_and_doc_ds(db_1L_chr = pkg_ds_ls_ls[[2]]$db_1L_chr,
+#                               title_1L_chr = pkg_ds_ls_ls[[2]]$title_1L_chr,
+#                               desc_1L_chr = pkg_ds_ls_ls[[2]]$desc_1L_chr,
+#                               url_1L_chr = pkg_ds_ls_ls[[2]]$url_1L_chr,
+#                               abbreviations_lup = manifest_r3$subsequent_ls$abbreviations_lup,
+#                               object_type_lup = manifest_r3$subsequent_ls$object_type_lu,
+#                               pkg_dss_tb = pkg_dss_tb)
+#usethis::use_package("ggfortify")

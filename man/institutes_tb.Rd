@@ -5,7 +5,7 @@
 \alias{institutes_tb}
 \title{Example institutes table}
 \format{
-An object of class \code{ready4show_institutes} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 3 rows and 2 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 2 columns.
 }
 \source{
 \url{https://ready4-dev.com}
