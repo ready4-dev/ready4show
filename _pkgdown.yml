@@ -1,9 +1,9 @@
 home:
   links:
   - text: Manual - User (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5246096
+    href: https://dataverse.harvard.edu/api/access/datafile/5246115
   - text: Manual - Developer (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5246095
+    href: https://dataverse.harvard.edu/api/access/datafile/5246114
   - text: Project website
     href:  https://ready4-dev.github.io/ready4/
 development:
