@@ -6,7 +6,7 @@
 #                                            long_name_chr = c("graphics","project","qualification","rendered"),
 #                                            no_plural_chr = c("graphics", "rendered"))
 # manifest_r3$manifest_r3$subsequent_ls$abbreviations_lup <- manifest_r3$manifest_r3$subsequent_ls$abbreviations_lup %>% dplyr::filter(!short_name_chr %in% c("ready4show_authors_lup","ready4show_institutes_lup"))
-# prototype_lup <- ready4fun::get_rds_from_dv("prototype_lup")
+# prototype_lup <- ready4::get_rds_from_dv("prototype_lup")
 # prototype_lup <- prototype_lup %>%
 #   dplyr::filter(pt_ns_chr != pkg_setup_ls$initial_ls$pkg_desc_ls$Package)
 # write_env_objs_to_dv(list(prototype_lup = prototype_lup),

@@ -54,7 +54,7 @@ make_eq_ref <- function (eq_nm_1L_chr, output_type_1L_chr)
 #' @export 
 #' @importFrom purrr map flatten flatten_chr map_chr
 #' @importFrom stringr str_remove_all
-#' @importFrom ready4fun get_from_lup_obj
+#' @importFrom ready4 get_from_lup_obj
 #' @keywords internal
 make_institutes_lines <- function (authors_tb, institutes_tb) 
 {
@@ -62,9 +62,9 @@ make_institutes_lines <- function (authors_tb, institutes_tb)
         "\"") %>% strsplit(", ")) %>% purrr::flatten() %>% purrr:::flatten_chr() %>% 
         unique()
     institutes_lines_chr <- institutes_chr %>% purrr::map_chr(~{
-        paste0("  - ", .x, ": ", ready4fun::get_from_lup_obj(institutes_tb, 
+        paste0("  - ", .x, ": ", ready4::get_from_lup_obj(institutes_tb, 
             match_var_nm_1L_chr = "short_name_chr", match_value_xx = .x, 
-            target_var_nm_1L_chr = "long_name_chr", evaluate_lgl = F) %>% 
+            target_var_nm_1L_chr = "long_name_chr", evaluate_1L_lgl = F) %>% 
             stringr::str_remove_all("\""))
     })
     return(institutes_lines_chr)
@@ -113,16 +113,16 @@ make_paths_ls <- function (params_ls, depth_1L_int = 1)
 #' @rdname make_rprt_type_ls
 #' @export 
 #' @importFrom purrr map_chr
-#' @importFrom ready4fun get_from_lup_obj
+#' @importFrom ready4 get_from_lup_obj
 make_rprt_type_ls <- function (rprt_nm_1L_chr, rprt_lup) 
 {
     values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>% 
-        purrr::map_chr(~ready4fun::get_from_lup_obj(rprt_lup, 
-            match_value_xx = rprt_nm_1L_chr, match_var_nm_1L_chr = "rprt_nms_chr", 
-            target_var_nm_1L_chr = .x, evaluate_lgl = F))
+        purrr::map_chr(~ready4::get_from_lup_obj(rprt_lup, match_value_xx = rprt_nm_1L_chr, 
+            match_var_nm_1L_chr = "rprt_nms_chr", target_var_nm_1L_chr = .x, 
+            evaluate_1L_lgl = F))
     rprt_type_ls <- list(path_to_RMD_dir_1L_chr = ifelse(!is.na(values_chr[2]), 
         values_chr[2], system.file(values_chr[3], package = values_chr[4])), 
-        nm_of_RMD_1L_chr = values_chr[5], rltv_path_to_outpt_yaml_1L_chr = values_chr[6], 
+        nm_of_RMD_1L_chr = values_chr[5], rltv_path_to_outp_yaml_1L_chr = values_chr[6], 
         file_nm_1L_chr = rprt_nm_1L_chr, title_1L_chr = values_chr[1])
     return(rprt_type_ls)
 }

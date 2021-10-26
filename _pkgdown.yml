@@ -1,9 +1,9 @@
 home:
   links:
   - text: Manual - User (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5246115
+    href: https://dataverse.harvard.edu/api/access/datafile/5342692
   - text: Manual - Developer (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5246114
+    href: https://dataverse.harvard.edu/api/access/datafile/5342691
   - text: Project website
     href:  https://ready4-dev.github.io/ready4/
 development:
@@ -13,7 +13,7 @@ reference:
 - contents:
   - authors_tb
   - institutes_tb
-- title: "Classes"
+- title: "S3 Classes"
 - contents:
   - ready4show_authors
   - ready4show_institutes
