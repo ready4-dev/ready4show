@@ -32,7 +32,8 @@ x_ready4fun_manifest <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author L
                            lifecycle_stage_1L_chr = "experimental",
                            path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4show-logo/default.png",
                            piggyback_to_1L_chr = "ready4-dev/ready4",
-                           ready4_type_1L_chr = "authoring")
+                           ready4_type_1L_chr = "authoring",
+                           zenodo_badge_1L_chr = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5644568.svg)](https://doi.org/10.5281/zenodo.5644568)")
 x_ready4class_constructor <- ready4class::ready4class_constructor() %>%
   dplyr::bind_rows(ready4class::make_pt_ready4class_constructor(make_s3_lgl = TRUE,
                                                                 name_stub_chr = "authors",
