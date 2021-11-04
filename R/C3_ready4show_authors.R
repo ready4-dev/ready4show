@@ -40,7 +40,7 @@ x
 #' @details ready4 S3 class for authors lookup table
 #' @rdname make_pt_ready4show_authors
 #' @export 
-#' @importFrom ready4fun update_pt_fn_args_ls
+#' @importFrom ready4 update_pt_fn_args_ls
 #' @importFrom rlang exec
 #' @importFrom tibble tibble
 make_pt_ready4show_authors <- function(first_nm_chr = character(0),
@@ -62,7 +62,7 @@ institute_chr = institute_chr,
 sequence_int = sequence_int,
 is_corresponding_lgl = is_corresponding_lgl,
 email_chr = email_chr,
-is_equal_first_lgl = is_equal_first_lgl) %>% ready4fun::update_pt_fn_args_ls()
+is_equal_first_lgl = is_equal_first_lgl) %>% ready4::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
 #' Validate ready4show authors ready4 S3 class for authors lookup table

@@ -66,3 +66,4 @@
 ^data-raw/dataverse/fn_type_lup_tb/fn_type_lup_tb\.csv$
 ^data-raw/dataverse/fn_type_lup_tb/fn_type_lup_tb\.RDS$
 ^data-raw/Notes\.R$
+^data-raw/abbreviations_lup\.Rds$

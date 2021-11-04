@@ -4,7 +4,7 @@
 \name{ready4show-package}
 \alias{ready4show}
 \alias{ready4show-package}
-\title{ready4show: Author Literate Programs Using Markdown to Share Insights from Open, Modular Mental Health Simulations}
+\title{ready4show: Author Literate Programs Using Markdown to Share Insights from Open, Modular Mental Health Systems Models}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 

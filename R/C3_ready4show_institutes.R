@@ -32,13 +32,13 @@ x
 #' @details ready4 S3 class for institutes lookup table
 #' @rdname make_pt_ready4show_institutes
 #' @export 
-#' @importFrom ready4fun update_pt_fn_args_ls
+#' @importFrom ready4 update_pt_fn_args_ls
 #' @importFrom rlang exec
 #' @importFrom tibble tibble
 make_pt_ready4show_institutes <- function(short_name_chr = character(0),
 long_name_chr = character(0)){ 
 args_ls <- list(short_name_chr = short_name_chr,
-long_name_chr = long_name_chr) %>% ready4fun::update_pt_fn_args_ls()
+long_name_chr = long_name_chr) %>% ready4::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
 #' Validate ready4show institutes ready4 S3 class for institutes lookup table

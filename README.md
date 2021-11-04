@@ -1,6 +1,6 @@
 # ready4show <img src="man/figures/fav120.png" align="right" />
 
-## Author Literate Programs Using Markdown to Share Insights from Open, Modular Mental Health Simulations
+## Author Literate Programs Using Markdown to Share Insights from Open, Modular Mental Health Systems Models
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
