@@ -1,4 +1,4 @@
-#' Write header files
+#' write header files
 #' @description write_header_fls() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header files. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param path_to_header_dir_1L_chr Path to header directory (a character vector of length one)
 #' @param header_yaml_args_ls Header yaml arguments (a list)
@@ -19,7 +19,7 @@ write_header_fls <- function (path_to_header_dir_1L_chr, header_yaml_args_ls, ab
             writeLines(paste0(path_to_header_dir_1L_chr, "/", 
                 abstract_args_ls$fl_nm_1L_chr))
 }
-#' Write header yaml
+#' write header yaml
 #' @description write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param path_to_header_dir_1L_chr Path to header directory (a character vector of length one)
 #' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'header.yaml'
@@ -77,7 +77,7 @@ write_header_yaml <- function (path_to_header_dir_1L_chr, fl_nm_1L_chr = "header
     }) %>% purrr::flatten_chr() %>% purrr::discard(is.na) %>% 
         writeLines(paste0(path_to_header_dir_1L_chr, "/", fl_nm_1L_chr))
 }
-#' Write model plot file
+#' write model plot file
 #' @description write_mdl_plt_fl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write model plot file. The function returns Path to plot (a character vector of length one).
 #' @param plt_fn Plot (a function), Default: NULL
 #' @param fn_args_ls Function arguments (a list), Default: NULL
@@ -112,7 +112,7 @@ write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to
     }
     return(path_to_plot_1L_chr)
 }
-#' Write markdown from package
+#' write markdown from package
 #' @description write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param pkg_nm_1L_chr Package name (a character vector of length one)
 #' @param dest_dir_1L_chr Destination directory (a character vector of length one), Default: 'Markdown'
@@ -140,7 +140,7 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, dest_dir_1L_chr = "Markdown", ov
             file.create(paste0(dest_dir_1L_chr, "/", .x))
     })
 }
-#' Write rendered report
+#' write rendered report
 #' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param rprt_type_ls Report type (a list)
 #' @param params_ls Parameters (a list), Default: list(output_type_1L_chr = "HTML")
@@ -193,7 +193,7 @@ write_rndrd_rprt <- function (rprt_type_ls, params_ls = list(output_type_1L_chr 
                 "docx", tolower(params_ls$output_type_1L_chr))), 
         output_dir = path_to_rprt_dir_1L_chr)
 }
-#' Write report
+#' write report
 #' @description write_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function returns Output summary (a list).
 #' @param rprt_type_ls Report type (a list)
 #' @param outp_smry_ls Output summary (a list)
@@ -246,7 +246,7 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, output_type_1L_chr = "PDF",
     }
     return(outp_smry_ls)
 }
-#' Write report from template
+#' write report from template
 #' @description write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param rprt_type_ls Report type (a list)
 #' @param params_ls Parameters (a list), Default: NULL

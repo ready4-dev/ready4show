@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_authors.R
 \name{make_new_ready4show_authors}
 \alias{make_new_ready4show_authors}
-\title{Make new ready4show authors ready4 S3 class for authors lookup table}
+\title{make new ready4show authors ready4 S3 class for authors lookup table}
 \usage{
 make_new_ready4show_authors(x)
 }

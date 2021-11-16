@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_sngl_author_lines}
 \alias{make_sngl_author_lines}
-\title{Make single author lines}
+\title{make single author lines}
 \usage{
 make_sngl_author_lines(authors_tb, slice_1L_int, inc_quals_1L_lgl = F)
 }

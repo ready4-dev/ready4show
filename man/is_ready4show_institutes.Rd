@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{is_ready4show_institutes}
 \alias{is_ready4show_institutes}
-\title{Is ready4show institutes ready4 S3 class for institutes lookup table}
+\title{is ready4show institutes ready4 S3 class for institutes lookup table}
 \usage{
 is_ready4show_institutes(x)
 }

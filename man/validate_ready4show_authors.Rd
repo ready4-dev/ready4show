@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_authors.R
 \name{validate_ready4show_authors}
 \alias{validate_ready4show_authors}
-\title{Validate ready4show authors ready4 S3 class for authors lookup table}
+\title{validate ready4show authors ready4 S3 class for authors lookup table}
 \usage{
 validate_ready4show_authors(x)
 }

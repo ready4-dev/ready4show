@@ -10,7 +10,7 @@ setOldClass(c("ready4show_authors","tbl_df", "tbl", "data.frame"))
 ready4show_authors <- function(x = make_pt_ready4show_authors()){ 
 validate_ready4show_authors(make_new_ready4show_authors(x))
 }
-#' Make new ready4show authors ready4 S3 class for authors lookup table
+#' make new ready4show authors ready4 S3 class for authors lookup table
 #' @description Create a new unvalidated instance of the ready4 S3 class for authors lookup table
 #' @param x A prototype for the ready4 S3 class for authors lookup table
 #' @return An unvalidated instance of the ready4 S3 class for authors lookup table
@@ -24,7 +24,7 @@ class(x) <- append(c("ready4show_authors",setdiff(make_pt_ready4show_authors() %
 class(x))
 x
 }
-#' Make prototype ready4show authors ready4 S3 class for authors lookup table
+#' make prototype ready4show authors ready4 S3 class for authors lookup table
 #' @description Create a new prototype for the ready4 S3 class for authors lookup table
 #' @param first_nm_chr First name (a character vector), Default: character(0)
 #' @param middle_nm_chr Middle name (a character vector), Default: character(0)
@@ -65,7 +65,7 @@ email_chr = email_chr,
 is_equal_first_lgl = is_equal_first_lgl) %>% ready4::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
-#' Validate ready4show authors ready4 S3 class for authors lookup table
+#' validate ready4show authors ready4 S3 class for authors lookup table
 #' @description Validate an instance of the ready4 S3 class for authors lookup table
 #' @param x An unvalidated instance of the ready4 S3 class for authors lookup table
 #' @return A prototpe for ready4 S3 class for authors lookup table
@@ -113,7 +113,7 @@ call. = FALSE)
 }
 
 x}
-#' Is ready4show authors ready4 S3 class for authors lookup table
+#' is ready4show authors ready4 S3 class for authors lookup table
 #' @description Check whether an object is a valid instance of the ready4 S3 class for authors lookup table
 #' @param x An object of any type
 #' @return A logical value, TRUE if a valid instance of the ready4 S3 class for authors lookup table

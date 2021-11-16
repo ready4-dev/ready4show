@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_transform.R
 \name{transform_abstract}
 \alias{transform_abstract}
-\title{Transform abstract}
+\title{transform abstract}
 \usage{
 transform_abstract(path_to_abstract_1L_chr)
 }

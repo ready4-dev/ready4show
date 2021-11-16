@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_authors.R
 \name{is_ready4show_authors}
 \alias{is_ready4show_authors}
-\title{Is ready4show authors ready4 S3 class for authors lookup table}
+\title{is ready4show authors ready4 S3 class for authors lookup table}
 \usage{
 is_ready4show_authors(x)
 }

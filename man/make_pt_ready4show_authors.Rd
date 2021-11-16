@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_authors.R
 \name{make_pt_ready4show_authors}
 \alias{make_pt_ready4show_authors}
-\title{Make prototype ready4show authors ready4 S3 class for authors lookup table}
+\title{make prototype ready4show authors ready4 S3 class for authors lookup table}
 \usage{
 make_pt_ready4show_authors(
   first_nm_chr = character(0),

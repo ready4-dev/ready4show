@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_rprt_type_ls}
 \alias{make_rprt_type_ls}
-\title{Make report type list}
+\title{make report type list}
 \usage{
 make_rprt_type_ls(rprt_nm_1L_chr, rprt_lup)
 }

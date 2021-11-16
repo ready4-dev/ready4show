@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_table}
 \alias{print_table}
-\title{Print table}
+\title{print table}
 \usage{
 print_table(
   data_tb,

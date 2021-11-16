@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_rndrd_rprt}
 \alias{write_rndrd_rprt}
-\title{Write rendered report}
+\title{write rendered report}
 \usage{
 write_rndrd_rprt(
   rprt_type_ls,

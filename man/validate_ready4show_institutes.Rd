@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{validate_ready4show_institutes}
 \alias{validate_ready4show_institutes}
-\title{Validate ready4show institutes ready4 S3 class for institutes lookup table}
+\title{validate ready4show institutes ready4 S3 class for institutes lookup table}
 \usage{
 validate_ready4show_institutes(x)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{make_pt_ready4show_institutes}
 \alias{make_pt_ready4show_institutes}
-\title{Make prototype ready4show institutes ready4 S3 class for institutes lookup table}
+\title{make prototype ready4show institutes ready4 S3 class for institutes lookup table}
 \usage{
 make_pt_ready4show_institutes(
   short_name_chr = character(0),

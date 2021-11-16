@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_rprt_from_tmpl}
 \alias{write_rprt_from_tmpl}
-\title{Write report from template}
+\title{write report from template}
 \usage{
 write_rprt_from_tmpl(
   rprt_type_ls,

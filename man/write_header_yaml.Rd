@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_header_yaml}
 \alias{write_header_yaml}
-\title{Write header yaml}
+\title{write header yaml}
 \usage{
 write_header_yaml(
   path_to_header_dir_1L_chr,

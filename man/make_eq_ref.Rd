@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_eq_ref}
 \alias{make_eq_ref}
-\title{Make equation reference}
+\title{make equation reference}
 \usage{
 make_eq_ref(eq_nm_1L_chr, output_type_1L_chr)
 }

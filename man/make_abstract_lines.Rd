@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_abstract_lines}
 \alias{make_abstract_lines}
-\title{Make abstract lines}
+\title{make abstract lines}
 \usage{
 make_abstract_lines(abstract_ls)
 }
