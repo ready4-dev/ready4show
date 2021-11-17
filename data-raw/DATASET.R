@@ -10,10 +10,6 @@ x_ready4fun_manifest <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author L
                                                     ),
                                                     utils::person("Glen", "Wiesner", email = "Glen.Wiesner@vu.edu.au",
                                                                   role = c("aut"), comment = c(ORCID = "0000-0002-0071-130X")),
-                                                    #person("Alexandra", "Parker", email =  "Alex.Parker@vu.edu.au", role = c("rev"), comment = c(ORCID ="0000-0002-2398-6306")),
-                                                    #person("Cathrine", "Mihalopoulos",email = "cathy.mihalopoulos@deakin.edu.au", role = c("rev"), comment = c(ORCID = "0000-0002-7127-9462")),
-                                                    #person("Jonathan", "Karnon", email ="Jonathan.Karnon@flinders.edu.au", role = c("rev"), comment =c(ORCID = "0000-0003-3220-2099")),
-                                                    #person("Petra","Plencnerova", email = "Petra.Plencnerova@vu.edu.au", role =c("rev"), comment = c(ORCID = "0000-0001-9698-9084")),
                                                     utils::person("Orygen", role = c("cph", "fnd")),
                                                     utils::person("VicHealth",role = c("fnd")),
                                                     utils::person("Victoria University", role =c("fnd"))
@@ -86,6 +82,3 @@ x_ready4pack_manifest <- ready4pack::make_pt_ready4pack_manifest(x_ready4fun_man
                                                                                       ready4show_institutes = "institutes_tb")) %>%
   ready4pack::ready4pack_manifest()
 x_ready4fun_manifest <- author(x_ready4pack_manifest)
-
-
-
