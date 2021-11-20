@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_header_fls}
 \alias{write_header_fls}
-\title{write header files}
+\title{Write header files}
 \usage{
 write_header_fls(
   path_to_header_dir_1L_chr,

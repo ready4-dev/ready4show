@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_mkdn_from_pkg}
 \alias{write_mkdn_from_pkg}
-\title{write markdown from package}
+\title{Write markdown from package}
 \usage{
 write_mkdn_from_pkg(
   pkg_nm_1L_chr,

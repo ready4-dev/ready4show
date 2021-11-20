@@ -1,4 +1,4 @@
-#' print table
+#' Print table
 #' @description print_table() is a Print function that prints output to console Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.
 #' @param data_tb Data (a tibble)
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'PDF'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_institutes_lines}
 \alias{make_institutes_lines}
-\title{make institutes lines}
+\title{Make institutes lines}
 \usage{
 make_institutes_lines(authors_tb, institutes_tb)
 }

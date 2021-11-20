@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_write.R
 \name{write_mdl_plt_fl}
 \alias{write_mdl_plt_fl}
-\title{write model plot file}
+\title{Write model plot file}
 \usage{
 write_mdl_plt_fl(
   plt_fn = NULL,

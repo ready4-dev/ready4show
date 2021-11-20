@@ -1,4 +1,4 @@
-#' transform abstract
+#' Transform abstract
 #' @description transform_abstract() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform abstract. Function argument path_to_abstract_1L_chr specifies the object to be updated. The function returns Transformed abstract (a character vector).
 #' @param path_to_abstract_1L_chr Path to abstract (a character vector of length one)
 #' @return Transformed abstract (a character vector)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_authorship_lines}
 \alias{make_authorship_lines}
-\title{make authorship lines}
+\title{Make authorship lines}
 \usage{
 make_authorship_lines(authors_tb, inc_quals_1L_lgl = F)
 }

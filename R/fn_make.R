@@ -1,4 +1,4 @@
-#' make abstract lines
+#' Make abstract lines
 #' @description make_abstract_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make abstract lines. The function returns Abstract lines (a character vector).
 #' @param abstract_ls Abstract (a list)
 #' @return Abstract lines (a character vector)
@@ -15,7 +15,7 @@ make_abstract_lines <- function (abstract_ls)
         }) %>% purrr::flatten_chr()
     return(abstract_lines_chr)
 }
-#' make authorship lines
+#' Make authorship lines
 #' @description make_authorship_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make authorship lines. The function returns Authorship lines (a character vector).
 #' @param authors_tb Authors (a tibble)
 #' @param inc_quals_1L_lgl Include qualifications (a logical vector of length one), Default: F
@@ -31,7 +31,7 @@ make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F)
         purrr::flatten_chr()
     return(authorship_lines_chr)
 }
-#' make equation reference
+#' Make equation reference
 #' @description make_eq_ref() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make equation reference. The function returns Equation reference (a character vector of length one).
 #' @param eq_nm_1L_chr Equation name (a character vector of length one)
 #' @param output_type_1L_chr Output type (a character vector of length one)
@@ -45,7 +45,7 @@ make_eq_ref <- function (eq_nm_1L_chr, output_type_1L_chr)
         "}"))
     return(eq_ref_1L_chr)
 }
-#' make institutes lines
+#' Make institutes lines
 #' @description make_institutes_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make institutes lines. The function returns Institutes lines (a character vector).
 #' @param authors_tb Authors (a tibble)
 #' @param institutes_tb Institutes (a tibble)
@@ -69,7 +69,7 @@ make_institutes_lines <- function (authors_tb, institutes_tb)
     })
     return(institutes_lines_chr)
 }
-#' make paths list
+#' Make paths list
 #' @description make_paths_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make paths list. The function returns Paths (a list).
 #' @param params_ls Parameters (a list)
 #' @param depth_1L_int Depth (an integer vector of length one), Default: 1
@@ -105,7 +105,7 @@ make_paths_ls <- function (params_ls, depth_1L_int = 1)
     }
     return(paths_ls)
 }
-#' make report type list
+#' Make report type list
 #' @description make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).
 #' @param rprt_nm_1L_chr Report name (a character vector of length one)
 #' @param rprt_lup Report (a lookup table)
@@ -126,7 +126,7 @@ make_rprt_type_ls <- function (rprt_nm_1L_chr, rprt_lup)
         file_nm_1L_chr = rprt_nm_1L_chr, title_1L_chr = values_chr[1])
     return(rprt_type_ls)
 }
-#' make single author lines
+#' Make single author lines
 #' @description make_sngl_author_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make single author lines. The function returns Author lines (a character vector).
 #' @param authors_tb Authors (a tibble)
 #' @param slice_1L_int Slice (an integer vector of length one)
