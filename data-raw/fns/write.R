@@ -1,3 +1,34 @@
+write_all_outp_dirs <- function(paths_ls){
+  output_data_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr),
+                                   "/",
+                                   paths_ls$write_to_dir_nm_1L_chr,
+                                   "/Output")
+  reports_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr),"/",
+                               paths_ls$write_to_dir_nm_1L_chr,"/Reports")
+  mkdn_data_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr),
+                                 "/",
+                                 paths_ls$write_to_dir_nm_1L_chr,
+                                 "/Markdown")
+  descv_outp_dir_1L_chr <- paste0(output_data_dir_1L_chr,"/_Descriptives")
+  dv_dir_1L_chr <- paste0(output_data_dir_1L_chr,"/H_Dataverse")
+  purrr::walk(c(paste0(here::here(paths_ls$path_from_top_level_1L_chr),
+                       "/",
+                       paths_ls$write_to_dir_nm_1L_chr),
+                mkdn_data_dir_1L_chr,
+                output_data_dir_1L_chr,
+                reports_dir_1L_chr,
+                descv_outp_dir_1L_chr,
+                dv_dir_1L_chr),
+              ~ if(!dir.exists(.x))
+                dir.create(.x))
+  paths_ls <- append(paths_ls,
+                     list(output_data_dir_1L_chr = output_data_dir_1L_chr,
+                          mkdn_data_dir_1L_chr = mkdn_data_dir_1L_chr,
+                          reports_dir_1L_chr = reports_dir_1L_chr,
+                          descv_outp_dir_1L_chr = descv_outp_dir_1L_chr,
+                          dv_dir_1L_chr = dv_dir_1L_chr))
+  return(paths_ls)
+}
 write_csp_output <- function(path_to_csp_1L_chr, # Move to ready4show?
                              dv_ds_doi_1L_chr = NULL,
                              execute_1L_lgl = T){
@@ -110,7 +141,7 @@ write_main_outp_dir <- function(params_ls = NULL, # Move to ready4show?
                     "/",
                     paths_ls$write_to_dir_nm_1L_chr))
   paths_ls$R_fl_nm_1L_chr <- R_fl_nm_1L_chr
-  paths_ls <- youthvars::write_all_outp_dirs(paths_ls)
+  paths_ls <- write_all_outp_dirs(paths_ls)
   return(paths_ls)
 }
 write_manuscript <- function(abstract_args_ls = NULL,# Move to ready4show?

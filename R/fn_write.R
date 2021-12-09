@@ -1,3 +1,32 @@
+#' Write all output directories
+#' @description write_all_outp_dirs() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write all output directories. The function returns Paths (a list).
+#' @param paths_ls Paths (a list)
+#' @return Paths (a list)
+#' @rdname write_all_outp_dirs
+#' @export 
+#' @importFrom here here
+#' @importFrom purrr walk
+#' @keywords internal
+write_all_outp_dirs <- function (paths_ls) 
+{
+    output_data_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
+        "/", paths_ls$write_to_dir_nm_1L_chr, "/Output")
+    reports_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
+        "/", paths_ls$write_to_dir_nm_1L_chr, "/Reports")
+    mkdn_data_dir_1L_chr <- paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
+        "/", paths_ls$write_to_dir_nm_1L_chr, "/Markdown")
+    descv_outp_dir_1L_chr <- paste0(output_data_dir_1L_chr, "/_Descriptives")
+    dv_dir_1L_chr <- paste0(output_data_dir_1L_chr, "/H_Dataverse")
+    purrr::walk(c(paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
+        "/", paths_ls$write_to_dir_nm_1L_chr), mkdn_data_dir_1L_chr, 
+        output_data_dir_1L_chr, reports_dir_1L_chr, descv_outp_dir_1L_chr, 
+        dv_dir_1L_chr), ~if (!dir.exists(.x)) 
+        dir.create(.x))
+    paths_ls <- append(paths_ls, list(output_data_dir_1L_chr = output_data_dir_1L_chr, 
+        mkdn_data_dir_1L_chr = mkdn_data_dir_1L_chr, reports_dir_1L_chr = reports_dir_1L_chr, 
+        descv_outp_dir_1L_chr = descv_outp_dir_1L_chr, dv_dir_1L_chr = dv_dir_1L_chr))
+    return(paths_ls)
+}
 #' Write complete study program output
 #' @description write_csp_output() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write complete study program output. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param path_to_csp_1L_chr Path to complete study program (a character vector of length one)
@@ -126,7 +155,6 @@ write_header_yaml <- function (path_to_header_dir_1L_chr, fl_nm_1L_chr = "header
 #' @export 
 #' @importFrom purrr pluck
 #' @importFrom here i_am here
-#' @importFrom youthvars write_all_outp_dirs
 #' @keywords internal
 write_main_outp_dir <- function (params_ls = NULL, use_fake_data_1L_lgl = F, R_fl_nm_1L_chr = "aaaaaaaaaa.txt") 
 {
@@ -141,7 +169,7 @@ write_main_outp_dir <- function (params_ls = NULL, use_fake_data_1L_lgl = F, R_f
     dir.create(paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
         "/", paths_ls$write_to_dir_nm_1L_chr))
     paths_ls$R_fl_nm_1L_chr <- R_fl_nm_1L_chr
-    paths_ls <- youthvars::write_all_outp_dirs(paths_ls)
+    paths_ls <- write_all_outp_dirs(paths_ls)
     return(paths_ls)
 }
 #' Write manuscript
