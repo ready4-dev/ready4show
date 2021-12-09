@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Author Literate Programs Using Markdown to Share Insights from
     Open, Modular Mental Health Systems Models
-Version: 0.0.0.9057
+Version: 0.0.0.9058
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton@orygen.org.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -48,8 +48,7 @@ Imports:
     tibble,
     tidyr,
     utils,
-    xtable,
-    youthvars
+    xtable
 VignetteBuilder: knitr
 Depends: 
     ready4,
