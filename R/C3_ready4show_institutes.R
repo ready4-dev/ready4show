@@ -18,6 +18,7 @@ validate_ready4show_institutes(make_new_ready4show_institutes(x))
 #' @rdname make_new_ready4show_institutes
 #' @export 
 #' @importFrom tibble is_tibble
+#' @keywords internal
 make_new_ready4show_institutes <- function(x){ 
 stopifnot(tibble::is_tibble(x))
 class(x) <- append(c("ready4show_institutes",setdiff(make_pt_ready4show_institutes() %>% class(),class(x))),
@@ -25,12 +26,11 @@ class(x))
 x
 }
 #' make prototype ready4show institutes ready4 S3 class for institutes lookup table
-#' @description Create a new prototype for the ready4 S3 class for institutes lookup table
 #' @param short_name_chr Short name (a character vector), Default: character(0)
 #' @param long_name_chr Long name (a character vector), Default: character(0)
 #' @return A prototype for ready4 S3 class for institutes lookup table
-#' @details ready4 S3 class for institutes lookup table
-#' @rdname make_pt_ready4show_institutes
+#' 
+#' @rdname ready4show_institutes
 #' @export 
 #' @importFrom ready4 update_pt_fn_args_ls
 #' @importFrom rlang exec
@@ -52,6 +52,7 @@ rlang::exec(tibble::tibble,!!!args_ls)
 #' @importFrom dplyr summarise_all filter arrange pull
 #' @importFrom tidyr gather
 #' @importFrom purrr map_chr map2_chr
+#' @keywords internal
 validate_ready4show_institutes <- function(x){
 if(sum(stringr::str_detect(names(x)[names(x) %in% names(make_pt_ready4show_institutes())],
 names(make_pt_ready4show_institutes())))!=length(names(make_pt_ready4show_institutes()))){
@@ -90,10 +91,9 @@ call. = FALSE)
 
 x}
 #' is ready4show institutes ready4 S3 class for institutes lookup table
-#' @description Check whether an object is a valid instance of the ready4 S3 class for institutes lookup table
 #' @param x An object of any type
 #' @return A logical value, TRUE if a valid instance of the ready4 S3 class for institutes lookup table
-#' @details ready4 S3 class for institutes lookup table
-#' @rdname is_ready4show_institutes
+#' 
+#' @rdname ready4show_institutes
 #' @export 
 is_ready4show_institutes <- function(x) inherits(validate_ready4show_institutes(x), "ready4show_institutes")

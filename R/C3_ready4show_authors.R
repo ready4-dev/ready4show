@@ -18,6 +18,7 @@ validate_ready4show_authors(make_new_ready4show_authors(x))
 #' @rdname make_new_ready4show_authors
 #' @export 
 #' @importFrom tibble is_tibble
+#' @keywords internal
 make_new_ready4show_authors <- function(x){ 
 stopifnot(tibble::is_tibble(x))
 class(x) <- append(c("ready4show_authors",setdiff(make_pt_ready4show_authors() %>% class(),class(x))),
@@ -25,7 +26,6 @@ class(x))
 x
 }
 #' make prototype ready4show authors ready4 S3 class for authors lookup table
-#' @description Create a new prototype for the ready4 S3 class for authors lookup table
 #' @param first_nm_chr First name (a character vector), Default: character(0)
 #' @param middle_nm_chr Middle name (a character vector), Default: character(0)
 #' @param last_nm_chr Last name (a character vector), Default: character(0)
@@ -37,8 +37,8 @@ x
 #' @param email_chr Email (a character vector), Default: character(0)
 #' @param is_equal_first_lgl Is equal first (a logical vector), Default: logical(0)
 #' @return A prototype for ready4 S3 class for authors lookup table
-#' @details ready4 S3 class for authors lookup table
-#' @rdname make_pt_ready4show_authors
+#' 
+#' @rdname ready4show_authors
 #' @export 
 #' @importFrom ready4 update_pt_fn_args_ls
 #' @importFrom rlang exec
@@ -76,6 +76,7 @@ rlang::exec(tibble::tibble,!!!args_ls)
 #' @importFrom dplyr summarise_all filter arrange pull
 #' @importFrom tidyr gather
 #' @importFrom purrr map_chr map2_chr
+#' @keywords internal
 validate_ready4show_authors <- function(x){
 if(sum(stringr::str_detect(names(x)[names(x) %in% names(make_pt_ready4show_authors())],
 names(make_pt_ready4show_authors())))!=length(names(make_pt_ready4show_authors()))){
@@ -114,10 +115,9 @@ call. = FALSE)
 
 x}
 #' is ready4show authors ready4 S3 class for authors lookup table
-#' @description Check whether an object is a valid instance of the ready4 S3 class for authors lookup table
 #' @param x An object of any type
 #' @return A logical value, TRUE if a valid instance of the ready4 S3 class for authors lookup table
-#' @details ready4 S3 class for authors lookup table
-#' @rdname is_ready4show_authors
+#' 
+#' @rdname ready4show_authors
 #' @export 
 is_ready4show_authors <- function(x) inherits(validate_ready4show_authors(x), "ready4show_authors")

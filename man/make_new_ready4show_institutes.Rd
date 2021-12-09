@@ -18,3 +18,4 @@ Create a new unvalidated instance of the ready4 S3 class for institutes lookup t
 \details{
 ready4 S3 class for institutes lookup table
 }
+\keyword{internal}

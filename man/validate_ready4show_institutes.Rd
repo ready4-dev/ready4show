@@ -18,3 +18,4 @@ Validate an instance of the ready4 S3 class for institutes lookup table
 \details{
 ready4 S3 class for institutes lookup table
 }
+\keyword{internal}

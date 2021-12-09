@@ -2,15 +2,32 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{ready4show_institutes}
 \alias{ready4show_institutes}
+\alias{make_pt_ready4show_institutes}
+\alias{is_ready4show_institutes}
 \title{ready4 S3 class for institutes lookup table}
 \usage{
 ready4show_institutes(x = make_pt_ready4show_institutes())
+
+make_pt_ready4show_institutes(
+  short_name_chr = character(0),
+  long_name_chr = character(0)
+)
+
+is_ready4show_institutes(x)
 }
 \arguments{
-\item{x}{A prototype for the ready4 S3 class for institutes lookup table, Default: make_pt_ready4show_institutes()}
+\item{x}{An object of any type}
+
+\item{short_name_chr}{Short name (a character vector), Default: character(0)}
+
+\item{long_name_chr}{Long name (a character vector), Default: character(0)}
 }
 \value{
 A validated instance of the ready4 S3 class for institutes lookup table
+
+A prototype for ready4 S3 class for institutes lookup table
+
+A logical value, TRUE if a valid instance of the ready4 S3 class for institutes lookup table
 }
 \description{
 Create a new valid instance of the ready4 S3 class for institutes lookup table

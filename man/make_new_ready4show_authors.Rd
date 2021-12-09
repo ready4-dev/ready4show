@@ -18,3 +18,4 @@ Create a new unvalidated instance of the ready4 S3 class for authors lookup tabl
 \details{
 ready4 S3 class for authors lookup table
 }
+\keyword{internal}

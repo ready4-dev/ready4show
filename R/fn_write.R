@@ -1,3 +1,42 @@
+#' Write complete study program output
+#' @description write_csp_output() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write complete study program output. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @param path_to_csp_1L_chr Path to complete study program (a character vector of length one)
+#' @param dv_ds_doi_1L_chr Dataverse dataset digital object identifier (a character vector of length one), Default: NULL
+#' @param execute_1L_lgl Execute (a logical vector of length one), Default: T
+#' @return NULL
+#' @rdname write_csp_output
+#' @export 
+#' @importFrom purrr map_chr
+#' @importFrom stringr str_sub
+#' @importFrom knitr purl
+#' @importFrom DescTools SplitPath
+#' @importFrom rmarkdown render
+#' @importFrom dataverse add_dataset_file
+#' @keywords internal
+write_csp_output <- function (path_to_csp_1L_chr, dv_ds_doi_1L_chr = NULL, execute_1L_lgl = T) 
+{
+    readLines(path_to_csp_1L_chr) %>% purrr::map_chr(~ifelse(.x == 
+        "knitr::opts_chunk$set(eval = F)", "knitr::opts_chunk$set(eval = T)", 
+        .x)) %>% writeLines(con = path_to_csp_1L_chr)
+    path_to_r_script_1L_chr <- stringr::str_sub(path_to_csp_1L_chr, 
+        end = -3)
+    knitr::purl(path_to_csp_1L_chr, path_to_r_script_1L_chr)
+    readLines(path_to_csp_1L_chr) %>% purrr::map_chr(~ifelse(.x == 
+        "knitr::opts_chunk$set(eval = T)", "knitr::opts_chunk$set(eval = F)", 
+        .x)) %>% writeLines(con = path_to_csp_1L_chr)
+    if (execute_1L_lgl) {
+        old_wd_1L_chr <- getwd()
+        path_info_ls <- DescTools::SplitPath(path_to_r_script_1L_chr)
+        setwd(path_info_ls$dirname)
+        source(path_info_ls$fullfilename)
+        setwd(old_wd_1L_chr)
+    }
+    rmarkdown::render(path_to_csp_1L_chr)
+    if (!is.null(dv_ds_doi_1L_chr)) {
+        dataverse::add_dataset_file(paste0(stringr::str_sub(path_to_csp_1L_chr, 
+            end = -4), "pdf"), dataset = dv_ds_doi_1L_chr, description = "Methods Report 1: Complete Study Program")
+    }
+}
 #' Write header files
 #' @description write_header_fls() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header files. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
 #' @param path_to_header_dir_1L_chr Path to header directory (a character vector of length one)
@@ -77,6 +116,137 @@ write_header_yaml <- function (path_to_header_dir_1L_chr, fl_nm_1L_chr = "header
     }) %>% purrr::flatten_chr() %>% purrr::discard(is.na) %>% 
         writeLines(paste0(path_to_header_dir_1L_chr, "/", fl_nm_1L_chr))
 }
+#' Write main output directory
+#' @description write_main_outp_dir() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write main output directory. The function returns Paths (a list).
+#' @param params_ls Parameters (a list), Default: NULL
+#' @param use_fake_data_1L_lgl Use fake data (a logical vector of length one), Default: F
+#' @param R_fl_nm_1L_chr R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'
+#' @return Paths (a list)
+#' @rdname write_main_outp_dir
+#' @export 
+#' @importFrom purrr pluck
+#' @importFrom here i_am here
+#' @importFrom youthvars write_all_outp_dirs
+#' @keywords internal
+write_main_outp_dir <- function (params_ls = NULL, use_fake_data_1L_lgl = F, R_fl_nm_1L_chr = "aaaaaaaaaa.txt") 
+{
+    file.create(R_fl_nm_1L_chr)
+    R_fl_nm_1L_chr <- list.files() %>% purrr::pluck(1)
+    paths_ls <- make_paths_ls(append(params_ls, list(use_fake_data_1L_lgl = use_fake_data_1L_lgl)), 
+        depth_1L_int = 0)
+    paths_ls$path_to_current_1L_chr <- ifelse(!is.null(paths_ls$path_to_current_1L_chr), 
+        paths_ls$path_to_current_1L_chr, params_ls$path_to_current_1L_chr)
+    here::i_am(paste0(paths_ls$path_from_top_level_1L_chr, "/", 
+        paths_ls$path_to_current_1L_chr, "/", R_fl_nm_1L_chr))
+    dir.create(paste0(here::here(paths_ls$path_from_top_level_1L_chr), 
+        "/", paths_ls$write_to_dir_nm_1L_chr))
+    paths_ls$R_fl_nm_1L_chr <- R_fl_nm_1L_chr
+    paths_ls <- youthvars::write_all_outp_dirs(paths_ls)
+    return(paths_ls)
+}
+#' Write manuscript
+#' @description write_manuscript() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write manuscript. The function returns Results (a list).
+#' @param abstract_args_ls Abstract arguments (a list), Default: NULL
+#' @param input_params_ls Input parameters (a list), Default: NULL
+#' @param results_ls Results (a list), Default: NULL
+#' @param figures_in_body_lgl Figures in body (a logical vector), Default: NULL
+#' @param ms_mkdn_fl_nm_1L_chr Manuscript markdown file name (a character vector of length one), Default: 'TTU_Study_Manuscript'
+#' @param ms_mkdn_parent_1L_chr Manuscript markdown parent (a character vector of length one), Default: 'ready4-dev'
+#' @param ms_mkdn_repo_1L_chr Manuscript markdown repository (a character vector of length one), Default: 'ttu_lng_ss'
+#' @param output_type_1L_chr Output type (a character vector of length one), Default: NULL
+#' @param tables_in_body_lgl Tables in body (a logical vector), Default: NULL
+#' @param title_1L_chr Title (a character vector of length one), Default: 'Scientific manuscript'
+#' @param version_1L_chr Version (a character vector of length one), Default: '0.5'
+#' @param write_to_dv_1L_lgl Write to dataverse (a logical vector of length one), Default: F
+#' @return Results (a list)
+#' @rdname write_manuscript
+#' @export 
+#' @importFrom utils unzip
+#' @importFrom rmarkdown render
+#' @importFrom ready4 write_to_dv_with_wait
+#' @importFrom tibble tibble
+#' @keywords internal
+write_manuscript <- function (abstract_args_ls = NULL, input_params_ls = NULL, results_ls = NULL, 
+    figures_in_body_lgl = NULL, ms_mkdn_fl_nm_1L_chr = "TTU_Study_Manuscript", 
+    ms_mkdn_parent_1L_chr = "ready4-dev", ms_mkdn_repo_1L_chr = "ttu_lng_ss", 
+    output_type_1L_chr = NULL, tables_in_body_lgl = NULL, title_1L_chr = "Scientific manuscript", 
+    version_1L_chr = "0.5", write_to_dv_1L_lgl = F) 
+{
+    mkdn_data_dir_1L_chr <- ifelse(!is.null(input_params_ls), 
+        input_params_ls$path_params_ls$paths_ls$mkdn_data_dir_1L_chr, 
+        results_ls$path_params_ls$paths_ls$mkdn_data_dir_1L_chr)
+    outp_dir_1L_chr <- ifelse(!is.null(input_params_ls), input_params_ls$path_params_ls$paths_ls$output_data_dir_1L_chr, 
+        results_ls$path_params_ls$paths_ls$output_data_dir_1L_chr)
+    output_type_1L_chr <- ifelse(!is.null(output_type_1L_chr), 
+        output_type_1L_chr, ifelse(!is.null(input_params_ls), 
+            input_params_ls$output_format_ls$manuscript_outp_1L_chr, 
+            results_ls$output_format_ls$manuscript_outp_1L_chr))
+    path_to_ms_mkdn_1L_dir <- paste0(mkdn_data_dir_1L_chr, "/", 
+        ms_mkdn_repo_1L_chr, "-", version_1L_chr)
+    path_to_results_dir_1L_chr <- ifelse(!is.null(input_params_ls), 
+        input_params_ls$path_params_ls$paths_ls$reports_dir_1L_chr, 
+        results_ls$path_params_ls$paths_ls$reports_dir_1L_chr)
+    if (!dir.exists(path_to_ms_mkdn_1L_dir)) {
+        tmp_fl <- tempfile()
+        download.file(paste0("https://github.com/", ms_mkdn_parent_1L_chr, 
+            "/", ms_mkdn_repo_1L_chr, "/archive/refs/tags/v", 
+            version_1L_chr, ".zip"), tmp_fl)
+        utils::unzip(tmp_fl, exdir = mkdn_data_dir_1L_chr)
+        unlink(tmp_fl)
+    }
+    if (!is.null(input_params_ls)) {
+        header_yaml_args_ls <- input_params_ls$header_yaml_args_ls
+    }
+    else {
+        header_yaml_args_ls <- results_ls$header_yaml_args_ls
+    }
+    if (is.null(results_ls)) {
+        results_ls <- make_results_ls(dv_ds_nm_and_url_chr = input_params_ls$path_params_ls$dv_ds_nm_and_url_chr, 
+            output_format_ls = input_params_ls$output_format_ls, 
+            params_ls_ls = input_params_ls, path_params_ls = input_params_ls$path_params_ls, 
+            study_descs_ls = input_params_ls$study_descs_ls, 
+            var_nm_change_lup = input_params_ls$study_descs_ls$var_nm_change_lup, 
+            version_1L_chr = version_1L_chr)
+    }
+    if (is.null(abstract_args_ls)) {
+        abstract_args_ls <- make_abstract_args_ls(results_ls)
+    }
+    write_header_fls(path_to_header_dir_1L_chr = paste0(path_to_ms_mkdn_1L_dir, 
+        "/Header"), header_yaml_args_ls = header_yaml_args_ls, 
+        abstract_args_ls = abstract_args_ls)
+    params_ls <- list(output_type_1L_chr = output_type_1L_chr, 
+        results_ls = results_ls)
+    if (!is.null(figures_in_body_lgl)) 
+        params_ls$figures_in_body_lgl <- figures_in_body_lgl
+    if (!is.null(tables_in_body_lgl)) 
+        params_ls$tables_in_body_lgl <- tables_in_body_lgl
+    rmarkdown::render(paste0(path_to_ms_mkdn_1L_dir, "/", output_type_1L_chr, 
+        "/", output_type_1L_chr, ".Rmd"), output_format = NULL, 
+        params = params_ls, output_file = paste0(ms_mkdn_fl_nm_1L_chr, 
+            ifelse(output_type_1L_chr == "Word", ".docx", ".pdf")), 
+        output_dir = path_to_results_dir_1L_chr)
+    if (write_to_dv_1L_lgl) {
+        if (!is.null(input_params_ls)) {
+            paths_ls <- input_params_ls$path_params_ls$paths_ls
+        }
+        else {
+            paths_ls <- results_ls$path_params_ls$paths_ls
+        }
+        ready4::write_to_dv_with_wait(dss_tb = tibble::tibble(ds_obj_nm_chr = ms_mkdn_fl_nm_1L_chr, 
+            title_chr = title_1L_chr), dv_nm_1L_chr = ifelse(!is.null(input_params_ls), 
+            input_params_ls$path_params_ls$dv_ds_nm_and_url_chr[1], 
+            results_ls$path_params_ls$dv_ds_nm_and_url_chr[1]), 
+            ds_url_1L_chr = ifelse(!is.null(input_params_ls), 
+                input_params_ls$path_params_ls$dv_ds_nm_and_url_chr[2], 
+                results_ls$path_params_ls$dv_ds_nm_and_url_chr[2]), 
+            parent_dv_dir_1L_chr = paths_ls$dv_dir_1L_chr, paths_to_dirs_chr = paths_ls$reports_dir_1L_chr, 
+            inc_fl_types_chr = ifelse(output_type_1L_chr == "Word", 
+                ".docx", ".pdf"), paths_are_rltv_1L_lgl = F)
+    }
+    results_ls$path_params_ls$paths_ls$path_to_ms_mkdn_1L_dir <- path_to_ms_mkdn_1L_dir
+    saveRDS(results_ls, paste0(outp_dir_1L_chr, "/results_ls.RDS"))
+    return(results_ls)
+}
 #' Write model plot file
 #' @description write_mdl_plt_fl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write model plot file. The function returns Path to plot (a character vector of length one).
 #' @param plt_fn Plot (a function), Default: NULL
@@ -139,6 +309,55 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, dest_dir_1L_chr = "Markdown", ov
                 overwrite_1L_lgl)) 
             file.create(paste0(dest_dir_1L_chr, "/", .x))
     })
+}
+#' Write report
+#' @description write_report() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @param params_ls Parameters (a list)
+#' @param paths_ls Paths (a list)
+#' @param rprt_nm_1L_chr Report name (a character vector of length one)
+#' @param abstract_args_ls Abstract arguments (a list), Default: NULL
+#' @param header_yaml_args_ls Header yaml arguments (a list), Default: NULL
+#' @param rprt_lup Report (a lookup table)
+#' @return NULL
+#' @rdname write_report
+#' @export 
+#' @importFrom here i_am here
+#' @importFrom rlang exec
+#' @keywords internal
+write_report <- function (params_ls, paths_ls, rprt_nm_1L_chr, abstract_args_ls = NULL, 
+    header_yaml_args_ls = NULL, rprt_lup) 
+{
+    rprt_type_ls <- rprt_lup %>% make_rprt_type_ls(rprt_nm_1L_chr = rprt_nm_1L_chr)
+    here::i_am(paste0(paths_ls$path_from_top_level_1L_chr, "/", 
+        paths_ls$path_to_current_1L_chr, "/", paths_ls$R_fl_nm_1L_chr))
+    args_ls <- list(rprt_type_ls = rprt_type_ls, params_ls = params_ls, 
+        output_type_1L_chr = params_ls$output_type_1L_chr, path_to_prjs_dir_1L_chr = here::here(paths_ls$path_from_top_level_1L_chr), 
+        prj_dir_1L_chr = paths_ls$write_to_dir_nm_1L_chr, header_yaml_args_ls = header_yaml_args_ls, 
+        abstract_args_ls = abstract_args_ls, reports_dir_1L_chr = "Reports", 
+        rltv_path_to_data_dir_1L_chr = "../Output", nm_of_mkdn_dir_1L_chr = "Markdown")
+    rlang::exec(write_rprt_from_tmpl, !!!args_ls)
+}
+#' Write reporting directory
+#' @description write_reporting_dir() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write reporting directory. The function returns Path to complete study program (a character vector of length one).
+#' @param path_to_write_to_1L_chr Path to write to (a character vector of length one), Default: getwd()
+#' @param new_dir_nm_1L_chr New directory name (a character vector of length one), Default: 'TTU_Project'
+#' @param overwrite_1L_lgl Overwrite (a logical vector of length one), Default: FALSE
+#' @param path_to_rmd_dir_1L_chr Path to Markdown directory (a character vector of length one)
+#' @return Path to complete study program (a character vector of length one)
+#' @rdname write_reporting_dir
+#' @export 
+#' @keywords internal
+write_reporting_dir <- function (path_to_write_to_1L_chr = getwd(), new_dir_nm_1L_chr = "TTU_Project", 
+    overwrite_1L_lgl = FALSE, path_to_rmd_dir_1L_chr) 
+{
+    path_to_prjt_dir_1L_chr <- paste0(path_to_write_to_1L_chr, 
+        "/", new_dir_nm_1L_chr)
+    if (!dir.exists(path_to_prjt_dir_1L_chr)) 
+        dir.create(path_to_prjt_dir_1L_chr)
+    file.copy(path_to_rmd_dir_1L_chr, path_to_prjt_dir_1L_chr, 
+        recursive = T, overwrite = overwrite_1L_lgl)
+    path_to_csp_1L_chr <- paste0(path_to_prjt_dir_1L_chr, "/CSP/CSP.Rmd")
+    return(path_to_csp_1L_chr)
 }
 #' Write rendered report
 #' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
@@ -278,4 +497,56 @@ write_rprt_from_tmpl <- function (rprt_type_ls, params_ls = NULL, output_type_1L
         path_to_write_dirs_to_1L_chr = normalizePath(path_to_outp_dir_1L_chr), 
         nm_of_mkdn_dir_1L_chr = nm_of_mkdn_dir_1L_chr, path_to_rprt_dir_1L_chr = path_to_rprt_dir_1L_chr, 
         header_yaml_args_ls = header_yaml_args_ls, abstract_args_ls = abstract_args_ls)
+}
+#' Write report with record
+#' @description write_rprt_with_rcrd() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report with record. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @param path_to_outp_fl_1L_chr Path to output file (a character vector of length one)
+#' @param paths_ls Paths (a list)
+#' @param header_yaml_args_ls Header yaml arguments (a list), Default: NULL
+#' @param rprt_lup Report (a lookup table)
+#' @param use_fake_data_1L_lgl Use fake data (a logical vector of length one), Default: F
+#' @param rprt_nm_1L_chr Report name (a character vector of length one), Default: 'AAA_TTU_MDL_CTG'
+#' @param rcrd_nm_1L_chr Record name (a character vector of length one), Default: 'AAA_RPRT_WRTNG_MTH'
+#' @param reference_1L_int Reference (an integer vector of length one), Default: NULL
+#' @param start_at_int Start at (an integer vector), Default: c(2, 1)
+#' @param output_type_1L_chr Output type (a character vector of length one), Default: 'PDF'
+#' @param rprt_output_type_1L_chr Report output type (a character vector of length one), Default: 'PDF'
+#' @param nbr_of_digits_1L_int Number of digits (an integer vector of length one), Default: 2
+#' @param abstract_args_ls Abstract arguments (a list), Default: NULL
+#' @param main_rprt_append_ls Main report append (a list), Default: NULL
+#' @param rcrd_rprt_append_ls Record report append (a list), Default: NULL
+#' @return NULL
+#' @rdname write_rprt_with_rcrd
+#' @export 
+#' @importFrom ready4 get_from_lup_obj
+#' @keywords internal
+write_rprt_with_rcrd <- function (path_to_outp_fl_1L_chr, paths_ls, header_yaml_args_ls = NULL, 
+    rprt_lup, use_fake_data_1L_lgl = F, rprt_nm_1L_chr = "AAA_TTU_MDL_CTG", 
+    rcrd_nm_1L_chr = "AAA_RPRT_WRTNG_MTH", reference_1L_int = NULL, 
+    start_at_int = c(2, 1), output_type_1L_chr = "PDF", rprt_output_type_1L_chr = "PDF", 
+    nbr_of_digits_1L_int = 2L, abstract_args_ls = NULL, main_rprt_append_ls = NULL, 
+    rcrd_rprt_append_ls = NULL) 
+{
+    params_ls <- list(abstract_args_ls = NULL, eval_1L_lgl = F, 
+        header_yaml_args_ls = header_yaml_args_ls, output_type_1L_chr = rprt_output_type_1L_chr, 
+        nbr_of_digits_1L_int = nbr_of_digits_1L_int, rprt_lup = rprt_lup, 
+        rprt_nm_1L_chr = rprt_nm_1L_chr, rprt_output_type_1L_chr = output_type_1L_chr, 
+        rprt_subtitle_1L_chr = ready4::get_from_lup_obj(rprt_lup, 
+            match_value_xx = rprt_nm_1L_chr, match_var_nm_1L_chr = "rprt_nms_chr", 
+            target_var_nm_1L_chr = "title_chr", evaluate_1L_lgl = F), 
+        subtitle_1L_chr = ready4::get_from_lup_obj(rprt_lup, 
+            match_value_xx = "AAA_RPRT_WRTNG_MTH", match_var_nm_1L_chr = "rprt_nms_chr", 
+            target_var_nm_1L_chr = "title_chr", evaluate_1L_lgl = F), 
+        use_fake_data_1L_lgl = use_fake_data_1L_lgl) %>% append(rcrd_rprt_append_ls)
+    params_ls %>% write_report(paths_ls = paths_ls, rprt_nm_1L_chr = rcrd_nm_1L_chr, 
+        abstract_args_ls = NULL, header_yaml_args_ls = header_yaml_args_ls, 
+        rprt_lup = rprt_lup)
+    list(outp_smry_ls = append(readRDS(path_to_outp_fl_1L_chr), 
+        list(rprt_lup = rprt_lup)), output_type_1L_chr = output_type_1L_chr, 
+        subtitle_1L_chr = ready4::get_from_lup_obj(rprt_lup, 
+            match_value_xx = rprt_nm_1L_chr, match_var_nm_1L_chr = "rprt_nms_chr", 
+            target_var_nm_1L_chr = "title_chr", evaluate_1L_lgl = F)) %>% 
+        append(main_rprt_append_ls) %>% write_report(paths_ls = paths_ls, 
+        rprt_nm_1L_chr = rprt_nm_1L_chr, abstract_args_ls = abstract_args_ls, 
+        header_yaml_args_ls = header_yaml_args_ls, rprt_lup = rprt_lup)
 }

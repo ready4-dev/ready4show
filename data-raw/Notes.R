@@ -1,3 +1,10 @@
+z$x_ready4fun_manifest$problems_ls$missing_abbrs_chr <- "ms"
+z$x_ready4fun_manifest <- ready4::renew(z$x_ready4fun_manifest,
+                                           long_name_chr = c("manuscript"),
+                                           # custom_plural_ls = list(analysis = "analyses"),
+                                           # no_plural_chr = c(),
+                                           type_1L_chr = "abbreviations")
+
 # manifest_r3 <- ready4fun::update_msng_abbrs(manifest_r3,
 #                                              are_words_chr = c("email", "rdocx", "yaml"),
 #                                              tf_to_singular_chr = c(prj = "prjs",
