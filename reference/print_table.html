@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ready4show</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9058</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9059</span>
       </span>
     </div>
 
@@ -55,21 +55,22 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">print_table</span><span class="op">(</span>
   <span class="va">data_tb</span>,
-  output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,
-  use_rdocx_1L_lgl <span class="op">=</span> <span class="cn">F</span>,
-  caption_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,
-  footnotes_chr <span class="op">=</span> <span class="cn">NA_character_</span>,
-  merge_row_idx_int <span class="op">=</span> <span class="cn">NA_integer_</span>,
-  digits_dbl <span class="op">=</span> <span class="cn">NULL</span>,
-  big_mark_1L_chr <span class="op">=</span> <span class="st">" "</span>,
-  use_lbls_as_col_nms_1L_lgl <span class="op">=</span> <span class="cn">F</span>,
-  scroll_box_args_ls <span class="op">=</span> <span class="cn">NULL</span>,
   <span class="va">mkdn_tbl_ref_1L_chr</span>,
+  add_to_row_ls <span class="op">=</span> <span class="cn">NULL</span>,
+  big_mark_1L_chr <span class="op">=</span> <span class="st">" "</span>,
+  caption_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,
+  digits_dbl <span class="op">=</span> <span class="cn">NULL</span>,
+  footnotes_chr <span class="op">=</span> <span class="cn">NA_character_</span>,
+  heading_grps_chr <span class="op">=</span> <span class="cn">NULL</span>,
   hline_after_ls <span class="op">=</span> <span class="cn">NULL</span>,
   inc_col_nms_1L_lgl <span class="op">=</span> <span class="cn">FALSE</span>,
   inc_row_nms_1L_lgl <span class="op">=</span> <span class="cn">FALSE</span>,
-  add_to_row_ls <span class="op">=</span> <span class="cn">NULL</span>,
-  sanitize_fn <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"xtable.sanitize.text.function"</span>, <span class="cn">NULL</span><span class="op">)</span>
+  merge_row_idx_int <span class="op">=</span> <span class="cn">NA_integer_</span>,
+  output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,
+  sanitize_fn <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"xtable.sanitize.text.function"</span>, <span class="cn">NULL</span><span class="op">)</span>,
+  scroll_box_args_ls <span class="op">=</span> <span class="cn">NULL</span>,
+  use_lbls_as_col_nms_1L_lgl <span class="op">=</span> <span class="cn">F</span>,
+  use_rdocx_1L_lgl <span class="op">=</span> <span class="cn">F</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -77,36 +78,38 @@
     <h2>Arguments</h2>
     <dl><dt>data_tb</dt>
 <dd><p>Data (a tibble)</p></dd>
-<dt>output_type_1L_chr</dt>
-<dd><p>Output type (a character vector of length one), Default: 'PDF'</p></dd>
-<dt>use_rdocx_1L_lgl</dt>
-<dd><p>Use rdocx (a logical vector of length one), Default: F</p></dd>
-<dt>caption_1L_chr</dt>
-<dd><p>Caption (a character vector of length one), Default: 'NA'</p></dd>
-<dt>footnotes_chr</dt>
-<dd><p>Footnotes (a character vector), Default: 'NA'</p></dd>
-<dt>merge_row_idx_int</dt>
-<dd><p>Merge row index (an integer vector), Default: NA</p></dd>
-<dt>digits_dbl</dt>
-<dd><p>Digits (a double vector), Default: NULL</p></dd>
-<dt>big_mark_1L_chr</dt>
-<dd><p>Big mark (a character vector of length one), Default: ' '</p></dd>
-<dt>use_lbls_as_col_nms_1L_lgl</dt>
-<dd><p>Use labels as column names (a logical vector of length one), Default: F</p></dd>
-<dt>scroll_box_args_ls</dt>
-<dd><p>Scroll box arguments (a list), Default: NULL</p></dd>
 <dt>mkdn_tbl_ref_1L_chr</dt>
 <dd><p>Markdown table reference (a character vector of length one)</p></dd>
+<dt>add_to_row_ls</dt>
+<dd><p>Add to row (a list), Default: NULL</p></dd>
+<dt>big_mark_1L_chr</dt>
+<dd><p>Big mark (a character vector of length one), Default: ' '</p></dd>
+<dt>caption_1L_chr</dt>
+<dd><p>Caption (a character vector of length one), Default: 'NA'</p></dd>
+<dt>digits_dbl</dt>
+<dd><p>Digits (a double vector), Default: NULL</p></dd>
+<dt>footnotes_chr</dt>
+<dd><p>Footnotes (a character vector), Default: 'NA'</p></dd>
+<dt>heading_grps_chr</dt>
+<dd><p>Heading groups (a character vector), Default: NULL</p></dd>
 <dt>hline_after_ls</dt>
 <dd><p>Horizonal line after (a list), Default: NULL</p></dd>
 <dt>inc_col_nms_1L_lgl</dt>
 <dd><p>Include column names (a logical vector of length one), Default: FALSE</p></dd>
 <dt>inc_row_nms_1L_lgl</dt>
 <dd><p>Include row names (a logical vector of length one), Default: FALSE</p></dd>
-<dt>add_to_row_ls</dt>
-<dd><p>Add to row (a list), Default: NULL</p></dd>
+<dt>merge_row_idx_int</dt>
+<dd><p>Merge row index (an integer vector), Default: NA</p></dd>
+<dt>output_type_1L_chr</dt>
+<dd><p>Output type (a character vector of length one), Default: 'PDF'</p></dd>
 <dt>sanitize_fn</dt>
 <dd><p>Sanitize (a function), Default: getOption("xtable.sanitize.text.function", NULL)</p></dd>
+<dt>scroll_box_args_ls</dt>
+<dd><p>Scroll box arguments (a list), Default: NULL</p></dd>
+<dt>use_lbls_as_col_nms_1L_lgl</dt>
+<dd><p>Use labels as column names (a logical vector of length one), Default: F</p></dd>
+<dt>use_rdocx_1L_lgl</dt>
+<dd><p>Use rdocx (a logical vector of length one), Default: F</p></dd>
 </dl></div>
 
   </div>
