@@ -6,45 +6,40 @@
 \usage{
 print_table(
   data_tb,
-  output_type_1L_chr = "PDF",
-  use_rdocx_1L_lgl = F,
-  caption_1L_chr = NA_character_,
-  footnotes_chr = NA_character_,
-  merge_row_idx_int = NA_integer_,
-  digits_dbl = NULL,
-  big_mark_1L_chr = " ",
-  use_lbls_as_col_nms_1L_lgl = F,
-  scroll_box_args_ls = NULL,
   mkdn_tbl_ref_1L_chr,
+  add_to_row_ls = NULL,
+  big_mark_1L_chr = " ",
+  caption_1L_chr = NA_character_,
+  digits_dbl = NULL,
+  footnotes_chr = NA_character_,
+  heading_grps_chr = NULL,
   hline_after_ls = NULL,
   inc_col_nms_1L_lgl = FALSE,
   inc_row_nms_1L_lgl = FALSE,
-  add_to_row_ls = NULL,
-  sanitize_fn = getOption("xtable.sanitize.text.function", NULL)
+  merge_row_idx_int = NA_integer_,
+  output_type_1L_chr = "PDF",
+  sanitize_fn = getOption("xtable.sanitize.text.function", NULL),
+  scroll_box_args_ls = NULL,
+  use_lbls_as_col_nms_1L_lgl = F,
+  use_rdocx_1L_lgl = F
 )
 }
 \arguments{
 \item{data_tb}{Data (a tibble)}
 
-\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one)}
 
-\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: F}
-
-\item{caption_1L_chr}{Caption (a character vector of length one), Default: 'NA'}
-
-\item{footnotes_chr}{Footnotes (a character vector), Default: 'NA'}
-
-\item{merge_row_idx_int}{Merge row index (an integer vector), Default: NA}
-
-\item{digits_dbl}{Digits (a double vector), Default: NULL}
+\item{add_to_row_ls}{Add to row (a list), Default: NULL}
 
 \item{big_mark_1L_chr}{Big mark (a character vector of length one), Default: ' '}
 
-\item{use_lbls_as_col_nms_1L_lgl}{Use labels as column names (a logical vector of length one), Default: F}
+\item{caption_1L_chr}{Caption (a character vector of length one), Default: 'NA'}
 
-\item{scroll_box_args_ls}{Scroll box arguments (a list), Default: NULL}
+\item{digits_dbl}{Digits (a double vector), Default: NULL}
 
-\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one)}
+\item{footnotes_chr}{Footnotes (a character vector), Default: 'NA'}
+
+\item{heading_grps_chr}{Heading groups (a character vector), Default: NULL}
 
 \item{hline_after_ls}{Horizonal line after (a list), Default: NULL}
 
@@ -52,9 +47,17 @@ print_table(
 
 \item{inc_row_nms_1L_lgl}{Include row names (a logical vector of length one), Default: FALSE}
 
-\item{add_to_row_ls}{Add to row (a list), Default: NULL}
+\item{merge_row_idx_int}{Merge row index (an integer vector), Default: NA}
+
+\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
 
 \item{sanitize_fn}{Sanitize (a function), Default: getOption("xtable.sanitize.text.function", NULL)}
+
+\item{scroll_box_args_ls}{Scroll box arguments (a list), Default: NULL}
+
+\item{use_lbls_as_col_nms_1L_lgl}{Use labels as column names (a logical vector of length one), Default: F}
+
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: F}
 }
 \description{
 print_table() is a Print function that prints output to console Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.

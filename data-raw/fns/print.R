@@ -1,19 +1,20 @@
 print_table <- function(data_tb,
-                        output_type_1L_chr = "PDF",
-                        use_rdocx_1L_lgl = F,
-                        caption_1L_chr = NA_character_,
-                        footnotes_chr = NA_character_,
-                        merge_row_idx_int = NA_integer_,
-                        digits_dbl = NULL,
-                        big_mark_1L_chr = " ",
-                        use_lbls_as_col_nms_1L_lgl = F,
-                        scroll_box_args_ls = NULL,
                         mkdn_tbl_ref_1L_chr,
+                        add_to_row_ls = NULL,
+                        big_mark_1L_chr = " ",
+                        caption_1L_chr = NA_character_,
+                        digits_dbl = NULL,
+                        footnotes_chr = NA_character_,
+                        heading_grps_chr = NULL,
                         hline_after_ls = NULL,
                         inc_col_nms_1L_lgl = FALSE,
                         inc_row_nms_1L_lgl = FALSE,
-                        add_to_row_ls = NULL,
-                        sanitize_fn = getOption("xtable.sanitize.text.function", NULL)){
+                        merge_row_idx_int = NA_integer_,
+                        output_type_1L_chr = "PDF",
+                        sanitize_fn = getOption("xtable.sanitize.text.function", NULL),
+                        scroll_box_args_ls = NULL,
+                        use_lbls_as_col_nms_1L_lgl = F,
+                        use_rdocx_1L_lgl = F){
   if(use_lbls_as_col_nms_1L_lgl & !any(Hmisc::label(data_tb)=="")){ #Add assert all cols have (unique) labels
     data_tb <- data_tb %>%
       dplyr::rename_with(~Hmisc::label(data_tb)[names(Hmisc::label(data_tb))==.x])
@@ -51,7 +52,8 @@ print_table <- function(data_tb,
           kableExtra::kable_paper()
         data_kb <- rlang::exec(kableExtra::scroll_box, data_kb, !!!scroll_box_args_ls)
       }
-      data_xx <- data_kb
+      data_xx <- data_kb %>%
+        kableExtra::add_header_above(header = heading_grps_chr)
     }
     if(output_type_1L_chr == "Word"){
       j2_1L_dbl <- ncol(data_tb)
