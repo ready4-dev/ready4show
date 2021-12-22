@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/ready4show.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/articles/ready4show.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/index.html</loc>
   </url>
   <url>
-    <loc>/reference/authors_tb.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/authors_tb.html</loc>
   </url>
   <url>
-    <loc>/reference/deprecated.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/institutes_tb.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/institutes_tb.html</loc>
   </url>
   <url>
-    <loc>/reference/knit_from_tmpl.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/knit_from_tmpl.html</loc>
   </url>
   <url>
-    <loc>/reference/make_abstract_lines.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_abstract_lines.html</loc>
   </url>
   <url>
-    <loc>/reference/make_authorship_lines.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_authorship_lines.html</loc>
   </url>
   <url>
-    <loc>/reference/make_eq_ref.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_eq_ref.html</loc>
   </url>
   <url>
-    <loc>/reference/make_header_yaml_args_ls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_header_yaml_args_ls.html</loc>
   </url>
   <url>
-    <loc>/reference/make_institutes_lines.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_institutes_lines.html</loc>
   </url>
   <url>
-    <loc>/reference/make_new_ready4show_authors.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_new_ready4show_authors.html</loc>
   </url>
   <url>
-    <loc>/reference/make_new_ready4show_institutes.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_new_ready4show_institutes.html</loc>
   </url>
   <url>
-    <loc>/reference/make_output_format_ls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_output_format_ls.html</loc>
   </url>
   <url>
-    <loc>/reference/make_path_params_ls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_path_params_ls.html</loc>
   </url>
   <url>
-    <loc>/reference/make_paths_ls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_paths_ls.html</loc>
   </url>
   <url>
-    <loc>/reference/make_rprt_type_ls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_rprt_type_ls.html</loc>
   </url>
   <url>
-    <loc>/reference/make_sngl_author_lines.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_sngl_author_lines.html</loc>
   </url>
   <url>
-    <loc>/reference/pipe.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>/reference/print_table.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/print_table.html</loc>
   </url>
   <url>
-    <loc>/reference/ready4show-package.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/ready4show-package.html</loc>
   </url>
   <url>
-    <loc>/reference/ready4show_authors.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/ready4show_authors.html</loc>
   </url>
   <url>
-    <loc>/reference/ready4show_institutes.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/ready4show_institutes.html</loc>
   </url>
   <url>
-    <loc>/reference/transform_abstract.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/transform_abstract.html</loc>
   </url>
   <url>
-    <loc>/reference/validate_ready4show_authors.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_authors.html</loc>
   </url>
   <url>
-    <loc>/reference/validate_ready4show_institutes.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_institutes.html</loc>
   </url>
   <url>
-    <loc>/reference/write_all_outp_dirs.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_all_outp_dirs.html</loc>
   </url>
   <url>
-    <loc>/reference/write_csp_output.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_csp_output.html</loc>
   </url>
   <url>
-    <loc>/reference/write_header_fls.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_header_fls.html</loc>
   </url>
   <url>
-    <loc>/reference/write_header_yaml.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_header_yaml.html</loc>
   </url>
   <url>
-    <loc>/reference/write_main_outp_dir.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_main_outp_dir.html</loc>
   </url>
   <url>
-    <loc>/reference/write_manuscript.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_manuscript.html</loc>
   </url>
   <url>
-    <loc>/reference/write_mdl_plt_fl.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_mdl_plt_fl.html</loc>
   </url>
   <url>
-    <loc>/reference/write_mkdn_from_pkg.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_mkdn_from_pkg.html</loc>
   </url>
   <url>
-    <loc>/reference/write_report.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_report.html</loc>
   </url>
   <url>
-    <loc>/reference/write_reporting_dir.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_reporting_dir.html</loc>
   </url>
   <url>
-    <loc>/reference/write_rndrd_rprt.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_rndrd_rprt.html</loc>
   </url>
   <url>
-    <loc>/reference/write_rprt.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_rprt.html</loc>
   </url>
   <url>
-    <loc>/reference/write_rprt_from_tmpl.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_rprt_from_tmpl.html</loc>
   </url>
   <url>
-    <loc>/reference/write_rprt_with_rcrd.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_rprt_with_rcrd.html</loc>
   </url>
 </urlset>
