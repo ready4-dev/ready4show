@@ -1,3 +1,34 @@
+print_from_chunk <- function(ds_tb,
+                             caption_1L_chr = NULL,
+                             mkdn_tbl_ref_1L_chr = NULL,
+                             output_type_1L_chr = "HTML",
+                             use_lbls_as_col_nms_1L_lgl = T,
+                             var_desc_chr = NA_character_,
+                             ...){
+  if(is.null(caption_1L_chr)){
+    caption_1L_chr <- knitr::opts_current$get("tab.cap")
+  }
+  if(is.null(mkdn_tbl_ref_1L_chr)){
+    mkdn_tbl_ref_1L_chr <- paste0("tab:",knitr::opts_current$get("tab.id"))
+  }
+  if(use_lbls_as_col_nms_1L_lgl){
+    if (!is.na(var_desc_chr[1]) & length(var_desc_chr) == ncol(ds_tb)) {
+      ds_tb <- ds_tb %>% ready4::remove_lbls_from_df()
+      ds_tb <- seq_len(length(var_desc_chr)) %>%
+        purrr::reduce(.init = ds_tb, ~{
+          Hmisc::label(.x[[names(ds_tb)[.y]]]) <- var_desc_chr[.y]
+          .x
+        })
+    }
+  }
+  ds_tb %>%
+    print_table(caption_1L_chr = caption_1L_chr,
+                            mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr,
+                            output_type_1L_chr = output_type_1L_chr,
+                            use_lbls_as_col_nms_1L_lgl = use_lbls_as_col_nms_1L_lgl,
+                            use_rdocx_1L_lgl = ifelse(output_type_1L_chr=="Word",T,F),
+                            ...)
+}
 print_table <- function(data_tb,
                         mkdn_tbl_ref_1L_chr,
                         add_to_row_ls = NULL,
