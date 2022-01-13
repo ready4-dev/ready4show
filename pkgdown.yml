@@ -3,7 +3,7 @@ pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   ready4show: ready4show.html
-last_built: 2021-12-23T21:09Z
+last_built: 2022-01-13T01:10Z
 urls:
   reference: https://ready4-dev.github.io/ready4show/reference
   article: https://ready4-dev.github.io/ready4show/articles
