@@ -67,7 +67,7 @@ print_table <- function(data_tb,
     if(output_type_1L_chr == "HTML"){
       data_kb <- data_tb %>%
         kableExtra::kbl(format = "html",escape = F,
-                        caption = caption_1L_chr, align = c("l",rep("r",nrow(data_tb)-1))) %>%
+                        caption = caption_1L_chr, align = c("l",rep("r",max(nrow(data_tb)-1,0)))) %>%
         kableExtra::kable_paper("hover", full_width = F)
       if(!all(is.na(merge_row_idx_int))){
         data_kb <- data_kb %>%
