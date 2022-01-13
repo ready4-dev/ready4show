@@ -23,6 +23,10 @@ reference:
 - contents:
   - ready4show_authors
   - ready4show_institutes
+  - ready4show_correspondences
+- title: "S4 Classes"
+- contents:
+  - Ready4showSynopsis
 - title: "Functions"
 - contents:
   - make_eq_ref
@@ -31,3 +35,8 @@ reference:
   - write_mdl_plt_fl
   - write_mkdn_from_pkg
   - write_rprt
+- title: "Methods"
+- contents:
+  - renew.ready4show_authors
+  - renew.ready4show_correspondences
+  - renew.ready4show_institutes
