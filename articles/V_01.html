@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ready4show</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9068</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9069</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,14 +116,52 @@
 <h3 id="add-authorship-details">Add authorship details<a class="anchor" aria-label="anchor" href="#add-authorship-details"></a>
 </h3>
 <p>Authorship details can be added to slots of <code>X</code> that contain <code>ready4show_authors</code> and <code>ready4show_instututes</code> ready4 framework sub-modules.</p>
+<p>As we can see from the below call to <code>exhibitSlot</code>, <code>X</code> was created with no authorship information.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/procureSlot-methods.html" class="external-link">procureSlot</a></span><span class="op">(</span><span class="va">X</span>,<span class="st">"authors_r3"</span><span class="op">)</span> <span class="co"># Add Exhibit Method</span></code></pre></div>
-<pre><code><span class="co">## <span style="color: #949494;"># A tibble: 0 × 10</span></span>
-<span class="co">## <span style="color: #949494;"># … with 10 variables: first_nm_chr &lt;chr&gt;, middle_nm_chr &lt;chr&gt;,</span></span>
-<span class="co">## <span style="color: #949494;">#   last_nm_chr &lt;chr&gt;, title_chr &lt;chr&gt;, qualifications_chr &lt;chr&gt;,</span></span>
-<span class="co">## <span style="color: #949494;">#   institute_chr &lt;chr&gt;, sequence_int &lt;int&gt;, is_corresponding_lgl &lt;lgl&gt;,</span></span>
-<span class="co">## <span style="color: #949494;">#   email_chr &lt;chr&gt;, is_equal_first_lgl &lt;lgl&gt;</span></span></code></pre>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html" class="external-link">exhibitSlot</a></span><span class="op">(</span><span class="va">X</span>,
+            <span class="st">"authors_r3"</span><span class="op">)</span> </code></pre></div>
+<table class="table  lightable-paper lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;'>
+<thead><tr>
+<th style="text-align:left;">
+First-name
+</th>
+<th style="text-align:left;">
+Middle-name
+</th>
+<th style="text-align:left;">
+Last-name
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Qualifications
+</th>
+<th style="text-align:left;">
+Institutes
+</th>
+<th style="text-align:left;">
+Sequence Position
+</th>
+<th style="text-align:left;">
+Corresponding
+</th>
+<th style="text-align:left;">
+Email
+</th>
+<th style="text-align:left;">
+Joint-first
+</th>
+</tr></thead>
+<tbody><tr></tr></tbody>
+<tfoot><tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup>
+</td>
+</tr></tfoot>
+</table>
+<p>We can add details on each author by repeated calls to the <code>renewSlot</code> method.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
           <span class="st">"authors_r3"</span>,
           first_nm_chr <span class="op">=</span> <span class="st">"Alejandra"</span>,
@@ -144,7 +182,8 @@
             institute_chr <span class="op">=</span> <span class="st">"Institute_C, Institute_B"</span>,
             sequence_int <span class="op">=</span> <span class="fl">2</span>,
             email_chr <span class="op">=</span> <span class="st">"fake_email@unreal_institute.com"</span><span class="op">)</span> </code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>The updated authorship table can now be inspected.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html" class="external-link">exhibitSlot</a></span><span class="op">(</span><span class="st">"authors_r3"</span><span class="op">)</span> </code></pre></div>
 <table class="table  lightable-paper lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;'>
@@ -252,7 +291,8 @@ NA
 </td>
 </tr></tfoot>
 </table>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<p>We now need to add additional information for each author institute.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
           <span class="st">"institutes_r3"</span>,
           short_name_chr <span class="op">=</span> <span class="st">"Institute_A"</span>, 
@@ -264,7 +304,8 @@ NA
             new_val_xx <span class="op">=</span> <span class="st">"use_renew_mthd"</span>,
             short_name_chr <span class="op">=</span> <span class="st">"Institute_C"</span>, 
             long_name_chr <span class="op">=</span> <span class="st">"Highly Ranked Uni, Montreal"</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<p>The updated institutes table can now be inspected.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html" class="external-link">exhibitSlot</a></span><span class="op">(</span><span class="st">"institutes_r3"</span><span class="op">)</span> </code></pre></div>
 <table class="table  lightable-paper lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;'>
@@ -313,13 +354,13 @@ Highly Ranked Uni, Montreal
 <h3 id="add-correspondences">Add correspondences<a class="anchor" aria-label="anchor" href="#add-correspondences"></a>
 </h3>
 <p>Finally we can add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
                <span class="st">"correspondences_r3"</span>,
-               old_nms_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PHQ9"</span>,<span class="st">"GAD7"</span><span class="op">)</span>,
-               new_nms_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PHQ-9"</span>,
-                               <span class="st">"GAD-7"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+               old_nms_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PHQ9"</span>, <span class="st">"GAD7"</span><span class="op">)</span>,
+               new_nms_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PHQ-9"</span>, <span class="st">"GAD-7"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>These edits can now be inspected with a call to <code>exhibitSlot</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/exhibitSlot-methods.html" class="external-link">exhibitSlot</a></span><span class="op">(</span><span class="st">"correspondences_r3"</span><span class="op">)</span> <span class="co"># Add Exhibit Method</span></code></pre></div>
 <table class="table  lightable-paper lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;'>
