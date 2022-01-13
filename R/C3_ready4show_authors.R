@@ -4,7 +4,7 @@ setOldClass(c("ready4show_authors","tbl_df", "tbl", "data.frame"))
 #' @description Create a new valid instance of the ready4 S3 class for authors lookup table
 #' @param x A prototype for the ready4 S3 class for authors lookup table, Default: make_pt_ready4show_authors()
 #' @return A validated instance of the ready4 S3 class for authors lookup table
-#' @details ready4 S3 class for authors lookup table
+#' @details Authors lookup table
 #' @rdname ready4show_authors
 #' @export 
 ready4show_authors <- function(x = make_pt_ready4show_authors()){ 
@@ -14,7 +14,7 @@ validate_ready4show_authors(make_new_ready4show_authors(x))
 #' @description Create a new unvalidated instance of the ready4 S3 class for authors lookup table
 #' @param x A prototype for the ready4 S3 class for authors lookup table
 #' @return An unvalidated instance of the ready4 S3 class for authors lookup table
-#' @details ready4 S3 class for authors lookup table
+#' @details Authors lookup table
 #' @rdname make_new_ready4show_authors
 #' @export 
 #' @importFrom tibble is_tibble
@@ -69,7 +69,7 @@ rlang::exec(tibble::tibble,!!!args_ls)
 #' @description Validate an instance of the ready4 S3 class for authors lookup table
 #' @param x An unvalidated instance of the ready4 S3 class for authors lookup table
 #' @return A prototpe for ready4 S3 class for authors lookup table
-#' @details ready4 S3 class for authors lookup table
+#' @details Authors lookup table
 #' @rdname validate_ready4show_authors
 #' @export 
 #' @importFrom stringr str_detect str_c

@@ -4,7 +4,7 @@ setOldClass(c("ready4show_institutes","tbl_df", "tbl", "data.frame"))
 #' @description Create a new valid instance of the ready4 S3 class for institutes lookup table
 #' @param x A prototype for the ready4 S3 class for institutes lookup table, Default: make_pt_ready4show_institutes()
 #' @return A validated instance of the ready4 S3 class for institutes lookup table
-#' @details ready4 S3 class for institutes lookup table
+#' @details Institutes lookup table
 #' @rdname ready4show_institutes
 #' @export 
 ready4show_institutes <- function(x = make_pt_ready4show_institutes()){ 
@@ -14,7 +14,7 @@ validate_ready4show_institutes(make_new_ready4show_institutes(x))
 #' @description Create a new unvalidated instance of the ready4 S3 class for institutes lookup table
 #' @param x A prototype for the ready4 S3 class for institutes lookup table
 #' @return An unvalidated instance of the ready4 S3 class for institutes lookup table
-#' @details ready4 S3 class for institutes lookup table
+#' @details Institutes lookup table
 #' @rdname make_new_ready4show_institutes
 #' @export 
 #' @importFrom tibble is_tibble
@@ -45,7 +45,7 @@ rlang::exec(tibble::tibble,!!!args_ls)
 #' @description Validate an instance of the ready4 S3 class for institutes lookup table
 #' @param x An unvalidated instance of the ready4 S3 class for institutes lookup table
 #' @return A prototpe for ready4 S3 class for institutes lookup table
-#' @details ready4 S3 class for institutes lookup table
+#' @details Institutes lookup table
 #' @rdname validate_ready4show_institutes
 #' @export 
 #' @importFrom stringr str_detect str_c

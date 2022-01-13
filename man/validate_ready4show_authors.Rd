@@ -16,6 +16,6 @@ A prototpe for ready4 S3 class for authors lookup table
 Validate an instance of the ready4 S3 class for authors lookup table
 }
 \details{
-ready4 S3 class for authors lookup table
+Authors lookup table
 }
 \keyword{internal}

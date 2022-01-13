@@ -33,5 +33,5 @@ A logical value, TRUE if a valid instance of the ready4 S3 class for institutes 
 Create a new valid instance of the ready4 S3 class for institutes lookup table
 }
 \details{
-ready4 S3 class for institutes lookup table
+Institutes lookup table
 }

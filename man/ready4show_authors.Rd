@@ -57,5 +57,5 @@ A logical value, TRUE if a valid instance of the ready4 S3 class for authors loo
 Create a new valid instance of the ready4 S3 class for authors lookup table
 }
 \details{
-ready4 S3 class for authors lookup table
+Authors lookup table
 }

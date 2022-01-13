@@ -45,7 +45,7 @@ y <- ready4class::ready4class_constructor() %>%
                                                                                     is_corresponding_lgl = "logical(0)",
                                                                                     email_chr = "character(0)",
                                                                                     is_equal_first_lgl = "logical(0)")),
-                                                                class_desc_chr = "ready4 S3 class for authors lookup table"),
+                                                                class_desc_chr = "Authors lookup table"),
                    dplyr::bind_rows(ready4class::make_pt_ready4class_constructor(make_s3_lgl = TRUE,
                                                                                  name_stub_chr = "institutes",
                                                                                  pt_ls = list(list("tibble")),
@@ -53,7 +53,7 @@ y <- ready4class::ready4class_constructor() %>%
                                                                                  pt_ns_ls = list(list("tibble")),
                                                                                  vals_ls = list(list(short_name_chr = "character(0)",
                                                                                                      long_name_chr = "character(0)")),
-                                                                                 class_desc_chr = "ready4 S3 class for institutes lookup table")))
+                                                                                 class_desc_chr = "Institutes lookup table")))
 datasets_ls <- list(tibble::tibble(first_nm_chr = c("Alejandra","Fionn"),
                                    middle_nm_chr = c("Rocio", "Seamus"),
                                    last_nm_chr = c("Scienceace", "Researchchamp"),

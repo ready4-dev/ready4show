@@ -16,6 +16,6 @@ An unvalidated instance of the ready4 S3 class for institutes lookup table
 Create a new unvalidated instance of the ready4 S3 class for institutes lookup table
 }
 \details{
-ready4 S3 class for institutes lookup table
+Institutes lookup table
 }
 \keyword{internal}

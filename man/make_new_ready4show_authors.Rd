@@ -16,6 +16,6 @@ An unvalidated instance of the ready4 S3 class for authors lookup table
 Create a new unvalidated instance of the ready4 S3 class for authors lookup table
 }
 \details{
-ready4 S3 class for authors lookup table
+Authors lookup table
 }
 \keyword{internal}
