@@ -10,6 +10,9 @@
     <loc>https://ready4-dev.github.io/ready4show/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/ready4show/articles/V_01.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/ready4show/articles/index.html</loc>
   </url>
   <url>
@@ -20,6 +23,9 @@
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/Ready4showSynopsis-class.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/authors_tb.html</loc>
@@ -55,6 +61,9 @@
     <loc>https://ready4-dev.github.io/ready4show/reference/make_new_ready4show_authors.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_new_ready4show_correspondences.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/make_new_ready4show_institutes.html</loc>
   </url>
   <url>
@@ -88,13 +97,22 @@
     <loc>https://ready4-dev.github.io/ready4show/reference/ready4show_authors.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/ready4show_correspondences.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/ready4show_institutes.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/renew-methods.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/transform_abstract.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_authors.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_correspondences.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_institutes.html</loc>
