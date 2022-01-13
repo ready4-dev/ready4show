@@ -37,6 +37,9 @@ reference:
   - write_rprt
 - title: "Methods"
 - contents:
+  - exhibit.ready4show_authors
+  - exhibit.ready4show_correspondences
+  - exhibit.ready4show_institutes
   - renew.ready4show_authors
   - renew.ready4show_correspondences
   - renew.ready4show_institutes

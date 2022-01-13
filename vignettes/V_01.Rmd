@@ -28,17 +28,17 @@ Open science workflows should ideally span an unbroken chain between data-ingest
 To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4framework module (S4) class. We can use `X` to record metadata about the manuscript to be authored (including details about the study being summarised and the title and format of the intended output).
 
 ```{r}
-X <- Ready4showSynopsis(background_1L_chr = "Our study is entirely fictional and is for illustrative purposes.",
+X <- Ready4showSynopsis(background_1L_chr = "Our study is entirely fictional.",
                         coi_1L_chr = "None declared.",
-                        conclusion_1L_chr = "If this study was real, the results would be interesting.",
+                        conclusion_1L_chr = "These fake results are not interesting.",
                         digits_int = 3L,
                         ethics_1L_chr = "The study was reviewed and granted approval by Awesome University's Human Research Ethics Committee (1111111.1).",
                         funding_1L_chr = "The study was funded by Generous Benefactor.",
                         interval_chr = "three months",
-                        keywords_chr = c("this","is","a","replication","using","fake","data","do", "not","cite"),
+                        keywords_chr = c("entirely","fake","do", "not","cite"),
                         outp_formats_chr = "PDF",
                         sample_desc_1L_chr = "The study sample is fake data that pretends to be young people aged 12 to 25 years who attended Australian primary care services for mental health related needs between November 2019 to August 2020.",
-                        title_1L_chr = "A hypothetical study using fake data for instructional purposes only")
+                        title_1L_chr = "A hypothetical study using fake data")
 ```
 
 ### Add authorship details
@@ -51,7 +51,6 @@ procureSlot(X,"authors_r3") # Add Exhibit Method
 ```{r}
 X <- renewSlot(X,
           "authors_r3",
-          new_val_xx = "use_renew_mthd",
           first_nm_chr = "Alejandra",
           middle_nm_chr = "Rocio",
           last_nm_chr = "Scienceace",
@@ -62,7 +61,6 @@ X <- renewSlot(X,
           is_corresponding_lgl = T,
           email_chr = "fake_email@fake_institute.com") %>%
   renewSlot("authors_r3",
-            new_val_xx = "use_renew_mthd",
             first_nm_chr = "Fionn",
             middle_nm_chr = "Seamus",
             last_nm_chr = "Researchchamp",
@@ -76,17 +74,15 @@ X <- renewSlot(X,
 
 ```{r}
 X %>%
-  procureSlot("authors_r3") # Add Exhibit Method
+  exhibitSlot("authors_r3") 
 ```
 
 ```{r}
 X <- renewSlot(X,
           "institutes_r3",
-          new_val_xx = "use_renew_mthd",
           short_name_chr = "Institute_A", 
           long_name_chr = "Awesome University, Shanghai") %>%
   renewSlot("institutes_r3",
-            new_val_xx = "use_renew_mthd",
             short_name_chr = "Institute_B", 
             long_name_chr = "August Institution, London") %>%
   renewSlot("institutes_r3",
@@ -98,7 +94,7 @@ X <- renewSlot(X,
 
 ```{r}
 X %>%
-  procureSlot("institutes_r3") # Add Exhibit Method
+  exhibitSlot("institutes_r3") 
 ```
 ### Add correspondences
 Finally we can add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.
@@ -106,7 +102,6 @@ Finally we can add a look-up table about any changes we wish to make from the an
 ```{r}
 X <- renewSlot(X,
                "correspondences_r3",
-               new_val_xx = "use_renew_mthd",
                old_nms_chr = c("PHQ9","GAD7"),
                new_nms_chr = c("PHQ-9",
                                "GAD-7"))
@@ -114,5 +109,5 @@ X <- renewSlot(X,
 
 ```{r}
 X %>%
-  procureSlot("correspondences_r3") # Add Exhibit Method
+  exhibitSlot("correspondences_r3") # Add Exhibit Method
 ```
