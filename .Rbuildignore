@@ -68,3 +68,5 @@
 ^data-raw/Notes\.R$
 ^data-raw/abbreviations_lup\.Rds$
 ^data-raw/mthds/renew\.R$
+^doc$
+^Meta$
