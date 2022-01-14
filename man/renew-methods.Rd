@@ -20,7 +20,9 @@ renew.ready4show_authors(
   sequence_int = NA_integer_,
   is_corresponding_lgl = NA,
   email_chr = NA_character_,
-  is_equal_first_lgl = NA
+  is_equal_first_lgl = NA,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
 )
 
 \S4method{renew}{ready4show_authors}(
@@ -34,24 +36,42 @@ renew.ready4show_authors(
   sequence_int = NA_integer_,
   is_corresponding_lgl = NA,
   email_chr = NA_character_,
-  is_equal_first_lgl = NA
+  is_equal_first_lgl = NA,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
 )
 
 renew.ready4show_correspondences(
   x,
   old_nms_chr = NA_character_,
-  new_nms_chr = NA_character_
+  new_nms_chr = NA_character_,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
 )
 
-\S4method{renew}{ready4show_correspondences}(x, old_nms_chr = NA_character_, new_nms_chr = NA_character_)
+\S4method{renew}{ready4show_correspondences}(
+  x,
+  old_nms_chr = NA_character_,
+  new_nms_chr = NA_character_,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
+)
 
 renew.ready4show_institutes(
   x,
   short_name_chr = NA_character_,
-  long_name_chr = NA_character_
+  long_name_chr = NA_character_,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
 )
 
-\S4method{renew}{ready4show_institutes}(x, short_name_chr = NA_character_, long_name_chr = NA_character_)
+\S4method{renew}{ready4show_institutes}(
+  x,
+  short_name_chr = NA_character_,
+  long_name_chr = NA_character_,
+  filter_cdn_1L_chr = NA_character_,
+  slice_idxs_int = NA_integer_
+)
 }
 \arguments{
 \item{x}{An instance of ready4 S3 class for institutes lookup table}
@@ -75,6 +95,10 @@ renew.ready4show_institutes(
 \item{email_chr}{Email (a character vector), Default: 'NA'}
 
 \item{is_equal_first_lgl}{Is equal first (a logical vector), Default: NA}
+
+\item{filter_cdn_1L_chr}{Filter condition (a character vector of length one), Default: 'NA'}
+
+\item{slice_idxs_int}{Slice indices (an integer vector), Default: NA}
 
 \item{old_nms_chr}{Old names (a character vector), Default: 'NA'}
 
