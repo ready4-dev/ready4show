@@ -1,0 +1,18 @@
+---
+title: "MA_Results"
+author: "Matthew Hamilton"
+date: "13/10/2020"
+output: html_document
+---
+
+```{r echo=FALSE}
+if(params$tables_in_body_lgl){
+  child_docs_ls <- list(Table_01 = "../Child_RMDs/MS_Tables_01.RMD",
+                        Table_02 = "../Child_RMDs/MS_Tables_02.RMD",
+                        Table_03 = "../Child_RMDs/MS_Tables_03.RMD")
+}else{
+    child_docs_ls <- list(Table_01 = NULL,
+                      Table_02 = NULL,
+                      Table_03 = NULL)
+}
+```

@@ -1,0 +1,10 @@
+---
+title: "MS_Method"
+author: "Matthew Hamilton"
+date: "13/10/2020"
+output:
+  bookdown::pdf_document2: default
+  html_document: default
+  pdf_document: default
+---
+Methods section goes here.

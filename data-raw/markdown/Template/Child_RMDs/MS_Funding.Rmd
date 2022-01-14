@@ -1,0 +1,8 @@
+---
+title: "MS_Funding"
+author: "Matthew Hamilton"
+date: "13/10/2020"
+output: html_document
+---
+
+<!-- Add funding text generation code here. -->

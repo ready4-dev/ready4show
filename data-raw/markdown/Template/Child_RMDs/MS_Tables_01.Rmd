@@ -1,0 +1,8 @@
+---
+title: "cohort profile table"
+author: "Matthew Hamilton"
+date: "27/01/2021"
+output: html_document
+---
+
+<!-- Add table generation code here. -->

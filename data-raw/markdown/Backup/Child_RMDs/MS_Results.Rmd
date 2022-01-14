@@ -1,0 +1,13 @@
+---
+title: "MA_Results"
+author: "Matthew Hamilton"
+date: "13/10/2020"
+output: html_document
+---
+
+```{r child="MS_Tables.Rmd", echo=FALSE}
+```
+```{r child="MS_Figures.Rmd", echo=FALSE}
+```
+
+Add results text here.

@@ -1,0 +1,22 @@
+\\textbf{Background: } 
+Background text.
+\\newline
+\\newline
+\\textbf{Objectives: } 
+We aimed to: Add study objectives here.
+\\newline
+\\newline
+\\textbf{Methods: } 
+Add abstract here.
+\\newline
+\\newline
+\\textbf{Results: } 
+Add results here.
+\\newline
+\\newline
+\\textbf{Conclusions: } 
+Add conclusion here 
+\\newline
+\\newline
+\\textbf{Data:} 
+Add details on dataset.
