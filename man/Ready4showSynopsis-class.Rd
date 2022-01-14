@@ -11,6 +11,10 @@ Metadata about a scientific summary manuscript
 \section{Slots}{
 
 \describe{
+\item{\code{a_Ready4showPaths}}{(an instance of the Ready4showPaths class)}
+
+\item{\code{abstract_args_ls}}{Abstract arguments (a list)}
+
 \item{\code{authors_r3}}{Authors (a ready4 S3)}
 
 \item{\code{background_1L_chr}}{Background (a character vector of length one)}
@@ -25,6 +29,10 @@ Metadata about a scientific summary manuscript
 
 \item{\code{ethics_1L_chr}}{Ethics (a character vector of length one)}
 
+\item{\code{fl_nm_1L_chr}}{File name (a character vector of length one)}
+
+\item{\code{figures_in_body_lgl}}{Figures in body (a logical vector)}
+
 \item{\code{funding_1L_chr}}{Funding (a character vector of length one)}
 
 \item{\code{institutes_r3}}{Institutes (a ready4 S3)}
@@ -36,6 +44,8 @@ Metadata about a scientific summary manuscript
 \item{\code{outp_formats_chr}}{Output formats (a character vector)}
 
 \item{\code{sample_desc_1L_chr}}{Sample description (a character vector of length one)}
+
+\item{\code{tables_in_body_lgl}}{Tables in body (a logical vector)}
 
 \item{\code{title_1L_chr}}{Title (a character vector of length one)}
 

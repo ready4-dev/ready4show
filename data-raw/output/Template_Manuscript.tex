@@ -1,0 +1,190 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={A hypothetical study using fake data},
+  pdfauthor={Alejandra R Scienceace1,2,; Fionn S Researchchamp3,2},
+  pdfkeywords={entirely, fake, do, not, cite},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage[normalem]{ulem}
+\usepackage{threeparttablex}
+\usepackage{makecell}
+
+\title{A hypothetical study using fake data}
+\author{Alejandra R Scienceace\textsuperscript{1,2,*} \and Fionn S Researchchamp\textsuperscript{3,2}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\textbf{Background: } Background text. \newline \newline \textbf{Objectives: } We aimed to: Add study objectives here. \newline \newline \textbf{Methods: } Add abstract here. \newline \newline \textbf{Results: } Add results here. \newline \newline \textbf{Conclusions: } Add conclusion here \newline \newline \textbf{Data:} Add details on dataset.
+\end{abstract}
+
+\textsuperscript{1} Awesome University, Shanghai\\
+\textsuperscript{2} August Institution, London\\
+\textsuperscript{3} Highly Ranked Uni, Montreal
+
+\textsuperscript{*} Correspondence: \href{mailto:fake_email@fake_institute.com}{Alejandra R Scienceace \textless{}\href{mailto:fake_email@fake_institute.com}{\nolinkurl{fake\_email@fake\_institute.com}}\textgreater{}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Introductory text goes here.
+
+A brief paragraph outlining study aims goes here.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Methods section goes here.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+Add results text here.
+
+\hypertarget{conclusions}{%
+\section{Conclusions}\label{conclusions}}
+
+Conclusions text goes here.
+
+\hypertarget{availability-of-data-and-materials}{%
+\subsection*{Availability of data and materials}\label{availability-of-data-and-materials}}
+\addcontentsline{toc}{subsection}{Availability of data and materials}
+
+A brief paragraph outlining where data and resources can be accessed goes here.
+
+\hypertarget{ethics-approval}{%
+\subsection*{Ethics approval}\label{ethics-approval}}
+\addcontentsline{toc}{subsection}{Ethics approval}
+
+\hypertarget{funding}{%
+\subsection*{Funding}\label{funding}}
+\addcontentsline{toc}{subsection}{Funding}
+
+\hypertarget{conflict-of-interest}{%
+\subsection*{Conflict of Interest}\label{conflict-of-interest}}
+\addcontentsline{toc}{subsection}{Conflict of Interest}
+
+COI Text goes here.
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+
+\newpage
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\hypertarget{supplementary-material}{%
+\section{Supplementary Material}\label{supplementary-material}}
+
+\hypertarget{additional-tables}{%
+\subsection{Additional tables}\label{additional-tables}}
+
+\newpage
+
+\end{document}

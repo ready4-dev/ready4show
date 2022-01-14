@@ -26,6 +26,7 @@ reference:
   - ready4show_correspondences
 - title: "S4 Classes"
 - contents:
+  - Ready4showPaths
   - Ready4showSynopsis
 - title: "Functions"
 - contents:
@@ -37,6 +38,7 @@ reference:
   - write_rprt
 - title: "Methods"
 - contents:
+  - author-Ready4showSynopsis
   - exhibit.ready4show_authors
   - exhibit.ready4show_correspondences
   - exhibit.ready4show_institutes

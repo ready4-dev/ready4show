@@ -1,8 +1,0 @@
----
-title: "MS_Figures_1"
-author: "Matthew Hamilton"
-date: "28/01/2021"
-output: html_document
----
-
-<!-- Add figure 1 code here. -->
