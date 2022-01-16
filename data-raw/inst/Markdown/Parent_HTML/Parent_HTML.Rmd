@@ -1,28 +1,17 @@
 ---
 bibliography: ../Data/references.bib
 output: 
-  bookdown::pdf_book: 
-    base_format: rticles::arxiv_article
-    includes:
-      in_header: preamble.tex
+  bookdown::html_document2: 
     pandoc_args: 
       - "--metadata-file=../Header/header_common.yaml"
       - '--lua-filter=../Filters/scholarly-metadata.lua'
       - '--lua-filter=../Filters/author-info-blocks.lua'
-  bookdown::pdf_document2: 
-    includes:
-      in_header: preamble.tex
-    pandoc_args: 
-      - "--metadata-file=../Header/header_common.yaml"
-      - '--lua-filter=../Filters/scholarly-metadata.lua'
-      - '--lua-filter=../Filters/author-info-blocks.lua'
-    toc: no
 params:
   figures_in_body_lgl: !r T
-  output_type_1L_chr: PDF
+  output_type_1L_chr: HTML
   results_ls: NULL
   tables_in_body_lgl: !r T
-abstract: "`r paste0(readLines('../Header/abstract.txt'),collapse=' ')`"
+abstract: "`r paste0(stringr::str_replace_all(stringr::str_replace_all(stringr::str_replace_all(stringr::str_replace_all(readLines('../Header/abstract.txt'),'\\\\\\\\textbf',''),'\\{','**'),'\\}','**'),'\\\\\\\\newline','\\\\n'),collapse=' ')`"
 graphics: yes
 csl: plos.csl
 ---

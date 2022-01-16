@@ -1,0 +1,23 @@
+---
+title: "MS_Method"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+<!-- Add child RMDs for methods content -->
+## Sample and setting
+ 
+
+## Measures
+
+
+
+### Population characteristics
+
+
+## Procedures
+
+## Statistical analysis
+
+
+### Replicability
