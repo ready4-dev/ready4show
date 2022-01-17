@@ -1,0 +1,14 @@
+---
+title: "MS_Cndl_Child_Not_In_Body"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+\newpage
+
+```{r, child = '../Child_RMDs/MS_Figures_1.RMD', echo=FALSE}
+```
+\newpage
+```{r, child = '../Child_RMDs/MS_Figures_2.RMD', echo=FALSE}
+```

@@ -40,9 +40,9 @@ methods::setMethod("author", "Ready4showSynopsis", function (x, results_ls = NUL
         results_ls = results_ls)
     params_ls$figures_in_body_lgl <- x@figures_in_body_lgl
     params_ls$tables_in_body_lgl <- x@tables_in_body_lgl
-    rmarkdown::render(paste0(path_to_ms_mkdn_1L_dir, "/", output_type_1L_chr, 
-        "/", output_type_1L_chr, ".Rmd"), output_format = NULL, 
-        params = params_ls, output_file = paste0(fl_nm_1L_chr, 
-            ifelse(output_type_1L_chr == "Word", ".docx", ".pdf")), 
-        output_dir = path_to_ms_outp_dir_1L_chr)
+    rmarkdown::render(paste0(path_to_ms_mkdn_1L_dir, "/Parent_", 
+        output_type_1L_chr, "/Parent_", output_type_1L_chr, ".Rmd"), 
+        output_format = NULL, params = params_ls, output_file = paste0(fl_nm_1L_chr, 
+            ifelse(output_type_1L_chr == "Word", ".docx", paste0(".", 
+                tolower(output_type_1L_chr)))), output_dir = path_to_ms_outp_dir_1L_chr)
 })

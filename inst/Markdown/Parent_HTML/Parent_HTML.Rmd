@@ -1,0 +1,30 @@
+---
+bibliography: ../Data/references.bib
+output: 
+  bookdown::html_document2: 
+    pandoc_args: 
+      - "--metadata-file=../Header/header_common.yaml"
+      - '--lua-filter=../Filters/scholarly-metadata.lua'
+      - '--lua-filter=../Filters/author-info-blocks.lua'
+params:
+  figures_in_body_lgl: !r T
+  output_type_1L_chr: HTML
+  results_ls: NULL
+  tables_in_body_lgl: !r T
+abstract: "`r paste0(stringr::str_replace_all(stringr::str_replace_all(stringr::str_replace_all(stringr::str_replace_all(readLines('../Header/abstract.txt'),'\\\\\\\\textbf',''),'\\{','**'),'\\}','**'),'\\\\\\\\newline','\\\\n'),collapse=' ')`"
+graphics: yes
+csl: plos.csl
+---
+
+```{r echo = F}
+## NOTE: EDITED TEMPLATE FILE To Add rotating and multirow packages as per:
+# https://stackoverflow.com/questions/31503418/how-to-add-a-latex-package-to-r-journal-template-from-rticle-package-in-r
+options(tinytex.verbose = TRUE)
+library(xtable)
+options(xtable.floating = FALSE)
+options(xtable.timestamp = "")
+```
+
+```{r child="../Child_RMDs/All_Content.Rmd", echo=FALSE}
+```
+

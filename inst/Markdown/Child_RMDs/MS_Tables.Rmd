@@ -1,0 +1,20 @@
+---
+title: "MA_Results"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+
+```{r child="XX_Funs.Rmd", echo=FALSE}
+```
+
+```{r echo=FALSE}
+if(params$tables_in_body_lgl){
+  child_docs_ls <- list(one = "../Child_RMDs/MS_Tables_1.RMD",
+                      two = "../Child_RMDs/MS_Tables_2.RMD")
+}else{
+    child_docs_ls <- list(one = NULL,
+                      two = NULL)
+}
+```

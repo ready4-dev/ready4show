@@ -1,0 +1,45 @@
+---
+title: "All_Content"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r echo=FALSE}
+#results_ls <- readRDS(params$path_to_results_ls_1L_chr)
+```
+
+```{r child="../Child_RMDs/MS_Body.Rmd", echo=FALSE}
+```
+
+\newpage
+# References {-}
+
+<div id="refs"></div>
+```{r echo=FALSE}
+if(!params$tables_in_body_lgl){
+  child_tabs_1L_chr <- c("../Child_RMDs/MS_Cndl_Tabs_Not_In_Body.Rmd")
+}else{
+  child_tabs_1L_chr <- NULL
+}
+if(!params$figures_in_body_lgl){
+  child_figs_1L_chr <- c("../Child_RMDs/MS_Cndl_Figs_Not_In_Body.Rmd")
+}else{
+  child_figs_1L_chr <- NULL
+}
+```
+
+```{r, child = child_tabs_1L_chr, echo=FALSE}
+```
+```{r, child = child_figs_1L_chr, echo=FALSE}
+```
+\newpage
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+# Appendix
+
+```{r child="../Child_RMDs/TA_Body.Rmd", echo=FALSE}
+```
+
+<!-- NOTE TO SELF: INCORPORATE TA_CODE.RMD -->

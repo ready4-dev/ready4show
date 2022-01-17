@@ -42,16 +42,16 @@ author_Ready4showSynopsis <- function (x,
     params_ls$tables_in_body_lgl <- x@tables_in_body_lgl
   # Add interactive prompt
   rmarkdown::render(paste0(path_to_ms_mkdn_1L_dir,
-                           "/",
+                           "/Parent_",
                            output_type_1L_chr,
-                           "/",
+                           "/Parent_",
                            output_type_1L_chr,
                            ".Rmd"),
                     output_format = NULL,
                     params = params_ls,
                     output_file = paste0(fl_nm_1L_chr,
                                          ifelse(output_type_1L_chr == "Word",
-                                                                    ".docx",
-                                                                    ".pdf")),
+                                                ".docx",
+                                                paste0(".",tolower(output_type_1L_chr)))),
                     output_dir = path_to_ms_outp_dir_1L_chr)
 }
