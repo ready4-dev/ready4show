@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Author Literate Programs to Share Insights from Applying the Ready4
     Framework
-Version: 0.0.0.9077
+Version: 0.0.0.9078
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton@orygen.org.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -42,6 +42,7 @@ Imports:
     purrr,
     rlang,
     rmarkdown,
+    stringi,
     stringr,
     testthat,
     tibble,
@@ -68,8 +69,8 @@ Collate:
     'fn_write.R'
     'imp_fns.R'
     'imp_mthds.R'
-    'mthd_author.R'
     'mthd_authorData.R'
+    'mthd_authorReport.R'
     'mthd_exhibit.R'
     'mthd_manufacture.R'
     'mthd_renew.R'
