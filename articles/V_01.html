@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ready4show</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9081</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9084</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,9 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ready4-dev.github.io/ready4show/">ready4show</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ready4-dev.github.io/ready4show/">ready4show</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/rticles" class="external-link">rticles</a></span><span class="op">)</span></code></pre></div>
 <div class="section level2">
 <h2 id="motivation">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
@@ -356,7 +358,7 @@ Highly Ranked Uni, Montreal
 <div class="section level3">
 <h3 id="add-correspondences">Add correspondences<a class="anchor" aria-label="anchor" href="#add-correspondences"></a>
 </h3>
-<p>Finally we can add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.</p>
+<p>We can also add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
                <span class="st">"correspondences_r3"</span>,
@@ -399,6 +401,49 @@ GAD-7
 </td>
 </tr></tfoot>
 </table>
+</div>
+<div class="section level3">
+<h3 id="specify-output-directory">Specify output directory<a class="anchor" aria-label="anchor" href="#specify-output-directory"></a>
+</h3>
+<p>We now update <code>X</code> with details of the directory to which we wish to write the manuscript we are authoring and all its supporting files.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
+               <span class="st">"a_Ready4showPaths@outp_data_dir_1L_chr"</span>,
+               new_val_xx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="create-dataset-of-literate-programming-files">Create dataset of literate programming files<a class="anchor" aria-label="anchor" href="#create-dataset-of-literate-programming-files"></a>
+</h3>
+<p>Our next step is to copy a dataset of files that can implement a literate program to generate our manuscript. If you have a template you wish to work with, you can specify its local path using the <code>a_Ready4showPaths@mkdn_source_dir_1L_chr</code> slot of the <code>X</code>. Skip this step if you wish to use <a href="https://github.com/ready4-dev/ms_tmpl" class="external-link">the default markdown dataset</a>, which leverages popular rmarkdown toolkits such as <code>bookdown</code> and <code>rticles</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Not run</span>
+<span class="co"># procureSlot(X,</span>
+<span class="co">#             "a_Ready4showPaths@mkdn_source_dir_1L_chr",</span>
+<span class="co">#             new_val_xx  = "PATH TO MARKDOWN DATASET")</span></code></pre></div>
+<p>We create the datset copy with the <code>authorData</code> method.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/authorData-methods.html" class="external-link">authorData</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></code></pre></div>
+<p>Having created a local copy of the template literate program files dataset, it is now possible to manually edit the markdown files to author the manuscript. However, in this example we are skipping this step and will continue to use the unedited template in conjunction with the metadata we have specified in <code>X</code>. We combine the two to author a manuscript using the <code>authorReport</code> method.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/authorReport-methods.html" class="external-link">authorReport</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></code></pre></div>
+<p>If we wish, we can now ammend <code>X</code> and then rerun the <code>authorReport</code> method to generate Word and HTML versions of the manuscript.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
+          <span class="st">"outp_formats_chr"</span>,
+          new_val_xx <span class="op">=</span> <span class="st">"Word"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/authorReport-methods.html" class="external-link">authorReport</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/renewSlot-methods.html" class="external-link">renewSlot</a></span><span class="op">(</span><span class="va">X</span>,
+          <span class="st">"outp_formats_chr"</span>,
+          new_val_xx <span class="op">=</span> <span class="st">"HTML"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ready4-dev.github.io/ready4/reference/authorReport-methods.html" class="external-link">authorReport</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>The outputed files are as follows:</p>
+<ul>
+<li>
+<a href="https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.pdf" class="external-link">PDF version</a> (and <a href="https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.tex" class="external-link">LaTeX file that generated it</a>)</li>
+<li><a href="https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.docx" class="external-link">Word version</a></li>
+<li><a href="https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.html" class="external-link">HTML version</a></li>
+</ul>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
