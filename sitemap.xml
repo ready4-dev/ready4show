@@ -31,7 +31,10 @@
     <loc>https://ready4-dev.github.io/ready4show/reference/Ready4showSynopsis-class.html</loc>
   </url>
   <url>
-    <loc>https://ready4-dev.github.io/ready4show/reference/author-methods.html</loc>
+    <loc>https://ready4-dev.github.io/ready4show/reference/authorData-methods.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/authorReport-methods.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/authors_tb.html</loc>
@@ -52,10 +55,16 @@
     <loc>https://ready4-dev.github.io/ready4show/reference/knit_from_tmpl.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_abstract_args_ls.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/make_abstract_lines.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/make_authorship_lines.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/make_default_paths.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/make_eq_ref.html</loc>
@@ -89,6 +98,9 @@
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/make_sngl_author_lines.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/manufacture-methods.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/pipe.html</loc>
@@ -131,6 +143,9 @@
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/write_csp_output.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_custom_authors.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/write_header_fls.html</loc>
