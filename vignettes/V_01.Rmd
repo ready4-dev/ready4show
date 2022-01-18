@@ -17,6 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r message=FALSE}
 library(ready4show)
 library(bookdown)
+library(rticles)
 ```
 
 ## Motivation
@@ -135,7 +136,7 @@ X <- renewSlot(X,
 ```
 
 ### Create dataset of literate programming files
-Our next step is to copy a dataset of files that can implement a literate program to generate our manuscript. If you have a template you wish to work with, you can specify its local path using the `a_Ready4showPaths@mkdn_source_dir_1L_chr` slot of the `X`. Skip this step if you wish to use [the default markdown dataset](https://github.com/ready4-dev/ms_tmpl). 
+Our next step is to copy a dataset of files that can implement a literate program to generate our manuscript. If you have a template you wish to work with, you can specify its local path using the `a_Ready4showPaths@mkdn_source_dir_1L_chr` slot of the `X`. Skip this step if you wish to use [the default markdown dataset](https://github.com/ready4-dev/ms_tmpl), which leverages popular rmarkdown toolkits such as `bookdown` and `rticles`. 
 
 ```{r}
 ## Not run
