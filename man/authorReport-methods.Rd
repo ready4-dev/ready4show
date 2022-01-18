@@ -5,12 +5,10 @@
 \alias{authorReport,Ready4showSynopsis-method}
 \title{Author and save a report}
 \usage{
-\S4method{authorReport}{Ready4showSynopsis}(x, results_ls = NULL)
+\S4method{authorReport}{Ready4showSynopsis}(x)
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
-
-\item{results_ls}{Results (a list), Default: NULL}
 }
 \description{
 authorReport method applied to Ready4showSynopsis
