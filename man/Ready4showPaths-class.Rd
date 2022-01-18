@@ -17,9 +17,11 @@ Metadata about paths to Markdown input and output
 
 \item{\code{ms_mkdn_dir_1L_chr}}{Manuscript markdown directory (a character vector of length one)}
 
-\item{\code{ms_1L_dir_1L_chr}}{Manuscript length one directory (a character vector of length one)}
+\item{\code{ms_dir_1L_chr}}{Manuscript directory (a character vector of length one)}
 
 \item{\code{outp_data_dir_1L_chr}}{Output data directory (a character vector of length one)}
+
+\item{\code{reports_dir_1L_chr}}{Reports directory (a character vector of length one)}
 
 \item{\code{dissemination_1L_chr}}{Dissemination (a character vector of length one)}
 }}

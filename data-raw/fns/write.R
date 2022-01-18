@@ -29,6 +29,59 @@ write_all_outp_dirs <- function(paths_ls){
                           dv_dir_1L_chr = dv_dir_1L_chr))
   return(paths_ls)
 }
+write_custom_authors <- function(paths_ls){
+  original_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,"/Parent_PDF/Parent_PDF.Rmd"))
+  placeholder_idx_1L_int <- which(original_chr=="## CUSTOM_AUTHORS_PLACEHOLDER ##")
+  if(!identical(placeholder_idx_1L_int, integer(0))){
+    header_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
+                                   "/Header/header_common.yaml"))
+    names_idxs_int <- c(which(header_chr == "author:")+1,
+                        (1:length(header_chr))[header_chr %>% startsWith("  - name: ")])
+    affiliations_idxs_int <- c(1:length(header_chr))[header_chr %>%
+                                                        startsWith("    institute: ") | header_chr %>%
+                                                       startsWith("      institute: ")]
+    affiliations_ls <- header_chr[affiliations_idxs_int] %>%
+      stringr::str_remove_all("      institute: ") %>%
+      stringr::str_remove_all("    institute: ") %>%
+      purrr::map(~stringr::str_sub(.x,start = 2, end = -2) %>%
+                       strsplit(", ")
+                       )
+    affiliations_chr <- affiliations_ls %>%
+      purrr::flatten() %>%
+      purrr::flatten_chr() %>%
+      unique()
+    affiliations_chr <- affiliations_ls %>%
+      purrr::map_chr(~paste0("    affiliation: ",
+                             .x[[1]] %>%
+                       purrr::map_int(~which(affiliations_chr ==.x)) %>%
+                       paste0(collapse = ",")))
+    replacement_chr <- purrr::reduce(1:length(names_idxs_int),
+                                     .init = c("authors:"),
+                                     ~{
+                                       if(.y==1){
+                                         c(.x,
+                                           header_chr[names_idxs_int[.y]] %>%
+                                             stringr::str_replace("  - ",
+                                                                  "  - name: ") %>%
+                                             stringi::stri_replace_last_regex(":",""),
+                                           affiliations_chr[.y])
+                                       }else{
+                                         c(.x,
+                                           header_chr[names_idxs_int[.y]] %>%
+                                             stringr::str_replace("  - name: ",
+                                                                  "  - name: "),
+                                           affiliations_chr[.y])
+                                       }
+                                       })
+    # replacement_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
+    #                                     "/Parent_PDF/TEMPLATE.RMD")) %>% `[`(20:24)
+    c(original_chr[1:(placeholder_idx_1L_int-1)],
+      replacement_chr,
+      original_chr[(placeholder_idx_1L_int+1):length(original_chr)]) %>%
+      writeLines(con = paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
+                              "/Parent_PDF/Parent_PDF.Rmd"))
+  }
+}
 write_csp_output <- function(path_to_csp_1L_chr, # Move to ready4show?
                              dv_ds_doi_1L_chr = NULL,
                              execute_1L_lgl = T){

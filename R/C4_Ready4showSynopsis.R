@@ -2,6 +2,7 @@
 #' 
 #' Metadata about a scientific summary manuscript
 #' 
+#' @include fn_make.R
 #' @slot a_Ready4showPaths  (an instance of the Ready4showPaths class)
 #' @slot abstract_args_ls Abstract arguments (a list)
 #' @slot authors_r3 Authors (a ready4 S3)
@@ -30,7 +31,7 @@
 Ready4showSynopsis <- methods::setClass("Ready4showSynopsis",
 contains = "Ready4Module",
 slots = c(a_Ready4showPaths = "Ready4showPaths",abstract_args_ls = "list",authors_r3 = "ready4show_authors",background_1L_chr = "character",coi_1L_chr = "character",conclusion_1L_chr = "character",correspondences_r3 = "ready4show_correspondences",digits_int = "integer",ethics_1L_chr = "character",fl_nm_1L_chr = "character",figures_in_body_lgl = "logical",funding_1L_chr = "character",institutes_r3 = "ready4show_institutes",interval_chr = "character",keywords_chr = "character",outp_formats_chr = "character",sample_desc_1L_chr = "character",tables_in_body_lgl = "logical",title_1L_chr = "character",dissemination_1L_chr = "character"),
-prototype =  list(a_Ready4showPaths = Ready4showPaths(),abstract_args_ls = list(list()),authors_r3 = ready4show_authors(),background_1L_chr = NA_character_,coi_1L_chr = NA_character_,conclusion_1L_chr = NA_character_,correspondences_r3 = ready4show_correspondences(),digits_int = NA_integer_,ethics_1L_chr = NA_character_,fl_nm_1L_chr = NA_character_,figures_in_body_lgl = NA,funding_1L_chr = NA_character_,institutes_r3 = ready4show_institutes(),interval_chr = NA_character_,keywords_chr = NA_character_,outp_formats_chr = NA_character_,sample_desc_1L_chr = NA_character_,tables_in_body_lgl = NA,title_1L_chr = NA_character_))
+prototype =  list(a_Ready4showPaths = make_default_paths(),abstract_args_ls = make_abstract_args_ls(),authors_r3 = ready4show_authors(),background_1L_chr = NA_character_,coi_1L_chr = 'None declared.',conclusion_1L_chr = NA_character_,correspondences_r3 = ready4show_correspondences(),digits_int = 3L,ethics_1L_chr = 'Details on ethics approvals go here.',fl_nm_1L_chr = 'Manuscript',figures_in_body_lgl = T,funding_1L_chr = 'Details on study funders go here.',institutes_r3 = ready4show_institutes(),interval_chr = NA_character_,keywords_chr = NA_character_,outp_formats_chr = 'PDF',sample_desc_1L_chr = NA_character_,tables_in_body_lgl = T,title_1L_chr = 'Manuscript title goes here.'))
 
 
 methods::setValidity(methods::className("Ready4showSynopsis"),

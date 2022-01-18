@@ -38,10 +38,12 @@ reference:
   - write_rprt
 - title: "Methods"
 - contents:
-  - author-Ready4showSynopsis
+  - authorData-Ready4showSynopsis
+  - authorReport-Ready4showSynopsis
   - exhibit.ready4show_authors
   - exhibit.ready4show_correspondences
   - exhibit.ready4show_institutes
+  - manufacture-Ready4showSynopsis
   - renew.ready4show_authors
   - renew.ready4show_correspondences
   - renew.ready4show_institutes

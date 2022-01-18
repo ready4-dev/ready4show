@@ -1,3 +1,32 @@
+make_abstract_args_ls <- function(background_1L_chr = NA_character_,
+                                  objectives_1L_chr = NA_character_,
+                                  methods_1L_chr = NA_character_,
+                                  results_1L_chr = NA_character_,
+                                  conclusions_1L_chr = NA_character_,
+                                  data_1L_chr = NA_character_,
+                                  fl_nm_1L_chr = "abstract.txt"){
+  if(is.na(background_1L_chr))
+    background_1L_chr <- "Brief background to study goes here."
+  if(is.na(objectives_1L_chr))
+    objectives_1L_chr <- "Brief study objectives goes here."
+  if(is.na(methods_1L_chr))
+    methods_1L_chr <- "Brief description of methods goes here."
+  if(is.na(results_1L_chr))
+    results_1L_chr <- "Brief summary of results goes here."
+  if(is.na(conclusions_1L_chr))
+    conclusions_1L_chr <- "Headline conclusions go here."
+  if(is.na(data_1L_chr))
+    data_1L_chr <- "Statement about availability of study data and materials goes here."
+  abstract_args_ls <- list(abstract_ls = list(Background = background_1L_chr,
+                                              Objectives = objectives_1L_chr,
+                                              Methods = methods_1L_chr,
+                                              Results = results_1L_chr,
+                                              Conclusions = conclusions_1L_chr,
+                                              Data = data_1L_chr),
+                           fl_nm_1L_chr = fl_nm_1L_chr)
+
+  return(abstract_args_ls)
+}
 make_abstract_lines <- function(abstract_ls){
   abstract_lines_chr <- purrr::map2(abstract_ls,
                                     names(abstract_ls),
@@ -17,6 +46,15 @@ make_authorship_lines <- function(authors_tb,
                                                                                      inc_quals_1L_lgl = inc_quals_1L_lgl)) %>%
     purrr::flatten_chr()
   return(authorship_lines_chr)
+}
+make_default_paths <- function(){
+  x_Ready4showPaths <- Ready4showPaths(mkdn_data_dir_1L_chr = 'Markdown',
+                                       mkdn_source_dir_1L_chr = system.file('Markdown/Manuscript', package = 'ready4show'),
+                                       ms_mkdn_dir_1L_chr = 'Manuscript',
+                                       ms_dir_1L_chr = 'Manuscript',
+                                       outp_data_dir_1L_chr = 'Output',
+                                       reports_dir_1L_chr = 'Reports')
+  return(x_Ready4showPaths)
 }
 make_eq_ref <- function(eq_nm_1L_chr,
                          output_type_1L_chr){

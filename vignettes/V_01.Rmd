@@ -123,3 +123,17 @@ These edits can now be inspected with a call to `exhibitSlot`.
 X %>%
   exhibitSlot("correspondences_r3") # Add Exhibit Method
 ```
+
+```{r echo=FALSE, eval=FALSE}
+X@a_Ready4showPaths@outp_data_dir_1L_chr <- tempdir()
+# X@a_Ready4showPaths@mkdn_data_dir_1L_chr <- "Markdown"
+# X@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- "Manuscript_Source"
+# X@a_Ready4showPaths@ms_dir_1L_chr <- "Manuscript_Renders"
+file_fl <- file()
+write(paste(c("Y"), collapse = "\n"), file_fl)
+options("prompt_opts.con" = file_fl)
+##INTERACTIVE CALLS GO HERE
+close(file_fl) # close the file
+options("prompt_opts.con" = stdin())
+```
+

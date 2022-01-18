@@ -1,3 +1,39 @@
+#' Make abstract arguments list
+#' @description make_abstract_args_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make abstract arguments list. The function returns Abstract arguments (a list).
+#' @param background_1L_chr Background (a character vector of length one), Default: 'NA'
+#' @param objectives_1L_chr Objectives (a character vector of length one), Default: 'NA'
+#' @param methods_1L_chr Methods (a character vector of length one), Default: 'NA'
+#' @param results_1L_chr Results (a character vector of length one), Default: 'NA'
+#' @param conclusions_1L_chr Conclusions (a character vector of length one), Default: 'NA'
+#' @param data_1L_chr Data (a character vector of length one), Default: 'NA'
+#' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'abstract.txt'
+#' @return Abstract arguments (a list)
+#' @rdname make_abstract_args_ls
+#' @export 
+#' @keywords internal
+make_abstract_args_ls <- function (background_1L_chr = NA_character_, objectives_1L_chr = NA_character_, 
+    methods_1L_chr = NA_character_, results_1L_chr = NA_character_, 
+    conclusions_1L_chr = NA_character_, data_1L_chr = NA_character_, 
+    fl_nm_1L_chr = "abstract.txt") 
+{
+    if (is.na(background_1L_chr)) 
+        background_1L_chr <- "Brief background to study goes here."
+    if (is.na(objectives_1L_chr)) 
+        objectives_1L_chr <- "Brief study objectives goes here."
+    if (is.na(methods_1L_chr)) 
+        methods_1L_chr <- "Brief description of methods goes here."
+    if (is.na(results_1L_chr)) 
+        results_1L_chr <- "Brief summary of results goes here."
+    if (is.na(conclusions_1L_chr)) 
+        conclusions_1L_chr <- "Headline conclusions go here."
+    if (is.na(data_1L_chr)) 
+        data_1L_chr <- "Statement about availability of study data and materials goes here."
+    abstract_args_ls <- list(abstract_ls = list(Background = background_1L_chr, 
+        Objectives = objectives_1L_chr, Methods = methods_1L_chr, 
+        Results = results_1L_chr, Conclusions = conclusions_1L_chr, 
+        Data = data_1L_chr), fl_nm_1L_chr = fl_nm_1L_chr)
+    return(abstract_args_ls)
+}
 #' Make abstract lines
 #' @description make_abstract_lines() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make abstract lines. The function returns Abstract lines (a character vector).
 #' @param abstract_ls Abstract (a list)
@@ -30,6 +66,22 @@ make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F)
         slice_1L_int = .x, inc_quals_1L_lgl = inc_quals_1L_lgl)) %>% 
         purrr::flatten_chr()
     return(authorship_lines_chr)
+}
+#' Make default paths
+#' @description make_default_paths() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make default paths. The function is called for its side effects and does not return a value.
+
+#' @return X (Metadata about paths to Markdown input and output)
+#' @rdname make_default_paths
+#' @export 
+#' @keywords internal
+make_default_paths <- function () 
+{
+    x_Ready4showPaths <- Ready4showPaths(mkdn_data_dir_1L_chr = "Markdown", 
+        mkdn_source_dir_1L_chr = system.file("Markdown/Manuscript", 
+            package = "ready4show"), ms_mkdn_dir_1L_chr = "Manuscript", 
+        ms_dir_1L_chr = "Manuscript", outp_data_dir_1L_chr = "Output", 
+        reports_dir_1L_chr = "Reports")
+    return(x_Ready4showPaths)
 }
 #' Make equation reference
 #' @description make_eq_ref() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make equation reference. The function returns Equation reference (a character vector of length one).
