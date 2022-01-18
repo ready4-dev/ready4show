@@ -108,7 +108,7 @@ X %>%
 ```
 
 ### Add correspondences
-Finally we can add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.
+We can also add a look-up table about any changes we wish to make from the analysis code of how names of variables / parameters are presented in the manuscript text.
 
 ```{r}
 X <- renewSlot(X,
@@ -124,16 +124,82 @@ X %>%
   exhibitSlot("correspondences_r3") # Add Exhibit Method
 ```
 
-```{r echo=FALSE, eval=FALSE}
-X@a_Ready4showPaths@outp_data_dir_1L_chr <- tempdir()
-# X@a_Ready4showPaths@mkdn_data_dir_1L_chr <- "Markdown"
-# X@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- "Manuscript_Source"
-# X@a_Ready4showPaths@ms_dir_1L_chr <- "Manuscript_Renders"
+### Specify output directory
+We now update `X` with details of the directory to which we wish to write the manuscript we are authoring and all its supporting files.
+
+```{r}
+X <- renewSlot(X,
+               "a_Ready4showPaths@outp_data_dir_1L_chr",
+               new_val_xx = tempdir())
+```
+
+### Create dataset of literate programming files
+Our next step is to copy a dataset of files that can implement a literate program to generate our manuscript. If you have a template you wish to work with, you can specify its local path using the `a_Ready4showPaths@mkdn_source_dir_1L_chr` slot of the `X`. Skip this step if you wish to use [the default markdown dataset](https://github.com/ready4-dev/ms_tmpl). 
+
+```{r}
+## Not run
+# procureSlot(X,
+#             "a_Ready4showPaths@mkdn_source_dir_1L_chr",
+#             new_val_xx  = "PATH TO MARKDOWN DATASET")
+```
+
+We create the datset copy with the `authorData` method.
+
+```{r echo=FALSE}
+# This section is only required when rendering vignettes (it replaces interactivity).
 file_fl <- file()
-write(paste(c("Y"), collapse = "\n"), file_fl)
+write(paste(c("Y","Y","Y","Y","Y","Y"), collapse = "\n"), file_fl)
 options("prompt_opts.con" = file_fl)
-##INTERACTIVE CALLS GO HERE
-close(file_fl) # close the file
+```
+
+```{r message=FALSE, results='hide', warning=FALSE}
+authorData(X)
+```
+
+Having created a local copy of the template literate program files dataset, it is now possible to manually edit the markdown files to author the manuscript. However, in this example we are skipping this step and will continue to use the unedited template in conjunction with the metadata we have specified in `X`. We combine the two to author a manuscript using the `authorReport` method.
+
+```{r message=FALSE, results='hide', warning=FALSE}
+authorReport(X)
+```
+
+If we wish, we can now ammend `X` and then rerun the `authorReport` method to generate Word and HTML versions of the manuscript.
+
+```{r eval = F, message=FALSE, results='hide', warning=FALSE}
+renewSlot(X,
+          "outp_formats_chr",
+          new_val_xx = "Word") %>%
+  authorReport()
+```
+```{r eval = F, message=FALSE, results='hide', warning=FALSE}
+renewSlot(X,
+          "outp_formats_chr",
+          new_val_xx = "HTML") %>%
+  authorReport()
+```
+```{r eval = F, echo=FALSE}
+# Upload output to Release Repo 
+purrr::walk(paste0(X@a_Ready4showPaths@outp_data_dir_1L_chr,
+                   "/Reports/Manuscript") %>%
+                  list.files(full.names = T),
+                ~ {
+                  if(file.exists(.x)){
+                  piggyback::pb_upload(.x,
+                                       repo = "ready4-dev/ready4show", #Change to your repo
+                                       tag = "Documentation_0.0") # Change to your Release
+                  }
+                  }
+                )
+```
+
+The outputed files are as follows:
+
+- [PDF version](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.pdf) (and [LaTeX file that generated it](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.tex))
+- [Word version](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.docx)
+- [HTML version](https://github.com/ready4-dev/ready4show/releases/download/Documentation_0.0/Manuscript.html) 
+
+```{r echo=FALSE}
+# Closes vignette specific connection to replace interactivity.
+close(file_fl) # 
 options("prompt_opts.con" = stdin())
 ```
 

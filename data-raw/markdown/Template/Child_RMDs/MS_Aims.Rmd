@@ -1,6 +1,0 @@
----
-title: "MS_Aims"
-output: html_document
----
-
-A brief paragraph outlining study aims goes here.
