@@ -1,5 +1,5 @@
 authorData_Ready4showSynopsis <- function(x,
-                                          tmpl_version_1_L_chr = "0.0.9"){
+                                          tmpl_version_1_L_chr = "0.0.9.1"){
   if(!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)){
     mkdn_source_dir_1L_chr <- x@a_Ready4showPaths@mkdn_source_dir_1L_chr
   }else{

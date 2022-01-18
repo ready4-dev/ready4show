@@ -3,7 +3,7 @@
 #' @name authorData-Ready4showSynopsis
 #' @description authorData method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis
-#' @param tmpl_version_1_L_chr Template version 1 L (a character vector), Default: '0.0.9'
+#' @param tmpl_version_1_L_chr Template version 1 L (a character vector), Default: '0.0.9.1'
 #' @return NULL
 #' @rdname authorData-methods
 #' @aliases authorData,Ready4showSynopsis-method
@@ -11,7 +11,7 @@
 #' @importFrom utils unzip
 #' @importFrom purrr flatten_chr
 #' @importFrom ready4 write_new_files authorData
-methods::setMethod("authorData", "Ready4showSynopsis", function (x, tmpl_version_1_L_chr = "0.0.9") 
+methods::setMethod("authorData", "Ready4showSynopsis", function (x, tmpl_version_1_L_chr = "0.0.9.1") 
 {
     if (!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)) {
         mkdn_source_dir_1L_chr <- x@a_Ready4showPaths@mkdn_source_dir_1L_chr

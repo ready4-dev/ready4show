@@ -1,0 +1,12 @@
+---
+title: "MA_Results"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r child="MS_Tables.Rmd", echo=FALSE}
+```
+```{r child="MS_Figures.Rmd", echo=FALSE}
+```
+<!-- Add child RMDs for results content -->

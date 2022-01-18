@@ -1,0 +1,8 @@
+---
+title: "COI"
+author: "Author"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+None declared.
