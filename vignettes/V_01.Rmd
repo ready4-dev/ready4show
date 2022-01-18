@@ -160,7 +160,7 @@ authorData(X)
 
 Having created a local copy of the template literate program files dataset, it is now possible to manually edit the markdown files to author the manuscript. However, in this example we are skipping this step and will continue to use the unedited template in conjunction with the metadata we have specified in `X`. We combine the two to author a manuscript using the `authorReport` method.
 
-```{r message=FALSE, results='hide', warning=FALSE}
+```{r eval = F, message=FALSE, results='hide', warning=FALSE}
 authorReport(X)
 ```
 
@@ -172,7 +172,7 @@ renewSlot(X,
           new_val_xx = "Word") %>%
   authorReport()
 ```
-```{r eval = F, message=FALSE, results='hide', warning=FALSE}
+```{r message=FALSE, results='hide', warning=FALSE}
 renewSlot(X,
           "outp_formats_chr",
           new_val_xx = "HTML") %>%
