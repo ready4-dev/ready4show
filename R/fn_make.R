@@ -77,8 +77,7 @@ make_authorship_lines <- function (authors_tb, inc_quals_1L_lgl = F)
 make_default_paths <- function () 
 {
     x_Ready4showPaths <- Ready4showPaths(mkdn_data_dir_1L_chr = "Markdown", 
-        mkdn_source_dir_1L_chr = system.file("Markdown/Manuscript", 
-            package = "ready4show"), ms_mkdn_dir_1L_chr = "Manuscript", 
+        mkdn_source_dir_1L_chr = NA_character_, ms_mkdn_dir_1L_chr = "Manuscript", 
         ms_dir_1L_chr = "Manuscript", outp_data_dir_1L_chr = "Output", 
         reports_dir_1L_chr = "Reports")
     return(x_Ready4showPaths)

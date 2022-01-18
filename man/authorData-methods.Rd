@@ -5,10 +5,12 @@
 \alias{authorData,Ready4showSynopsis-method}
 \title{Author and document datasets}
 \usage{
-\S4method{authorData}{Ready4showSynopsis}(x)
+\S4method{authorData}{Ready4showSynopsis}(x, tmpl_version_1_L_chr = "0.0.9")
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
+
+\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.0.9'}
 }
 \description{
 authorData method applied to Ready4showSynopsis

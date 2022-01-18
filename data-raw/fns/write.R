@@ -324,8 +324,13 @@ write_mdl_plt_fl <- function (plt_fn = NULL, fn_args_ls = NULL, path_to_write_to
 write_mkdn_from_pkg <- function(pkg_nm_1L_chr,
                                 dest_dir_1L_chr = "Markdown",
                                 overwrite_1L_lgl = F){
-  all_mkdn_chr <- system.file("Markdown",package=pkg_nm_1L_chr) %>% list.files()
-  is_dir_lgl <- all_mkdn_chr %>% purrr::map_lgl(~system.file(paste0("Markdown/",.x),package=pkg_nm_1L_chr) %>% dir.exists())
+  all_mkdn_chr <- system.file("Markdown",
+                              package = pkg_nm_1L_chr) %>%
+    list.files()
+  is_dir_lgl <- all_mkdn_chr %>% purrr::map_lgl(~system.file(paste0("Markdown/",
+                                                                    .x),
+                                                             package=pkg_nm_1L_chr) %>%
+                                                  dir.exists())
   all_mkdn_chr[is_dir_lgl] %>% purrr::walk(~{
     if(!dir.exists(paste0(dest_dir_1L_chr,"/",.x)))
       dir.create(paste0(dest_dir_1L_chr,"/",.x))

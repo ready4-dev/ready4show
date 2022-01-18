@@ -49,7 +49,7 @@ make_authorship_lines <- function(authors_tb,
 }
 make_default_paths <- function(){
   x_Ready4showPaths <- Ready4showPaths(mkdn_data_dir_1L_chr = 'Markdown',
-                                       mkdn_source_dir_1L_chr = system.file('Markdown/Manuscript', package = 'ready4show'),
+                                       mkdn_source_dir_1L_chr = NA_character_,#system.file('Markdown/Manuscript', package = 'ready4show')
                                        ms_mkdn_dir_1L_chr = 'Manuscript',
                                        ms_dir_1L_chr = 'Manuscript',
                                        outp_data_dir_1L_chr = 'Output',
@@ -161,13 +161,16 @@ make_path_params_ls <- function(path_to_data_from_top_level_chr = NULL, # MIGRAT
 }
 make_rprt_type_ls <- function(rprt_nm_1L_chr,
                               rprt_lup){
-  values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>% purrr::map_chr(~ready4::get_from_lup_obj(rprt_lup,
-                                                                                                                   match_value_xx = rprt_nm_1L_chr,
-                                                                                                                   match_var_nm_1L_chr = "rprt_nms_chr",
-                                                                                                                   target_var_nm_1L_chr = .x,
-                                                                                                                   evaluate_1L_lgl = F))
-  rprt_type_ls <- list(path_to_RMD_dir_1L_chr = ifelse(!is.na(values_chr[2]),values_chr[2],system.file(values_chr[3],
-                                                                                                       package = values_chr[4])),
+  values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>%
+    purrr::map_chr(~ready4::get_from_lup_obj(rprt_lup,
+                                             match_value_xx = rprt_nm_1L_chr,
+                                             match_var_nm_1L_chr = "rprt_nms_chr",
+                                             target_var_nm_1L_chr = .x,
+                                             evaluate_1L_lgl = F))
+  rprt_type_ls <- list(path_to_RMD_dir_1L_chr = ifelse(!is.na(values_chr[2]),
+                                                       values_chr[2],
+                                                       system.file(values_chr[3],
+                                                                   package = values_chr[4])),
                        nm_of_RMD_1L_chr = values_chr[5],
                        rltv_path_to_outp_yaml_1L_chr = values_chr[6],
                        file_nm_1L_chr = rprt_nm_1L_chr,
