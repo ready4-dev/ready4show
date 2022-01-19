@@ -1,5 +1,5 @@
 ---
-title: "Author Scientific Summaries Using Ready4showSynopsis"
+title: "Author Scientific Summaries Of Studies Using The Ready4 Framework"
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -7,7 +7,7 @@ output:
     highlight: null
     number_sections: yes
 vignette: >
-  %\VignetteIndexEntry{Author Scientific Summaries Using Ready4showSynopsis}
+  %\VignetteIndexEntry{Author Scientific Summaries Of Studies Using The Ready4 Framework}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -145,7 +145,7 @@ Our next step is to copy a dataset of files that can implement a literate progra
 #             new_val_xx  = "PATH TO MARKDOWN DATASET")
 ```
 
-We create the datset copy with the `authorData` method.
+We create the dataset copy with the `authorData` method.
 
 ```{r echo=FALSE}
 # This section is only required when rendering vignettes (it replaces interactivity).
