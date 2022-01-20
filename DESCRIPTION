@@ -1,7 +1,7 @@
 Package: ready4show
 Title: Author Literate Programs to Share Insights from Applying the Ready4
     Framework
-Version: 0.0.0.9084
+Version: 0.0.0.9085
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton@orygen.org.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -77,7 +77,8 @@ Collate:
     'pkg_ready4show.R'
     'ready4show-package.R'
 Suggests: 
-    rticles,
-    bookdown
+    officedown,
+    bookdown,
+    rticles
 Remotes: 
     ready4-dev/ready4
