@@ -16,7 +16,7 @@ x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Literate Programs to
                                  urls_chr = c("https://ready4-dev.github.io/ready4show/",
                                               "https://github.com/ready4-dev/ready4show",
                                               "https://www.ready4-dev.com/")) %>%
-  ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(depends_chr = "ready4",
+  ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(#depends_chr = "ready4",
                                                                        imports_chr = "knitrBootstrap",
                                                                        suggests_chr = c("bookdown", "officedown","rmarkdown", "rticles")),
                            build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
