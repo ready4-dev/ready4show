@@ -14,7 +14,11 @@ authorData_Ready4showSynopsis <- function(x,
     utils::unzip(temp_fl_1L_chr,
                  exdir = temp_dir_1L_chr)
     unlink(temp_fl_1L_chr)
-    mkdn_source_dir_1L_chr <- paste0(temp_dir_1L_chr,"/ms_tmpl-",tmpl_version_1_L_chr)
+    mkdn_source_dir_1L_chr <- paste0(temp_dir_1L_chr,
+                                     "/",
+                                     tmpl_url_1L_chr %>% basename(),
+                                     "-",
+                                     tmpl_version_1_L_chr)
   }
   paths_ls <- manufacture(x,
                           what_1L_chr = "paths_ls")

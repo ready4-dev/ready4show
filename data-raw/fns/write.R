@@ -29,8 +29,12 @@ write_all_outp_dirs <- function(paths_ls){
                           dv_dir_1L_chr = dv_dir_1L_chr))
   return(paths_ls)
 }
-write_custom_authors <- function(paths_ls){
-  original_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,"/Parent_PDF/Parent_PDF.Rmd"))
+write_custom_authors <- function(paths_ls,
+                                 rmd_fl_nms_ls = make_rmd_fl_nms_ls()){
+  original_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
+                                   "/Parent_PDF/",
+                                   rmd_fl_nms_ls$PDF,
+                                   ".Rmd"))
   placeholder_idx_1L_int <- which(original_chr=="## CUSTOM_AUTHORS_PLACEHOLDER ##")
   if(!identical(placeholder_idx_1L_int, integer(0))){
     header_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
@@ -79,7 +83,9 @@ write_custom_authors <- function(paths_ls){
       replacement_chr,
       original_chr[(placeholder_idx_1L_int+1):length(original_chr)]) %>%
       writeLines(con = paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr,
-                              "/Parent_PDF/Parent_PDF.Rmd"))
+                              "/Parent_PDF/",
+                              rmd_fl_nms_ls$PDF,
+                              ".Rmd"))
   }
 }
 write_csp_output <- function(path_to_csp_1L_chr, # Move to ready4show?

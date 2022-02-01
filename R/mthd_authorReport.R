@@ -29,7 +29,7 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x)
     write_header_fls(path_to_header_dir_1L_chr = paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
         "/Header"), header_yaml_args_ls = header_yaml_args_ls, 
         abstract_args_ls = x@abstract_args_ls)
-    write_custom_authors(paths_ls)
+    write_custom_authors(paths_ls, rmd_fl_nms_ls = x@rmd_fl_nms_ls)
     params_ls <- list(X = x)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr, ifelse(x@outp_formats_chr[1] == 
         "Word", ".docx", paste0(".", tolower(x@outp_formats_chr[1]))))

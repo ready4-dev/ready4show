@@ -6,16 +6,16 @@
 \usage{
 make_rmd_fl_nms_ls(
   html_fl_nm_1L_chr = "Main_HTML",
-  pdf_fl_nm_1L_chr = "Main_HTML",
-  word_fl_nm_1L_chr = "Main_HTML"
+  pdf_fl_nm_1L_chr = "Main_Bookdown_PDF",
+  word_fl_nm_1L_chr = "Main_Word"
 )
 }
 \arguments{
 \item{html_fl_nm_1L_chr}{Html file name (a character vector of length one), Default: 'Main_HTML'}
 
-\item{pdf_fl_nm_1L_chr}{Pdf file name (a character vector of length one), Default: 'Main_HTML'}
+\item{pdf_fl_nm_1L_chr}{Pdf file name (a character vector of length one), Default: 'Main_Bookdown_PDF'}
 
-\item{word_fl_nm_1L_chr}{Word file name (a character vector of length one), Default: 'Main_HTML'}
+\item{word_fl_nm_1L_chr}{Word file name (a character vector of length one), Default: 'Main_Word'}
 }
 \value{
 a R Markdown file names (a list)

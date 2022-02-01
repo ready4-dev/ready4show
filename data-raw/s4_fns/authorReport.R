@@ -19,7 +19,8 @@ authorReport_Ready4showSynopsis <- function (x) {
                                                       "/Header"),
                    header_yaml_args_ls = header_yaml_args_ls,
                    abstract_args_ls = x@abstract_args_ls)
-  write_custom_authors(paths_ls)
+  write_custom_authors(paths_ls,
+                       rmd_fl_nms_ls = x@rmd_fl_nms_ls)
   params_ls <- list(X = x
     # output_type_1L_chr = x@outp_formats_chr[1],
     #                 results_ls = results_ls
