@@ -103,6 +103,7 @@ y <- ready4class::ready4class_constructor() %>%
                                                                                 "interval_chr",
                                                                                 "keywords_chr",
                                                                                 "outp_formats_chr",
+                                                                                "rmd_fl_nms_ls",
                                                                                 "sample_desc_1L_chr",
                                                                                 "tables_in_body_lgl",
                                                                                 "title_1L_chr") %>% list(),
@@ -122,6 +123,7 @@ y <- ready4class::ready4class_constructor() %>%
                                                                              "character",
                                                                              "character",
                                                                              "character",
+                                                                             "list",
                                                                              "character",
                                                                              "logical",
                                                                              "character") %>% list(),
@@ -134,6 +136,7 @@ y <- ready4class::ready4class_constructor() %>%
                                                                                     funding_1L_chr = "'Details on study funders go here.'",
                                                                                     fl_nm_1L_chr = "'Manuscript'",
                                                                                     outp_formats_chr = "'PDF'",
+                                                                                    rmd_fl_nms_ls = "make_rmd_fl_nms_ls()",
                                                                                     tables_in_body_lgl = "T",
                                                                                     title_1L_chr = "'Manuscript title goes here.'"
                                                                 )),

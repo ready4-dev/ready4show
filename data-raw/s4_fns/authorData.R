@@ -1,11 +1,13 @@
 authorData_Ready4showSynopsis <- function(x,
-                                          tmpl_version_1_L_chr = "0.0.9.1"){
+                                          tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
+                                          tmpl_version_1_L_chr = "0.0.9.2"){
   if(!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)){
     mkdn_source_dir_1L_chr <- x@a_Ready4showPaths@mkdn_source_dir_1L_chr
   }else{
     temp_fl_1L_chr <- tempfile()
     temp_dir_1L_chr <- tempdir()
-    download.file(paste0("https://github.com/ready4-dev/ms_tmpl/archive/refs/tags/v",
+    download.file(paste0(tmpl_url_1L_chr,
+                         "/archive/refs/tags/v",
                          tmpl_version_1_L_chr,
                          ".zip"),
                   temp_fl_1L_chr)

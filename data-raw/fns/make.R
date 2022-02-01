@@ -159,6 +159,14 @@ make_path_params_ls <- function(path_to_data_from_top_level_chr = NULL, # MIGRAT
 
   return(path_params_ls)
 }
+make_rmd_fl_nms_ls <- function(html_fl_nm_1L_chr = "Main_HTML",
+                               pdf_fl_nm_1L_chr = "Main_Bookdown_PDF",
+                               word_fl_nm_1L_chr = "Main_Word"){
+  rmd_fl_nms_ls <- list(HTML = html_fl_nm_1L_chr,
+                        PDF = pdf_fl_nm_1L_chr,
+                        Word = word_fl_nm_1L_chr)
+  return(rmd_fl_nms_ls)
+}
 make_rprt_type_ls <- function(rprt_nm_1L_chr,
                               rprt_lup){
   values_chr <- names(rprt_lup)[names(rprt_lup) != "rprt_nms_chr"] %>%

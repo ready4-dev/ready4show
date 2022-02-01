@@ -242,6 +242,22 @@ make_paths_ls <- function (params_ls, depth_1L_int = 1)
     }
     return(paths_ls)
 }
+#' Make Markdown file names list
+#' @description make_rmd_fl_nms_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make markdown file names list. The function returns a R Markdown file names (a list).
+#' @param html_fl_nm_1L_chr Html file name (a character vector of length one), Default: 'Main_HTML'
+#' @param pdf_fl_nm_1L_chr Pdf file name (a character vector of length one), Default: 'Main_HTML'
+#' @param word_fl_nm_1L_chr Word file name (a character vector of length one), Default: 'Main_HTML'
+#' @return a R Markdown file names (a list)
+#' @rdname make_rmd_fl_nms_ls
+#' @export 
+#' @keywords internal
+make_rmd_fl_nms_ls <- function (html_fl_nm_1L_chr = "Main_HTML", pdf_fl_nm_1L_chr = "Main_HTML", 
+    word_fl_nm_1L_chr = "Main_HTML") 
+{
+    rmd_fl_nms_ls <- list(HTML = html_fl_nm_1L_chr, PDF = pdf_fl_nm_1L_chr, 
+        Word = word_fl_nm_1L_chr)
+    return(rmd_fl_nms_ls)
+}
 #' Make report type list
 #' @description make_rprt_type_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make report type list. The function returns Report type (a list).
 #' @param rprt_nm_1L_chr Report name (a character vector of length one)

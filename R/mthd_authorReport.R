@@ -38,8 +38,8 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x)
         " ?"), options_chr = c("Y", "N"), force_from_opts_1L_chr = T)
     if (consent_1L_chr == "Y") {
         rmarkdown::render(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
-            "/Parent_", x@outp_formats_chr[1], "/Parent_", x@outp_formats_chr[1], 
-            ".Rmd"), output_format = NULL, params = params_ls, 
+            "/Parent_", x@outp_formats_chr[1], "/", x@rmd_fl_nms_ls[names(x@rmd_fl_nms_ls) == 
+                "PDF"][[1]], ".Rmd"), output_format = NULL, params = params_ls, 
             output_file = output_fl_1L_chr, output_dir = paths_ls$path_to_ms_outp_dir_1L_chr)
     }
 })

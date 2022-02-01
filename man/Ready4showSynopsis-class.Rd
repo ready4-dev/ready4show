@@ -43,6 +43,8 @@ Metadata about a scientific summary manuscript
 
 \item{\code{outp_formats_chr}}{Output formats (a character vector)}
 
+\item{\code{rmd_fl_nms_ls}}{R Markdown file names (a list)}
+
 \item{\code{sample_desc_1L_chr}}{Sample description (a character vector of length one)}
 
 \item{\code{tables_in_body_lgl}}{Tables in body (a logical vector)}

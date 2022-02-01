@@ -5,12 +5,18 @@
 \alias{authorData,Ready4showSynopsis-method}
 \title{Author and document datasets}
 \usage{
-\S4method{authorData}{Ready4showSynopsis}(x, tmpl_version_1_L_chr = "0.0.9.1")
+\S4method{authorData}{Ready4showSynopsis}(
+  x,
+  tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
+  tmpl_version_1_L_chr = "0.0.9.2"
+)
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
 
-\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.0.9.1'}
+\item{tmpl_url_1L_chr}{Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'}
+
+\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.0.9.2'}
 }
 \description{
 authorData method applied to Ready4showSynopsis
