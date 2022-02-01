@@ -46,7 +46,7 @@ authorReport_Ready4showSynopsis <- function (x) {
                              "/Parent_",
                              x@outp_formats_chr[1],
                              "/",
-                             x@rmd_fl_nms_ls[names(x@rmd_fl_nms_ls)=="PDF"][[1]],
+                             x@rmd_fl_nms_ls[names(x@rmd_fl_nms_ls)==x@outp_formats_chr[1]][[1]],
                              ".Rmd"),
                       output_format = NULL,
                       params = params_ls,
