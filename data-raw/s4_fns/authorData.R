@@ -1,6 +1,7 @@
 authorData_Ready4showSynopsis <- function(x,
                                           tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
-                                          tmpl_version_1_L_chr = "0.0.9.2"){
+                                          tmpl_version_1_L_chr = "0.0.9.2",
+                                          what_1L_chr = "Manuscript"){
   if(!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)){
     mkdn_source_dir_1L_chr <- x@a_Ready4showPaths@mkdn_source_dir_1L_chr
   }else{
@@ -19,6 +20,11 @@ authorData_Ready4showSynopsis <- function(x,
                                      tmpl_url_1L_chr %>% basename(),
                                      "-",
                                      tmpl_version_1_L_chr)
+  }
+  if(what_1L_chr != "Manuscript"){
+    ms_mkdn_dir_1L_chr <- x@a_Ready4showPaths@ms_mkdn_dir_1L_chr
+    ms_dir_1L_chr <- x@a_Ready4showPaths@ms_dir_1L_chr
+    x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- x@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
   }
   paths_ls <- manufacture(x,
                           what_1L_chr = "paths_ls")
