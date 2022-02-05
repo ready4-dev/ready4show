@@ -3,8 +3,8 @@ authorReport_Ready4showSynopsis <- function (x,
                                              rmd_fl_nms_ls = NULL,
                                              what_1L_chr = NA_character_) {
   if(!is.na(what_1L_chr)){
-    Z@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
-    Z@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
+    x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
+    x@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
   }
   if(is.na(fl_nm_1L_chr)){
     if(is.na(x@fl_nm_1L_chr)){
