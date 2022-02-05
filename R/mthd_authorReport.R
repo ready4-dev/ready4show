@@ -3,6 +3,9 @@
 #' @name authorReport-Ready4showSynopsis
 #' @description authorReport method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis
+#' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'NA'
+#' @param rmd_fl_nms_ls R Markdown file names (a list), Default: NULL
+#' @param what_1L_chr What (a character vector of length one), Default: 'NA'
 #' @return NULL
 #' @rdname authorReport-methods
 #' @aliases authorReport,Ready4showSynopsis-method
@@ -10,13 +13,23 @@
 #' @importFrom purrr flatten_chr
 #' @importFrom ready4 make_prompt authorReport
 #' @importFrom rmarkdown render
-methods::setMethod("authorReport", "Ready4showSynopsis", function (x) 
+methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_chr = NA_character_, rmd_fl_nms_ls = NULL, 
+    what_1L_chr = NA_character_) 
 {
-    if (is.na(x@fl_nm_1L_chr)) {
-        fl_nm_1L_chr <- "Manuscript"
+    if (!is.na(what_1L_chr)) {
+        Z@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
+        Z@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
     }
-    else {
-        fl_nm_1L_chr <- x@fl_nm_1L_chr
+    if (is.na(fl_nm_1L_chr)) {
+        if (is.na(x@fl_nm_1L_chr)) {
+            fl_nm_1L_chr <- "Manuscript"
+        }
+        else {
+            fl_nm_1L_chr <- x@fl_nm_1L_chr
+        }
+    }
+    if (!is.null(rmd_fl_nms_ls)) {
+        x@rmd_fl_nms_ls <- rmd_fl_nms_ls
     }
     paths_ls <- manufacture(x, what_1L_chr = "paths_ls")
     write_new_dirs(paths_ls %>% purrr::flatten_chr())

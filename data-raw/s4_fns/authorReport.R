@@ -1,8 +1,20 @@
-authorReport_Ready4showSynopsis <- function (x) {
-  if(is.na(x@fl_nm_1L_chr)){
-    fl_nm_1L_chr <- "Manuscript"
-  }else{
-    fl_nm_1L_chr <- x@fl_nm_1L_chr
+authorReport_Ready4showSynopsis <- function (x,
+                                             fl_nm_1L_chr = NA_character_,
+                                             rmd_fl_nms_ls = NULL,
+                                             what_1L_chr = NA_character_) {
+  if(!is.na(what_1L_chr)){
+    Z@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
+    Z@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
+  }
+  if(is.na(fl_nm_1L_chr)){
+    if(is.na(x@fl_nm_1L_chr)){
+      fl_nm_1L_chr <- "Manuscript"
+    }else{
+      fl_nm_1L_chr <- x@fl_nm_1L_chr
+    }
+  }
+  if(!is.null(rmd_fl_nms_ls)){
+    x@rmd_fl_nms_ls <- rmd_fl_nms_ls
   }
   paths_ls <- manufacture(x,
                           what_1L_chr = "paths_ls")
@@ -21,12 +33,7 @@ authorReport_Ready4showSynopsis <- function (x) {
                    abstract_args_ls = x@abstract_args_ls)
   write_custom_authors(paths_ls,
                        rmd_fl_nms_ls = x@rmd_fl_nms_ls)
-  params_ls <- list(X = x
-    # output_type_1L_chr = x@outp_formats_chr[1],
-    #                 results_ls = results_ls
-                    )
-    # params_ls$figures_in_body_lgl <- x@figures_in_body_lgl
-    # params_ls$tables_in_body_lgl <- x@tables_in_body_lgl
+  params_ls <- list(X = x)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr,
                             ifelse(x@outp_formats_chr[1] == "Word",
                                    ".docx",

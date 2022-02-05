@@ -5,10 +5,21 @@
 \alias{authorReport,Ready4showSynopsis-method}
 \title{Author and save a report}
 \usage{
-\S4method{authorReport}{Ready4showSynopsis}(x)
+\S4method{authorReport}{Ready4showSynopsis}(
+  x,
+  fl_nm_1L_chr = NA_character_,
+  rmd_fl_nms_ls = NULL,
+  what_1L_chr = NA_character_
+)
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
+
+\item{fl_nm_1L_chr}{File name (a character vector of length one), Default: 'NA'}
+
+\item{rmd_fl_nms_ls}{R Markdown file names (a list), Default: NULL}
+
+\item{what_1L_chr}{What (a character vector of length one), Default: 'NA'}
 }
 \description{
 authorReport method applied to Ready4showSynopsis

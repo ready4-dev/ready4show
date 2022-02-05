@@ -278,14 +278,6 @@ write_manuscript <- function (abstract_args_ls = NULL, input_params_ls = NULL, r
     else {
         header_yaml_args_ls <- results_ls$header_yaml_args_ls
     }
-    if (is.null(results_ls)) {
-        results_ls <- make_results_ls(dv_ds_nm_and_url_chr = input_params_ls$path_params_ls$dv_ds_nm_and_url_chr, 
-            output_format_ls = input_params_ls$output_format_ls, 
-            params_ls_ls = input_params_ls, path_params_ls = input_params_ls$path_params_ls, 
-            study_descs_ls = input_params_ls$study_descs_ls, 
-            var_nm_change_lup = input_params_ls$study_descs_ls$var_nm_change_lup, 
-            version_1L_chr = version_1L_chr)
-    }
     if (is.null(abstract_args_ls)) {
         abstract_args_ls <- make_abstract_args_ls(results_ls)
     }
