@@ -28,6 +28,7 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_c
             fl_nm_1L_chr <- x@fl_nm_1L_chr
         }
     }
+    x@fl_nm_1L_chr <- fl_nm_1L_chr
     if (!is.null(rmd_fl_nms_ls)) {
         x@rmd_fl_nms_ls <- rmd_fl_nms_ls
     }
