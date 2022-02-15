@@ -171,4 +171,6 @@ z <- ready4pack::make_pt_ready4pack_manifest(x,
                                                                      ready4show_institutes = "institutes_tb")) %>%
   ready4pack::ready4pack_manifest()
 z <- author(z)
+ready4::write_citation_cff(packageDescription("ready4show"),
+                           citation_chr = readLines("inst/CITATION"))
 devtools::build_vignettes()
