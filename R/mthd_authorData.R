@@ -4,7 +4,7 @@
 #' @description authorData method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis
 #' @param tmpl_url_1L_chr Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'
-#' @param tmpl_version_1_L_chr Template version 1 L (a character vector), Default: '0.0.9.2'
+#' @param tmpl_version_1_L_chr Template version 1 L (a character vector), Default: '0.1.1.0'
 #' @param what_1L_chr What (a character vector of length one), Default: 'Manuscript'
 #' @return NULL
 #' @rdname authorData-methods
@@ -14,7 +14,7 @@
 #' @importFrom purrr flatten_chr
 #' @importFrom ready4 write_new_files authorData
 methods::setMethod("authorData", "Ready4showSynopsis", function (x, tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl", 
-    tmpl_version_1_L_chr = "0.0.9.2", what_1L_chr = "Manuscript") 
+    tmpl_version_1_L_chr = "0.1.1.0", what_1L_chr = "Manuscript") 
 {
     if (!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)) {
         mkdn_source_dir_1L_chr <- x@a_Ready4showPaths@mkdn_source_dir_1L_chr

@@ -8,7 +8,7 @@
 \S4method{authorData}{Ready4showSynopsis}(
   x,
   tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
-  tmpl_version_1_L_chr = "0.0.9.2",
+  tmpl_version_1_L_chr = "0.1.1.0",
   what_1L_chr = "Manuscript"
 )
 }
@@ -17,7 +17,7 @@
 
 \item{tmpl_url_1L_chr}{Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'}
 
-\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.0.9.2'}
+\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.1.1.0'}
 
 \item{what_1L_chr}{What (a character vector of length one), Default: 'Manuscript'}
 }
