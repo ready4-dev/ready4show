@@ -1,4 +1,4 @@
-#' Exhibit (print to console) features of a ready4 framework module (or sub-module)
+#' Exhibit features of a dataset by printing them to the R console
 #' @description exhibit.ready4show_authors() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 S3 class for authors lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of ready4 S3 class for authors lookup table
 #' @param caption_1L_chr Caption (a character vector of length one), Default: NULL
@@ -23,7 +23,7 @@ exhibit.ready4show_authors <- function (x, caption_1L_chr = NULL, mkdn_tbl_ref_1
 #' @aliases exhibit,ready4show_authors-method
 #' @importFrom ready4 exhibit
 methods::setMethod("exhibit", methods::className("ready4show_authors", package = "ready4show"), exhibit.ready4show_authors)
-#' Exhibit (print to console) features of a ready4 framework module (or sub-module)
+#' Exhibit features of a dataset by printing them to the R console
 #' @description exhibit.ready4show_correspondences() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the Name correspondences lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of Name correspondences lookup table
 #' @param caption_1L_chr Caption (a character vector of length one), Default: NULL
@@ -46,7 +46,7 @@ exhibit.ready4show_correspondences <- function (x, caption_1L_chr = NULL, mkdn_t
 #' @aliases exhibit,ready4show_correspondences-method
 #' @importFrom ready4 exhibit
 methods::setMethod("exhibit", methods::className("ready4show_correspondences", package = "ready4show"), exhibit.ready4show_correspondences)
-#' Exhibit (print to console) features of a ready4 framework module (or sub-module)
+#' Exhibit features of a dataset by printing them to the R console
 #' @description exhibit.ready4show_institutes() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 S3 class for institutes lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of ready4 S3 class for institutes lookup table
 #' @param caption_1L_chr Caption (a character vector of length one), Default: NULL

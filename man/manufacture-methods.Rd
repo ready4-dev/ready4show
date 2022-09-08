@@ -3,7 +3,7 @@
 \name{manufacture-Ready4showSynopsis}
 \alias{manufacture-Ready4showSynopsis}
 \alias{manufacture,Ready4showSynopsis-method}
-\title{Manufacture a (non ready4 framework) object}
+\title{Manufacture a new object}
 \usage{
 \S4method{manufacture}{Ready4showSynopsis}(x, what_1L_chr = "paths_ls")
 }

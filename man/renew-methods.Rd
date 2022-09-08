@@ -7,7 +7,7 @@
 \alias{renew,ready4show_correspondences-method}
 \alias{renew.ready4show_institutes}
 \alias{renew,ready4show_institutes-method}
-\title{Renew (update) a ready4 framework module (or sub-module)}
+\title{Renew values in a dataset}
 \usage{
 renew.ready4show_authors(
   x,

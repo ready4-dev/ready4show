@@ -7,7 +7,7 @@
 \alias{exhibit,ready4show_correspondences-method}
 \alias{exhibit.ready4show_institutes}
 \alias{exhibit,ready4show_institutes-method}
-\title{Exhibit (print to console) features of a ready4 framework module (or sub-module)}
+\title{Exhibit features of a dataset by printing them to the R console}
 \usage{
 exhibit.ready4show_authors(
   x,

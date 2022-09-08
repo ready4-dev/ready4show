@@ -1,5 +1,5 @@
 #' 
-#' Manufacture a (non ready4 framework) object
+#' Manufacture a new object
 #' @name manufacture-Ready4showSynopsis
 #' @description manufacture method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis

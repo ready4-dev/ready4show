@@ -1,4 +1,4 @@
-#' Renew (update) a ready4 framework module (or sub-module)
+#' Renew values in a dataset
 #' @description renew.ready4show_authors() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 S3 class for authors lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of ready4 S3 class for authors lookup table
 #' @param first_nm_chr First name (a character vector), Default: 'NA'
@@ -34,7 +34,7 @@ renew.ready4show_authors <- function (x, first_nm_chr = NA_character_, middle_nm
 #' @aliases renew,ready4show_authors-method
 #' @importFrom ready4 renew
 methods::setMethod("renew", methods::className("ready4show_authors", package = "ready4show"), renew.ready4show_authors)
-#' Renew (update) a ready4 framework module (or sub-module)
+#' Renew values in a dataset
 #' @description renew.ready4show_correspondences() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the Name correspondences lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of Name correspondences lookup table
 #' @param old_nms_chr Old names (a character vector), Default: 'NA'
@@ -59,7 +59,7 @@ renew.ready4show_correspondences <- function (x, old_nms_chr = NA_character_, ne
 #' @aliases renew,ready4show_correspondences-method
 #' @importFrom ready4 renew
 methods::setMethod("renew", methods::className("ready4show_correspondences", package = "ready4show"), renew.ready4show_correspondences)
-#' Renew (update) a ready4 framework module (or sub-module)
+#' Renew values in a dataset
 #' @description renew.ready4show_institutes() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 S3 class for institutes lookup table The function is called for its side effects and does not return a value.
 #' @param x An instance of ready4 S3 class for institutes lookup table
 #' @param short_name_chr Short name (a character vector), Default: 'NA'
