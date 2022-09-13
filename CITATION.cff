@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Matthew Hamilton and Glen Wiesner  (2022). ready4show: Author Literate Programs to Share Insights from Applying the Ready4
-Framework. Version 0.0.0.9096. Zenodo. https://doi.org/10.5281/zenodo.5644568"
+Framework. Version 0.0.0.9098. Zenodo. https://doi.org/10.5281/zenodo.5644568"
 authors:
   - family-names: "Hamilton"
     given-names: "Matthew"
@@ -8,7 +8,7 @@ authors:
     given-names: "Glen"
 title: "ready4show: Author Literate Programs to Share Insights from Applying the Ready4
 Framework"
-version: 0.0.0.9096
+version: 0.0.0.9098
 doi: 10.5281/zenodo.5644568
-date-released: 2022-04-19
+date-released: 2022-09-13
 url: "https://ready4-dev.github.io/ready4show/"
