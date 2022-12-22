@@ -6,6 +6,7 @@
 #' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'NA'
 #' @param rmd_fl_nms_ls R Markdown file names (a list), Default: NULL
 #' @param what_1L_chr What (a character vector of length one), Default: 'NA'
+#' @param ... Additional arguments
 #' @return NULL
 #' @rdname authorReport-methods
 #' @aliases authorReport,Ready4showSynopsis-method
@@ -14,7 +15,7 @@
 #' @importFrom ready4 make_prompt authorReport
 #' @importFrom rmarkdown render
 methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_chr = NA_character_, rmd_fl_nms_ls = NULL, 
-    what_1L_chr = NA_character_) 
+    what_1L_chr = NA_character_, ...) 
 {
     if (!is.na(what_1L_chr)) {
         x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
@@ -44,7 +45,7 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_c
         "/Header"), header_yaml_args_ls = header_yaml_args_ls, 
         abstract_args_ls = x@abstract_args_ls)
     write_custom_authors(paths_ls, rmd_fl_nms_ls = x@rmd_fl_nms_ls)
-    params_ls <- list(X = x)
+    params_ls <- list(X = x, ...)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr, ifelse(x@outp_formats_chr[1] == 
         "Word", ".docx", paste0(".", tolower(x@outp_formats_chr[1]))))
     consent_1L_chr <- ready4::make_prompt(prompt_1L_chr = paste0("Do you confirm ('Y') that you want to write the file ", 

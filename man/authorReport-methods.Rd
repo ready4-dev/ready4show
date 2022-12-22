@@ -9,7 +9,8 @@
   x,
   fl_nm_1L_chr = NA_character_,
   rmd_fl_nms_ls = NULL,
-  what_1L_chr = NA_character_
+  what_1L_chr = NA_character_,
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@
 \item{rmd_fl_nms_ls}{R Markdown file names (a list), Default: NULL}
 
 \item{what_1L_chr}{What (a character vector of length one), Default: 'NA'}
+
+\item{...}{Additional arguments}
 }
 \description{
 authorReport method applied to Ready4showSynopsis

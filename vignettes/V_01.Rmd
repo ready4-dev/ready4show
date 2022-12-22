@@ -51,7 +51,8 @@ As we can see from the below call to `exhibitSlot`, `X` was created with no auth
 
 ```{r}
 exhibitSlot(X,
-            "authors_r3") 
+            "authors_r3",
+            scroll_box_args_ls = list(width = "100%")) 
 ```
 
 We can add details on each author by repeated calls to the `renewSlot` method.
@@ -84,7 +85,8 @@ The updated authorship table can now be inspected.
 
 ```{r}
 X %>%
-  exhibitSlot("authors_r3") 
+  exhibitSlot("authors_r3",
+              scroll_box_args_ls = list(width = "100%")) 
 ```
 
 We now need to add additional information for each author institute.
@@ -107,7 +109,8 @@ The updated institutes table can now be inspected.
 
 ```{r}
 X %>%
-  exhibitSlot("institutes_r3") 
+  exhibitSlot("institutes_r3",
+              scroll_box_args_ls = list(width = "100%")) 
 ```
 
 ### Add correspondences
@@ -124,7 +127,8 @@ These edits can now be inspected with a call to `exhibitSlot`.
 
 ```{r}
 X %>%
-  exhibitSlot("correspondences_r3") # Add Exhibit Method
+  exhibitSlot("correspondences_r3",
+              scroll_box_args_ls = list(width = "100%")) # Add Exhibit Method
 ```
 
 ### Specify output directory

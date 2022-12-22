@@ -1,7 +1,8 @@
 authorReport_Ready4showSynopsis <- function (x,
                                              fl_nm_1L_chr = NA_character_,
                                              rmd_fl_nms_ls = NULL,
-                                             what_1L_chr = NA_character_) {
+                                             what_1L_chr = NA_character_,
+                                             ...) {
   if(!is.na(what_1L_chr)){
     x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
     x@a_Ready4showPaths@ms_dir_1L_chr <- what_1L_chr
@@ -34,7 +35,8 @@ authorReport_Ready4showSynopsis <- function (x,
                    abstract_args_ls = x@abstract_args_ls)
   write_custom_authors(paths_ls,
                        rmd_fl_nms_ls = x@rmd_fl_nms_ls)
-  params_ls <- list(X = x)
+  params_ls <- list(X = x,
+                    ...)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr,
                             ifelse(x@outp_formats_chr[1] == "Word",
                                    ".docx",

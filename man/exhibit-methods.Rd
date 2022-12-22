@@ -14,7 +14,8 @@ exhibit.ready4show_authors(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 
 \S4method{exhibit}{ready4show_authors}(
@@ -22,7 +23,8 @@ exhibit.ready4show_authors(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 
 exhibit.ready4show_correspondences(
@@ -30,7 +32,8 @@ exhibit.ready4show_correspondences(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 
 \S4method{exhibit}{ready4show_correspondences}(
@@ -38,7 +41,8 @@ exhibit.ready4show_correspondences(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 
 exhibit.ready4show_institutes(
@@ -46,7 +50,8 @@ exhibit.ready4show_institutes(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 
 \S4method{exhibit}{ready4show_institutes}(
@@ -54,7 +59,8 @@ exhibit.ready4show_institutes(
   caption_1L_chr = NULL,
   mkdn_tbl_ref_1L_chr = NULL,
   output_type_1L_chr = "HTML",
-  use_lbls_as_col_nms_1L_lgl = T
+  use_lbls_as_col_nms_1L_lgl = T,
+  ...
 )
 }
 \arguments{
@@ -67,6 +73,8 @@ exhibit.ready4show_institutes(
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 
 \item{use_lbls_as_col_nms_1L_lgl}{Use labels as column names (a logical vector of length one), Default: T}
+
+\item{...}{Additional arguments}
 }
 \description{
 exhibit.ready4show_authors() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 S3 class for authors lookup table The function is called for its side effects and does not return a value.
