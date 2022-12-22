@@ -28,7 +28,7 @@ Open science workflows should ideally span an unbroken chain between data-ingest
 `ready4show` includes a number of classes and methods that help integrate manuscript authoring into a reproducible workflow. 
 
 ### Create a synopsis of the manuscript to be authored
-To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4framework module (S4) class. We can use `X` to record metadata about the manuscript to be authored (including details about the study being summarised and the title and format of the intended output).
+To start with we create `X`, an instance of `Ready4showSynopsis`, a ready4 module (S4 class). We can use `X` to record metadata about the manuscript to be authored (including details about the study being summarised and the title and format of the intended output).
 
 ```{r}
 X <- Ready4showSynopsis(background_1L_chr = "Our study is entirely fictional.",

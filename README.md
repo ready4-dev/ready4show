@@ -1,6 +1,6 @@
 # ready4show
 
-## Author Literate Programs to Share Insights from Applying the Ready4 Framework
+## Author Literate Programs to Implement and Report Ready4 Analyses
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)

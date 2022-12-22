@@ -22,7 +22,7 @@ renew.ready4show_authors(
   email_chr = NA_character_,
   is_equal_first_lgl = NA,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 
 \S4method{renew}{ready4show_authors}(
@@ -38,7 +38,7 @@ renew.ready4show_authors(
   email_chr = NA_character_,
   is_equal_first_lgl = NA,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 
 renew.ready4show_correspondences(
@@ -46,7 +46,7 @@ renew.ready4show_correspondences(
   old_nms_chr = NA_character_,
   new_nms_chr = NA_character_,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 
 \S4method{renew}{ready4show_correspondences}(
@@ -54,7 +54,7 @@ renew.ready4show_correspondences(
   old_nms_chr = NA_character_,
   new_nms_chr = NA_character_,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 
 renew.ready4show_institutes(
@@ -62,7 +62,7 @@ renew.ready4show_institutes(
   short_name_chr = NA_character_,
   long_name_chr = NA_character_,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 
 \S4method{renew}{ready4show_institutes}(
@@ -70,7 +70,7 @@ renew.ready4show_institutes(
   short_name_chr = NA_character_,
   long_name_chr = NA_character_,
   filter_cdn_1L_chr = NA_character_,
-  slice_idxs_int = NA_integer_
+  slice_indcs_int = NA_integer_
 )
 }
 \arguments{
@@ -98,7 +98,7 @@ renew.ready4show_institutes(
 
 \item{filter_cdn_1L_chr}{Filter condition (a character vector of length one), Default: 'NA'}
 
-\item{slice_idxs_int}{Slice indices (an integer vector), Default: NA}
+\item{slice_indcs_int}{Slice indices (an integer vector), Default: NA}
 
 \item{old_nms_chr}{Old names (a character vector), Default: 'NA'}
 

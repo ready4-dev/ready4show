@@ -4,7 +4,7 @@
 \name{ready4show-package}
 \alias{ready4show}
 \alias{ready4show-package}
-\title{ready4show: Author Literate Programs to Share Insights from Applying the Ready4 Framework}
+\title{ready4show: Author Literate Programs to Implement and Report Ready4 Analyses}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 

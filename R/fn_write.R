@@ -85,11 +85,11 @@ write_custom_authors <- function (paths_ls, rmd_fl_nms_ls = make_rmd_fl_nms_ls()
     if (!identical(placeholder_idx_1L_int, integer(0))) {
         header_chr <- readLines(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
             "/Header/header_common.yaml"))
-        names_idxs_int <- c(which(header_chr == "author:") + 
+        names_indcs_int <- c(which(header_chr == "author:") + 
             1, (1:length(header_chr))[header_chr %>% startsWith("  - name: ")])
-        affiliations_idxs_int <- c(1:length(header_chr))[header_chr %>% 
+        affiliations_indcs_int <- c(1:length(header_chr))[header_chr %>% 
             startsWith("    institute: ") | header_chr %>% startsWith("      institute: ")]
-        affiliations_ls <- header_chr[affiliations_idxs_int] %>% 
+        affiliations_ls <- header_chr[affiliations_indcs_int] %>% 
             stringr::str_remove_all("      institute: ") %>% 
             stringr::str_remove_all("    institute: ") %>% purrr::map(~stringr::str_sub(.x, 
             start = 2, end = -2) %>% strsplit(", "))
@@ -98,15 +98,15 @@ write_custom_authors <- function (paths_ls, rmd_fl_nms_ls = make_rmd_fl_nms_ls()
         affiliations_chr <- affiliations_ls %>% purrr::map_chr(~paste0("    affiliation: ", 
             .x[[1]] %>% purrr::map_int(~which(affiliations_chr == 
                 .x)) %>% paste0(collapse = ",")))
-        replacement_chr <- purrr::reduce(1:length(names_idxs_int), 
+        replacement_chr <- purrr::reduce(1:length(names_indcs_int), 
             .init = c("authors:"), ~{
                 if (.y == 1) {
-                  c(.x, header_chr[names_idxs_int[.y]] %>% stringr::str_replace("  - ", 
+                  c(.x, header_chr[names_indcs_int[.y]] %>% stringr::str_replace("  - ", 
                     "  - name: ") %>% stringi::stri_replace_last_regex(":", 
                     ""), affiliations_chr[.y])
                 }
                 else {
-                  c(.x, header_chr[names_idxs_int[.y]] %>% stringr::str_replace("  - name: ", 
+                  c(.x, header_chr[names_indcs_int[.y]] %>% stringr::str_replace("  - name: ", 
                     "  - name: "), affiliations_chr[.y])
                 }
             })
