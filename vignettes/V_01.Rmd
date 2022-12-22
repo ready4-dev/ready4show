@@ -14,7 +14,7 @@ vignette: >
 ```{r echo = F}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(ready4)
 library(ready4show)
 library(bookdown)
