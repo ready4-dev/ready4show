@@ -13,6 +13,7 @@ x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Literate Programs to
                                  utils::person("Glen", "Wiesner", email = "Glen.Wiesner@vu.edu.au",
                                                role = c("aut"), comment = c(ORCID = "0000-0002-0071-130X")),
                                  utils::person("Orygen", role = c("cph", "fnd")),
+                                 utils::person("Australian Government Research Training Program", role =c("fnd")),
                                  utils::person("VicHealth",role = c("fnd")),
                                  utils::person("Victoria University", role =c("fnd"))
                                  ),
@@ -174,11 +175,4 @@ z <- ready4pack::make_pt_ready4pack_manifest(x,
                                                                      ready4show_institutes = "institutes_tb")) %>%
   ready4pack::ready4pack_manifest()
 z <- author(z)
-#ready4fun::write_fns_dmt_tb(z$x_ready4fun_manifest) # Need to fix in ready4fun
 devtools::build_vignettes()
-# readLines(".github/workflows/R-CMD-check.yaml") %>%
-#   stringr::str_replace_all("r-lib/actions/setup-r@master","r-lib/actions/setup-r@v2") %>%
-#   stringr::str_replace_all("r-lib/actions/setup-pandoc@master","r-lib/actions/setup-pandoc@v2") %>%
-#   writeLines(con = ".github/workflows/R-CMD-check.yaml")
-# writeLines(c("main table {","  display: table;","}"),
-#            con = "pkgdown/extra.css")

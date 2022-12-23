@@ -42,6 +42,7 @@ Authors:
 Other contributors:
 \itemize{
   \item Orygen [copyright holder, funder]
+  \item Australian Government Research Training Program [funder]
   \item VicHealth [funder]
   \item Victoria University [funder]
 }
