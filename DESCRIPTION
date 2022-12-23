@@ -1,6 +1,6 @@
 Package: ready4show
 Title: Author Literate Programs to Implement and Report Ready4 Analyses
-Version: 0.0.0.9102
+Version: 0.0.0.9103
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton@orygen.org.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -40,7 +40,7 @@ Imports:
     methods,
     officer,
     purrr,
-    ready4 (>= 0.0.0.9107),
+    ready4 (>= 0.0.0.9109),
     rlang,
     rmarkdown,
     stringi,
