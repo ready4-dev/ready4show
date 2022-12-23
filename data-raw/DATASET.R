@@ -175,4 +175,5 @@ z <- ready4pack::make_pt_ready4pack_manifest(x,
                                                                      ready4show_institutes = "institutes_tb")) %>%
   ready4pack::ready4pack_manifest()
 z <- author(z)
+ready4::write_extra_pkgs_to_actions()
 devtools::build_vignettes()
