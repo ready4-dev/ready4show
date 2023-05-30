@@ -217,3 +217,4 @@
 ^data-raw/s4_fns/authorData\.R$
 ^data-raw/s4_fns/manufacture\.R$
 ^data-raw/s4_fns/authorReport\.R$
+^data-raw/mthds/manufacture\.R$

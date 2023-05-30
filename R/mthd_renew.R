@@ -13,6 +13,7 @@
 #' @param is_equal_first_lgl Is equal first (a logical vector), Default: NA
 #' @param filter_cdn_1L_chr Filter condition (a character vector of length one), Default: 'NA'
 #' @param slice_indcs_int Slice indices (an integer vector), Default: NA
+#' @param ... Additional arguments
 #' @return x (An object)
 #' @rdname renew-methods
 #' @export 
@@ -22,7 +23,8 @@ renew.ready4show_authors <- function (x, first_nm_chr = NA_character_, middle_nm
     last_nm_chr = NA_character_, title_chr = NA_character_, qualifications_chr = NA_character_, 
     institute_chr = NA_character_, sequence_int = NA_integer_, 
     is_corresponding_lgl = NA, email_chr = NA_character_, is_equal_first_lgl = NA, 
-    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_) 
+    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_, 
+    ...) 
 {
     fn_env_ls <- as.list(rlang::current_env())[-1]
     x <- ready4::update_tb_r3(x, filter_cdn_1L_chr = filter_cdn_1L_chr, 
@@ -41,13 +43,15 @@ methods::setMethod("renew", methods::className("ready4show_authors", package = "
 #' @param new_nms_chr New names (a character vector), Default: 'NA'
 #' @param filter_cdn_1L_chr Filter condition (a character vector of length one), Default: 'NA'
 #' @param slice_indcs_int Slice indices (an integer vector), Default: NA
+#' @param ... Additional arguments
 #' @return x (An object)
 #' @rdname renew-methods
 #' @export 
 #' @importFrom rlang current_env
 #' @importFrom ready4 update_tb_r3 renew
 renew.ready4show_correspondences <- function (x, old_nms_chr = NA_character_, new_nms_chr = NA_character_, 
-    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_) 
+    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_, 
+    ...) 
 {
     fn_env_ls <- as.list(rlang::current_env())[-1]
     x <- ready4::update_tb_r3(x, filter_cdn_1L_chr = filter_cdn_1L_chr, 
@@ -66,13 +70,15 @@ methods::setMethod("renew", methods::className("ready4show_correspondences", pac
 #' @param long_name_chr Long name (a character vector), Default: 'NA'
 #' @param filter_cdn_1L_chr Filter condition (a character vector of length one), Default: 'NA'
 #' @param slice_indcs_int Slice indices (an integer vector), Default: NA
+#' @param ... Additional arguments
 #' @return x (An object)
 #' @rdname renew-methods
 #' @export 
 #' @importFrom rlang current_env
 #' @importFrom ready4 update_tb_r3 renew
 renew.ready4show_institutes <- function (x, short_name_chr = NA_character_, long_name_chr = NA_character_, 
-    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_) 
+    filter_cdn_1L_chr = NA_character_, slice_indcs_int = NA_integer_, 
+    ...) 
 {
     fn_env_ls <- as.list(rlang::current_env())[-1]
     x <- ready4::update_tb_r3(x, filter_cdn_1L_chr = filter_cdn_1L_chr, 

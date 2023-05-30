@@ -4,15 +4,15 @@
 \name{ready4show-package}
 \alias{ready4show}
 \alias{ready4show-package}
-\title{ready4show: Author Literate Programs to Implement and Report Ready4 Analyses}
+\title{ready4show: Author Literate Programs to Implement and Report Modelling Analyses}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 youth mental health system model (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
+ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
 
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 youth mental health system model (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
+ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
 }
 \seealso{
 Useful links:

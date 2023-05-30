@@ -1,7 +1,7 @@
 # library(ready4)
 library(ready4fun)
-x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Literate Programs to Implement And Report Ready4 Analyses" %>% tools::toTitleCase(),
-                                 pkg_desc_1L_chr = "ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 youth mental health system model (https://www.ready4-dev.com).
+x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Literate Programs to Implement And Report Modelling Analyses" %>% tools::toTitleCase(),
+                                 pkg_desc_1L_chr = "ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 framework (https://www.ready4-dev.com).
   This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).",
                                  authors_prsn = c(utils::person(
                                    given = "Matthew",
