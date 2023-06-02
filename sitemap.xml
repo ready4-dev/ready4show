@@ -133,6 +133,9 @@
     <loc>https://ready4-dev.github.io/ready4show/reference/transform_abstract.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/validate_args_inc_consent.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/validate_ready4show_authors.html</loc>
   </url>
   <url>
@@ -167,6 +170,9 @@
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/write_mkdn_from_pkg.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/ready4show/reference/write_mkdn_from_repo.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/ready4show/reference/write_report.html</loc>

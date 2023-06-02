@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ready4show</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9103</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9106</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,19 +60,22 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">write_rprt_with_rcrd</span><span class="op">(</span></span>
 <span>  <span class="va">path_to_outp_fl_1L_chr</span>,</span>
 <span>  <span class="va">paths_ls</span>,</span>
-<span>  header_yaml_args_ls <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  <span class="va">rprt_lup</span>,</span>
-<span>  use_fake_data_1L_lgl <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  rprt_nm_1L_chr <span class="op">=</span> <span class="st">"AAA_TTU_MDL_CTG"</span>,</span>
-<span>  rcrd_nm_1L_chr <span class="op">=</span> <span class="st">"AAA_RPRT_WRTNG_MTH"</span>,</span>
-<span>  reference_1L_int <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  start_at_int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span>  output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,</span>
-<span>  rprt_output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,</span>
-<span>  nbr_of_digits_1L_int <span class="op">=</span> <span class="fl">2L</span>,</span>
 <span>  abstract_args_ls <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  consent_1L_chr <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  consent_indcs_int <span class="op">=</span> <span class="fl">1L</span>,</span>
+<span>  header_yaml_args_ls <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  main_rprt_append_ls <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  rcrd_rprt_append_ls <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  nbr_of_digits_1L_int <span class="op">=</span> <span class="fl">2L</span>,</span>
+<span>  options_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Y"</span>, <span class="st">"N"</span><span class="op">)</span>,</span>
+<span>  output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,</span>
+<span>  rcrd_nm_1L_chr <span class="op">=</span> <span class="st">"AAA_RPRT_WRTNG_MTH"</span>,</span>
+<span>  rcrd_rprt_append_ls <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  reference_1L_int <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  rprt_nm_1L_chr <span class="op">=</span> <span class="st">"AAA_TTU_MDL_CTG"</span>,</span>
+<span>  rprt_output_type_1L_chr <span class="op">=</span> <span class="st">"PDF"</span>,</span>
+<span>  start_at_int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>  use_fake_data_1L_lgl <span class="op">=</span> <span class="cn">F</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -86,56 +89,68 @@
 <dd><p>Paths (a list)</p></dd>
 
 
-<dt>header_yaml_args_ls</dt>
-<dd><p>Header yaml arguments (a list), Default: NULL</p></dd>
-
-
 <dt>rprt_lup</dt>
 <dd><p>Report (a lookup table)</p></dd>
-
-
-<dt>use_fake_data_1L_lgl</dt>
-<dd><p>Use fake data (a logical vector of length one), Default: F</p></dd>
-
-
-<dt>rprt_nm_1L_chr</dt>
-<dd><p>Report name (a character vector of length one), Default: 'AAA_TTU_MDL_CTG'</p></dd>
-
-
-<dt>rcrd_nm_1L_chr</dt>
-<dd><p>Record name (a character vector of length one), Default: 'AAA_RPRT_WRTNG_MTH'</p></dd>
-
-
-<dt>reference_1L_int</dt>
-<dd><p>Reference (an integer vector of length one), Default: NULL</p></dd>
-
-
-<dt>start_at_int</dt>
-<dd><p>Start at (an integer vector), Default: c(2, 1)</p></dd>
-
-
-<dt>output_type_1L_chr</dt>
-<dd><p>Output type (a character vector of length one), Default: 'PDF'</p></dd>
-
-
-<dt>rprt_output_type_1L_chr</dt>
-<dd><p>Report output type (a character vector of length one), Default: 'PDF'</p></dd>
-
-
-<dt>nbr_of_digits_1L_int</dt>
-<dd><p>Number of digits (an integer vector of length one), Default: 2</p></dd>
 
 
 <dt>abstract_args_ls</dt>
 <dd><p>Abstract arguments (a list), Default: NULL</p></dd>
 
 
+<dt>consent_1L_chr</dt>
+<dd><p>Consent (a character vector of length one), Default: ''</p></dd>
+
+
+<dt>consent_indcs_int</dt>
+<dd><p>Consent indices (an integer vector), Default: 1</p></dd>
+
+
+<dt>header_yaml_args_ls</dt>
+<dd><p>Header yaml arguments (a list), Default: NULL</p></dd>
+
+
 <dt>main_rprt_append_ls</dt>
 <dd><p>Main report append (a list), Default: NULL</p></dd>
 
 
+<dt>nbr_of_digits_1L_int</dt>
+<dd><p>Number of digits (an integer vector of length one), Default: 2</p></dd>
+
+
+<dt>options_chr</dt>
+<dd><p>Options (a character vector), Default: c("Y", "N")</p></dd>
+
+
+<dt>output_type_1L_chr</dt>
+<dd><p>Output type (a character vector of length one), Default: 'PDF'</p></dd>
+
+
+<dt>rcrd_nm_1L_chr</dt>
+<dd><p>Record name (a character vector of length one), Default: 'AAA_RPRT_WRTNG_MTH'</p></dd>
+
+
 <dt>rcrd_rprt_append_ls</dt>
 <dd><p>Record report append (a list), Default: NULL</p></dd>
+
+
+<dt>reference_1L_int</dt>
+<dd><p>Reference (an integer vector of length one), Default: NULL</p></dd>
+
+
+<dt>rprt_nm_1L_chr</dt>
+<dd><p>Report name (a character vector of length one), Default: 'AAA_TTU_MDL_CTG'</p></dd>
+
+
+<dt>rprt_output_type_1L_chr</dt>
+<dd><p>Report output type (a character vector of length one), Default: 'PDF'</p></dd>
+
+
+<dt>start_at_int</dt>
+<dd><p>Start at (an integer vector), Default: c(2, 1)</p></dd>
+
+
+<dt>use_fake_data_1L_lgl</dt>
+<dd><p>Use fake data (a logical vector of length one), Default: F</p></dd>
 
 </dl></div>
 

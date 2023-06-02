@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ready4show</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9103</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9106</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,12 +59,15 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">make_path_params_ls</span><span class="op">(</span></span>
 <span>  path_to_data_from_top_level_chr <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  consent_1L_chr <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  consent_indcs_int <span class="op">=</span> <span class="fl">1L</span>,</span>
+<span>  dv_ds_nm_and_url_chr <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  options_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Y"</span>, <span class="st">"N"</span><span class="op">)</span>,</span>
 <span>  path_from_top_level_1L_chr <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  path_to_current_1L_chr <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  dv_ds_nm_and_url_chr <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  write_new_dir_1L_lgl <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  R_fl_nm_1L_chr <span class="op">=</span> <span class="st">"aaaaaaaaaa.txt"</span>,</span>
 <span>  use_fake_data_1L_lgl <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  R_fl_nm_1L_chr <span class="op">=</span> <span class="st">"aaaaaaaaaa.txt"</span></span>
+<span>  write_new_dir_1L_lgl <span class="op">=</span> <span class="cn">F</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -72,6 +75,22 @@
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>path_to_data_from_top_level_chr</dt>
 <dd><p>Path to data from top level (a character vector), Default: NULL</p></dd>
+
+
+<dt>consent_1L_chr</dt>
+<dd><p>Consent (a character vector of length one), Default: ''</p></dd>
+
+
+<dt>consent_indcs_int</dt>
+<dd><p>Consent indices (an integer vector), Default: 1</p></dd>
+
+
+<dt>dv_ds_nm_and_url_chr</dt>
+<dd><p>Dataverse dataset name and url (a character vector), Default: NULL</p></dd>
+
+
+<dt>options_chr</dt>
+<dd><p>Options (a character vector), Default: c("Y", "N")</p></dd>
 
 
 <dt>path_from_top_level_1L_chr</dt>
@@ -82,20 +101,16 @@
 <dd><p>Path to current (a character vector of length one), Default: NULL</p></dd>
 
 
-<dt>dv_ds_nm_and_url_chr</dt>
-<dd><p>Dataverse dataset name and url (a character vector), Default: NULL</p></dd>
-
-
-<dt>write_new_dir_1L_lgl</dt>
-<dd><p>Write new directory (a logical vector of length one), Default: F</p></dd>
+<dt>R_fl_nm_1L_chr</dt>
+<dd><p>R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'</p></dd>
 
 
 <dt>use_fake_data_1L_lgl</dt>
 <dd><p>Use fake data (a logical vector of length one), Default: F</p></dd>
 
 
-<dt>R_fl_nm_1L_chr</dt>
-<dd><p>R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'</p></dd>
+<dt>write_new_dir_1L_lgl</dt>
+<dd><p>Write new directory (a logical vector of length one), Default: F</p></dd>
 
 </dl></div>
     <div class="section level2">

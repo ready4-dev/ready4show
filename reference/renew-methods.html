@@ -14,7 +14,7 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
     
     <a class="navbar-brand me-2" href="../index.html">ready4show</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9103</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9106</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  email_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  is_equal_first_lgl <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for ready4show_authors</span></span>
@@ -93,7 +94,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  email_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  is_equal_first_lgl <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">renew.ready4show_correspondences</span><span class="op">(</span></span>
@@ -101,7 +103,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  old_nms_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  new_nms_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for ready4show_correspondences</span></span>
@@ -110,7 +113,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  old_nms_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  new_nms_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">renew.ready4show_institutes</span><span class="op">(</span></span>
@@ -118,7 +122,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  short_name_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  long_name_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for ready4show_institutes</span></span>
@@ -127,7 +132,8 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 <span>  short_name_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  long_name_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
 <span>  filter_cdn_1L_chr <span class="op">=</span> <span class="cn">NA_character_</span>,</span>
-<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span></span>
+<span>  slice_indcs_int <span class="op">=</span> <span class="cn">NA_integer_</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -183,6 +189,10 @@ renew.ready4show_institutes() is a renew method that renews an instance of a cla
 
 <dt>slice_indcs_int</dt>
 <dd><p>Slice indices (an integer vector), Default: NA</p></dd>
+
+
+<dt>...</dt>
+<dd><p>Additional arguments</p></dd>
 
 
 <dt>old_nms_chr</dt>
