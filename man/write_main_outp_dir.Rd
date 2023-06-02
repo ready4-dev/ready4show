@@ -6,16 +6,25 @@
 \usage{
 write_main_outp_dir(
   params_ls = NULL,
-  use_fake_data_1L_lgl = F,
-  R_fl_nm_1L_chr = "aaaaaaaaaa.txt"
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N"),
+  R_fl_nm_1L_chr = "aaaaaaaaaa.txt",
+  use_fake_data_1L_lgl = F
 )
 }
 \arguments{
 \item{params_ls}{Parameters (a list), Default: NULL}
 
-\item{use_fake_data_1L_lgl}{Use fake data (a logical vector of length one), Default: F}
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{R_fl_nm_1L_chr}{R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'}
+
+\item{use_fake_data_1L_lgl}{Use fake data (a logical vector of length one), Default: F}
 }
 \value{
 Paths (a list)

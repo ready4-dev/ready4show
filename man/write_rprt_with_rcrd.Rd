@@ -7,19 +7,22 @@
 write_rprt_with_rcrd(
   path_to_outp_fl_1L_chr,
   paths_ls,
-  header_yaml_args_ls = NULL,
   rprt_lup,
-  use_fake_data_1L_lgl = F,
-  rprt_nm_1L_chr = "AAA_TTU_MDL_CTG",
-  rcrd_nm_1L_chr = "AAA_RPRT_WRTNG_MTH",
-  reference_1L_int = NULL,
-  start_at_int = c(2, 1),
-  output_type_1L_chr = "PDF",
-  rprt_output_type_1L_chr = "PDF",
-  nbr_of_digits_1L_int = 2L,
   abstract_args_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  header_yaml_args_ls = NULL,
   main_rprt_append_ls = NULL,
-  rcrd_rprt_append_ls = NULL
+  nbr_of_digits_1L_int = 2L,
+  options_chr = c("Y", "N"),
+  output_type_1L_chr = "PDF",
+  rcrd_nm_1L_chr = "AAA_RPRT_WRTNG_MTH",
+  rcrd_rprt_append_ls = NULL,
+  reference_1L_int = NULL,
+  rprt_nm_1L_chr = "AAA_TTU_MDL_CTG",
+  rprt_output_type_1L_chr = "PDF",
+  start_at_int = c(2, 1),
+  use_fake_data_1L_lgl = F
 )
 }
 \arguments{
@@ -27,31 +30,37 @@ write_rprt_with_rcrd(
 
 \item{paths_ls}{Paths (a list)}
 
-\item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
-
 \item{rprt_lup}{Report (a lookup table)}
-
-\item{use_fake_data_1L_lgl}{Use fake data (a logical vector of length one), Default: F}
-
-\item{rprt_nm_1L_chr}{Report name (a character vector of length one), Default: 'AAA_TTU_MDL_CTG'}
-
-\item{rcrd_nm_1L_chr}{Record name (a character vector of length one), Default: 'AAA_RPRT_WRTNG_MTH'}
-
-\item{reference_1L_int}{Reference (an integer vector of length one), Default: NULL}
-
-\item{start_at_int}{Start at (an integer vector), Default: c(2, 1)}
-
-\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
-
-\item{rprt_output_type_1L_chr}{Report output type (a character vector of length one), Default: 'PDF'}
-
-\item{nbr_of_digits_1L_int}{Number of digits (an integer vector of length one), Default: 2}
 
 \item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
+
 \item{main_rprt_append_ls}{Main report append (a list), Default: NULL}
 
+\item{nbr_of_digits_1L_int}{Number of digits (an integer vector of length one), Default: 2}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
+\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
+
+\item{rcrd_nm_1L_chr}{Record name (a character vector of length one), Default: 'AAA_RPRT_WRTNG_MTH'}
+
 \item{rcrd_rprt_append_ls}{Record report append (a list), Default: NULL}
+
+\item{reference_1L_int}{Reference (an integer vector of length one), Default: NULL}
+
+\item{rprt_nm_1L_chr}{Report name (a character vector of length one), Default: 'AAA_TTU_MDL_CTG'}
+
+\item{rprt_output_type_1L_chr}{Report output type (a character vector of length one), Default: 'PDF'}
+
+\item{start_at_int}{Start at (an integer vector), Default: c(2, 1)}
+
+\item{use_fake_data_1L_lgl}{Use fake data (a logical vector of length one), Default: F}
 }
 \description{
 write_rprt_with_rcrd() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report with record. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

@@ -6,31 +6,40 @@
 \usage{
 write_header_yaml(
   path_to_header_dir_1L_chr,
-  fl_nm_1L_chr = "header.yaml",
   authors_tb,
   institutes_tb,
-  title_1L_chr = "Example title",
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  fl_nm_1L_chr = "header.yaml",
+  inc_quals_1L_lgl = F,
   keywords_chr = c("Example keyword one", "Example keyword two"),
+  options_chr = c("Y", "N"),
   path_to_tmpl_header_1L_chr = NULL,
-  inc_quals_1L_lgl = F
+  title_1L_chr = "Example title"
 )
 }
 \arguments{
 \item{path_to_header_dir_1L_chr}{Path to header directory (a character vector of length one)}
 
-\item{fl_nm_1L_chr}{File name (a character vector of length one), Default: 'header.yaml'}
-
 \item{authors_tb}{Authors (a tibble)}
 
 \item{institutes_tb}{Institutes (a tibble)}
 
-\item{title_1L_chr}{Title (a character vector of length one), Default: 'Example title'}
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{fl_nm_1L_chr}{File name (a character vector of length one), Default: 'header.yaml'}
+
+\item{inc_quals_1L_lgl}{Include qualifications (a logical vector of length one), Default: F}
 
 \item{keywords_chr}{Keywords (a character vector), Default: c("Example keyword one", "Example keyword two")}
 
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
 \item{path_to_tmpl_header_1L_chr}{Path to template header (a character vector of length one), Default: NULL}
 
-\item{inc_quals_1L_lgl}{Include qualifications (a logical vector of length one), Default: F}
+\item{title_1L_chr}{Title (a character vector of length one), Default: 'Example title'}
 }
 \description{
 write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

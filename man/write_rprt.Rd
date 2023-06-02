@@ -7,15 +7,18 @@
 write_rprt(
   rprt_type_ls,
   outp_smry_ls,
+  append_params_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N"),
   output_type_1L_chr = "PDF",
-  section_type_1L_chr = "#",
+  nm_of_mkdn_dir_1L_chr = "Markdown",
   path_to_prjs_dir_1L_chr = "../../../../Data/Project",
   prj_dir_dir_1L_chr = "My_Project",
+  push_copy_to_dv_1L_lgl = T,
   reports_dir_1L_chr = "Reports",
   rltv_path_to_data_dir_1L_chr = "../Output",
-  nm_of_mkdn_dir_1L_chr = "Markdown",
-  push_copy_to_dv_1L_lgl = T,
-  append_params_ls = NULL
+  section_type_1L_chr = "#"
 )
 }
 \arguments{
@@ -23,23 +26,29 @@ write_rprt(
 
 \item{outp_smry_ls}{Output summary (a list)}
 
+\item{append_params_ls}{Append parameters (a list), Default: NULL}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
 
-\item{section_type_1L_chr}{Section type (a character vector of length one), Default: '#'}
+\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
 
 \item{path_to_prjs_dir_1L_chr}{Path to projects directory (a character vector of length one), Default: '../../../../Data/Project'}
 
 \item{prj_dir_dir_1L_chr}{Project directory directory (a character vector of length one), Default: 'My_Project'}
 
+\item{push_copy_to_dv_1L_lgl}{Push copy to dataverse (a logical vector of length one), Default: T}
+
 \item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
 
 \item{rltv_path_to_data_dir_1L_chr}{Relative path to data directory (a character vector of length one), Default: '../Output'}
 
-\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
-
-\item{push_copy_to_dv_1L_lgl}{Push copy to dataverse (a logical vector of length one), Default: T}
-
-\item{append_params_ls}{Append parameters (a list), Default: NULL}
+\item{section_type_1L_chr}{Section type (a character vector of length one), Default: '#'}
 }
 \value{
 Output summary (a list)

@@ -172,20 +172,25 @@ make_output_format_ls <- function (manuscript_outp_1L_chr = "Word", manuscript_d
 #' Make path parameters list
 #' @description make_path_params_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make path parameters list. The function returns Path parameters (a list).
 #' @param path_to_data_from_top_level_chr Path to data from top level (a character vector), Default: NULL
+#' @param consent_1L_chr Consent (a character vector of length one), Default: ''
+#' @param consent_indcs_int Consent indices (an integer vector), Default: 1
+#' @param dv_ds_nm_and_url_chr Dataverse dataset name and url (a character vector), Default: NULL
+#' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param path_from_top_level_1L_chr Path from top level (a character vector of length one), Default: NULL
 #' @param path_to_current_1L_chr Path to current (a character vector of length one), Default: NULL
-#' @param dv_ds_nm_and_url_chr Dataverse dataset name and url (a character vector), Default: NULL
-#' @param write_new_dir_1L_lgl Write new directory (a logical vector of length one), Default: F
-#' @param use_fake_data_1L_lgl Use fake data (a logical vector of length one), Default: F
 #' @param R_fl_nm_1L_chr R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'
+#' @param use_fake_data_1L_lgl Use fake data (a logical vector of length one), Default: F
+#' @param write_new_dir_1L_lgl Write new directory (a logical vector of length one), Default: F
 #' @return Path parameters (a list)
 #' @rdname make_path_params_ls
 #' @export 
 #' @importFrom purrr pluck
 #' @keywords internal
-make_path_params_ls <- function (path_to_data_from_top_level_chr = NULL, path_from_top_level_1L_chr = NULL, 
-    path_to_current_1L_chr = NULL, dv_ds_nm_and_url_chr = NULL, 
-    write_new_dir_1L_lgl = F, use_fake_data_1L_lgl = F, R_fl_nm_1L_chr = "aaaaaaaaaa.txt") 
+make_path_params_ls <- function (path_to_data_from_top_level_chr = NULL, consent_1L_chr = "", 
+    consent_indcs_int = 1L, dv_ds_nm_and_url_chr = NULL, options_chr = c("Y", 
+        "N"), path_from_top_level_1L_chr = NULL, path_to_current_1L_chr = NULL, 
+    R_fl_nm_1L_chr = "aaaaaaaaaa.txt", use_fake_data_1L_lgl = F, 
+    write_new_dir_1L_lgl = F) 
 {
     if (is.null(path_to_data_from_top_level_chr)) 
         path_to_data_from_top_level_chr <- ifelse(use_fake_data_1L_lgl, 
@@ -202,8 +207,10 @@ make_path_params_ls <- function (path_to_data_from_top_level_chr = NULL, path_fr
         path_to_data_from_top_level_chr = path_to_data_from_top_level_chr, 
         path_to_current_1L_chr = path_to_current_1L_chr, dv_ds_nm_and_url_chr = dv_ds_nm_and_url_chr)
     if (write_new_dir_1L_lgl) 
-        path_params_ls$paths_ls <- write_main_outp_dir(path_params_ls, 
-            use_fake_data_1L_lgl = use_fake_data_1L_lgl, R_fl_nm_1L_chr = R_fl_nm_1L_chr)
+        path_params_ls$paths_ls <- write_main_outp_dir(consent_1L_chr = consent_1L_chr, 
+            consent_indcs_int = consent_indcs_int, options_chr = options_chr, 
+            path_params_ls, use_fake_data_1L_lgl = use_fake_data_1L_lgl, 
+            R_fl_nm_1L_chr = R_fl_nm_1L_chr)
     return(path_params_ls)
 }
 #' Make paths list

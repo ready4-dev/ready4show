@@ -6,37 +6,46 @@
 \usage{
 write_rprt_from_tmpl(
   rprt_type_ls,
-  params_ls = NULL,
-  output_type_1L_chr = "PDF",
   path_to_prjs_dir_1L_chr,
-  prj_dir_1L_chr = "Fake",
-  header_yaml_args_ls = NULL,
   abstract_args_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  header_yaml_args_ls = NULL,
+  nm_of_mkdn_dir_1L_chr = "Markdown",
+  options_chr = c("Y", "N"),
+  output_type_1L_chr = "PDF",
+  params_ls = NULL,
+  prj_dir_1L_chr = "Fake",
   reports_dir_1L_chr = "Reports",
-  rltv_path_to_data_dir_1L_chr = "../Output",
-  nm_of_mkdn_dir_1L_chr = "Markdown"
+  rltv_path_to_data_dir_1L_chr = "../Output"
 )
 }
 \arguments{
 \item{rprt_type_ls}{Report type (a list)}
 
-\item{params_ls}{Parameters (a list), Default: NULL}
-
-\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
-
 \item{path_to_prjs_dir_1L_chr}{Path to projects directory (a character vector of length one)}
 
-\item{prj_dir_1L_chr}{Project directory (a character vector of length one), Default: 'Fake'}
+\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
 
 \item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
 
-\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
+\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
+\item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'PDF'}
+
+\item{params_ls}{Parameters (a list), Default: NULL}
+
+\item{prj_dir_1L_chr}{Project directory (a character vector of length one), Default: 'Fake'}
 
 \item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
 
 \item{rltv_path_to_data_dir_1L_chr}{Relative path to data directory (a character vector of length one), Default: '../Output'}
-
-\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
 }
 \description{
 write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

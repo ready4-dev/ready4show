@@ -6,14 +6,26 @@
 \usage{
 write_csp_output(
   path_to_csp_1L_chr,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  description_1L_chr = "Methods Report 1: Complete Study Program",
   dv_ds_doi_1L_chr = NULL,
+  options_chr = c("Y", "N"),
   execute_1L_lgl = T
 )
 }
 \arguments{
 \item{path_to_csp_1L_chr}{Path to complete study program (a character vector of length one)}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{description_1L_chr}{Description (a character vector of length one), Default: 'Methods Report 1: Complete Study Program'}
+
 \item{dv_ds_doi_1L_chr}{Dataverse dataset digital object identifier (a character vector of length one), Default: NULL}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{execute_1L_lgl}{Execute (a logical vector of length one), Default: T}
 }

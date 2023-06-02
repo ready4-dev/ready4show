@@ -6,24 +6,36 @@
 \usage{
 write_reporting_dir(
   path_to_write_to_1L_chr = getwd(),
+  path_to_rmd_dir_1L_chr,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N"),
+  path_to_main_rmd_fl_1L_chr = "/CSP/CSP.Rmd",
   new_dir_nm_1L_chr = "TTU_Project",
-  overwrite_1L_lgl = FALSE,
-  path_to_rmd_dir_1L_chr
+  overwrite_1L_lgl = FALSE
 )
 }
 \arguments{
 \item{path_to_write_to_1L_chr}{Path to write to (a character vector of length one), Default: getwd()}
 
+\item{path_to_rmd_dir_1L_chr}{Path to Markdown directory (a character vector of length one)}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
+\item{path_to_main_rmd_fl_1L_chr}{Path to main Markdown file (a character vector of length one), Default: '/CSP/CSP.Rmd'}
+
 \item{new_dir_nm_1L_chr}{New directory name (a character vector of length one), Default: 'TTU_Project'}
 
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: FALSE}
-
-\item{path_to_rmd_dir_1L_chr}{Path to Markdown directory (a character vector of length one)}
 }
 \value{
-Path to complete study program (a character vector of length one)
+Path to program (a character vector of length one)
 }
 \description{
-write_reporting_dir() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write reporting directory. The function returns Path to complete study program (a character vector of length one).
+write_reporting_dir() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write reporting directory. The function returns Path to program (a character vector of length one).
 }
 \keyword{internal}

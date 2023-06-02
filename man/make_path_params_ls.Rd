@@ -6,28 +6,37 @@
 \usage{
 make_path_params_ls(
   path_to_data_from_top_level_chr = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  dv_ds_nm_and_url_chr = NULL,
+  options_chr = c("Y", "N"),
   path_from_top_level_1L_chr = NULL,
   path_to_current_1L_chr = NULL,
-  dv_ds_nm_and_url_chr = NULL,
-  write_new_dir_1L_lgl = F,
+  R_fl_nm_1L_chr = "aaaaaaaaaa.txt",
   use_fake_data_1L_lgl = F,
-  R_fl_nm_1L_chr = "aaaaaaaaaa.txt"
+  write_new_dir_1L_lgl = F
 )
 }
 \arguments{
 \item{path_to_data_from_top_level_chr}{Path to data from top level (a character vector), Default: NULL}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{dv_ds_nm_and_url_chr}{Dataverse dataset name and url (a character vector), Default: NULL}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
 \item{path_from_top_level_1L_chr}{Path from top level (a character vector of length one), Default: NULL}
 
 \item{path_to_current_1L_chr}{Path to current (a character vector of length one), Default: NULL}
 
-\item{dv_ds_nm_and_url_chr}{Dataverse dataset name and url (a character vector), Default: NULL}
-
-\item{write_new_dir_1L_lgl}{Write new directory (a logical vector of length one), Default: F}
+\item{R_fl_nm_1L_chr}{R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'}
 
 \item{use_fake_data_1L_lgl}{Use fake data (a logical vector of length one), Default: F}
 
-\item{R_fl_nm_1L_chr}{R file name (a character vector of length one), Default: 'aaaaaaaaaa.txt'}
+\item{write_new_dir_1L_lgl}{Write new directory (a logical vector of length one), Default: F}
 }
 \value{
 Path parameters (a list)

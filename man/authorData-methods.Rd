@@ -7,19 +7,31 @@
 \usage{
 \S4method{authorData}{Ready4showSynopsis}(
   x,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N"),
   tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
   tmpl_version_1_L_chr = "0.1.1.0",
-  what_1L_chr = "Manuscript"
+  what_1L_chr = "Manuscript",
+  ...
 )
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{tmpl_url_1L_chr}{Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'}
 
 \item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.1.1.0'}
 
 \item{what_1L_chr}{What (a character vector of length one), Default: 'Manuscript'}
+
+\item{...}{Additional arguments}
 }
 \description{
 authorData method applied to Ready4showSynopsis

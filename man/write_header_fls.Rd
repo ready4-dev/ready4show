@@ -7,7 +7,10 @@
 write_header_fls(
   path_to_header_dir_1L_chr,
   header_yaml_args_ls,
-  abstract_args_ls = NULL
+  abstract_args_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N")
 )
 }
 \arguments{
@@ -16,6 +19,12 @@ write_header_fls(
 \item{header_yaml_args_ls}{Header yaml arguments (a list)}
 
 \item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 }
 \description{
 write_header_fls() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header files. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

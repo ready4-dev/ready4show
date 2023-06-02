@@ -132,12 +132,15 @@ make_paths_ls <- function(params_ls,
   return(paths_ls)
 }
 make_path_params_ls <- function(path_to_data_from_top_level_chr = NULL, # MIGRATE From specific / TTU
+                                consent_1L_chr = "",
+                                consent_indcs_int = 1L,
+                                dv_ds_nm_and_url_chr = NULL,
+                                options_chr = c("Y", "N"),
                                 path_from_top_level_1L_chr = NULL,
                                 path_to_current_1L_chr = NULL,
-                                dv_ds_nm_and_url_chr = NULL,
-                                write_new_dir_1L_lgl = F,
+                                R_fl_nm_1L_chr = 'aaaaaaaaaa.txt',
                                 use_fake_data_1L_lgl = F,
-                                R_fl_nm_1L_chr = 'aaaaaaaaaa.txt'){
+                                write_new_dir_1L_lgl = F){
   if(is.null(path_to_data_from_top_level_chr))
     path_to_data_from_top_level_chr <- ifelse(use_fake_data_1L_lgl,
                                               "fake_data.rds",
@@ -153,7 +156,10 @@ make_path_params_ls <- function(path_to_data_from_top_level_chr = NULL, # MIGRAT
                          path_to_current_1L_chr = path_to_current_1L_chr,
                          dv_ds_nm_and_url_chr = dv_ds_nm_and_url_chr)
   if(write_new_dir_1L_lgl)
-    path_params_ls$paths_ls <- write_main_outp_dir(path_params_ls,
+    path_params_ls$paths_ls <- write_main_outp_dir(consent_1L_chr = consent_1L_chr,
+                                                   consent_indcs_int = consent_indcs_int,
+                                                   options_chr = options_chr,
+                                                   path_params_ls,
                                                    use_fake_data_1L_lgl = use_fake_data_1L_lgl,
                                                    R_fl_nm_1L_chr = R_fl_nm_1L_chr)
 

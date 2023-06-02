@@ -6,14 +6,23 @@
 \usage{
 write_mkdn_from_pkg(
   pkg_nm_1L_chr,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
   dest_dir_1L_chr = "Markdown",
+  options_chr = c("Y", "N"),
   overwrite_1L_lgl = F
 )
 }
 \arguments{
 \item{pkg_nm_1L_chr}{Package name (a character vector of length one)}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
 \item{dest_dir_1L_chr}{Destination directory (a character vector of length one), Default: 'Markdown'}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: F}
 }

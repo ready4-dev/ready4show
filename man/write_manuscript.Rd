@@ -6,13 +6,16 @@
 \usage{
 write_manuscript(
   abstract_args_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
   input_params_ls = NULL,
-  results_ls = NULL,
   figures_in_body_lgl = NULL,
   ms_mkdn_fl_nm_1L_chr = "TTU_Study_Manuscript",
   ms_mkdn_parent_1L_chr = "ready4-dev",
   ms_mkdn_repo_1L_chr = "ttu_lng_ss",
+  options_chr = c("Y", "N"),
   output_type_1L_chr = NULL,
+  results_ls = NULL,
   tables_in_body_lgl = NULL,
   title_1L_chr = "Scientific manuscript",
   version_1L_chr = "0.5",
@@ -22,9 +25,11 @@ write_manuscript(
 \arguments{
 \item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
-\item{input_params_ls}{Input parameters (a list), Default: NULL}
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
 
-\item{results_ls}{Results (a list), Default: NULL}
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{input_params_ls}{Input parameters (a list), Default: NULL}
 
 \item{figures_in_body_lgl}{Figures in body (a logical vector), Default: NULL}
 
@@ -34,7 +39,11 @@ write_manuscript(
 
 \item{ms_mkdn_repo_1L_chr}{Manuscript markdown repository (a character vector of length one), Default: 'ttu_lng_ss'}
 
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: NULL}
+
+\item{results_ls}{Results (a list), Default: NULL}
 
 \item{tables_in_body_lgl}{Tables in body (a logical vector), Default: NULL}
 

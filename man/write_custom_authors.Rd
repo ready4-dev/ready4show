@@ -4,10 +4,22 @@
 \alias{write_custom_authors}
 \title{Write custom authors}
 \usage{
-write_custom_authors(paths_ls, rmd_fl_nms_ls = make_rmd_fl_nms_ls())
+write_custom_authors(
+  paths_ls,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  options_chr = c("Y", "N"),
+  rmd_fl_nms_ls = make_rmd_fl_nms_ls()
+)
 }
 \arguments{
 \item{paths_ls}{Paths (a list)}
+
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{rmd_fl_nms_ls}{R Markdown file names (a list), Default: make_rmd_fl_nms_ls()}
 }

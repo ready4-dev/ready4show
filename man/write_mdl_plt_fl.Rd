@@ -6,34 +6,43 @@
 \usage{
 write_mdl_plt_fl(
   plt_fn = NULL,
-  fn_args_ls = NULL,
   path_to_write_to_1L_chr,
   plt_nm_1L_chr,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  fn_args_ls = NULL,
   grpx_fn = grDevices::png,
-  units_1L_chr = "in",
-  width_1L_dbl = 6,
   height_1L_dbl = 6,
-  rsl_1L_dbl = 300
+  options_chr = c("Y", "N"),
+  rsl_1L_dbl = 300,
+  units_1L_chr = "in",
+  width_1L_dbl = 6
 )
 }
 \arguments{
 \item{plt_fn}{Plot (a function), Default: NULL}
 
-\item{fn_args_ls}{Function arguments (a list), Default: NULL}
-
 \item{path_to_write_to_1L_chr}{Path to write to (a character vector of length one)}
 
 \item{plt_nm_1L_chr}{Plot name (a character vector of length one)}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
+\item{fn_args_ls}{Function arguments (a list), Default: NULL}
+
 \item{grpx_fn}{Graphics (a function), Default: grDevices::png}
+
+\item{height_1L_dbl}{Height (a double vector of length one), Default: 6}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
+\item{rsl_1L_dbl}{Resolution (a double vector of length one), Default: 300}
 
 \item{units_1L_chr}{Units (a character vector of length one), Default: 'in'}
 
 \item{width_1L_dbl}{Width (a double vector of length one), Default: 6}
-
-\item{height_1L_dbl}{Height (a double vector of length one), Default: 6}
-
-\item{rsl_1L_dbl}{Resolution (a double vector of length one), Default: 300}
 }
 \value{
 Path to plot (a character vector of length one)

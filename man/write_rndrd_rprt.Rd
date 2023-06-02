@@ -6,31 +6,40 @@
 \usage{
 write_rndrd_rprt(
   rprt_type_ls,
-  params_ls = list(output_type_1L_chr = "HTML"),
-  path_to_write_dirs_to_1L_chr = NA_character_,
-  nm_of_mkdn_dir_1L_chr = "Markdown",
-  path_to_rprt_dir_1L_chr = "./",
-  header_yaml_args_ls = NULL,
   abstract_args_ls = NULL,
-  overwrite_1L_lgl = T
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
+  header_yaml_args_ls = NULL,
+  nm_of_mkdn_dir_1L_chr = "Markdown",
+  options_chr = c("Y", "N"),
+  overwrite_1L_lgl = T,
+  params_ls = list(output_type_1L_chr = "HTML"),
+  path_to_rprt_dir_1L_chr = "./",
+  path_to_write_dirs_to_1L_chr = NA_character_
 )
 }
 \arguments{
 \item{rprt_type_ls}{Report type (a list)}
 
-\item{params_ls}{Parameters (a list), Default: list(output_type_1L_chr = "HTML")}
+\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
-\item{path_to_write_dirs_to_1L_chr}{Path to write directories to (a character vector of length one), Default: 'NA'}
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
 
-\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
-
-\item{path_to_rprt_dir_1L_chr}{Path to report directory (a character vector of length one), Default: './'}
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
 
 \item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
 
-\item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
+\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{overwrite_1L_lgl}{Overwrite (a logical vector of length one), Default: T}
+
+\item{params_ls}{Parameters (a list), Default: list(output_type_1L_chr = "HTML")}
+
+\item{path_to_rprt_dir_1L_chr}{Path to report directory (a character vector of length one), Default: './'}
+
+\item{path_to_write_dirs_to_1L_chr}{Path to write directories to (a character vector of length one), Default: 'NA'}
 }
 \description{
 write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

@@ -7,7 +7,10 @@
 \usage{
 \S4method{authorReport}{Ready4showSynopsis}(
   x,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
   fl_nm_1L_chr = NA_character_,
+  options_chr = c("Y", "N"),
   rmd_fl_nms_ls = NULL,
   what_1L_chr = NA_character_,
   ...
@@ -16,7 +19,13 @@
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
 \item{fl_nm_1L_chr}{File name (a character vector of length one), Default: 'NA'}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 
 \item{rmd_fl_nms_ls}{R Markdown file names (a list), Default: NULL}
 

@@ -7,10 +7,16 @@
 write_report(
   params_ls,
   paths_ls,
+  rprt_lup,
   rprt_nm_1L_chr,
   abstract_args_ls = NULL,
+  consent_1L_chr = "",
+  consent_indcs_int = 1L,
   header_yaml_args_ls = NULL,
-  rprt_lup
+  nm_of_mkdn_dir_1L_chr = "Markdown",
+  options_chr = c("Y", "N"),
+  reports_dir_1L_chr = "Reports",
+  rltv_path_to_data_dir_1L_chr = "../Output"
 )
 }
 \arguments{
@@ -18,13 +24,25 @@ write_report(
 
 \item{paths_ls}{Paths (a list)}
 
+\item{rprt_lup}{Report (a lookup table)}
+
 \item{rprt_nm_1L_chr}{Report name (a character vector of length one)}
 
 \item{abstract_args_ls}{Abstract arguments (a list), Default: NULL}
 
+\item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
+
+\item{consent_indcs_int}{Consent indices (an integer vector), Default: 1}
+
 \item{header_yaml_args_ls}{Header yaml arguments (a list), Default: NULL}
 
-\item{rprt_lup}{Report (a lookup table)}
+\item{nm_of_mkdn_dir_1L_chr}{Name of markdown directory (a character vector of length one), Default: 'Markdown'}
+
+\item{options_chr}{Options (a character vector), Default: c("Y", "N")}
+
+\item{reports_dir_1L_chr}{Reports directory (a character vector of length one), Default: 'Reports'}
+
+\item{rltv_path_to_data_dir_1L_chr}{Relative path to data directory (a character vector of length one), Default: '../Output'}
 }
 \description{
 write_report() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour

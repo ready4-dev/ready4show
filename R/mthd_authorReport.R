@@ -3,7 +3,10 @@
 #' @name authorReport-Ready4showSynopsis
 #' @description authorReport method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis
+#' @param consent_1L_chr Consent (a character vector of length one), Default: ''
+#' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'NA'
+#' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param rmd_fl_nms_ls R Markdown file names (a list), Default: NULL
 #' @param what_1L_chr What (a character vector of length one), Default: 'NA'
 #' @param ... Additional arguments
@@ -12,10 +15,11 @@
 #' @aliases authorReport,Ready4showSynopsis-method
 #' @export 
 #' @importFrom purrr flatten_chr
-#' @importFrom ready4 make_prompt authorReport
+#' @importFrom ready4 write_with_consent authorReport
 #' @importFrom rmarkdown render
-methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_chr = NA_character_, rmd_fl_nms_ls = NULL, 
-    what_1L_chr = NA_character_, ...) 
+methods::setMethod("authorReport", "Ready4showSynopsis", function (x, consent_1L_chr = "", consent_indcs_int = 1L, fl_nm_1L_chr = NA_character_, 
+    options_chr = c("Y", "N"), rmd_fl_nms_ls = NULL, what_1L_chr = NA_character_, 
+    ...) 
 {
     if (!is.na(what_1L_chr)) {
         x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
@@ -34,7 +38,8 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_c
         x@rmd_fl_nms_ls <- rmd_fl_nms_ls
     }
     paths_ls <- manufacture(x, what_1L_chr = "paths_ls")
-    write_new_dirs(paths_ls %>% purrr::flatten_chr())
+    write_new_dirs(paths_ls %>% purrr::flatten_chr(), consent_1L_chr = consent_1L_chr, 
+        consent_indcs_int = consent_indcs_int, options_chr = options_chr)
     header_yaml_args_ls <- make_header_yaml_args_ls(x@authors_r3, 
         institutes_tb = x@institutes_r3, keywords_chr = x@keywords_chr, 
         title_1L_chr = x@title_1L_chr)
@@ -43,19 +48,24 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x, fl_nm_1L_c
     }
     write_header_fls(path_to_header_dir_1L_chr = paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
         "/Header"), header_yaml_args_ls = header_yaml_args_ls, 
-        abstract_args_ls = x@abstract_args_ls)
-    write_custom_authors(paths_ls, rmd_fl_nms_ls = x@rmd_fl_nms_ls)
+        abstract_args_ls = x@abstract_args_ls, consent_1L_chr = consent_1L_chr, 
+        consent_indcs_int = consent_indcs_int, options_chr = options_chr)
+    write_custom_authors(paths_ls, rmd_fl_nms_ls = x@rmd_fl_nms_ls, 
+        consent_1L_chr = consent_1L_chr, consent_indcs_int = consent_indcs_int, 
+        options_chr = options_chr)
     params_ls <- list(X = x, ...)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr, ifelse(x@outp_formats_chr[1] == 
         "Word", ".docx", paste0(".", tolower(x@outp_formats_chr[1]))))
-    consent_1L_chr <- ready4::make_prompt(prompt_1L_chr = paste0("Do you confirm ('Y') that you want to write the file ", 
-        output_fl_1L_chr, " to the directory ", paths_ls$path_to_ms_outp_dir_1L_chr, 
-        " ?"), options_chr = c("Y", "N"), force_from_opts_1L_chr = T)
-    if (consent_1L_chr == "Y") {
-        rmarkdown::render(paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
-            "/Parent_", x@outp_formats_chr[1], "/", x@rmd_fl_nms_ls[names(x@rmd_fl_nms_ls) == 
-                x@outp_formats_chr[1]][[1]], ".Rmd"), output_format = NULL, 
-            params = params_ls, output_file = output_fl_1L_chr, 
-            output_dir = paths_ls$path_to_ms_outp_dir_1L_chr)
-    }
+    file_to_render_1L_chr <- paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
+        "/Parent_", x@outp_formats_chr[1], "/", x@rmd_fl_nms_ls[names(x@rmd_fl_nms_ls) == 
+            x@outp_formats_chr[1]][[1]], ".Rmd")
+    ready4::write_with_consent(consented_fn = rmarkdown::render, 
+        prompt_1L_chr = paste0("Do you confirm that you want to render the file ", 
+            file_to_render_1L_chr, "?"), consent_1L_chr = consent_1L_chr, 
+        consent_indcs_int = consent_indcs_int, consented_args_ls = list(input = file_to_render_1L_chr, 
+            output_format = NULL, params = params_ls, output_file = output_fl_1L_chr, 
+            output_dir = paths_ls$path_to_ms_outp_dir_1L_chr), 
+        consented_msg_1L_chr = paste0("File ", file_to_render_1L_chr, 
+            " has been rendered."), declined_msg_1L_chr = "Render request cancelled.", 
+        options_chr = options_chr)
 })
