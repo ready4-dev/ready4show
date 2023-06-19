@@ -7,7 +7,7 @@
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param tmpl_url_1L_chr Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'
-#' @param tmpl_version_1_L_chr Template version 1 L (a character vector), Default: '0.1.1.0'
+#' @param tmpl_version_1L_chr Template version (a character vector of length one), Default: '0.1.1.0'
 #' @param what_1L_chr What (a character vector of length one), Default: 'Manuscript'
 #' @param ... Additional arguments
 #' @return NULL
@@ -18,7 +18,7 @@
 #' @importFrom ready4 write_new_files authorData
 methods::setMethod("authorData", "Ready4showSynopsis", function (x, consent_1L_chr = "", consent_indcs_int = 1L, options_chr = c("Y", 
     "N"), tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl", 
-    tmpl_version_1_L_chr = "0.1.1.0", what_1L_chr = "Manuscript", 
+    tmpl_version_1L_chr = "0.1.1.0", what_1L_chr = "Manuscript", 
     ...) 
 {
     if (!is.na(x@a_Ready4showPaths@mkdn_source_dir_1L_chr)) {
@@ -31,9 +31,9 @@ methods::setMethod("authorData", "Ready4showSynopsis", function (x, consent_1L_c
         write_mkdn_from_repo(consent_1L_chr = consent_1L_chr, 
             consent_indcs_int = consent_indcs_int, mkdn_data_dir_1L_chr = temp_dir_1L_chr, 
             ms_mkdn_parent_1L_chr = mkdn_repos_chr[1], ms_mkdn_repo_1L_chr = mkdn_repos_chr[2], 
-            options_chr = options_chr, version_1L_chr = version_1L_chr)
+            options_chr = options_chr, version_1L_chr = tmpl_version_1L_chr)
         mkdn_source_dir_1L_chr <- paste0(temp_dir_1L_chr, "/", 
-            tmpl_url_1L_chr %>% basename(), "-", tmpl_version_1_L_chr)
+            tmpl_url_1L_chr %>% basename(), "-", tmpl_version_1L_chr)
     }
     if (what_1L_chr != "Manuscript") {
         ms_mkdn_dir_1L_chr <- x@a_Ready4showPaths@ms_mkdn_dir_1L_chr

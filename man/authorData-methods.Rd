@@ -11,7 +11,7 @@
   consent_indcs_int = 1L,
   options_chr = c("Y", "N"),
   tmpl_url_1L_chr = "https://github.com/ready4-dev/ms_tmpl",
-  tmpl_version_1_L_chr = "0.1.1.0",
+  tmpl_version_1L_chr = "0.1.1.0",
   what_1L_chr = "Manuscript",
   ...
 )
@@ -27,7 +27,7 @@
 
 \item{tmpl_url_1L_chr}{Template url (a character vector of length one), Default: 'https://github.com/ready4-dev/ms_tmpl'}
 
-\item{tmpl_version_1_L_chr}{Template version 1 L (a character vector), Default: '0.1.1.0'}
+\item{tmpl_version_1L_chr}{Template version (a character vector of length one), Default: '0.1.1.0'}
 
 \item{what_1L_chr}{What (a character vector of length one), Default: 'Manuscript'}
 
