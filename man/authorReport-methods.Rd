@@ -7,6 +7,7 @@
 \usage{
 \S4method{authorReport}{Ready4showSynopsis}(
   x,
+  args_ls = NULL,
   consent_1L_chr = "",
   consent_indcs_int = 1L,
   fl_nm_1L_chr = NA_character_,
@@ -18,6 +19,8 @@
 }
 \arguments{
 \item{x}{An object of class Ready4showSynopsis}
+
+\item{args_ls}{Arguments (a list), Default: NULL}
 
 \item{consent_1L_chr}{Consent (a character vector of length one), Default: ''}
 

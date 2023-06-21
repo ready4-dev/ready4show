@@ -3,6 +3,7 @@
 #' @name authorReport-Ready4showSynopsis
 #' @description authorReport method applied to Ready4showSynopsis
 #' @param x An object of class Ready4showSynopsis
+#' @param args_ls Arguments (a list), Default: NULL
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param fl_nm_1L_chr File name (a character vector of length one), Default: 'NA'
@@ -17,9 +18,9 @@
 #' @importFrom purrr flatten_chr
 #' @importFrom ready4 write_with_consent authorReport
 #' @importFrom rmarkdown render
-methods::setMethod("authorReport", "Ready4showSynopsis", function (x, consent_1L_chr = "", consent_indcs_int = 1L, fl_nm_1L_chr = NA_character_, 
-    options_chr = c("Y", "N"), rmd_fl_nms_ls = NULL, what_1L_chr = NA_character_, 
-    ...) 
+methods::setMethod("authorReport", "Ready4showSynopsis", function (x, args_ls = NULL, consent_1L_chr = "", consent_indcs_int = 1L, 
+    fl_nm_1L_chr = NA_character_, options_chr = c("Y", "N"), 
+    rmd_fl_nms_ls = NULL, what_1L_chr = NA_character_, ...) 
 {
     if (!is.na(what_1L_chr)) {
         x@a_Ready4showPaths@ms_mkdn_dir_1L_chr <- what_1L_chr
@@ -53,7 +54,7 @@ methods::setMethod("authorReport", "Ready4showSynopsis", function (x, consent_1L
     write_custom_authors(paths_ls, rmd_fl_nms_ls = x@rmd_fl_nms_ls, 
         consent_1L_chr = consent_1L_chr, consent_indcs_int = consent_indcs_int, 
         options_chr = options_chr)
-    params_ls <- list(X = x, ...)
+    params_ls <- append(list(X = x), args_ls)
     output_fl_1L_chr <- paste0(x@fl_nm_1L_chr, ifelse(x@outp_formats_chr[1] == 
         "Word", ".docx", paste0(".", tolower(x@outp_formats_chr[1]))))
     file_to_render_1L_chr <- paste0(paths_ls$path_to_ms_mkdn_dir_1L_chr, 
