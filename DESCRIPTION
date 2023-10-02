@@ -1,6 +1,6 @@
 Package: ready4show
 Title: Author Health Economic Analysis Programs and Reporting Templates
-Version: 0.0.0.9110
+Version: 0.0.0.9111
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -11,8 +11,8 @@ Authors@R: c(
     person("VicHealth", role = "fnd"),
     person("Victoria University", role = "fnd")
   )
-Description: ready4show provides tools for authoring reproducible
-    analyses, technical documentation, and scientific summaries for
+Description: ready4show provides tools for authoring reproducible analyses
+    and to help automate the generation of scientific summaries for
     modelling studies implemented with the ready4 framework
     (https://www.ready4-dev.com).  This development version of the
     ready4show package has been made available as part of the process of
