@@ -1,6 +1,6 @@
 # ready4show
 
-## Author Literate Programs to Implement and Report Modelling Analyses
+## Author Health Economic Analysis Programs and Reporting Templates
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -11,11 +11,11 @@
 
 ready4show provides tools for authoring reproducible
 analyses, technical documentation, and scientific summaries for
-studies implemented with the ready4 framework
+modelling studies implemented with the ready4 framework
 (https://www.ready4-dev.com).  This development version of the
 ready4show package has been made available as part of the process of
 testing and documenting the package. If you have any questions, please
-contact the authors (matthew.hamilton@orygen.org.au).
+contact the authors (matthew.hamilton1@monash.edu).
 
 To install a development version of this software, run the following commands in your R console:
 

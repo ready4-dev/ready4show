@@ -4,15 +4,15 @@
 \name{ready4show-package}
 \alias{ready4show}
 \alias{ready4show-package}
-\title{ready4show: Author Literate Programs to Implement and Report Modelling Analyses}
+\title{ready4show: Author Health Economic Analysis Programs and Reporting Templates}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
+ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton@orygen.org.au).
+ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 }
 \seealso{
 Useful links:
@@ -32,11 +32,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton@orygen.org.au} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID})
+\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton1@monash.edu} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID})
 
 Authors:
 \itemize{
-  \item Glen Wiesner \email{Glen.Wiesner@vu.edu.au} (\href{https://orcid.org/0000-0002-0071-130X}{ORCID})
+  \item Glen Wiesner (\href{https://orcid.org/0000-0002-0071-130X}{ORCID})
 }
 
 Other contributors:

@@ -1,5 +1,5 @@
 ---
-title: "Author Scientific Summaries Of Studies Using The Ready4 Framework"
+title: "Author Template Scientific Summaries That Read Results From Analysis Output"
 output: rmarkdown::html_vignette
 # output: 
   # rmarkdown::html_vignette:
@@ -8,7 +8,7 @@ output: rmarkdown::html_vignette
   #   highlight: null
   #   number_sections: yes
 vignette: >
-  %\VignetteIndexEntry{Author Scientific Summaries Of Studies Using The Ready4 Framework}
+  %\VignetteIndexEntry{Author Template Scientific Summaries That Read Results From Analysis Output}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Open science workflows should ideally span an unbroken chain between data-ingest to production of a scientific summary such as a manuscript. Such extensive workflows provide an explicit means of linking all content in a scientific summary with the analysis that it reports. 
 
 ## Implementation
-`ready4show` includes a number of classes and methods that help integrate manuscript authoring into a reproducible workflow. These tools are principally intended for use with the [ready4 youth mental health system model](https://www.ready4-dev.com).
+`ready4show` includes a number of classes and methods that help integrate manuscript authoring into a reproducible workflow. These tools are part of the [ready4 framework for transparent, reusable and updatable health economic models](https://www.ready4-dev.com).
 
 ### Load required libraries
 We first begin by loading the libraries we will require to implement this workflow.
