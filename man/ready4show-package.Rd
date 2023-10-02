@@ -8,11 +8,11 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
+ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses, technical documentation, and scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
+ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 }
 \seealso{
 Useful links:

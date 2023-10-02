@@ -1,5 +1,5 @@
 ---
-title: "Author Template Scientific Summaries That Read Results From Analysis Output"
+title: "Author Health Economic Reporting Templates That Read Results From Analysis Output"
 output: rmarkdown::html_vignette
 # output: 
   # rmarkdown::html_vignette:
@@ -8,7 +8,7 @@ output: rmarkdown::html_vignette
   #   highlight: null
   #   number_sections: yes
 vignette: >
-  %\VignetteIndexEntry{Author Template Scientific Summaries That Read Results From Analysis Output}
+  %\VignetteIndexEntry{Author Health Economic Reporting Templates That Read Results From Analysis Output}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---

@@ -176,13 +176,13 @@ z <- ready4pack::make_pt_ready4pack_manifest(x,
   ready4pack::ready4pack_manifest()
 z <- author(z)
 write_extra_pkgs_to_actions()
-readLines(".github/workflows/R-CMD-check.yaml") %>%
+#readLines(".github/workflows/R-CMD-check.yaml") %>%
   #stringr::str_replace_all("r-lib/actions/setup-r@master", "r-lib/actions/setup-r@v2") %>%
   #stringr::str_replace_all("r-lib/actions/setup-pandoc@master", "r-lib/actions/setup-pandoc@v2") %>%
-  stringr::str_replace_all("- \\{os: windows-latest, r: '3.6'\\}", "#- \\{os: windows-latest, r: '3.6'\\}") %>%
-  stringr::str_replace_all("- \\{os: ubuntu-20.04,   r: 'oldrel', ", "#- \\{os: ubuntu-20.04,   r: 'oldrel', ") %>%
-  purrr::discard_at(2:4) %>%
-  writeLines(con = ".github/workflows/R-CMD-check.yaml")
+  #stringr::str_replace_all("- \\{os: windows-latest, r: '3.6'\\}", "#- \\{os: windows-latest, r: '3.6'\\}") %>%
+  #stringr::str_replace_all("- \\{os: ubuntu-20.04,   r: 'oldrel', ", "#- \\{os: ubuntu-20.04,   r: 'oldrel', ") %>%
+  #purrr::discard_at(2:4) %>%
+  #writeLines(con = ".github/workflows/R-CMD-check.yaml")
 write_to_edit_workflow("pkgdown.yaml") # In other packages, run for "test-coverage.yaml" as well.
 readLines("_pkgdown.yml") %>%
   stringr::str_replace_all("  - text: Model", "  - text: Framework & Model") %>%
