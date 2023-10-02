@@ -1,10 +1,10 @@
 Package: ready4show
-Title: Author Literate Programs to Implement and Report Modelling Analyses
-Version: 0.0.0.9109
+Title: Author Health Economic Analysis Programs and Reporting Templates
+Version: 0.0.0.9110
 Authors@R: c(
-    person("Matthew", "Hamilton", , "matthew.hamilton@orygen.org.au", role = c("aut", "cre"),
+    person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7407-9194")),
-    person("Glen", "Wiesner", , "Glen.Wiesner@vu.edu.au", role = "aut",
+    person("Glen", "Wiesner", role = "aut",
            comment = c(ORCID = "0000-0002-0071-130X")),
     person("Orygen", role = c("cph", "fnd")),
     person("Australian Government Research Training Program", role = "fnd"),
@@ -13,11 +13,11 @@ Authors@R: c(
   )
 Description: ready4show provides tools for authoring reproducible
     analyses, technical documentation, and scientific summaries for
-    studies implemented with the ready4 framework
+    modelling studies implemented with the ready4 framework
     (https://www.ready4-dev.com).  This development version of the
     ready4show package has been made available as part of the process of
     testing and documenting the package. If you have any questions, please
-    contact the authors (matthew.hamilton@orygen.org.au).
+    contact the authors (matthew.hamilton1@monash.edu).
 License: GPL-3 + file LICENSE
 URL: https://ready4-dev.github.io/ready4show/,
     https://github.com/ready4-dev/ready4show, https://www.ready4-dev.com/
@@ -40,7 +40,7 @@ Imports:
     methods,
     officer,
     purrr,
-    ready4 (>= 0.0.0.9117),
+    ready4 (>= 0.0.0.9125),
     rlang,
     rmarkdown,
     stringi,
