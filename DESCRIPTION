@@ -1,8 +1,8 @@
 Package: ready4show
 Title: Author Health Economic Analysis Programs and Reporting Templates
-Version: 0.0.0.9111
+Version: 0.0.0.9112
 Authors@R: c(
-    person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre"),
+    person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-7407-9194")),
     person("Glen", "Wiesner", role = "aut",
            comment = c(ORCID = "0000-0002-0071-130X")),
@@ -23,7 +23,13 @@ URL: https://ready4-dev.github.io/ready4show/,
     https://github.com/ready4-dev/ready4show, https://www.ready4-dev.com/
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
+Suggests: 
+    bookdown,
+    officedown,
+    rticles,
+    testthat
+VignetteBuilder: knitr
 Imports: 
     dataverse,
     DescTools,
@@ -40,17 +46,15 @@ Imports:
     methods,
     officer,
     purrr,
-    ready4 (>= 0.0.0.9125),
+    ready4,
     rlang,
     rmarkdown,
     stringi,
     stringr,
-    testthat,
     tibble,
     tidyr,
     utils,
     xtable
-VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
 LazyData: true
@@ -77,9 +81,3 @@ Collate:
     'mthd_renew.R'
     'pkg_ready4show.R'
     'ready4show-package.R'
-Suggests: 
-    bookdown,
-    officedown,
-    rticles
-Remotes: 
-    ready4-dev/ready4
