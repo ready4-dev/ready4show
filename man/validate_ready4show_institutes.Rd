@@ -2,18 +2,18 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{validate_ready4show_institutes}
 \alias{validate_ready4show_institutes}
-\title{validate ready4show institutes ready4 S3 class for institutes lookup table}
+\title{validate ready4show institutes ready4 submodule class for institutes lookup table}
 \usage{
 validate_ready4show_institutes(x)
 }
 \arguments{
-\item{x}{An unvalidated instance of the ready4 S3 class for institutes lookup table}
+\item{x}{An unvalidated instance of the ready4 submodule class for institutes lookup table}
 }
 \value{
-A prototpe for ready4 S3 class for institutes lookup table
+A prototpe for ready4 submodule class for institutes lookup table
 }
 \description{
-Validate an instance of the ready4 S3 class for institutes lookup table
+Validate an instance of the ready4 submodule class for institutes lookup table
 }
 \details{
 Institutes lookup table

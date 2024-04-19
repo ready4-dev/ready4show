@@ -13,6 +13,6 @@ transform_abstract(path_to_abstract_1L_chr)
 Transformed abstract (a character vector)
 }
 \description{
-transform_abstract() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform abstract. Function argument path_to_abstract_1L_chr specifies the object to be updated. The function returns Transformed abstract (a character vector).
+transform_abstract() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform abstract. The function returns Transformed abstract (a character vector).
 }
 \keyword{internal}

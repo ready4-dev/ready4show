@@ -59,4 +59,7 @@ Results (a list)
 \description{
 write_manuscript() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write manuscript. The function returns Results (a list).
 }
+\seealso{
+\code{\link[rmarkdown:render]{rmarkdown::render()}}
+}
 \keyword{internal}

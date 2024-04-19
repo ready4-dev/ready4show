@@ -1,19 +1,19 @@
 
 setOldClass(c("ready4show_authors","tbl_df", "tbl", "data.frame"))
-#' ready4 S3 class for authors lookup table
-#' @description Create a new valid instance of the ready4 S3 class for authors lookup table
-#' @param x A prototype for the ready4 S3 class for authors lookup table, Default: make_pt_ready4show_authors()
-#' @return A validated instance of the ready4 S3 class for authors lookup table
+#' ready4 submodule class for authors lookup table
+#' @description Create a new valid instance of the ready4 submodule class for authors lookup table
+#' @param x A prototype for the ready4 submodule class for authors lookup table, Default: make_pt_ready4show_authors()
+#' @return A validated instance of the ready4 submodule class for authors lookup table
 #' @details Authors lookup table
 #' @rdname ready4show_authors
 #' @export 
 ready4show_authors <- function(x = make_pt_ready4show_authors()){ 
 validate_ready4show_authors(make_new_ready4show_authors(x))
 }
-#' make new ready4show authors ready4 S3 class for authors lookup table
-#' @description Create a new unvalidated instance of the ready4 S3 class for authors lookup table
-#' @param x A prototype for the ready4 S3 class for authors lookup table
-#' @return An unvalidated instance of the ready4 S3 class for authors lookup table
+#' make new ready4show authors ready4 submodule class for authors lookup table
+#' @description Create a new unvalidated instance of the ready4 submodule class for authors lookup table
+#' @param x A prototype for the ready4 submodule class for authors lookup table
+#' @return An unvalidated instance of the ready4 submodule class for authors lookup table
 #' @details Authors lookup table
 #' @rdname make_new_ready4show_authors
 #' @export 
@@ -25,7 +25,7 @@ class(x) <- append(c("ready4show_authors",setdiff(make_pt_ready4show_authors() %
 class(x))
 x
 }
-#' make prototype ready4show authors ready4 S3 class for authors lookup table
+#' make prototype ready4show authors ready4 submodule class for authors lookup table
 #' @param first_nm_chr First name (a character vector), Default: character(0)
 #' @param middle_nm_chr Middle name (a character vector), Default: character(0)
 #' @param last_nm_chr Last name (a character vector), Default: character(0)
@@ -36,7 +36,7 @@ x
 #' @param is_corresponding_lgl Is corresponding (a logical vector), Default: logical(0)
 #' @param email_chr Email (a character vector), Default: character(0)
 #' @param is_equal_first_lgl Is equal first (a logical vector), Default: logical(0)
-#' @return A prototype for ready4 S3 class for authors lookup table
+#' @return A prototype for ready4 submodule class for authors lookup table
 #' 
 #' @rdname ready4show_authors
 #' @export 
@@ -65,10 +65,10 @@ email_chr = email_chr,
 is_equal_first_lgl = is_equal_first_lgl) %>% ready4::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
-#' validate ready4show authors ready4 S3 class for authors lookup table
-#' @description Validate an instance of the ready4 S3 class for authors lookup table
-#' @param x An unvalidated instance of the ready4 S3 class for authors lookup table
-#' @return A prototpe for ready4 S3 class for authors lookup table
+#' validate ready4show authors ready4 submodule class for authors lookup table
+#' @description Validate an instance of the ready4 submodule class for authors lookup table
+#' @param x An unvalidated instance of the ready4 submodule class for authors lookup table
+#' @return A prototpe for ready4 submodule class for authors lookup table
 #' @details Authors lookup table
 #' @rdname validate_ready4show_authors
 #' @export 
@@ -114,9 +114,9 @@ call. = FALSE)
 }
 
 x}
-#' is ready4show authors ready4 S3 class for authors lookup table
+#' is ready4show authors ready4 submodule class for authors lookup table
 #' @param x An object of any type
-#' @return A logical value, TRUE if a valid instance of the ready4 S3 class for authors lookup table
+#' @return A logical value, TRUE if a valid instance of the ready4 submodule class for authors lookup table
 #' 
 #' @rdname ready4show_authors
 #' @export 

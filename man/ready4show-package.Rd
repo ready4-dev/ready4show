@@ -2,7 +2,6 @@
 % Please edit documentation in R/pkg_ready4show.R, R/ready4show-package.R
 \docType{package}
 \name{ready4show-package}
-\alias{ready4show}
 \alias{ready4show-package}
 \title{ready4show: Author Health Economic Analysis Programs and Reporting Templates}
 \description{
@@ -32,7 +31,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton1@monash.edu} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID})
+\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton1@monash.edu} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{

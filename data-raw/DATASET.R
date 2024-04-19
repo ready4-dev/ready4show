@@ -1,4 +1,4 @@
-#library(ready4)
+library(ready4)
 library(ready4fun)
 x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Health Economic Analysis Programs and Reporting Templates" %>% tools::toTitleCase(),
                                  pkg_desc_1L_chr = "ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com).
@@ -7,7 +7,7 @@ x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Health Economic Anal
                                    given = "Matthew",
                                    family = "Hamilton",
                                    email = "matthew.hamilton1@monash.edu",
-                                   role = c("aut", "cre"),
+                                   role = c("aut", "cre", "cph"),
                                    comment = c(ORCID = "0000-0001-7407-9194")
                                  ),
                                  utils::person("Glen", "Wiesner", #email = "Glen.Wiesner@vu.edu.au",
@@ -25,11 +25,11 @@ x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Health Economic Anal
                                                                        suggests_chr = c("bookdown", "officedown","rmarkdown", "rticles")),
                            build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
                            check_type_1L_chr = "ready4",
-                           copyright_holders_chr = "Orygen",
+                           copyright_holders_chr = "Matthew Hamilton and Orygen",
                            custom_dmt_ls = ready4fun::make_custom_dmt_ls(user_manual_fns_chr = c("make_eq_ref","make_rprt_type_ls",
                                                                                                  "print_table",
                                                                                                  "write_mdl_plt_fl","write_mkdn_from_pkg","write_rprt")),
-                           dev_pkgs_chr = c("ready4"),
+                           #dev_pkgs_chr = c("ready4"),
                            lifecycle_stage_1L_chr = "experimental",
                            path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4show-logo/default.png",
                            piggyback_to_1L_chr = "ready4-dev/ready4",
@@ -175,16 +175,20 @@ z <- ready4pack::make_pt_ready4pack_manifest(x,
                                                                      ready4show_institutes = "institutes_tb")) %>%
   ready4pack::ready4pack_manifest()
 z <- author(z)
-write_extra_pkgs_to_actions()
-#readLines(".github/workflows/R-CMD-check.yaml") %>%
-  #stringr::str_replace_all("r-lib/actions/setup-r@master", "r-lib/actions/setup-r@v2") %>%
-  #stringr::str_replace_all("r-lib/actions/setup-pandoc@master", "r-lib/actions/setup-pandoc@v2") %>%
-  #stringr::str_replace_all("- \\{os: windows-latest, r: '3.6'\\}", "#- \\{os: windows-latest, r: '3.6'\\}") %>%
-  #stringr::str_replace_all("- \\{os: ubuntu-20.04,   r: 'oldrel', ", "#- \\{os: ubuntu-20.04,   r: 'oldrel', ") %>%
-  #purrr::discard_at(2:4) %>%
-  #writeLines(con = ".github/workflows/R-CMD-check.yaml")
-write_to_edit_workflow("pkgdown.yaml") # In other packages, run for "test-coverage.yaml" as well.
-readLines("_pkgdown.yml") %>%
-  stringr::str_replace_all("  - text: Model", "  - text: Framework & Model") %>%
-  writeLines(con = "_pkgdown.yml")
-devtools::build_vignettes()
+#write_extra_pkgs_to_actions(path_to_dir_1L_chr = ".github/workflows")
+write_to_edit_workflow("pkgdown.yaml", consent_1L_chr = "Y") # In other packages, run for "test-coverage.yaml" as well.
+write_to_tidy_pkg(manifest_ls, build_vignettes_1L_lgl = TRUE,
+                  clean_license_1L_lgl = TRUE, consent_1L_chr = "Y",
+                  examples_chr = character(0), project_1L_chr = "Framework", suggest_chr = "pkgload")
+#usethis::use_package("pkgload", type = "Suggests") # ??
+# write_examples(consent_1L_chr = "Y", path_1L_chr = x$initial_ls$path_to_pkg_rt_1L_chr)
+# write_examples(consent_1L_chr = "Y", path_1L_chr = x$initial_ls$path_to_pkg_rt_1L_chr, type_1L_chr = "r4")
+# readLines("_pkgdown.yml") %>%
+#   stringr::str_replace_all("  - text: Model", "  - text: Framework") %>%
+#   writeLines(con = "_pkgdown.yml")
+# unlink("LICENSE")
+# readLines("DESCRIPTION") %>%
+#   purrr::map_chr(~.x %>% stringr::str_replace("GPL-3 \\+ file LICENSE","GPL-3")) %>%
+#   writeLines("DESCRIPTION")
+# devtools::document()
+# devtools::build_vignettes()

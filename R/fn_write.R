@@ -32,7 +32,7 @@ write_all_outp_dirs <- function (paths_ls, consent_1L_chr = "", consent_indcs_in
     return(paths_ls)
 }
 #' Write complete study program output
-#' @description write_csp_output() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write complete study program output. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_csp_output() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write complete study program output. The function is called for its side effects and does not return a value.
 #' @param path_to_csp_1L_chr Path to complete study program (a character vector of length one)
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
@@ -40,7 +40,7 @@ write_all_outp_dirs <- function (paths_ls, consent_1L_chr = "", consent_indcs_in
 #' @param dv_ds_doi_1L_chr Dataverse dataset digital object identifier (a character vector of length one), Default: NULL
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param execute_1L_lgl Execute (a logical vector of length one), Default: T
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_csp_output
 #' @export 
 #' @importFrom purrr map_chr
@@ -48,7 +48,7 @@ write_all_outp_dirs <- function (paths_ls, consent_1L_chr = "", consent_indcs_in
 #' @importFrom stringr str_sub
 #' @importFrom knitr purl
 #' @importFrom DescTools SplitPath
-#' @importFrom rmarkdown render
+#' @seealso [rmarkdown::render()]
 #' @importFrom dataverse add_dataset_file
 #' @keywords internal
 write_csp_output <- function (path_to_csp_1L_chr, consent_1L_chr = "", consent_indcs_int = 1L, 
@@ -111,13 +111,13 @@ write_csp_output <- function (path_to_csp_1L_chr, consent_1L_chr = "", consent_i
     }
 }
 #' Write custom authors
-#' @description write_custom_authors() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write custom authors. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_custom_authors() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write custom authors. The function is called for its side effects and does not return a value.
 #' @param paths_ls Paths (a list)
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param rmd_fl_nms_ls R Markdown file names (a list), Default: make_rmd_fl_nms_ls()
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_custom_authors
 #' @export 
 #' @importFrom stringr str_remove_all str_sub str_replace
@@ -176,14 +176,14 @@ write_custom_authors <- function (paths_ls, consent_1L_chr = "", consent_indcs_i
     }
 }
 #' Write header files
-#' @description write_header_fls() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header files. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_header_fls() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header files. The function is called for its side effects and does not return a value.
 #' @param path_to_header_dir_1L_chr Path to header directory (a character vector of length one)
 #' @param header_yaml_args_ls Header yaml arguments (a list)
 #' @param abstract_args_ls Abstract arguments (a list), Default: NULL
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_header_fls
 #' @export 
 #' @importFrom ready4 write_new_dirs write_with_consent
@@ -214,7 +214,7 @@ write_header_fls <- function (path_to_header_dir_1L_chr, header_yaml_args_ls, ab
     }
 }
 #' Write header yaml
-#' @description write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_header_yaml() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write header yaml. The function is called for its side effects and does not return a value.
 #' @param path_to_header_dir_1L_chr Path to header directory (a character vector of length one)
 #' @param authors_tb Authors (a tibble)
 #' @param institutes_tb Institutes (a tibble)
@@ -226,7 +226,7 @@ write_header_fls <- function (path_to_header_dir_1L_chr, header_yaml_args_ls, ab
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param path_to_tmpl_header_1L_chr Path to template header (a character vector of length one), Default: NULL
 #' @param title_1L_chr Title (a character vector of length one), Default: 'Example title'
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_header_yaml
 #' @export 
 #' @importFrom dplyr arrange
@@ -340,7 +340,7 @@ write_main_outp_dir <- function (params_ls = NULL, consent_1L_chr = "", consent_
 #' @rdname write_manuscript
 #' @export 
 #' @importFrom ready4 write_with_consent write_to_dv_with_wait
-#' @importFrom rmarkdown render
+#' @seealso [rmarkdown::render()]
 #' @importFrom tibble tibble
 #' @keywords internal
 write_manuscript <- function (abstract_args_ls = NULL, consent_1L_chr = "", consent_indcs_int = 1L, 
@@ -486,14 +486,14 @@ write_mdl_plt_fl <- function (plt_fn = NULL, path_to_write_to_1L_chr, plt_nm_1L_
     return(path_to_plot_1L_chr)
 }
 #' Write markdown from package
-#' @description write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_mkdn_from_pkg() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from package. The function is called for its side effects and does not return a value.
 #' @param pkg_nm_1L_chr Package name (a character vector of length one)
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param dest_dir_1L_chr Destination directory (a character vector of length one), Default: 'Markdown'
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param overwrite_1L_lgl Overwrite (a logical vector of length one), Default: F
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_mkdn_from_pkg
 #' @export 
 #' @importFrom purrr map_lgl map_chr discard
@@ -523,7 +523,7 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, consent_1L_chr = "", consent_ind
         consent_indcs_int = consent_indcs_int, options_chr = options_chr)
 }
 #' Write markdown from repository
-#' @description write_mkdn_from_repo() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from repository. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_mkdn_from_repo() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from repository. The function is called for its side effects and does not return a value.
 #' @param mkdn_data_dir_1L_chr Markdown data directory (a character vector of length one)
 #' @param ms_mkdn_parent_1L_chr Manuscript markdown parent (a character vector of length one)
 #' @param ms_mkdn_repo_1L_chr Manuscript markdown repository (a character vector of length one)
@@ -531,7 +531,7 @@ write_mkdn_from_pkg <- function (pkg_nm_1L_chr, consent_1L_chr = "", consent_ind
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
 #' @param consent_indcs_int Consent indices (an integer vector), Default: 1
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_mkdn_from_repo
 #' @export 
 #' @importFrom utils unzip
@@ -561,7 +561,7 @@ write_mkdn_from_repo <- function (mkdn_data_dir_1L_chr, ms_mkdn_parent_1L_chr, m
         options_chr = options_chr)
 }
 #' Write report
-#' @description write_report() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_report() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report. The function is called for its side effects and does not return a value.
 #' @param params_ls Parameters (a list)
 #' @param paths_ls Paths (a list)
 #' @param rprt_lup Report (a lookup table)
@@ -574,7 +574,7 @@ write_mkdn_from_repo <- function (mkdn_data_dir_1L_chr, ms_mkdn_parent_1L_chr, m
 #' @param options_chr Options (a character vector), Default: c("Y", "N")
 #' @param reports_dir_1L_chr Reports directory (a character vector of length one), Default: 'Reports'
 #' @param rltv_path_to_data_dir_1L_chr Relative path to data directory (a character vector of length one), Default: '../Output'
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_report
 #' @export 
 #' @importFrom here i_am here
@@ -635,7 +635,7 @@ write_reporting_dir <- function (path_to_write_to_1L_chr = getwd(), path_to_rmd_
     return(path_to_program_1L_chr)
 }
 #' Write rendered report
-#' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value.
 #' @param rprt_type_ls Report type (a list)
 #' @param abstract_args_ls Abstract arguments (a list), Default: NULL
 #' @param consent_1L_chr Consent (a character vector of length one), Default: ''
@@ -647,12 +647,12 @@ write_reporting_dir <- function (path_to_write_to_1L_chr = getwd(), path_to_rmd_
 #' @param params_ls Parameters (a list), Default: list(output_type_1L_chr = "HTML")
 #' @param path_to_rprt_dir_1L_chr Path to report directory (a character vector of length one), Default: './'
 #' @param path_to_write_dirs_to_1L_chr Path to write directories to (a character vector of length one), Default: 'NA'
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_rndrd_rprt
 #' @export 
 #' @importFrom ready4 write_with_consent write_new_dirs
 #' @importFrom purrr pluck
-#' @importFrom rmarkdown render
+#' @seealso [rmarkdown::render()]
 #' @keywords internal
 write_rndrd_rprt <- function (rprt_type_ls, abstract_args_ls = NULL, consent_1L_chr = "", 
     consent_indcs_int = 1L, header_yaml_args_ls = NULL, nm_of_mkdn_dir_1L_chr = "Markdown", 
@@ -777,7 +777,7 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, append_params_ls = NULL,
     return(outp_smry_ls)
 }
 #' Write report from template
-#' @description write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_rprt_from_tmpl() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report from template. The function is called for its side effects and does not return a value.
 #' @param rprt_type_ls Report type (a list)
 #' @param path_to_prjs_dir_1L_chr Path to projects directory (a character vector of length one)
 #' @param abstract_args_ls Abstract arguments (a list), Default: NULL
@@ -791,7 +791,7 @@ write_rprt <- function (rprt_type_ls, outp_smry_ls, append_params_ls = NULL,
 #' @param prj_dir_1L_chr Project directory (a character vector of length one), Default: 'Fake'
 #' @param reports_dir_1L_chr Reports directory (a character vector of length one), Default: 'Reports'
 #' @param rltv_path_to_data_dir_1L_chr Relative path to data directory (a character vector of length one), Default: '../Output'
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_rprt_from_tmpl
 #' @export 
 #' @importFrom ready4 write_new_dirs
@@ -817,7 +817,7 @@ write_rprt_from_tmpl <- function (rprt_type_ls, path_to_prjs_dir_1L_chr, abstrac
         rprt_type_ls = rprt_type_ls)
 }
 #' Write report with record
-#' @description write_rprt_with_rcrd() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report with record. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+#' @description write_rprt_with_rcrd() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write report with record. The function is called for its side effects and does not return a value.
 #' @param path_to_outp_fl_1L_chr Path to output file (a character vector of length one)
 #' @param paths_ls Paths (a list)
 #' @param rprt_lup Report (a lookup table)
@@ -836,7 +836,7 @@ write_rprt_from_tmpl <- function (rprt_type_ls, path_to_prjs_dir_1L_chr, abstrac
 #' @param rprt_output_type_1L_chr Report output type (a character vector of length one), Default: 'PDF'
 #' @param start_at_int Start at (an integer vector), Default: c(2, 1)
 #' @param use_fake_data_1L_lgl Use fake data (a logical vector of length one), Default: F
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname write_rprt_with_rcrd
 #' @export 
 #' @importFrom ready4 get_from_lup_obj

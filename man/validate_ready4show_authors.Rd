@@ -2,18 +2,18 @@
 % Please edit documentation in R/C3_ready4show_authors.R
 \name{validate_ready4show_authors}
 \alias{validate_ready4show_authors}
-\title{validate ready4show authors ready4 S3 class for authors lookup table}
+\title{validate ready4show authors ready4 submodule class for authors lookup table}
 \usage{
 validate_ready4show_authors(x)
 }
 \arguments{
-\item{x}{An unvalidated instance of the ready4 S3 class for authors lookup table}
+\item{x}{An unvalidated instance of the ready4 submodule class for authors lookup table}
 }
 \value{
-A prototpe for ready4 S3 class for authors lookup table
+A prototpe for ready4 submodule class for authors lookup table
 }
 \description{
-Validate an instance of the ready4 S3 class for authors lookup table
+Validate an instance of the ready4 submodule class for authors lookup table
 }
 \details{
 Authors lookup table

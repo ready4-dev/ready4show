@@ -4,7 +4,7 @@
 \alias{ready4show_institutes}
 \alias{make_pt_ready4show_institutes}
 \alias{is_ready4show_institutes}
-\title{ready4 S3 class for institutes lookup table}
+\title{ready4 submodule class for institutes lookup table}
 \usage{
 ready4show_institutes(x = make_pt_ready4show_institutes())
 
@@ -23,14 +23,14 @@ is_ready4show_institutes(x)
 \item{long_name_chr}{Long name (a character vector), Default: character(0)}
 }
 \value{
-A validated instance of the ready4 S3 class for institutes lookup table
+A validated instance of the ready4 submodule class for institutes lookup table
 
-A prototype for ready4 S3 class for institutes lookup table
+A prototype for ready4 submodule class for institutes lookup table
 
-A logical value, TRUE if a valid instance of the ready4 S3 class for institutes lookup table
+A logical value, TRUE if a valid instance of the ready4 submodule class for institutes lookup table
 }
 \description{
-Create a new valid instance of the ready4 S3 class for institutes lookup table
+Create a new valid instance of the ready4 submodule class for institutes lookup table
 }
 \details{
 Institutes lookup table

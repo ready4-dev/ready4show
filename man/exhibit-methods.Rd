@@ -7,7 +7,7 @@
 \alias{exhibit,ready4show_correspondences-method}
 \alias{exhibit.ready4show_institutes}
 \alias{exhibit,ready4show_institutes-method}
-\title{Exhibit features of a dataset by printing them to the R console}
+\title{Exhibit features of model module data by printing them to the R console}
 \usage{
 exhibit.ready4show_authors(
   x,
@@ -64,7 +64,7 @@ exhibit.ready4show_institutes(
 )
 }
 \arguments{
-\item{x}{An instance of ready4 S3 class for institutes lookup table}
+\item{x}{An instance of \code{ready4show_institutes}, a ready4 submodule class for institutes lookup table}
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: NULL}
 
@@ -76,10 +76,17 @@ exhibit.ready4show_institutes(
 
 \item{...}{Additional arguments}
 }
+\value{
+No return value, called for side effects.
+
+No return value, called for side effects.
+
+No return value, called for side effects.
+}
 \description{
-exhibit.ready4show_authors() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 S3 class for authors lookup table The function is called for its side effects and does not return a value.
+exhibit.ready4show_authors() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 submodule class for authors lookup table The function is called for its side effects and does not return a value.
 
 exhibit.ready4show_correspondences() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the Name correspondences lookup table The function is called for its side effects and does not return a value.
 
-exhibit.ready4show_institutes() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 S3 class for institutes lookup table The function is called for its side effects and does not return a value.
+exhibit.ready4show_institutes() is an exhibit method that exhibits features of a class instance by printing to console. This method is implemented for the ready4 submodule class for institutes lookup table The function is called for its side effects and does not return a value.
 }

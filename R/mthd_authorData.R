@@ -10,7 +10,7 @@
 #' @param tmpl_version_1L_chr Template version (a character vector of length one), Default: '0.1.1.0'
 #' @param what_1L_chr What (a character vector of length one), Default: 'Manuscript'
 #' @param ... Additional arguments
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname authorData-methods
 #' @aliases authorData,Ready4showSynopsis-method
 #' @export 

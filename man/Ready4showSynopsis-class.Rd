@@ -15,7 +15,7 @@ Metadata about a scientific summary manuscript
 
 \item{\code{abstract_args_ls}}{Abstract arguments (a list)}
 
-\item{\code{authors_r3}}{Authors (a ready4 S3)}
+\item{\code{authors_r3}}{Authors (a ready4 submodule)}
 
 \item{\code{background_1L_chr}}{Background (a character vector of length one)}
 
@@ -23,7 +23,7 @@ Metadata about a scientific summary manuscript
 
 \item{\code{conclusion_1L_chr}}{Conclusion (a character vector of length one)}
 
-\item{\code{correspondences_r3}}{Correspondences (a ready4 S3)}
+\item{\code{correspondences_r3}}{Correspondences (a ready4 submodule)}
 
 \item{\code{digits_int}}{Digits (an integer vector)}
 
@@ -35,7 +35,7 @@ Metadata about a scientific summary manuscript
 
 \item{\code{funding_1L_chr}}{Funding (a character vector of length one)}
 
-\item{\code{institutes_r3}}{Institutes (a ready4 S3)}
+\item{\code{institutes_r3}}{Institutes (a ready4 submodule)}
 
 \item{\code{interval_chr}}{Interval (a character vector)}
 

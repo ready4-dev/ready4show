@@ -36,6 +36,12 @@
 
 \item{...}{Additional arguments}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 authorReport method applied to Ready4showSynopsis
+}
+\seealso{
+\code{\link[rmarkdown:render]{rmarkdown::render()}}
 }

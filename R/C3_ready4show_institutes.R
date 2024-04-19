@@ -1,19 +1,19 @@
 
 setOldClass(c("ready4show_institutes","tbl_df", "tbl", "data.frame"))
-#' ready4 S3 class for institutes lookup table
-#' @description Create a new valid instance of the ready4 S3 class for institutes lookup table
-#' @param x A prototype for the ready4 S3 class for institutes lookup table, Default: make_pt_ready4show_institutes()
-#' @return A validated instance of the ready4 S3 class for institutes lookup table
+#' ready4 submodule class for institutes lookup table
+#' @description Create a new valid instance of the ready4 submodule class for institutes lookup table
+#' @param x A prototype for the ready4 submodule class for institutes lookup table, Default: make_pt_ready4show_institutes()
+#' @return A validated instance of the ready4 submodule class for institutes lookup table
 #' @details Institutes lookup table
 #' @rdname ready4show_institutes
 #' @export 
 ready4show_institutes <- function(x = make_pt_ready4show_institutes()){ 
 validate_ready4show_institutes(make_new_ready4show_institutes(x))
 }
-#' make new ready4show institutes ready4 S3 class for institutes lookup table
-#' @description Create a new unvalidated instance of the ready4 S3 class for institutes lookup table
-#' @param x A prototype for the ready4 S3 class for institutes lookup table
-#' @return An unvalidated instance of the ready4 S3 class for institutes lookup table
+#' make new ready4show institutes ready4 submodule class for institutes lookup table
+#' @description Create a new unvalidated instance of the ready4 submodule class for institutes lookup table
+#' @param x A prototype for the ready4 submodule class for institutes lookup table
+#' @return An unvalidated instance of the ready4 submodule class for institutes lookup table
 #' @details Institutes lookup table
 #' @rdname make_new_ready4show_institutes
 #' @export 
@@ -25,10 +25,10 @@ class(x) <- append(c("ready4show_institutes",setdiff(make_pt_ready4show_institut
 class(x))
 x
 }
-#' make prototype ready4show institutes ready4 S3 class for institutes lookup table
+#' make prototype ready4show institutes ready4 submodule class for institutes lookup table
 #' @param short_name_chr Short name (a character vector), Default: character(0)
 #' @param long_name_chr Long name (a character vector), Default: character(0)
-#' @return A prototype for ready4 S3 class for institutes lookup table
+#' @return A prototype for ready4 submodule class for institutes lookup table
 #' 
 #' @rdname ready4show_institutes
 #' @export 
@@ -41,10 +41,10 @@ args_ls <- list(short_name_chr = short_name_chr,
 long_name_chr = long_name_chr) %>% ready4::update_pt_fn_args_ls()
 rlang::exec(tibble::tibble,!!!args_ls)
 }
-#' validate ready4show institutes ready4 S3 class for institutes lookup table
-#' @description Validate an instance of the ready4 S3 class for institutes lookup table
-#' @param x An unvalidated instance of the ready4 S3 class for institutes lookup table
-#' @return A prototpe for ready4 S3 class for institutes lookup table
+#' validate ready4show institutes ready4 submodule class for institutes lookup table
+#' @description Validate an instance of the ready4 submodule class for institutes lookup table
+#' @param x An unvalidated instance of the ready4 submodule class for institutes lookup table
+#' @return A prototpe for ready4 submodule class for institutes lookup table
 #' @details Institutes lookup table
 #' @rdname validate_ready4show_institutes
 #' @export 
@@ -90,9 +90,9 @@ call. = FALSE)
 }
 
 x}
-#' is ready4show institutes ready4 S3 class for institutes lookup table
+#' is ready4show institutes ready4 submodule class for institutes lookup table
 #' @param x An object of any type
-#' @return A logical value, TRUE if a valid instance of the ready4 S3 class for institutes lookup table
+#' @return A logical value, TRUE if a valid instance of the ready4 submodule class for institutes lookup table
 #' 
 #' @rdname ready4show_institutes
 #' @export 

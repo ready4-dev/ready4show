@@ -11,13 +11,13 @@
 #' @param rmd_fl_nms_ls R Markdown file names (a list), Default: NULL
 #' @param what_1L_chr What (a character vector of length one), Default: 'NA'
 #' @param ... Additional arguments
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname authorReport-methods
 #' @aliases authorReport,Ready4showSynopsis-method
 #' @export 
 #' @importFrom purrr flatten_chr
 #' @importFrom ready4 write_with_consent authorReport
-#' @importFrom rmarkdown render
+#' @seealso [rmarkdown::render()]
 methods::setMethod("authorReport", "Ready4showSynopsis", function (x, args_ls = NULL, consent_1L_chr = "", consent_indcs_int = 1L, 
     fl_nm_1L_chr = NA_character_, options_chr = c("Y", "N"), 
     rmd_fl_nms_ls = NULL, what_1L_chr = NA_character_, ...) 

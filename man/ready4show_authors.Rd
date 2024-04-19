@@ -4,7 +4,7 @@
 \alias{ready4show_authors}
 \alias{make_pt_ready4show_authors}
 \alias{is_ready4show_authors}
-\title{ready4 S3 class for authors lookup table}
+\title{ready4 submodule class for authors lookup table}
 \usage{
 ready4show_authors(x = make_pt_ready4show_authors())
 
@@ -47,14 +47,14 @@ is_ready4show_authors(x)
 \item{is_equal_first_lgl}{Is equal first (a logical vector), Default: logical(0)}
 }
 \value{
-A validated instance of the ready4 S3 class for authors lookup table
+A validated instance of the ready4 submodule class for authors lookup table
 
-A prototype for ready4 S3 class for authors lookup table
+A prototype for ready4 submodule class for authors lookup table
 
-A logical value, TRUE if a valid instance of the ready4 S3 class for authors lookup table
+A logical value, TRUE if a valid instance of the ready4 submodule class for authors lookup table
 }
 \description{
-Create a new valid instance of the ready4 S3 class for authors lookup table
+Create a new valid instance of the ready4 submodule class for authors lookup table
 }
 \details{
 Authors lookup table

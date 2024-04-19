@@ -29,7 +29,10 @@ write_mkdn_from_repo(
 
 \item{options_chr}{Options (a character vector), Default: c("Y", "N")}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-write_mkdn_from_repo() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from repository. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+write_mkdn_from_repo() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write markdown from repository. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

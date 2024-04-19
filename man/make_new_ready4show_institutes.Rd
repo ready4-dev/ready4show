@@ -2,18 +2,18 @@
 % Please edit documentation in R/C3_ready4show_institutes.R
 \name{make_new_ready4show_institutes}
 \alias{make_new_ready4show_institutes}
-\title{make new ready4show institutes ready4 S3 class for institutes lookup table}
+\title{make new ready4show institutes ready4 submodule class for institutes lookup table}
 \usage{
 make_new_ready4show_institutes(x)
 }
 \arguments{
-\item{x}{A prototype for the ready4 S3 class for institutes lookup table}
+\item{x}{A prototype for the ready4 submodule class for institutes lookup table}
 }
 \value{
-An unvalidated instance of the ready4 S3 class for institutes lookup table
+An unvalidated instance of the ready4 submodule class for institutes lookup table
 }
 \description{
-Create a new unvalidated instance of the ready4 S3 class for institutes lookup table
+Create a new unvalidated instance of the ready4 submodule class for institutes lookup table
 }
 \details{
 Institutes lookup table

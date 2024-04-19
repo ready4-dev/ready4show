@@ -7,7 +7,7 @@
 \alias{renew,ready4show_correspondences-method}
 \alias{renew.ready4show_institutes}
 \alias{renew,ready4show_institutes-method}
-\title{Renew values in a dataset}
+\title{Renew (update) values}
 \usage{
 renew.ready4show_authors(
   x,
@@ -80,7 +80,7 @@ renew.ready4show_institutes(
 )
 }
 \arguments{
-\item{x}{An instance of ready4 S3 class for institutes lookup table}
+\item{x}{An instance of \code{ready4show_institutes}, a ready4 submodule class for institutes lookup table}
 
 \item{first_nm_chr}{First name (a character vector), Default: 'NA'}
 
@@ -124,9 +124,9 @@ x (An object)
 x (An object)
 }
 \description{
-renew.ready4show_authors() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 S3 class for authors lookup table The function is called for its side effects and does not return a value.
+renew.ready4show_authors() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 submodule class for authors lookup table The function is called for its side effects and does not return a value.
 
 renew.ready4show_correspondences() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the Name correspondences lookup table The function is called for its side effects and does not return a value.
 
-renew.ready4show_institutes() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 S3 class for institutes lookup table The function is called for its side effects and does not return a value.
+renew.ready4show_institutes() is a renew method that renews an instance of a class by updating it with new data. This method is implemented for the ready4 submodule class for institutes lookup table The function is called for its side effects and does not return a value.
 }

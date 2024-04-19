@@ -59,6 +59,9 @@ print_table(
 
 \item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: F}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-print_table() is a Print function that prints output to console Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.
+print_table() is a Print function that prints output to console. Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.
 }

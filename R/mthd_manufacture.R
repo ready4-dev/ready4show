@@ -1,6 +1,6 @@
 #' Manufacture a new object
 #' @description manufacture.ready4show_correspondences() is a manufacture method that manufactures a novel R object using data contained in an instance of a class. This method is implemented for the Name correspondences lookup table The function returns Object (an output object of multiple potential types).
-#' @param x An instance of Name correspondences lookup table
+#' @param x An instance of `ready4show_correspondences`, a Name correspondences lookup table
 #' @param data_ls Data (a list)
 #' @param flatten_1L_chr Flatten (a character vector of length one), Default: F
 #' @param type_1L_chr Type (a character vector of length one), Default: 'new'

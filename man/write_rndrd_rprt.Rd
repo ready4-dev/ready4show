@@ -41,7 +41,13 @@ write_rndrd_rprt(
 
 \item{path_to_write_dirs_to_1L_chr}{Path to write directories to (a character vector of length one), Default: 'NA'}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value. WARNING: This function writes R scripts to your local environment. Make sure to only use if you want this behaviour
+write_rndrd_rprt() is a Write function that writes a file to a specified local directory. Specifically, this function implements an algorithm to write rendered report. The function is called for its side effects and does not return a value.
+}
+\seealso{
+\code{\link[rmarkdown:render]{rmarkdown::render()}}
 }
 \keyword{internal}

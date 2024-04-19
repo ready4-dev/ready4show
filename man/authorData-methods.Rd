@@ -33,6 +33,9 @@
 
 \item{...}{Additional arguments}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 authorData method applied to Ready4showSynopsis
 }

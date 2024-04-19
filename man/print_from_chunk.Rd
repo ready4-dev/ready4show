@@ -29,7 +29,10 @@ print_from_chunk(
 
 \item{...}{Additional arguments}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-print_from_chunk() is a Print function that prints output to console Specifically, this function implements an algorithm to print from chunk. The function is called for its side effects and does not return a value.
+print_from_chunk() is a Print function that prints output to console. Specifically, this function implements an algorithm to print from chunk. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

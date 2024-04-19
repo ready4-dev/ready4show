@@ -11,7 +11,10 @@ knit_from_tmpl(params_to_expand_ls, path_to_tmpl_1L_chr)
 
 \item{path_to_tmpl_1L_chr}{Path to template (a character vector of length one)}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-knit_from_tmpl() is a Knit function that knits a rmarkdown file Specifically, this function implements an algorithm to knit from template. The function is called for its side effects and does not return a value.
+knit_from_tmpl() is a Knit function that knits an RMD or Rmarkdown file. Specifically, this function implements an algorithm to knit from template. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}
