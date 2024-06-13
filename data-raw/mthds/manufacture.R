@@ -1,4 +1,4 @@
-manfacture.ready4show_correspondences <- function (x, data_ls, flatten_1L_lgl = F, type_1L_chr = "new", what_1L_chr = "names", ...)
+manufacture.ready4show_correspondences <- function (x, data_ls, flatten_1L_lgl = F, type_1L_chr = "new", what_1L_chr = "names", ...)
 {
   if (what_1L_chr == "names") {
     object_xx <- data_ls %>% purrr::map(~.x %>% purrr::map_chr(~ifelse(.x %in%

@@ -44,6 +44,7 @@ reference:
   - exhibit.ready4show_correspondences
   - exhibit.ready4show_institutes
   - manufacture-Ready4showSynopsis
+  - manufacture.ready4show_correspondences
   - renew.ready4show_authors
   - renew.ready4show_correspondences
   - renew.ready4show_institutes
