@@ -10,13 +10,16 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/ready4show)](https://CRAN.R-project.org/package=ready4show)
 <!-- badges: end -->
 
-ready4show provides tools for authoring reproducible analyses
+ready4show provides tools for authoring repeatable analyses
 and to help automate the generation of scientific summaries for
-modelling studies implemented with the ready4 framework
-(https://www.ready4-dev.com).  This development version of the
-ready4show package has been made available as part of the process of
-testing and documenting the package. If you have any questions, please
-contact the authors (matthew.hamilton1@monash.edu).
+modelling studies implemented with the ready4 framework.  For detailed
+documentation about the framework and how to use it visit
+<https://www.ready4-dev.com/>. For a background to the methodological
+issues that the framework is attempting to help solve, see Hamilton et
+al. (2024) <https://doi.org/10.1007/s40273-024-01378-8>.  This development version
+of the ready4show package has been made available as part of the
+process of testing and documenting the package. If you have any
+questions, please contact the authors (matthew.hamilton1@monash.edu).
 
 To install a development version of this software, run the following commands in your R console:
 

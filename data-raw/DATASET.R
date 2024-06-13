@@ -1,8 +1,9 @@
 library(ready4)
 library(ready4fun)
 x <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Author Health Economic Analysis Programs and Reporting Templates" %>% tools::toTitleCase(),
-                                 pkg_desc_1L_chr = "ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com).
-  This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).",
+                                 pkg_desc_1L_chr = "ready4show provides tools for authoring repeatable analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework.
+                                 For detailed documentation about the framework and how to use it visit <https://www.ready4-dev.com/>. For a background to the methodological issues that the framework is attempting to help solve, see Hamilton et al. (2024) <doi:10.1007/s40273-024-01378-8>.
+                                 This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).",
                                  authors_prsn = c(utils::person(
                                    given = "Matthew",
                                    family = "Hamilton",
@@ -179,7 +180,12 @@ z <- author(z)
 write_to_edit_workflow("pkgdown.yaml", consent_1L_chr = "Y") # In other packages, run for "test-coverage.yaml" as well.
 write_to_tidy_pkg(manifest_ls, build_vignettes_1L_lgl = TRUE,
                   clean_license_1L_lgl = TRUE, consent_1L_chr = "Y",
-                  examples_chr = character(0), project_1L_chr = "Framework", suggest_chr = "pkgload")
+                  examples_chr = character(0), project_1L_chr = "Framework"#, suggest_chr = "pkgload"
+                  )
+readLines("README.md") %>% # update in ready4fun
+  #gsub(pattern = "doi:10.48550/arXiv.([^&]+)", replacement = "https://arxiv.org/abs/\\1") %>%
+  gsub(pattern = "doi:([^&]+)", replacement = "https://doi.org/\\1") %>%
+  writeLines(con = "README.md")
 #usethis::use_package("pkgload", type = "Suggests") # ??
 # write_examples(consent_1L_chr = "Y", path_1L_chr = x$initial_ls$path_to_pkg_rt_1L_chr)
 # write_examples(consent_1L_chr = "Y", path_1L_chr = x$initial_ls$path_to_pkg_rt_1L_chr, type_1L_chr = "r4")

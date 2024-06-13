@@ -7,11 +7,11 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
+ready4show provides tools for authoring repeatable analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework. For detailed documentation about the framework and how to use it visit \url{https://www.ready4-dev.com/}. For a background to the methodological issues that the framework is attempting to help solve, see Hamilton et al. (2024) \doi{10.1007/s40273-024-01378-8}. This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-ready4show provides tools for authoring reproducible analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework (https://www.ready4-dev.com). This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
+ready4show provides tools for authoring repeatable analyses and to help automate the generation of scientific summaries for modelling studies implemented with the ready4 framework. For detailed documentation about the framework and how to use it visit \url{https://www.ready4-dev.com/}. For a background to the methodological issues that the framework is attempting to help solve, see Hamilton et al. (2024) \doi{10.1007/s40273-024-01378-8}. This development version of the ready4show package has been made available as part of the process of testing and documenting the package. If you have any questions, please contact the authors (matthew.hamilton1@monash.edu).
 }
 \seealso{
 Useful links:
