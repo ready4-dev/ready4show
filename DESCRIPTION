@@ -1,6 +1,6 @@
 Package: ready4show
 Title: Author Health Economic Analysis Programs and Reporting Templates
-Version: 0.0.0.9114
+Version: 0.0.0.9115
 Authors@R: c(
     person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-7407-9194")),
@@ -21,17 +21,15 @@ Description: ready4show provides tools for authoring repeatable analyses
     of the ready4show package has been made available as part of the
     process of testing and documenting the package. If you have any
     questions, please contact the authors (matthew.hamilton1@monash.edu).
-License: GPL-3
+License: GPL-3 + file LICENSE
 URL: https://ready4-dev.github.io/ready4show/,
     https://github.com/ready4-dev/ready4show, https://www.ready4-dev.com/
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Suggests: 
     bookdown,
     officedown,
-    pkgload,
-    rmarkdown,
     rticles,
     testthat
 VignetteBuilder: knitr
@@ -40,7 +38,10 @@ Imports:
     DescTools,
     dplyr,
     flextable,
+    ggplot2,
     grDevices,
+    gt,
+    gtsummary,
     here,
     Hmisc,
     kableExtra,
@@ -53,6 +54,7 @@ Imports:
     purrr,
     ready4,
     rlang,
+    rmarkdown,
     stringi,
     stringr,
     tibble,
@@ -60,7 +62,7 @@ Imports:
     utils,
     xtable
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5)
 LazyData: true
 Collate: 
     'C3_ready4show_authors.R'
@@ -71,6 +73,7 @@ Collate:
     'C4_Ready4showSynopsis.R'
     'db_authors_tb.R'
     'db_institutes_tb.R'
+    'fn_add.R'
     'fn_knit.R'
     'fn_print.R'
     'fn_transform.R'
