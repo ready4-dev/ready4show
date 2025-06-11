@@ -41,6 +41,72 @@ print_from_chunk <- function (ds_tb, caption_1L_chr = NULL, mkdn_tbl_ref_1L_chr 
         use_rdocx_1L_lgl = ifelse(output_type_1L_chr == "Word", 
             T, F), ...)
 }
+#' Print in format
+#' @description print_in_format() is a Print function that prints output to console. Specifically, this function implements an algorithm to print in format. The function returns Table (an output object of multiple potential types).
+#' @param table_xx Table (an output object of multiple potential types)
+#' @param caption_1L_chr Caption (a character vector of length one), Default: NULL
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: NULL
+#' @param output_type_1L_chr Output type (a character vector of length one), Default: c("PDF", "HTML", "Word")
+#' @param table_fns_ls Table functions (a list), Default: make_table_fns_ls()
+#' @param use_lbls_as_col_nms_1L_lgl Use labels as column names (a logical vector of length one), Default: T
+#' @param var_desc_chr Variable description (a character vector), Default: 'NA'
+#' @param ... Additional arguments
+#' @return Table (an output object of multiple potential types)
+#' @rdname print_in_format
+#' @export 
+#' @importFrom knitr opts_current
+#' @importFrom purrr pluck
+print_in_format <- function (table_xx, caption_1L_chr = NULL, mkdn_tbl_ref_1L_chr = NULL, 
+    output_type_1L_chr = c("PDF", "HTML", "Word"), table_fns_ls = make_table_fns_ls(), 
+    use_lbls_as_col_nms_1L_lgl = T, var_desc_chr = NA_character_, 
+    ...) 
+{
+    output_type_1L_chr <- match.arg(output_type_1L_chr)
+    if (is.null(mkdn_tbl_ref_1L_chr)) {
+        mkdn_tbl_ref_1L_chr <- paste0("tab:", knitr::opts_current$get("tab.id"))
+    }
+    table_fn <- NULL
+    if (!is.null(table_fns_ls)) {
+        table_fn <- table_fns_ls %>% purrr::pluck(output_type_1L_chr)
+    }
+    if (!is.null(table_fn)) {
+        table_xx <- table_xx %>% table_fn()
+    }
+    else {
+        table_xx <- table_xx %>% print_from_chunk(data_df, caption_1L_chr = caption_1L_chr, 
+            mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, output_type_1L_chr = output_type_1L_chr, 
+            use_lbls_as_col_nms_1L_lgl = use_lbls_as_col_nms_1L_lgl, 
+            var_desc_chr = var_desc_chr, ...)
+    }
+    return(table_xx)
+}
+#' Print plot
+#' @description print_plot() is a Print function that prints output to console. Specifically, this function implements an algorithm to print plot. The function is called for its side effects and does not return a value.
+#' @param plot_plt Plot (a plot)
+#' @param name_1L_chr Name (a character vector of length one), Default: 'plot'
+#' @param output_type_1L_chr Output type (a character vector of length one), Default: c("PDF", "HTML", "Word")
+#' @param scale_1L_dbl Scale (a double vector of length one), Default: 1
+#' @param write_to_1L_chr Write to (a character vector of length one), Default: tempdir()
+#' @return No return value, called for side effects.
+#' @rdname print_plot
+#' @export 
+#' @importFrom ggplot2 ggsave
+#' @importFrom knitr include_graphics
+#' @keywords internal
+print_plot <- function (plot_plt, name_1L_chr = "plot", output_type_1L_chr = c("PDF", 
+    "HTML", "Word"), scale_1L_dbl = 1, write_to_1L_chr = tempdir()) 
+{
+    output_type_1L_chr <- match.arg(output_type_1L_chr)
+    if (output_type_1L_chr != "Word") {
+        plot_plt
+    }
+    else {
+        plot_plt %>% ggplot2::ggsave(filename = paste0(write_to_1L_chr, 
+            "/", name_1L_chr, ".png"), scale = scale_1L_dbl)
+        knitr::include_graphics(paste0(write_to_1L_chr, "/", 
+            name_1L_chr, ".png"))
+    }
+}
 #' Print table
 #' @description print_table() is a Print function that prints output to console. Specifically, this function implements an algorithm to print table. The function is called for its side effects and does not return a value.
 #' @param data_tb Data (a tibble)

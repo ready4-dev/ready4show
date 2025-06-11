@@ -32,6 +32,8 @@ reference:
 - contents:
   - make_eq_ref
   - make_rprt_type_ls
+  - make_table_fns_ls
+  - print_in_format
   - print_table
   - write_mdl_plt_fl
   - write_mkdn_from_pkg

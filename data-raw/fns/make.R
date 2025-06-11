@@ -236,3 +236,73 @@ make_sngl_author_lines <- function(authors_tb,
     purrr::discard(is.na)
   return(author_lines_chr)
 }
+make_table_fn <- function(type_1L_chr = c("HTML","PDF", "Word"),
+                          what_1L_chr = c("df", "gtsummary", "null")){
+  type_1L_chr <- match.arg(type_1L_chr)
+  what_1L_chr <- match.arg(what_1L_chr)
+  if(what_1L_chr=="null"){
+    table_fn = NULL
+  }else{
+    if(type_1L_chr == "HTML"){
+      if(what_1L_chr=="df"){
+        table_fn <- function(x) {x %>% gt::gt() %>% gt::tab_caption(caption = knitr::opts_current$get("tab.cap"))} #gt::gt
+      }else{
+        table_fn <- identity
+      }
+
+    }
+    if(type_1L_chr == "PDF"){
+      if(what_1L_chr=="df"){
+        table_fn <- function(x) {kableExtra::kbl(x,
+                                                 booktabs = T,
+                                                 caption = knitr::opts_current$get("tab.cap"))}
+      }else{
+        table_fn <- function(x) {gtsummary::as_kable_extra(x, booktabs = T)}
+      }
+    }
+    if(type_1L_chr == "Word"){
+      if(what_1L_chr=="df"){
+        table_fn <- function(x) {  gtsummary::as_flex_table(gtsummary::as_gtsummary(x)) %>% flextable::set_caption(caption = knitr::opts_current$get("tab.cap"))} #x %>% flextable::as_flextable()
+      }else{
+        table_fn <- gtsummary::as_flex_table
+      }
+    }
+  }
+
+  return(table_fn)
+}
+make_table_fns_ls <- function(what_1L_chr = c("df", "gtsummary", "null", "identity"),
+                              html_table_fn = NULL,
+                              pdf_table_fn = NULL,
+                              word_table_fn = NULL){
+  what_1L_chr <- match.arg(what_1L_chr)
+  if(what_1L_chr=="identity"){
+    if(is.null(html_table_fn)){
+      html_table_fn <- identity
+    }
+    if(is.null(pdf_table_fn)){
+      pdf_table_fn <- identity
+    }
+    if(is.null(word_table_fn)){
+      word_table_fn <- identity
+    }
+  }
+  if(F){
+    html_table_fn <- function(x) x %>% gt::gt() %>% gt::tab_caption(caption = knitr::opts_current$get("tab.cap"))
+    pdf_table_fn <- function(x) x %>% kableExtra::kbl(booktabs = T, caption = knitr::opts_current$get("tab.cap"))
+    word_table_fn <- function(x) x %>% flextable::as_flextable() %>% flextable::set_caption(caption = knitr::opts_current$get("tab.cap"))
+  }
+  if(is.null(html_table_fn)){
+    html_table_fn <- make_table_fn("HTML", what_1L_chr = what_1L_chr)
+  }
+  if(is.null(pdf_table_fn)){
+    pdf_table_fn <- make_table_fn("PDF", what_1L_chr = what_1L_chr)
+  }
+  if(is.null(word_table_fn)){
+    word_table_fn <- make_table_fn("Word", what_1L_chr = what_1L_chr)
+  }
+  table_fns_ls <- list(HTML = html_table_fn,
+                       PDF = pdf_table_fn,
+                       Word = word_table_fn)
+  return(table_fns_ls)
+}

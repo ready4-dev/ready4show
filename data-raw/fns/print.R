@@ -29,6 +29,50 @@ print_from_chunk <- function(ds_tb,
                             use_rdocx_1L_lgl = ifelse(output_type_1L_chr=="Word",T,F),
                             ...)
 }
+print_in_format <- function(table_xx,
+                            caption_1L_chr = NULL,
+                            mkdn_tbl_ref_1L_chr = NULL,
+                            output_type_1L_chr = c("PDF", "HTML", "Word"),
+                            table_fns_ls = make_table_fns_ls(),
+                            use_lbls_as_col_nms_1L_lgl = T,
+                            var_desc_chr = NA_character_,
+                            ...){
+
+  output_type_1L_chr <- match.arg(output_type_1L_chr)
+  if (is.null(mkdn_tbl_ref_1L_chr)) {
+    mkdn_tbl_ref_1L_chr <- paste0("tab:", knitr::opts_current$get("tab.id"))
+  }
+  table_fn <- NULL
+  if(!is.null(table_fns_ls)){
+    table_fn <- table_fns_ls %>% purrr::pluck(output_type_1L_chr)
+  }
+  if(!is.null(table_fn)){
+    table_xx <- table_xx %>% table_fn()
+  }else{
+    table_xx <- table_xx %>% print_from_chunk(data_df,#ready4show::
+                                              caption_1L_chr = caption_1L_chr, mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr,
+                                              output_type_1L_chr = output_type_1L_chr, use_lbls_as_col_nms_1L_lgl = use_lbls_as_col_nms_1L_lgl,
+                                              var_desc_chr = var_desc_chr, ...)
+  }
+  return(table_xx)
+
+
+}
+print_plot <- function(plot_plt,
+                       name_1L_chr = "plot",
+                       output_type_1L_chr = c("PDF", "HTML", "Word"),
+                       scale_1L_dbl = 1,
+                       write_to_1L_chr = tempdir()){
+  output_type_1L_chr <- match.arg(output_type_1L_chr)
+  if(output_type_1L_chr != "Word"){
+    plot_plt
+  }else{
+    plot_plt %>%
+      ggplot2::ggsave(filename = paste0(write_to_1L_chr,"/", name_1L_chr, ".png"), scale = scale_1L_dbl)
+
+    knitr::include_graphics(paste0(write_to_1L_chr,"/", name_1L_chr, ".png"))
+  }
+}
 print_table <- function(data_tb,
                         mkdn_tbl_ref_1L_chr,
                         add_to_row_ls = NULL,

@@ -327,3 +327,109 @@ make_sngl_author_lines <- function (authors_tb, slice_1L_int, inc_quals_1L_lgl =
         correspondence_1L_chr, equal_1L_chr) %>% purrr::discard(is.na)
     return(author_lines_chr)
 }
+#' Make table function
+#' @description make_table_fn() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make table function. The function returns Table (a function).
+#' @param type_1L_chr Type (a character vector of length one), Default: c("HTML", "PDF", "Word")
+#' @param what_1L_chr What (a character vector of length one), Default: c("df", "gtsummary", "null")
+#' @return Table (a function)
+#' @rdname make_table_fn
+#' @export 
+#' @importFrom gt gt tab_caption
+#' @importFrom knitr opts_current
+#' @importFrom kableExtra kbl
+#' @importFrom gtsummary as_kable_extra as_flex_table as_gtsummary
+#' @importFrom flextable set_caption
+#' @keywords internal
+make_table_fn <- function (type_1L_chr = c("HTML", "PDF", "Word"), what_1L_chr = c("df", 
+    "gtsummary", "null")) 
+{
+    type_1L_chr <- match.arg(type_1L_chr)
+    what_1L_chr <- match.arg(what_1L_chr)
+    if (what_1L_chr == "null") {
+        table_fn = NULL
+    }
+    else {
+        if (type_1L_chr == "HTML") {
+            if (what_1L_chr == "df") {
+                table_fn <- function(x) {
+                  x %>% gt::gt() %>% gt::tab_caption(caption = knitr::opts_current$get("tab.cap"))
+                }
+            }
+            else {
+                table_fn <- identity
+            }
+        }
+        if (type_1L_chr == "PDF") {
+            if (what_1L_chr == "df") {
+                table_fn <- function(x) {
+                  kableExtra::kbl(x, booktabs = T, caption = knitr::opts_current$get("tab.cap"))
+                }
+            }
+            else {
+                table_fn <- function(x) {
+                  gtsummary::as_kable_extra(x, booktabs = T)
+                }
+            }
+        }
+        if (type_1L_chr == "Word") {
+            if (what_1L_chr == "df") {
+                table_fn <- function(x) {
+                  gtsummary::as_flex_table(gtsummary::as_gtsummary(x)) %>% 
+                    flextable::set_caption(caption = knitr::opts_current$get("tab.cap"))
+                }
+            }
+            else {
+                table_fn <- gtsummary::as_flex_table
+            }
+        }
+    }
+    return(table_fn)
+}
+#' Make table functions list
+#' @description make_table_fns_ls() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make table functions list. The function returns Table functions (a list).
+#' @param what_1L_chr What (a character vector of length one), Default: c("df", "gtsummary", "null", "identity")
+#' @param html_table_fn Html table (a function), Default: NULL
+#' @param pdf_table_fn Pdf table (a function), Default: NULL
+#' @param word_table_fn Word table (a function), Default: NULL
+#' @return Table functions (a list)
+#' @rdname make_table_fns_ls
+#' @export 
+#' @importFrom gt gt tab_caption
+#' @importFrom knitr opts_current
+#' @importFrom kableExtra kbl
+#' @importFrom flextable as_flextable set_caption
+make_table_fns_ls <- function (what_1L_chr = c("df", "gtsummary", "null", "identity"), 
+    html_table_fn = NULL, pdf_table_fn = NULL, word_table_fn = NULL) 
+{
+    what_1L_chr <- match.arg(what_1L_chr)
+    if (what_1L_chr == "identity") {
+        if (is.null(html_table_fn)) {
+            html_table_fn <- identity
+        }
+        if (is.null(pdf_table_fn)) {
+            pdf_table_fn <- identity
+        }
+        if (is.null(word_table_fn)) {
+            word_table_fn <- identity
+        }
+    }
+    if (F) {
+        html_table_fn <- function(x) x %>% gt::gt() %>% gt::tab_caption(caption = knitr::opts_current$get("tab.cap"))
+        pdf_table_fn <- function(x) x %>% kableExtra::kbl(booktabs = T, 
+            caption = knitr::opts_current$get("tab.cap"))
+        word_table_fn <- function(x) x %>% flextable::as_flextable() %>% 
+            flextable::set_caption(caption = knitr::opts_current$get("tab.cap"))
+    }
+    if (is.null(html_table_fn)) {
+        html_table_fn <- make_table_fn("HTML", what_1L_chr = what_1L_chr)
+    }
+    if (is.null(pdf_table_fn)) {
+        pdf_table_fn <- make_table_fn("PDF", what_1L_chr = what_1L_chr)
+    }
+    if (is.null(word_table_fn)) {
+        word_table_fn <- make_table_fn("Word", what_1L_chr = what_1L_chr)
+    }
+    table_fns_ls <- list(HTML = html_table_fn, PDF = pdf_table_fn, 
+        Word = word_table_fn)
+    return(table_fns_ls)
+}

@@ -219,3 +219,4 @@
 ^data-raw/s4_fns/authorReport\.R$
 ^data-raw/mthds/manufacture\.R$
 ^data-raw/fns/validate\.R$
+^data-raw/fns/add\.R$
